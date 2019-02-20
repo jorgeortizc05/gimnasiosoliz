@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
@@ -22,8 +23,11 @@ import org.hibernate.validator.constraints.NotEmpty;
 /*
  * Realizado por: Jorge Luis Ortiz Caceres
  * Fecha Creacion: 19/02/2019
- * Fecha Modificacion:
  * Nota: Mantenimiento para persona.
+ * 
+ * MODIFICACIONES
+ * Fecha Modificacion: 20/02/2019
+ * Se agrego onetomany a tipoPersona, ejercicio
  */
 @Entity
 public class Persona {
@@ -48,7 +52,7 @@ public class Persona {
 	@Column(name = "per_fecha_nac")
 	private Date fechaNacimiento;
 	
-	@Column(name = "per_fecha_nac")
+	@Column(name = "per_direccion")
 	private String direccion;
 	
 	//Parametros que ingresara el usuario en caso de movil o administrador.
@@ -80,8 +84,7 @@ public class Persona {
 		telefonos.remove(telefono);
 	}
 	
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="per_id")
 	private List<Complexion> complexiones;
 	//Metodo para add Complexion
@@ -91,11 +94,31 @@ public class Persona {
 			complexiones = new ArrayList<>();
 		complexiones.add(complexion);
 	}
+	
 	//Metodo para remove complexion
 	//Parametro complexion para ver que complexion se va a eliminar
 	public void removeComplexion(Complexion complexion) {
 		telefonos.remove(complexion);
 	}
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="per_id")
+	private List<Ejercicio> ejercicios;
+	
+	public void addEjercicio(Ejercicio ejercicio) {
+		if(ejercicios == null)
+			ejercicios = new ArrayList<>();
+		ejercicios.add(ejercicio);
+	}
+	
+	public void removeEjercicio(Ejercicio ejercicio) {
+		ejercicios.remove(ejercicio);
+	}
+	
+	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "tper_id")
+	private TipoPersona tipoPersona;
+	
 	public int getIdPersona() {
 		return idPersona;
 	}
@@ -150,6 +173,17 @@ public class Persona {
 	public void setComplexiones(List<Complexion> complexiones) {
 		this.complexiones = complexiones;
 	}
-	
+	public TipoPersona getTipoPersona() {
+		return tipoPersona;
+	}
+	public void setTipoPersona(TipoPersona tipoPersona) {
+		this.tipoPersona = tipoPersona;
+	}
+	public List<Ejercicio> getEjercicios() {
+		return ejercicios;
+	}
+	public void setEjercicios(List<Ejercicio> ejercicios) {
+		this.ejercicios = ejercicios;
+	}
 	
 }
