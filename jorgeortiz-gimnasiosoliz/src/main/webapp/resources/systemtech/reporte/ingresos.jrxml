@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ingresos" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="fd69a895-123c-4d2a-9954-5000cbb0f84a">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="daPostgres.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables">
+		<![CDATA[aW5ncmVzbyAsMTUsMTUsYTViYTU0YmUtNGFjMi00NDY2LThkNmItMDUxMDdjYzQwMGRkO3BlcnNv
+bmEgLDIwNSw2NywzOWUyNmNhMS02ODMwLTRmZTktOTk2OS0xNWM0Y2Y4NTc0ZjA7]]>
+	</property>
+	<queryString>
+		<![CDATA[SELECT ingreso.ing_fecha_hora,
+	ingreso.ing_serie_comprobante,
+	ingreso.ing_num_comprobante,
+	ingreso.ing_total,
+	persona.per_nombres,
+	ingreso.ing_impuesto,
+	ingreso.ing_tip_comprobante
+FROM persona
+	INNER JOIN ingreso ON 
+	 ingreso.per_id = persona.per_id]]>
+	</queryString>
+	<field name="fechaHora" class="java.sql.Timestamp">
+		<property name="com.jaspersoft.studio.field.label" value="ing_fecha_hora"/>
+	</field>
+	<field name="serieComprobante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ing_serie_comprobante"/>
+	</field>
+	<field name="numComprobante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ing_num_comprobante"/>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="ing_total"/>
+	</field>
+	<field name="persona.nombres" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="per_nombres"/>
+	</field>
+	<field name="impuesto" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="ing_impuesto"/>
+	</field>
+	<field name="tipoComprobante" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ing_tip_comprobante"/>
+	</field>
+	<variable name="vTotalGastos" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="156" y="24" width="243" height="30" uuid="df4c24d7-c4fa-4634-bb95-9cd586077c54"/>
+				<textElement>
+					<font size="20" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE INGRESOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="150" height="50" uuid="5fe3bc6a-fbe1-4aef-8e54-81e8a3a867f0"/>
+				<imageExpression><![CDATA["/fusionsystem/jorgeortiz/logo/systemtech/logoSystemTechReporte.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="36" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="30" uuid="06bad38e-7f90-4184-8efe-b8599cb8d71c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d9d0967-4d7b-4d66-899e-299af6c81cfb"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[FECHA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="100" y="0" width="160" height="30" uuid="4a80c9a8-80c8-4df4-867c-b3aa9021a0b9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb8aa1ca-77ee-4cf2-916f-6c9b127a47e3"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[PROVEEDOR]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="260" y="0" width="130" height="30" uuid="a7cf8846-e463-4384-855a-86d7f06a646b">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad6d81e8-539f-464f-ba57-22365bc110ab"/>
+				</reportElement>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[COMPROBANTE]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="390" y="0" width="50" height="30" uuid="489f301f-a581-48f5-ae0f-59ea200ea453">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98408e4c-7dda-4fa7-a561-51d2b65ca722"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[IMP.]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="440" y="0" width="100" height="30" uuid="00c29c8a-5204-472e-a904-6c2ff7bc080f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0d432c0-a39a-41cf-b259-3d0d08fe95a6"/>
+				</reportElement>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="597592b9-131a-4c8e-b20b-ae29e757278e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8d9d0967-4d7b-4d66-899e-299af6c81cfb"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{fechaHora}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="160" height="30" uuid="2edc21a3-b741-4a68-95f6-6b3b9adbaa6f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb8aa1ca-77ee-4cf2-916f-6c9b127a47e3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{persona.nombres}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="320" y="0" width="30" height="30" uuid="f93cb02e-39f2-458d-8057-1b1735f990cc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="aa092d75-2d2c-45a7-99ab-79e9427c8ed7"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{serieComprobante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="350" y="0" width="40" height="30" uuid="2b4bce5a-31ca-4ee9-b40b-0235ac7f739d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ad6d81e8-539f-464f-ba57-22365bc110ab"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{numComprobante}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="390" y="0" width="50" height="30" uuid="87127f6f-7a4f-4d4f-9467-ca4ae04db815">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="98408e4c-7dda-4fa7-a561-51d2b65ca722"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{impuesto}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.00#">
+				<reportElement x="440" y="0" width="100" height="30" uuid="27f303a7-b5da-4c3a-acb6-06e0c09559b7">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="e0d432c0-a39a-41cf-b259-3d0d08fe95a6"/>
+				</reportElement>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="260" y="0" width="60" height="30" uuid="963709c1-6489-4c80-8253-d57c750b9cbf">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="cb5c6761-38b2-48ff-bb73-a6fa29259d8c"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{tipoComprobante}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="50" splitType="Stretch">
+			<staticText>
+				<reportElement x="350" y="0" width="100" height="30" uuid="15c7ddf7-486e-48c8-b52f-492c956c28cb"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL EN GASTOS]]></text>
+			</staticText>
+			<textField pattern="#,##0.00#">
+				<reportElement x="450" y="0" width="100" height="30" uuid="c62636f1-8bd8-4555-8581-9e29de69c290"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$V{vTotalGastos}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="32">
+			<textField pattern="d/M/yyyy h:mm a">
+				<reportElement x="440" y="0" width="110" height="30" uuid="dd65fb54-9bd6-4e09-8c32-451b638be17a"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="0" y="0" width="100" height="30" uuid="70c32e1d-25b8-4bc5-bd7e-caead4215b14"/>
+				<textElement>
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>
