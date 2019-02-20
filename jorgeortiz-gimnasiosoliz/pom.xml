@@ -35,7 +35,7 @@
         </license>
     </licenses>
 
-    <properties>
+     <properties>
         <!-- Explicitly declaring the source encoding eliminates the following 
             message: -->
         <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
@@ -59,8 +59,16 @@
         <maven.compiler.source>1.7</maven.compiler.source>
     </properties>
 
-
+	<repositories>
+			<repository>
+				<id>prime-repo</id>
+				<name>Prime Repo</name>
+				<url>http://repository.primefaces.org</url>
+			</repository>
+	</repositories>
     <dependencyManagement>
+    	
+    	
         <dependencies>
             <!-- JBoss distributes a complete set of Java EE 7 APIs including a Bill
                 of Materials (BOM). A BOM specifies the versions of a "stack" (or a collection) 
@@ -195,6 +203,42 @@
             <scope>test</scope>
         </dependency>
 
+        <dependency>
+        	<groupId>org.primefaces</groupId>
+        	<artifactId>primefaces</artifactId>
+        	<version>6.2</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>org.primefaces.themes</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.10</version>
+		</dependency>
+        <dependency>
+        	<groupId>net.sf.jasperreports</groupId>
+        	<artifactId>jasperreports</artifactId>
+        	<version>6.7.0</version>
+        </dependency>
+        <dependency>
+        	<groupId>net.glxn</groupId>
+        	<artifactId>qrgen</artifactId>
+        	<version>1.4</version>
+        </dependency>
+        <dependency>
+        	<groupId>net.sf.barcode4j</groupId>
+        	<artifactId>barcode4j-light</artifactId>
+        	<version>2.1</version>
+        </dependency>
+        <dependency>
+        	<groupId>javax.servlet</groupId>
+        	<artifactId>servlet-api</artifactId>
+        	<version>2.5</version>
+        </dependency>
+        <dependency>
+        	<groupId>net.sf.jasperreports</groupId>
+        	<artifactId>jasperreports-fonts</artifactId>
+        	<version>6.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
