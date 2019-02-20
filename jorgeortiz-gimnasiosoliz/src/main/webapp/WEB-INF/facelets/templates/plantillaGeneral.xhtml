@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util">
+<!-- style="font-size:12px;" -->
+<h:head>
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="util" name="sgmEstilos.css" />
+	<h:outputStylesheet library="util" name="sgmPantalla.css" />
+	<title><ui:insert name="titulo"> systemtech
+		</ui:insert></title>
+<script>
+            window.location.hash = "no-back-button";
+            window.location.hash = "Again-No-back-button";//again because google chrome don't insert first hash into history
+            window.onhashchange = function() {
+                window.location.hash = "no-back-button";
+            }
+</script>  
+	
+	
+</h:head>
+<h:body>
+	<header id="main-header">
+ 		<link rel="shortcut icon" type="image/x-icon" href="#{resource['systemtech/logo/systemtech_mini.png']}"/>
+	</header><!-- / #main-header -->
+	<f:loadBundle basename="jorgeortiz.fusionsystem.web.Componente" var="componente" />
+	<h:panelGroup layout="block" id="pantalla" style="font-size:14px;">
+		<p:growl id="mensajes" showDetail="true" />
+		<h:panelGroup layout="block" id="cuerpo">
+			<h:form id="forma">
+				<p:panel>
+					<p:menubar>
+							<p:menuitem>
+								
+			        				<h:graphicImage name="systemtech/logo/systemtech.png" height="50" width="150" />
+						   	 	
+							</p:menuitem>
+					        <p:submenu label="Escritorio" icon="fa fa-desktop">
+					        	<p:menuitem value="Escritorio" action="escritorio" immediate="true" ajax="false"/>
+					        </p:submenu>
+					        <p:submenu label="Almacen" icon="fa fa-home">
+					        	<p:menuitem value="Articulos"  action="articulos" immediate="true" ajax="false"/>
+					        	<p:menuitem value="Categorias"  action="categorias" immediate="true" ajax="false"/>
+					        </p:submenu>
+					        <p:submenu label="Compras" icon="fa fa-cc-mastercard">
+					        	<p:menuitem value="Ingresos"  action="ingresos" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
+								<p:menuitem value="Proveedores" action="proveedores" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
+								<p:menuitem value="Forma Pago" action="forma-pagos" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
+					        </p:submenu>
+					        <p:submenu label="Ventas" icon="fa fa-shopping-cart">
+					        	<p:menuitem value="Ventas"  action="ventas" immediate="true"/>
+					        	<p:menuitem value="Clientes"  action="clientes" immediate="true" ajax="false"/>
+					        	<p:menuitem value="Parametros de Factura"  action="parametros-facturas" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
+					        	
+					        </p:submenu>
+					        <p:submenu label="Consultas" icon="fa fa-server">
+					        	<p:menuitem value="Consultas Precios"  action="precios" immediate="true"/>
+					        </p:submenu>
+					        <p:submenu label="Herramientas" icon="fa fa-anchor">
+					        	<p:menuitem value="Backup de Base de Datos" actionListener="#{backup.descargarBackup()}" ajax="false" immediate="true" disabled="#{usersController.permisosAdministrativos}" update="mensajes">
+					        		 <p:fileDownload value="#{backup.download}" />
+					        	</p:menuitem>
+					        </p:submenu>
+					        <p:submenu label="Acceso" icon="fa fa-user-secret">
+					        	<p:menuitem value="Usuarios"  action="usuarios" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
+					        	<p:menuitem value="Salir"  action="#{usersController.salir()}" immediate="true" ajax="false"/>
+					        </p:submenu>
+					        <p:submenu label="Acerca de..." icon="fa fa-home">
+					        	<p:menuitem value="Acerca de..."  action="acerca-de" immediate="true" ajax="false"/>
+					        </p:submenu>
+					    </p:menubar>
+				</p:panel>
+				
+				
+				<ui:insert name="barra">
+				</ui:insert>
+				<p:panel>
+					<ui:insert name="cuerpo">
+					</ui:insert>
+				</p:panel>
+			</h:form>
+			<ui:insert name="listas">
+			</ui:insert>
+		</h:panelGroup>
+	</h:panelGroup>
+	 <p class="footer-text text-center">Copyright © 2018 Ing. Jorge Luis Ortiz Cáceres. FUSIONSYSTEM. All rights reserved.</p>
+	 <p class="footer-text text-center">0983457699 jorgeortizc05@gmail.com</p>
+</h:body>
+</html>
