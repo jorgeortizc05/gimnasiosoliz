@@ -80,4 +80,76 @@ public class Persona {
 		telefonos.remove(telefono);
 	}
 	
+	
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+	@JoinColumn(name="per_id")
+	private List<Complexion> complexiones;
+	//Metodo para add Complexion
+	//Complexion complexion es el parametro de la clase Complexion
+	public void addComplexion(Complexion complexion) {
+		if(complexiones == null)
+			complexiones = new ArrayList<>();
+		complexiones.add(complexion);
+	}
+	//Metodo para remove complexion
+	//Parametro complexion para ver que complexion se va a eliminar
+	public void removeComplexion(Complexion complexion) {
+		telefonos.remove(complexion);
+	}
+	public int getIdPersona() {
+		return idPersona;
+	}
+	public void setIdPersona(int idPersona) {
+		this.idPersona = idPersona;
+	}
+	public String getCedula() {
+		return cedula;
+	}
+	public void setCedula(String cedula) {
+		this.cedula = cedula;
+	}
+	public String getNombres() {
+		return nombres;
+	}
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
+	}
+	public Date getFechaNacimiento() {
+		return fechaNacimiento;
+	}
+	public void setFechaNacimiento(Date fechaNacimiento) {
+		this.fechaNacimiento = fechaNacimiento;
+	}
+	public String getDireccion() {
+		return direccion;
+	}
+	public void setDireccion(String direccion) {
+		this.direccion = direccion;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public void setEmail(String email) {
+		this.email = email;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public List<Telefono> getTelefonos() {
+		return telefonos;
+	}
+	public void setTelefonos(List<Telefono> telefonos) {
+		this.telefonos = telefonos;
+	}
+	public List<Complexion> getComplexiones() {
+		return complexiones;
+	}
+	public void setComplexiones(List<Complexion> complexiones) {
+		this.complexiones = complexiones;
+	}
+	
+	
 }

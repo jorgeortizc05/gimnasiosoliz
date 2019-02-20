@@ -1,6 +1,7 @@
 package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 
 import javax.persistence.Column;
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -13,6 +14,8 @@ import javax.validation.constraints.NotNull;
  * Fecha Modificacion:
  * Nota: Entidad para datos de telefono
  */
+
+@Entity
 public class Complexion {
 
 	@Id
@@ -34,4 +37,56 @@ public class Complexion {
 	
 	//Detalle del sobrepeso si es muy delgado, normal, sobrepeso
 	private String estadoPeso;
+
+	//Getter and setters
+	
+	public int getIdComplexion() {
+		return idComplexion;
+	}
+
+	public void setIdComplexion(int idComplexion) {
+		this.idComplexion = idComplexion;
+	}
+
+	public Double getAltura() {
+		return altura;
+	}
+
+	public void setAltura(Double altura) {
+		this.altura = altura;
+	}
+
+	public Double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(Double peso) {
+		this.peso = peso;
+	}
+
+	public String getEstatura() {
+		return estatura;
+	}
+
+	public void setEstatura(String estatura) {
+		this.estatura = estatura;
+	}
+
+	public Double getIndiceCorporal() {
+		return indiceCorporal;
+	}
+
+	public void setIndiceCorporal(Double indiceCorporal) {
+		this.indiceCorporal = indiceCorporal;
+	}
+
+	public String getEstadoPeso() {
+		return estadoPeso;
+	}
+
+	public void setEstadoPeso(String estadoPeso) {
+		this.estadoPeso = estadoPeso;
+	}
+	
+	
 }
