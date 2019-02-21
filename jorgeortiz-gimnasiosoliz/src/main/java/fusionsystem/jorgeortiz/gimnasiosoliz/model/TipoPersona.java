@@ -58,6 +58,12 @@ public class TipoPersona {
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+
+	@Override
+	public String toString() {
+		return "TipoPersona [idTipoPersona=" + idTipoPersona + ", nombre=" + nombre + ", descripcion=" + descripcion
+				+ "]";
+	}
 	
 	
 }

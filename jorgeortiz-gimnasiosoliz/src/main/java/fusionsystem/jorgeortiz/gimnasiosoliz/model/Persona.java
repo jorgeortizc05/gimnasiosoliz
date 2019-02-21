@@ -56,15 +56,10 @@ public class Persona {
 	private String direccion;
 	
 	//Parametros que ingresara el usuario en caso de movil o administrador.
-	@NotNull
-	@NotEmpty
 	@Email
 	@Column(name= "per_email")
 	private String email;
 	
-	@NotNull
-	@NotEmpty
-	@Size(min=4, max=30)
 	@Column(name= "per_pass")
 	private String password;
 	
@@ -84,7 +79,7 @@ public class Persona {
 		telefonos.remove(telefono);
 	}
 	
-	@OneToMany(cascade = CascadeType.ALL)
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="per_id")
 	private List<Complexion> complexiones;
 	//Metodo para add Complexion
