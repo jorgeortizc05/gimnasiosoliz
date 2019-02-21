@@ -42,28 +42,29 @@
 					        <p:submenu label="Escritorio" icon="fa fa-desktop">
 					        	<p:menuitem value="Escritorio" action="escritorio" immediate="true" ajax="false"/>
 					        </p:submenu>
-					        <p:submenu label="Almacen" icon="fa fa-home">
-					        	<p:menuitem value="Articulos"  action="articulos" immediate="true" ajax="false"/>
-					        	<p:menuitem value="Categorias"  action="categorias" immediate="true" ajax="false"/>
-					        </p:submenu>
-					        <p:submenu label="Compras" icon="fa fa-cc-mastercard">
-					        	<p:menuitem value="Ingresos"  action="ingresos" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
-								<p:menuitem value="Proveedores" action="proveedores" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
-								<p:menuitem value="Forma Pago" action="forma-pagos" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
-					        </p:submenu>
-					        <p:submenu label="Ventas" icon="fa fa-shopping-cart">
-					        	<p:menuitem value="Ventas"  action="ventas" immediate="true"/>
-					        	<p:menuitem value="Clientes"  action="clientes" immediate="true" ajax="false"/>
-					        	<p:menuitem value="Parametros de Factura"  action="parametros-facturas" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
+					        <p:submenu label="Ejercicios Programados" icon="fa fa-home">
+					        	<p:submenu label="Rutinas">
+					        		<p:menuitem value="Nueva Rutina"  action="nueva-rutina?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Rutinas"  action="list-rutinas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
 					        	
+					        </p:submenu>
+					        <p:submenu label="Gestion Personas" icon="fa fa-home">
+					        	<p:submenu label="Persona">
+					        		<p:menuitem value="Nueva Persona"  action="nueva-persona?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Personas"  action="list-rutinas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
+					        	<p:submenu label="Tipo Persona">
+					        		<p:menuitem value="Nueva Tipo"  action="nuevo-tipo-persona?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Tipos"  action="list-tipo-personas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
+					        	<p:submenu label="Ejercicios">
+					        		<p:menuitem value="Personas"  action="list-rutinas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
+					
 					        </p:submenu>
 					        <p:submenu label="Consultas" icon="fa fa-server">
 					        	<p:menuitem value="Consultas Precios"  action="precios" immediate="true"/>
-					        </p:submenu>
-					        <p:submenu label="Herramientas" icon="fa fa-anchor">
-					        	<p:menuitem value="Backup de Base de Datos" actionListener="#{backup.descargarBackup()}" ajax="false" immediate="true" disabled="#{usersController.permisosAdministrativos}" update="mensajes">
-					        		 <p:fileDownload value="#{backup.download}" />
-					        	</p:menuitem>
 					        </p:submenu>
 					        <p:submenu label="Acceso" icon="fa fa-user-secret">
 					        	<p:menuitem value="Usuarios"  action="usuarios" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>

@@ -25,23 +25,22 @@ public class TipoPersona {
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "tper_generator")
 	@NotNull
 	@Column(name = "tper_id")
-	private int idPersona;
+	private int idTipoPersona;
 	
 	@NotNull
 	@NotEmpty
 	@Column(name = "tper_nombre")
-	@Size(min=1, max=2)
-	private String nombre; //C=Cliente, E=Entrenador, EM=Empleado, A=Administrador.
+	private String nombre;
 	
 	@Column(name = "tper_descripcion")
 	private String descripcion;
 
-	public int getIdPersona() {
-		return idPersona;
+	public int getIdTipoPersona() {
+		return idTipoPersona;
 	}
 
-	public void setIdPersona(int idPersona) {
-		this.idPersona = idPersona;
+	public void setIdTipoPersona(int idTipoPersona) {
+		this.idTipoPersona = idTipoPersona;
 	}
 
 	public String getNombre() {

@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:20/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{rutinaController.vIdRutina}"/>
+        <f:viewAction action="#{rutinaController.cargarRutina()}" />
+ 	</f:metadata>
+</h:head>
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<p:fieldset legend="NUEVA RUTINA" style="margin-bottom:20px" id="panelRutina">
+		<p:panelGrid columns="3" id="pgRutina">
+			<p:outputLabel value="Rutina"/>
+			<p:inputText value="#{rutinaController.newRutina.nombre}" id="txtnombre"/>
+			<p:message for="txtnombre" />
+			
+			<p:outputLabel value="Descripcion"/>
+			<p:inputText value="#{rutinaController.newRutina.descripcion}" id="txtdescripcion"/>
+			<p:message for="txtdescripcion"/>
+		</p:panelGrid>
+		<p:commandButton value="+" action="#{rutinaController.addEjercicio()}" update="panelRutina"/>
+		<p:dataTable value="#{rutinaController.newRutina.ejercicios}" var="ej" id="listEjercicios">
+			<p:column>
+				<p:commandButton value="x" action="#{rutinaController.removeEjercicio(ej)}" update="listEjercicios"/>
+			</p:column>
+			<p:column headerText="Ejercicio">
+				<p:inputText value="#{ej.nombre}"/>
+			</p:column>
+			<p:column headerText="Series">
+				<p:inputText value="#{ej.series}"/>
+			</p:column>
+			<p:column headerText="Repeticiones">
+				<p:inputText value="#{ej.repeticiones}" placeholder="Ejem: 10-8-8-8"/>
+			</p:column>
+		</p:dataTable>
+
+	</p:fieldset>
+	<p:commandButton value="Guardar" action="#{rutinaController.guardarRutina()}" update="panelRutina"/>
+	<p:commandButton value="Cancelar" action="list-rutinas?faces-redirect=true" immediate="true"/>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>
