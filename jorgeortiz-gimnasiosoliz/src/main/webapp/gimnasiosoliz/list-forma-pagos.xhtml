@@ -1,0 +1,50 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:14/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<p:fieldset legend="LISTA DE PRODUCTOS" style="margin-bottom:20px">
+		<p:commandButton value="Nuevo" action="nueva-forma-pago?faces-redirect=true" icon="fa fa-user-plus" ajax="false"/>
+		<p:dataTable resizableColumns="true"  value="#{formaPagoController.formaPagos}" var="fp" id="dtFormaPagos" paginator="true" paginatorPosition="bottom"  
+				 	rows="15" style="margin-bottom:20px" widgetVar="dTWWFormaPagos" rowsPerPageTemplate="5,10,15,20,50" filteredValue="#{formaPagoController.filterFormaPagos}">
+			    
+		    <p:column headerText="Nombre" >
+		       <h:outputText  value="#{fp.nombre}"/>
+		    </p:column>
+		    
+		    <p:column headerText="Descripcion" >
+		       <h:outputText  value="#{fp.descripcion}"/>
+		    </p:column>
+
+		    <p:column headerText="Opciones" style="width:80px;">
+		    	<p:commandButton action="#{formaPagoController.editarFormaPago(fp)}" icon="fa fa-edit" update="mensajes"/>
+		    	
+		       	<p:commandButton update="mensajes dtFormaPagos" action="#{formaPagoController.eliminarFormaPago(fp.idFormaPago)}" 
+		       	icon="fa fa-remove" oncomplete="PF('dTWWFormaPagos').filter()"/>
+		    </p:column>
+		    <!-- oncomplete me sirve para eliminar con el filtro activado -->
+		</p:dataTable>
+		
+	</p:fieldset>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>

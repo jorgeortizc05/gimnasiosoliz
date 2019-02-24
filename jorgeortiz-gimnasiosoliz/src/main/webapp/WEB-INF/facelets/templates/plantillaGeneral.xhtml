@@ -42,10 +42,28 @@
 					        <p:submenu label="Escritorio" icon="fa fa-desktop">
 					        	<p:menuitem value="Escritorio" action="escritorio" immediate="true" ajax="false"/>
 					        </p:submenu>
+					        <p:submenu label="Inventarios" icon="fa fa-home">
+					        	<p:submenu label="Productos">
+					        		<p:menuitem value="Nuevo Producto"  action="nuevo-producto?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Productos"  action="list-productos?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
+					        	
+					        </p:submenu>
 					        <p:submenu label="Ejercicios Programados" icon="fa fa-home">
 					        	<p:submenu label="Rutinas">
 					        		<p:menuitem value="Nueva Rutina"  action="nueva-rutina?faces-redirect=true" immediate="true" ajax="false"/>
 					        		<p:menuitem value="Rutinas"  action="list-rutinas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
+					        	
+					        </p:submenu>
+					        <p:submenu label="CAJA" icon="fa fa-home">
+					        	<p:submenu label="Ventas">
+					        		<p:menuitem value="Nueva Venta"  action="nueva-venta?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Facturas"  action="list-rutinas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
+					        	<p:submenu label="Forma Pago">
+					        		<p:menuitem value="Nueva Forma Pago"  action="nueva-forma-pago?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Forma de Pagos"  action="list-forma-pagos?faces-redirect=true" immediate="true" ajax="false"/>
 					        	</p:submenu>
 					        	
 					        </p:submenu>

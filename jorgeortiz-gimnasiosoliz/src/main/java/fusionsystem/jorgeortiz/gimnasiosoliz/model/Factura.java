@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.SequenceGenerator;
 import javax.validation.constraints.NotNull;
@@ -35,6 +36,9 @@ public class Factura {
 	@Column(name = "fact_serie")
 	private String serie;//Numero de factura
 	
+	@Column(name = "fact_tipo_comprobante")
+	private String tipoComprobante;//Si es factura, boleta, etc
+	
 	@Column(name = "fact_fec_emision")
 	private Date fechaEmision = new Date();
 	
@@ -56,6 +60,10 @@ public class Factura {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="fact_id")
 	private List<DetalleFactura> detalleFacturas;
+	
+	@ManyToOne
+	@JoinColumn(name = "fp_id")
+	private FormaPago formaPago;
 
 	public int getIdFactura() {
 		return idFactura;
@@ -128,7 +136,21 @@ public class Factura {
 	public void setDetalleFacturas(List<DetalleFactura> detalleFacturas) {
 		this.detalleFacturas = detalleFacturas;
 	}
-	
-	
+
+	public String getTipoComprobante() {
+		return tipoComprobante;
+	}
+
+	public void setTipoComprobante(String tipoComprobante) {
+		this.tipoComprobante = tipoComprobante;
+	}
+
+	public FormaPago getFormaPago() {
+		return formaPago;
+	}
+
+	public void setFormaPago(FormaPago formaPago) {
+		this.formaPago = formaPago;
+	}
 	
 }
