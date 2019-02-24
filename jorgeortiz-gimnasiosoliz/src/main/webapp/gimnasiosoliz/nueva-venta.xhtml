@@ -65,9 +65,6 @@ Funcion: Controlador Articulo Controller.
 					<p:message for="sComprob"></p:message>
 				</p:column>
 				<p:column>
-					<p:message for="nComprob"></p:message>
-				</p:column>
-				<p:column>
 					<p:message for="imp"></p:message>
 				</p:column>
 			</p:row>
@@ -77,9 +74,6 @@ Funcion: Controlador Articulo Controller.
 				</p:column>
 				<p:column>
 					<b><h:outputLabel value="Serie de Comprobante" for="sComprob"/></b>
-				</p:column>
-				<p:column>
-					<b><h:outputLabel value="Numero de Comprobante" for="nComprob"/></b>
 				</p:column>
 				<p:column>
 					<b><h:outputLabel value="Impuesto" for="imp"/></b>
@@ -97,16 +91,11 @@ Funcion: Controlador Articulo Controller.
 					</p:selectOneMenu>
 				</p:column>
 				<p:column>
-					<p:outputLabel id="sComprob" value="#{ventaController.pf.serieEstablecimiento} - #{ventaController.pf.seriePuntoEmision}" style="width:150px;"/>
+					<p:inputText id="sComprob" value="#{ventaController.newFactura.serie}" style="width:150px;"/>
 				</p:column>
-				<p:column>
-					<p:inplace>
-						<p:inputText value="#{ventaController.pf.desdeNumComprobante}" style="width:150px; color:#FF0000" id="nComprob"/>
-					</p:inplace>
-					
-				</p:column>
+				
 				<p:column> 
-					<p:outputLabel id="imp" value="#{ventaController.venta.impuesto}"></p:outputLabel>
+					<p:outputLabel id="imp" value="#{ventaController.newFactura.iva}"></p:outputLabel>
 				</p:column>
 			</p:row>
 			
