@@ -1,5 +1,6 @@
 package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -57,13 +58,23 @@ public class Factura {
 	@Column(name = "fact_vtotal")
 	private Double valorTotal;
 	
+	@ManyToOne
+	@JoinColumn(name = "fp_id")
+	private FormaPago formaPago;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="fact_id")
 	private List<DetalleFactura> detalleFacturas;
 	
-	@ManyToOne
-	@JoinColumn(name = "fp_id")
-	private FormaPago formaPago;
+	public void addDetalleFactura(DetalleFactura detalleFactura) {
+		if(detalleFacturas ==null)
+			detalleFacturas = new ArrayList<>();
+		detalleFacturas.add(detalleFactura);
+	}
+	
+	public void removeDetalleFactura(DetalleFactura detalleFactura) {
+		detalleFacturas.remove(detalleFactura);
+	}
 
 	public int getIdFactura() {
 		return idFactura;

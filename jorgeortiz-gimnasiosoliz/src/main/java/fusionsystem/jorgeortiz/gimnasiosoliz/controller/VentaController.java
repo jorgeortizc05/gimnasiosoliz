@@ -10,6 +10,7 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.VentaBussiness;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.DetalleFactura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.FormaPago;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
@@ -31,7 +32,10 @@ public class VentaController {
 	
 	private List<Persona> personas;
 	private List<Producto> productos;
+	private Producto newProducto;
 	private List<FormaPago> formaPagos;
+	
+	private DetalleFactura newDetalleFactura;
 	
 	
 	//Variable para verificar si estas editando
@@ -41,10 +45,14 @@ public class VentaController {
 	private int vIdPersona;
 	private int vIdProducto;
 	private int vIdFormaPago;
+	private Double vTotalVenta;
+	private Double vSubtotal;
 	
 	@PostConstruct
 	public void init() {
 		newFactura = new Factura();
+		newProducto = new Producto();
+		newDetalleFactura = new DetalleFactura();
 		vEditing = false;
 		vTitulo = "NUEVO";
 		loadFacturas();
@@ -125,9 +133,23 @@ public class VentaController {
 		}
 	}
 	
+	public void getProducto() {
+		newProducto = ventBuss.getProducto(vIdProducto);
+		// dIngreso = dIngresoDAO.detalleIngresoArticulo(articulo.getIdArticulo());
+	}
+	
 	//Carga todos los Factura en el formulario
 	public void loadFacturas() {
 		facturas = ventBuss.getFacturas();
+	}
+	
+	public void addDetalleFactura() {
+		newFactura.addDetalleFactura(newDetalleFactura);
+		newDetalleFactura = new DetalleFactura();
+	}
+	
+	public void removeDetalleFactura(DetalleFactura detalleFactura) {
+		newFactura.removeDetalleFactura(detalleFactura);
 	}
 
 	public Factura getNewFactura() {
@@ -225,6 +247,39 @@ public class VentaController {
 	public void setvIdFormaPago(int vIdFormaPago) {
 		this.vIdFormaPago = vIdFormaPago;
 	}
+
+	public Producto getNewProducto() {
+		return newProducto;
+	}
+
+	public void setNewProducto(Producto newProducto) {
+		this.newProducto = newProducto;
+	}
+
+	public DetalleFactura getNewDetalleFactura() {
+		return newDetalleFactura;
+	}
+
+	public void setNewDetalleFactura(DetalleFactura newDetalleFactura) {
+		this.newDetalleFactura = newDetalleFactura;
+	}
+
+	public Double getvTotalVenta() {
+		return vTotalVenta;
+	}
+
+	public void setvTotalVenta(Double vTotalVenta) {
+		this.vTotalVenta = vTotalVenta;
+	}
+
+	public Double getvSubtotal() {
+		return vSubtotal;
+	}
+
+	public void setvSubtotal(Double vSubtotal) {
+		this.vSubtotal = vSubtotal;
+	}
+
 	
 	
 

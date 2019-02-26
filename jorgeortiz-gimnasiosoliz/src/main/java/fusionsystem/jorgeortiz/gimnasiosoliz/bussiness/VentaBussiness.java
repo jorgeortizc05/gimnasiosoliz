@@ -84,6 +84,11 @@ public class VentaBussiness {
 		return perDAO.getPersonas();
 	}
 	
+	//Carga un objeto Producto
+	public Producto getProducto(int id) {
+		return prodDAO.read(id);
+	}
+	
 	//Recupera una lista de productos
 	public List<Producto> getProductos(){
 		return prodDAO.getProductos();

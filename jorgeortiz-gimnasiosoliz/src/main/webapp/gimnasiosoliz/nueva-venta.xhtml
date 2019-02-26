@@ -102,13 +102,10 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:columnGroup>
 					<p:column>
-						<p:message for="lArticulos"></p:message>
+						<p:message for="lProductos"></p:message>
 					</p:column>
 					<p:column>
 						<p:message for="cantidad"></p:message>
-					</p:column>
-					<p:column>
-						<p:message for="stock"></p:message>
 					</p:column>
 					<p:column>
 						<p:message for="pVenta"></p:message>
@@ -127,13 +124,10 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:columnGroup>
 					<p:column>
-						<b><h:outputLabel value="Articulo" for="lArticulos"/></b>
+						<b><h:outputLabel value="Producto" for="lProductos"/></b>
 					</p:column>
 					<p:column>
 						<b><h:outputLabel value="Cantidad" for="cantidad"/></b>
-					</p:column>
-					<p:column>
-						<b><h:outputLabel value="Stock" for="stock"/></b>
 					</p:column>
 					<p:column>
 						<b><h:outputLabel value="Precio Venta" for="pVenta"/></b>
@@ -147,29 +141,24 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:columnGroup>
 					<p:column>
-						<p:selectOneListbox value="#{ventaController.vIdDetalleIngreso}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Articulo" filterMatchMode="contains" id="lArticulos" scrollHeight="100">
-				            <f:selectItems value="#{articuloController.detalleIngresos}" var="di" itemLabel="#{di.articulo.codigo}/#{di.articulo.nombre}/#{di.articulo.descripcion}" itemValue="#{di.idDetalleIngrso}"/>
+						<p:selectOneListbox value="#{ventaController.vIdProducto}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Articulo" filterMatchMode="contains" id="lProductos" scrollHeight="100">
+				            <f:selectItems value="#{ventaController.productos}" var="pro" itemLabel="#{pro.nombre}" itemValue="#{pro.idProducto}"/>
 				        	<p:ajax process="@this"
-				            listener="#{ventaController.loadDetalleIngreso()}" update="stock pVenta cantidad"/>
+				            listener="#{ventaController.getProducto()}" update="pVenta cantidad"/>
 				        
 				        </p:selectOneListbox>
 					</p:column>
 					<p:column>
-						<p:spinner id="cantidad" value="#{ventaController.dVenta.cantidad}" min="1" max="#{ventaController.detalleIngreso.stockActual}" />
+						<p:spinner id="cantidad" value="#{ventaController.newDetalleFactura.cantidad}" min="1" />
 						
 					</p:column>
 					<p:column>
-						<p:outputLabel value="#{ventaController.detalleIngreso.stockActual}" id="stock" style="width:150px;">
-							
-						</p:outputLabel>	
-					</p:column>
-					<p:column>
-						<h:outputText value="#{ventaController.detalleIngreso.precioVenta}" id="pVenta">	
+						<h:outputText value="#{ventaController.newProducto.precio}" id="pVenta">	
 						
 						</h:outputText>
 					</p:column>
 					<p:column>
-						<p:inputNumber id="descuento" value="#{ventaController.dVenta.descuento}" symbol="%" 
+						<p:inputNumber id="descuento" value="#{ventaController.newFactura.descuento}" symbol="%" 
                                 symbolPosition="s" emptyValue="zero"/>
 					</p:column>
 				
@@ -177,35 +166,27 @@ Funcion: Controlador Articulo Controller.
 			</p:row>
 			<p:row>
 				<p:column>		
-					<p:commandButton value="Agregar" actionListener="#{ventaController.addDetalleVenta()}" update="dTVenta mensajes"></p:commandButton>				
+					<p:commandButton value="Agregar" actionListener="#{ventaController.addDetalleFactura()}" update="dTFacturas mensajes"></p:commandButton>				
 				</p:column>
 				
 			</p:row>
 			<p:row>
 				<p:column colspan="5">
 				  
-					<p:dataTable value="#{ventaController.venta.detalleVentas}" var="d" rowIndexVar="row" id="dTVenta">
+					<p:dataTable value="#{ventaController.newFactura.detalleFacturas}" var="d" rowIndexVar="row" id="dTFacturas">
 						<p:column headerText="Remover">
-							<p:commandButton value="Remover" actionListener="#{ventaController.removeDetalles(row+1)}" update="dTVenta" immediate="true"></p:commandButton>
-						</p:column>
-						<p:column headerText="Articulo">
-							<h:outputText value="#{d.detalleIngreso.articulo.nombre}" />
+							<p:commandButton value="Remover" actionListener="#{ventaController.removeDetalleFactura(d)}" update="dTFacturas" immediate="true"></p:commandButton>
 						</p:column>
 						<p:column headerText="cantidad">
 							<h:outputText value="#{d.cantidad}" />
 						</p:column>
 						<p:column headerText="Precio Venta">
-							<p:outputLabel value="#{d.precioVenta}">
+							<p:outputLabel value="#{d.valorUnitario}">
 							
 							</p:outputLabel>
 						</p:column>
-						<p:column headerText="Descuento">
-							<p:outputLabel value="#{d.descuento}">
-								
-							</p:outputLabel>
-						</p:column>
-						<p:column headerText="subtotal">
-							<h:outputText value="#{d.subtotal}">
+						<p:column headerText="Valor Total">
+							<h:outputText value="#{d.valorTotal}">
 								<f:convertNumber currencySymbol="$" type="currency"  />
 							</h:outputText>
 						</p:column>
@@ -217,7 +198,7 @@ Funcion: Controlador Articulo Controller.
 				            </p:row>
 				            <p:row>
 				                <p:column colspan="5" style="text-align:right" footerText="Iva:" />
-				                <p:column footerText="#{ventaController.venta.impuesto}" />
+				                <p:column footerText="#{ventaController.newFactura.iva}" />
 				            </p:row>
 				            <p:row>
 				            	<p:column colspan="5" style="text-align:right" footerText="Total:" />
@@ -232,58 +213,12 @@ Funcion: Controlador Articulo Controller.
 			</p:row>
 			
 		</p:panelGrid>
-		<p:commandButton value="Guardar" action="#{ventaController.guardarVenta(usersController.users)}" update="gridVenta" icon="fa fa-save"></p:commandButton>
-		<p:commandButton value="Cancelar" action="ventas" immediate="true" icon="fa fa-hand-o-left"></p:commandButton>
+		<p:commandButton value="Guardar" action="#{ventaController.guardarFactura()}" update="gridVenta" icon="fa fa-save"></p:commandButton>
+		<p:commandButton value="Cancelar" action="list-ventas" immediate="true" icon="fa fa-hand-o-left"></p:commandButton>
 	 	
 	 
 	
 	</p:fieldset>
-	<p:dialog header="Nuevo Cliente" widgetVar="dlg2" modal="true" height="400" closeOnEscape="true"  id="dialog">
-   		<p:panelGrid columns="3" id="gridCliente">
-	 		<p:outputLabel value="Nombre:" for="nombre"></p:outputLabel>
-	 		<p:inputText value="#{personaController.persona.nombres}" id="nombre"/>
-	 		<p:message for="nombre"/>
-	 	
-	 		<p:outputLabel value="Tipo Persona:" for="tipoPersona"></p:outputLabel>
-	 		<p:selectOneMenu id="tipoPersona" value="#{personaController.persona.tipoPersona}" style="width:125px">
-	            <f:selectItem itemLabel="Cliente" itemValue="cliente" />
-	            <f:selectItem itemLabel="Proveedor" itemValue="proveedor" />
-        	</p:selectOneMenu>
-	 		<p:message for="tipoPersona"/>
-	 		
-	 		<p:outputLabel value="Direccion:" for="direccion"></p:outputLabel>
-	 		<p:inputText value="#{personaController.persona.direccion}" id="direccion"/>
-	 		<p:message for="direccion"/>
-	 		
-	 		<p:outputLabel value="Tipo Documento:" for="tipDocumento"></p:outputLabel>
-	 		<p:selectOneMenu id="tipDocumento" value="#{personaController.persona.tipoDocumento}" style="width:125px">
-	            <f:selectItem itemLabel="Cedula" itemValue="cedula" />
-	            <f:selectItem itemLabel="RUC" itemValue="ruc" />
-	            <f:selectItem itemLabel="Ninguno" itemValue="na" />
-        	</p:selectOneMenu>
-	 		<p:message for="tipDocumento"/>
-	 		
-	 		<p:outputLabel value="Numero Documento:" for="numDocumento"></p:outputLabel>
-	 		<p:inputText value="#{personaController.persona.numeroDocumento}" id="numDocumento"/>
-	 		<p:message for="numDocumento"/>
-	 		
-	 		<p:outputLabel value="Telefono:" for="telefono"></p:outputLabel>
-	 		<p:inputText value="#{personaController.persona.telefono}" id="telefono"/>
-	 		<p:message for="telefono"/>
-	 		
-	 		<p:outputLabel value="Email:" for="email"></p:outputLabel>
-	 		<p:inputText value="#{personaController.persona.email}" id="email"/>
-	 		<p:message for="email"/>
-	 		
-	 		
-	 		<p:commandButton action="#{personaController.guardarClienteVenta()}" ajax="false" value="Guardar" icon="fa fa-save"></p:commandButton>
-	 		
-	 		
-	 		
-	 	</p:panelGrid>
-	 	
-	</p:dialog>	
-	  
 
 	</ui:define>
 
