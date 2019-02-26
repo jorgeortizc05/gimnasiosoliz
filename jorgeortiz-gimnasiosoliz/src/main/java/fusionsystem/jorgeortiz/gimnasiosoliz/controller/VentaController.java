@@ -69,7 +69,7 @@ public class VentaController {
 			else
 				
 				ventBuss.doGuardar(newFactura);
-			return "list-facturas?faces-redirect=true";
+			return "list-ventas?faces-redirect=true";
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			System.out.println("Error al guardar");
@@ -105,7 +105,7 @@ public class VentaController {
 		//newFactura = ts;
 		vEditing = true;
 		vTitulo = "EDITAR";
-		return "nueva-rutina?faces-redirect=true&id="+tp.getIdFactura();
+		return "nueva-venta?faces-redirect=true&id="+tp.getIdFactura();
 	}
 	
 	//Elimina Factura con base id
@@ -144,6 +144,9 @@ public class VentaController {
 	}
 	
 	public void addDetalleFactura() {
+		newDetalleFactura.setValorUnitario(newProducto.getPrecio());
+		Double vTotal = newProducto.getPrecio()*newDetalleFactura.getCantidad();
+		newDetalleFactura.setValorTotal(vTotal);
 		newFactura.addDetalleFactura(newDetalleFactura);
 		newDetalleFactura = new DetalleFactura();
 	}

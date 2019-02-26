@@ -40,6 +40,9 @@ public class Factura {
 	@Column(name = "fact_tipo_comprobante")
 	private String tipoComprobante;//Si es factura, boleta, etc
 	
+	@Column(name = "fact_estado")
+	private String estado = "A"; //Indica si esta activo o no la factura
+	
 	@Column(name = "fact_fec_emision")
 	private Date fechaEmision = new Date();
 	

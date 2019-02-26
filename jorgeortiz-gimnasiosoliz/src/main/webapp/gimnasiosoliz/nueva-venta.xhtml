@@ -124,7 +124,7 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:columnGroup>
 					<p:column>
-						<b><h:outputLabel value="Producto" for="lProductos"/></b>
+						<b><h:outputLabel value="Producto o Servicio" for="lProductos"/></b>
 					</p:column>
 					<p:column>
 						<b><h:outputLabel value="Cantidad" for="cantidad"/></b>
@@ -141,7 +141,7 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:columnGroup>
 					<p:column>
-						<p:selectOneListbox value="#{ventaController.vIdProducto}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Articulo" filterMatchMode="contains" id="lProductos" scrollHeight="100">
+						<p:selectOneListbox value="#{ventaController.vIdProducto}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Producto o Servicio" filterMatchMode="contains" id="lProductos" scrollHeight="100">
 				            <f:selectItems value="#{ventaController.productos}" var="pro" itemLabel="#{pro.nombre}" itemValue="#{pro.idProducto}"/>
 				        	<p:ajax process="@this"
 				            listener="#{ventaController.getProducto()}" update="pVenta cantidad"/>
