@@ -16,10 +16,6 @@ import org.primefaces.event.CaptureEvent;
 @ViewScoped
 public class PhotoCamBean {
 	
-	private String nombre;
-	 
-	private int edad;
- 
 	private String foto;
  
 	public void oncapture(CaptureEvent captureEvent) {
@@ -50,10 +46,6 @@ public class PhotoCamBean {
 		}
 	}
  
-	public void guardarDatos() {
-		// hacemos lo que sea con los datos...
-	}
- 
 	public String getFoto() {
 		return foto;
 	}
@@ -62,20 +54,5 @@ public class PhotoCamBean {
 		return foto != null;
 	}
  
-	public String getNombre() {
-		return nombre;
-	}
- 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
- 
-	public int getEdad() {
-		return edad;
-	}
- 
-	public void setEdad(int edad) {
-		this.edad = edad;
-	}
 
 }

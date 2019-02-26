@@ -36,9 +36,9 @@ Notas:
 			<h:outputLabel for="fotoLink" value="Foto" />
 			<p:commandLink id="fotoLink" onclick="PF('fotoDialog').show()">
 				<p:graphicImage name="gimnasiosoliz/logo/photo-camera.png" width="30"
-					rendered="#{! photoCamBean.verFoto}" />
-				<p:graphicImage rendered="#{photoCamBean.verFoto}"
-					value="#{pageContext.contextPath}/resources/gimnasiosoliz/camera/#{photoCamBean.foto}"
+					rendered="#{! personaController.verFoto}" />
+				<p:graphicImage rendered="#{personaController.verFoto}"
+					value="#{pageContext.contextPath}/resources/gimnasiosoliz/camera/#{personaController.foto}"
 					cache="false" />
 			</p:commandLink>
 			<p:spacer/>
@@ -101,7 +101,7 @@ Notas:
 	
 	<p:dialog header="Haz una foto" widgetVar="fotoDialog" modal="true"
 		fixedCenter="true" width="400" visible="false" resizable="false">
-		<p:photoCam widgetVar="pc" listener="#{photoCamBean.oncapture}"
+		<p:photoCam widgetVar="pc" listener="#{personaController.oncapture}"
 			update="fotoLink" />
 		<br />
 		<p:commandButton type="button" value="Hacer foto"
