@@ -8,6 +8,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.dao.FacturaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.FormaPagoDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.PersonaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.ProductoDAO;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.DetalleFactura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.FormaPago;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
@@ -35,6 +36,8 @@ public class VentaBussiness {
 		else 
 			//El valor a calcular
 			factura.setIva(this.tipoFactura(factura.getTipoComprobante()));
+		    factura.setTotal(totalVenta(factura));
+		    System.out.println("Calculo total junto con IVA "+totalVenta(factura));
 			factDAO.insert(factura);	
 	}
 	
@@ -45,6 +48,25 @@ public class VentaBussiness {
 		} else {
 			return 0.0;
 		}
+	}
+	
+	public Double totalVenta(Factura factura) {
+		Double vTotal = 0.0;
+		Double vTotalDetalle = 0.0;
+		//Realiza una suma por cada detalle
+		for(DetalleFactura df: factura.getDetalleFacturas()) {
+			df.setValorTotal(df.getValorUnitario()*df.getCantidad());
+			vTotal = vTotal + df.getValorTotal();
+		}
+		
+		//Verifica si tiene iva o no
+		if(factura.getIva() == 0) {
+			return vTotal;
+		}
+		else {
+			//Calcula el valor total con el iva
+			return vTotal+((vTotal*factura.getIva())/100);
+		}	
 	}
 	
 	//Actualiza Factura verificando si existe o no

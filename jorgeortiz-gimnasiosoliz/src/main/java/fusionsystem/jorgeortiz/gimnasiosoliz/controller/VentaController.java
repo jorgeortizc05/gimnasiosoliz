@@ -125,14 +125,6 @@ public class VentaController {
 		return null;
 	}
 	
-	public void tipoFactura() {
-		if (newFactura.getTipoComprobante().equals("FACTURA")) {
-			newFactura.setIva(12.0);
-		} else {
-			newFactura.setIva(0.0);
-		}
-	}
-	
 	public void getProducto() {
 		newProducto = ventBuss.getProducto(vIdProducto);
 		// dIngreso = dIngresoDAO.detalleIngresoArticulo(articulo.getIdArticulo());

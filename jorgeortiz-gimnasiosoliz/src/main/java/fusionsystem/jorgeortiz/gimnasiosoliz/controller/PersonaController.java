@@ -2,6 +2,11 @@ package fusionsystem.jorgeortiz.gimnasiosoliz.controller;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.CopyOption;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -127,6 +132,16 @@ public class PersonaController {
 		return null;
 	}
 	
+	public void copiarArchivo(String origen, String destino) throws IOException {
+		Path ORIGEN = Paths.get(origen);
+		Path DESTINO = Paths.get(destino);
+		// sobreescribir el fichero de destino, si existe, y copiar
+		// los atributos, incluyendo los permisos rwx
+		CopyOption[] options = new CopyOption[] { StandardCopyOption.REPLACE_EXISTING,
+				StandardCopyOption.COPY_ATTRIBUTES };
+		Files.copy(ORIGEN, DESTINO, options);
+	}
+	
 	public String addTelefono() {
 		newPersona.addTelefono(newTelefono);
 		newTelefono = new Telefono();
@@ -215,7 +230,7 @@ public class PersonaController {
 		// le asignamos el nombre que sea a la imagen (en este caso siempre el mismo)
 		this.foto = newPersona.getCedula();
 		// ruta destino de la imagen /photocam/foto.png
-		final String fileFoto = servletContext.getRealPath("") + File.separator + "resources" + File.separator + "gimnasiosoliz"+ File.separator + "camera" + File.separator + foto;
+		final String fileFoto = servletContext.getRealPath("") + File.separator + "resources" + File.separator + "gimnasiosoliz"+ File.separator + "camera" + File.separator + foto+".png";
 		System.out.println("//////////////////////////////////////////////");
 		System.out.println(fileFoto);
 		FileImageOutputStream outputStream = null;
@@ -223,6 +238,7 @@ public class PersonaController {
 			outputStream = new FileImageOutputStream(new File(fileFoto));
 			// guardamos la imagen
 			outputStream.write(datos, 0, datos.length);
+			copiarArchivo(fileFoto, "/fusionsystem/jorgeortiz/fotos-socios/"+foto+".png");
 		} catch (IOException e) {
 			throw new FacesException("Error guardando la foto.", e);
 		} finally {

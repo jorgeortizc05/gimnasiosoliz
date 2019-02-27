@@ -46,7 +46,7 @@ public class DetalleFactura {
 	private Date fechaHasta;
 	
 	@Column(name = "dfact_estado")
-	private String estado;
+	private String estado = "A";
 	
 	@ManyToOne
 	@JoinColumn(name = "prod_id")
