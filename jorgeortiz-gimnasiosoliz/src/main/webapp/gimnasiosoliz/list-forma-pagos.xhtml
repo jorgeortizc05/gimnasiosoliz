@@ -19,7 +19,7 @@ Notas:
 	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
 
 	<ui:define name="cuerpo">
-	<p:fieldset legend="LISTA DE PRODUCTOS" style="margin-bottom:20px">
+	<p:fieldset legend="FORMAS DE PAGOS" style="margin-bottom:20px">
 		<p:commandButton value="Nuevo" action="nueva-forma-pago?faces-redirect=true" icon="fa fa-user-plus" ajax="false"/>
 		<p:dataTable resizableColumns="true"  value="#{formaPagoController.formaPagos}" var="fp" id="dtFormaPagos" paginator="true" paginatorPosition="bottom"  
 				 	rows="15" style="margin-bottom:20px" widgetVar="dTWWFormaPagos" rowsPerPageTemplate="5,10,15,20,50" filteredValue="#{formaPagoController.filterFormaPagos}">

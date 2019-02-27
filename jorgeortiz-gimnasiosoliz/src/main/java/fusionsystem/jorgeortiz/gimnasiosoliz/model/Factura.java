@@ -56,10 +56,10 @@ public class Factura {
 	private Double descuento;
 	
 	@Column(name = "fact_iva")
-	private Double iva;
+	private Double iva = 12.0;
 	
 	@Column(name = "fact_vtotal")
-	private Double valorTotal;
+	private Double total;
 	
 	@ManyToOne
 	@JoinColumn(name = "fp_id")
@@ -135,12 +135,20 @@ public class Factura {
 		this.iva = iva;
 	}
 
-	public Double getValorTotal() {
-		return valorTotal;
+	public String getEstado() {
+		return estado;
 	}
 
-	public void setValorTotal(Double valorTotal) {
-		this.valorTotal = valorTotal;
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+
+	public Double getTotal() {
+		return total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
 	}
 
 	public List<DetalleFactura> getDetalleFacturas() {

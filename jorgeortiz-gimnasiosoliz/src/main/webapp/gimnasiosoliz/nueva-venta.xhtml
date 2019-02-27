@@ -180,6 +180,15 @@ Funcion: Controlador Articulo Controller.
 						<p:column headerText="cantidad">
 							<h:outputText value="#{d.cantidad}" />
 						</p:column>
+						
+						<p:column headerText="Fecha Desde">
+							<p:calendar value="#{d.fechaDesde}" pattern="dd-MM-yyyy" id="txtFechaDesde" mask="true"/>
+						</p:column>
+						
+						<p:column headerText="Fecha Hasta">
+							<p:calendar value="#{d.fechaHasta}" pattern="dd-MM-yyyy" id="txtFechaHasta" mask="true"/>
+						</p:column>
+						
 						<p:column headerText="Precio Venta">
 							<p:outputLabel value="#{d.valorUnitario}">
 							

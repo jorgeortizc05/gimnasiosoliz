@@ -19,34 +19,37 @@ Notas:
 	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
 
 	<ui:define name="cuerpo">
-	<p:fieldset legend="LISTA DE PRODUCTOS" style="margin-bottom:20px">
-		<p:commandButton value="Nuevo" action="nuevo-producto?faces-redirect=true" icon="fa fa-user-plus" ajax="false"/>
-		<p:dataTable resizableColumns="true"  value="#{productoController.productos}" var="prod" id="dtProductos" paginator="true" paginatorPosition="bottom"  
-				 	rows="15" style="margin-bottom:20px" widgetVar="dTWWProductos" rowsPerPageTemplate="5,10,15,20,50" filteredValue="#{productoController.filterProductos}">
+	<p:fieldset legend="LISTA DE VENTAS" style="margin-bottom:20px">
+		<p:commandButton value="Nuevo" action="nueva-venta?faces-redirect=true" icon="fa fa-user-plus" ajax="false"/>
+		<p:dataTable resizableColumns="true"  value="#{ventaController.facturas}" var="vent" id="dtVentas" paginator="true" paginatorPosition="bottom"  
+				 	rows="15" style="margin-bottom:20px" widgetVar="dTWWVentas" rowsPerPageTemplate="5,10,15,20,50" filteredValue="#{ventaController.filterFacturas}">
 			    
-		    <p:column filterBy="#{prod.nombre}" headerText="Producto" >
-		       <h:outputText  value="#{prod.nombre}"/>
+		    <p:column headerText="ID" >
+		       <h:outputText  value="#{vent.idFactura}"/>
 		    </p:column>
 		    
-		    <p:column filterBy="#{prod.codigo}" headerText="Codigo" >
-		       <h:outputText  value="#{prod.codigo}"/>
+		    <p:column filterBy="#{vent.serie}" headerText="Serie" >
+		       <h:outputText  value="#{vent.serie}"/>
 		    </p:column>
 		    
-		    <p:column headerText="Precio" >
-		       <h:outputText  value="#{prod.precio}"/>
+		    <p:column headerText="Tipo Comprobante" >
+		       <h:outputText  value="#{vent.tipoComprobante}"/>
 		    </p:column>
 		    
-		    <p:column headerText="Descripción">
-		       <h:outputText  value="#{prod.descripcion}"/>
+		    <p:column headerText="Total">
+		       <h:outputText value="#{vent.total}"/>
 		    </p:column>
 		    
+		    <p:column headerText="Estado" >
+		       <h:outputText  value="#{vent.estado}"/>
+		    </p:column>
 		 
 		    
 		    <p:column headerText="Opciones" style="width:80px;">
-		    	<p:commandButton action="#{productoController.editarProducto(prod)}" icon="fa fa-edit" update="mensajes"/>
+		    	<p:commandButton action="#{ventaController.editarFactura(vent)}" icon="fa fa-edit" update="mensajes"/>
 		    	
-		       	<p:commandButton update="mensajes dtProductos" action="#{productoController.eliminarProducto(prod.idProducto)}" 
-		       	icon="fa fa-remove" oncomplete="PF('dTWWProductos').filter()"/>
+		       	<p:commandButton update="mensajes dtVentas" action="#{ventaController.eliminarFactura(vent.idFactura)}" 
+		       	icon="fa fa-remove" oncomplete="PF('dTWWVentas').filter()"/>
 		    </p:column>
 		    <!-- oncomplete me sirve para eliminar con el filtro activado -->
 		</p:dataTable>

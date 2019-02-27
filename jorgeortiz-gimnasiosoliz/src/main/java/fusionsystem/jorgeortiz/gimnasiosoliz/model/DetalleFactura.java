@@ -1,5 +1,7 @@
 package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -36,6 +38,15 @@ public class DetalleFactura {
 	
 	@Column(name = "dfact_val_total")
 	private Double valorTotal;
+	
+	@Column(name = "dfact_fecha_desde")
+	private Date fechaDesde;
+	
+	@Column(name = "dfact_fecha_hasta")
+	private Date fechaHasta;
+	
+	@Column(name = "dfact_estado")
+	private String estado;
 	
 	@ManyToOne
 	@JoinColumn(name = "prod_id")
@@ -79,6 +90,30 @@ public class DetalleFactura {
 
 	public void setProducto(Producto producto) {
 		this.producto = producto;
+	}
+
+	public Date getFechaDesde() {
+		return fechaDesde;
+	}
+
+	public void setFechaDesde(Date fechaDesde) {
+		this.fechaDesde = fechaDesde;
+	}
+
+	public Date getFechaHasta() {
+		return fechaHasta;
+	}
+
+	public void setFechaHasta(Date fechaHasta) {
+		this.fechaHasta = fechaHasta;
+	}
+
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
 	}
 
 	
