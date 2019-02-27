@@ -12,6 +12,12 @@ Fecha de Modificacion: 22/09/2018
 Empresa: FUSIONSYSTEM JORGE INC F.S.J
 Funcion: Controlador Articulo Controller.
 -->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{ventaController.vIdFactura}"/>
+        <f:viewAction action="#{ventaController.cargarFactura()}" />
+ 	</f:metadata>
+</h:head>
 <ui:composition
 	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
 

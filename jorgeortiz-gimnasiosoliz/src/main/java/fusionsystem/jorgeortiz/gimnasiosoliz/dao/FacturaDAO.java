@@ -23,6 +23,9 @@ public class FacturaDAO {
 	//Select en DB recuperando la informacion con base del id
 	public Factura read(int id) {
 		Factura factura = em.find(Factura.class, id);
+		if(factura!= null) {
+			factura.getDetalleFacturas().size();
+		}
 		//Factura.getDetalleIngresos().size();
 		return factura;
 	}
