@@ -97,6 +97,8 @@ public class PersonaController {
 			System.out.println(newPersona);
 			vEditing = true;
 			vTitulo = "EDITAR";
+			enviarFotosServidor(newPersona.getCedula());
+			foto = newPersona.getCedula();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -130,16 +132,6 @@ public class PersonaController {
 		}
 		
 		return null;
-	}
-	
-	public void copiarArchivo(String origen, String destino) throws IOException {
-		Path ORIGEN = Paths.get(origen);
-		Path DESTINO = Paths.get(destino);
-		// sobreescribir el fichero de destino, si existe, y copiar
-		// los atributos, incluyendo los permisos rwx
-		CopyOption[] options = new CopyOption[] { StandardCopyOption.REPLACE_EXISTING,
-				StandardCopyOption.COPY_ATTRIBUTES };
-		Files.copy(ORIGEN, DESTINO, options);
 	}
 	
 	public String addTelefono() {
@@ -238,7 +230,7 @@ public class PersonaController {
 			outputStream = new FileImageOutputStream(new File(fileFoto));
 			// guardamos la imagen
 			outputStream.write(datos, 0, datos.length);
-			copiarArchivo(fileFoto, "/fusionsystem/jorgeortiz/fotos-socios/"+foto+".png");
+			copiarArchivo(fileFoto, "/fusionsystem/jorgeortiz/fotos-socios/"+newPersona.getCedula()+".png");
 		} catch (IOException e) {
 			throw new FacesException("Error guardando la foto.", e);
 		} finally {
@@ -246,6 +238,30 @@ public class PersonaController {
 				outputStream.close();
 			} catch (IOException e) {
 			}
+		}
+	}
+	
+	public void copiarArchivo(String origen, String destino) throws IOException {
+		Path ORIGEN = Paths.get(origen);
+		Path DESTINO = Paths.get(destino);
+		// sobreescribir el fichero de destino, si existe, y copiar
+		// los atributos, incluyendo los permisos rwx
+		CopyOption[] options = new CopyOption[] { StandardCopyOption.REPLACE_EXISTING,
+				StandardCopyOption.COPY_ATTRIBUTES };
+		Files.copy(ORIGEN, DESTINO, options);
+	}
+	
+	public void enviarFotosServidor(String cedula) {
+		final ServletContext servletContext = (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
+		try {
+			String origen = "/fusionsystem/jorgeortiz/fotos-socios/"+cedula+".png";
+			String destino = servletContext.getRealPath("") + File.separator + "resources" + File.separator + "gimnasiosoliz"+ File.separator + "camera" + File.separator + cedula +".png";
+			System.out.println("Ruta de mis fotos socios "+origen);
+			System.out.println("Ruta del servidor "+destino);
+			copiarArchivo(origen, destino);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 	}
  

@@ -84,9 +84,6 @@
 					        		<p:menuitem value="Tipos"  action="list-tipo-personas?faces-redirect=true" immediate="true" ajax="false"/>
 					        	</p:submenu>
 					        </p:submenu>
-					        <p:submenu label="Consultas" icon="fa fa-server">
-					        	<p:menuitem value="Consultas Precios"  action="precios" immediate="true"/>
-					        </p:submenu>
 					        <p:submenu label="Acceso" icon="fa fa-user-secret">
 					        	<p:menuitem value="Usuarios"  action="usuarios" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
 					        	<p:menuitem value="Salir"  action="#{usersController.salir()}" immediate="true" ajax="false"/>
