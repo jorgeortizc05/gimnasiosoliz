@@ -42,12 +42,15 @@
 					        <p:submenu label="Escritorio" icon="fa fa-desktop">
 					        	<p:menuitem value="Escritorio" action="escritorio" immediate="true" ajax="false"/>
 					        </p:submenu>
-					        <p:submenu label="Inventarios" icon="fa fa-home">
-					        	<p:submenu label="Productos">
-					        		<p:menuitem value="Nuevo Producto"  action="nuevo-producto?faces-redirect=true" immediate="true" ajax="false"/>
-					        		<p:menuitem value="Productos"  action="list-productos?faces-redirect=true" immediate="true" ajax="false"/>
+					         <p:submenu label="Gestion Personas" icon="fa fa-home">
+					        	<p:submenu label="Persona">
+					        		<p:menuitem value="Nueva Persona"  action="nueva-persona?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Personas"  action="list-personas?faces-redirect=true" immediate="true" ajax="false"/>
 					        	</p:submenu>
-					        	
+					        	<p:submenu label="Tipo Personas">
+					        		<p:menuitem value="Nuevo Tipo de Persona"  action="nuevo-tipo-persona?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Lista"  action="list-tipo-personas?faces-redirect=true" immediate="true" ajax="false"/>
+					        	</p:submenu>
 					        </p:submenu>
 					        <p:submenu label="Ejercicios Programados" icon="fa fa-home">
 					        	<p:submenu label="Rutinas">
@@ -74,19 +77,12 @@
 					        	</p:submenu>
 					        	
 					        </p:submenu>
-					        <p:submenu label="Gestion Personas" icon="fa fa-home">
-					        	<p:submenu label="Persona">
-					        		<p:menuitem value="Nueva Persona"  action="nueva-persona?faces-redirect=true" immediate="true" ajax="false"/>
-					        		<p:menuitem value="Personas"  action="list-personas?faces-redirect=true" immediate="true" ajax="false"/>
+					        <p:submenu label="Inventarios" icon="fa fa-home">
+					        	<p:submenu label="Productos">
+					        		<p:menuitem value="Nuevo Producto"  action="nuevo-producto?faces-redirect=true" immediate="true" ajax="false"/>
+					        		<p:menuitem value="Productos"  action="list-productos?faces-redirect=true" immediate="true" ajax="false"/>
 					        	</p:submenu>
-					        	<p:submenu label="Tipo Persona">
-					        		<p:menuitem value="Nueva Tipo"  action="nuevo-tipo-persona?faces-redirect=true" immediate="true" ajax="false"/>
-					        		<p:menuitem value="Tipos"  action="list-tipo-personas?faces-redirect=true" immediate="true" ajax="false"/>
-					        	</p:submenu>
-					        </p:submenu>
-					        <p:submenu label="Acceso" icon="fa fa-user-secret">
-					        	<p:menuitem value="Usuarios"  action="usuarios" immediate="true" disabled="#{usersController.permisosAdministrativos}" ajax="false"/>
-					        	<p:menuitem value="Salir"  action="#{usersController.salir()}" immediate="true" ajax="false"/>
+					        	
 					        </p:submenu>
 					        <p:submenu label="Acerca de..." icon="fa fa-home">
 					        	<p:menuitem value="Acerca de..."  action="acerca-de" immediate="true" ajax="false"/>

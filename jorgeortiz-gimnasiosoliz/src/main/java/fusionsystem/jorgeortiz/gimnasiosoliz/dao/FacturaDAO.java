@@ -48,5 +48,14 @@ public class FacturaDAO {
 		List<Factura> listado = query.getResultList();
 		return listado;
 	}
+	
+	//Select en DetalleFactura solo activos
+	public List<Factura> getDetalleFacturas() {
+		String jpql = "SELECT a FROM Factura a where a.detallefactura.estado = A";
+		Query query = em.createQuery(jpql, Factura.class);
+		//query.setMaxResults(100);
+		List<Factura> listado = query.getResultList();
+		return listado;
+	}
 
 }

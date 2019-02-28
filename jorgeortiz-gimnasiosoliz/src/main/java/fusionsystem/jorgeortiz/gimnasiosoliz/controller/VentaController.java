@@ -63,6 +63,14 @@ public class VentaController {
 	
 	//Guarda y actualiza Factura con control de exceptions
 	public String guardarFactura() {
+		FormaPago fp = new FormaPago();
+		fp.setIdFormaPago(vIdFormaPago);
+		Persona p = new Persona();
+		p.setIdPersona(vIdPersona);
+		
+		newFactura.setPersona(p);
+		newFactura.setFormaPago(fp);
+		
 		try {
 			if(vEditing)
 				ventBuss.doActualizar(newFactura);
@@ -87,6 +95,8 @@ public class VentaController {
 			return;
 		try {
 			newFactura = ventBuss.getFactura(vIdFactura);
+			vIdPersona = newFactura.getPersona().getIdPersona();
+			vIdFormaPago = newFactura.getFormaPago().getIdFormaPago();
 			System.out.println(newFactura);
 			vEditing = true;
 			vTitulo = "EDITAR";
@@ -105,7 +115,7 @@ public class VentaController {
 		//newFactura = ts;
 		vEditing = true;
 		vTitulo = "EDITAR";
-		return "nueva-venta?faces-redirect=true&id="+tp.getIdFactura();
+		return "info-factura?faces-redirect=true&id="+tp.getIdFactura();
 	}
 	
 	//Elimina Factura con base id

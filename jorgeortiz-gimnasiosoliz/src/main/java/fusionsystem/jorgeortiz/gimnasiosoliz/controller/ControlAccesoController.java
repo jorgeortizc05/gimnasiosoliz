@@ -7,6 +7,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -16,6 +17,7 @@ import javax.servlet.ServletContext;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.ControlAccesoBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
 
 @ManagedBean
 public class ControlAccesoController {
@@ -24,17 +26,18 @@ public class ControlAccesoController {
 	private ControlAccesoBussiness caBuss;
 	
 	private Persona newPersona;
-	
-	
-	
+	private Suscripcion newSuscripcion;
 	//Variables
 	private String vCedula;
+	private int vDias;
+	private String vColorAdvertencia = "#070719";
 	
 	private String vMensajeAdvertencia = "Ya vencio";
 	
 	@PostConstruct
 	public void init() {
 		newPersona = new Persona();
+		newSuscripcion = new Suscripcion();
 	}
 	
 	
@@ -42,6 +45,21 @@ public class ControlAccesoController {
 		System.out.println(vCedula);
 		enviarFotosServidor(vCedula);
 		newPersona = caBuss.getPersona(vCedula);
+		
+		newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
+		System.out.println(newSuscripcion);
+		vDias = caBuss.calcularDiasRestantes(newSuscripcion);
+		
+		if(vDias <= 0) {
+			vMensajeAdvertencia = "PAGAR POR VENTANILLA";
+			vColorAdvertencia = "#FF0040";
+			vDias = 0;
+		}else
+		{
+			vMensajeAdvertencia = "CORRECTO";
+			vColorAdvertencia = "#070719";
+		}
+		
 		vCedula = "";
 		return null;
 		
@@ -101,8 +119,34 @@ public class ControlAccesoController {
 	}
 
 
-	
-	
+	public Suscripcion getNewSuscripcion() {
+		return newSuscripcion;
+	}
+
+
+	public void setNewSuscripcion(Suscripcion newSuscripcion) {
+		this.newSuscripcion = newSuscripcion;
+	}
+
+
+	public int getvDias() {
+		return vDias;
+	}
+
+
+	public void setvDias(int vDias) {
+		this.vDias = vDias;
+	}
+
+
+	public String getvColorAdvertencia() {
+		return vColorAdvertencia;
+	}
+
+
+	public void setvColorAdvertencia(String vColorAdvertencia) {
+		this.vColorAdvertencia = vColorAdvertencia;
+	}
 	
 	
 	

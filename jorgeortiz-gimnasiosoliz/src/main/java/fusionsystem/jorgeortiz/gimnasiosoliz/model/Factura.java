@@ -65,6 +65,10 @@ public class Factura {
 	@JoinColumn(name = "fp_id")
 	private FormaPago formaPago;
 	
+	@ManyToOne
+	@JoinColumn(name = "per_id")
+	private Persona persona;
+	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="fact_id")
 	private List<DetalleFactura> detalleFacturas;
@@ -174,5 +178,15 @@ public class Factura {
 	public void setFormaPago(FormaPago formaPago) {
 		this.formaPago = formaPago;
 	}
+
+	public Persona getPersona() {
+		return persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
+	}
+	
+	
 	
 }

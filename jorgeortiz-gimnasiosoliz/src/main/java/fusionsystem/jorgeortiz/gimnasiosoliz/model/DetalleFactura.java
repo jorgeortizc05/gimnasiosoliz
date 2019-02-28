@@ -45,8 +45,8 @@ public class DetalleFactura {
 	@Column(name = "dfact_fecha_hasta")
 	private Date fechaHasta;
 	
-	@Column(name = "dfact_estado")
-	private String estado = "A";
+	@Column(name = "dfact_dias_restantes")
+	private int diasRestantes;
 	
 	@ManyToOne
 	@JoinColumn(name = "prod_id")
@@ -108,12 +108,12 @@ public class DetalleFactura {
 		this.fechaHasta = fechaHasta;
 	}
 
-	public String getEstado() {
-		return estado;
+	public int getDiasRestantes() {
+		return diasRestantes;
 	}
 
-	public void setEstado(String estado) {
-		this.estado = estado;
+	public void setDiasRestantes(int diasRestantes) {
+		this.diasRestantes = diasRestantes;
 	}
 
 	

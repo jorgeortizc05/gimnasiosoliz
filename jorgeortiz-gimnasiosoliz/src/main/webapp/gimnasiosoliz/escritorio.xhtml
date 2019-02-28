@@ -26,7 +26,7 @@ Notas:
 	<p:panelGrid id="panelInfoSocio" columns="3"  border="1" style="margin: 0 auto;">
 			
 				
-			<p:graphicImage id="image4" name="gimnasiosoliz/camera/#{controlAccesoController.newPersona.cedula}.png" width="300"></p:graphicImage>
+			<p:graphicImage id="image4" value="#{pageContext.contextPath}/resources/gimnasiosoliz/camera/#{controlAccesoController.newPersona.cedula}.png" width="300"></p:graphicImage>
 			
 			<p:panelGrid>
 				<p:row>
@@ -36,42 +36,23 @@ Notas:
 				</p:row>
 				<p:row >
 					<p:column colspan="4">
-						<b><h:outputText value="#{controlAccesoController.vMensajeAdvertencia}" style="text-align:center;font-size:26px; margin:12px"></h:outputText></b>
+						<b><h:outputText value="#{controlAccesoController.vMensajeAdvertencia}" style="text-align:center;font-size:26px; margin:12px;color:#{controlAccesoController.vColorAdvertencia}"></h:outputText></b>
 					</p:column>
 				</p:row>
 				<p:row>
 					<p:column><b>Días restantes</b></p:column>
 					<p:column>
-						<b><h:outputText value="#{gimnasioCtrl.inscripcion.diasRestantes}" style="color:#{gimnasioCtrl.colorAdvertencia};font-size: 18px;"></h:outputText></b>
+						<b><h:outputText value="#{controlAccesoController.vDias}" style="color:#{controlAccesoController.vColorAdvertencia};font-size: 18px;"></h:outputText></b>
 					</p:column>
 					<p:column></p:column>
 					<p:column></p:column>
 					
 				</p:row>
-				<p:row>
-					<p:column>
-						<b>Saldo Pendiente</b>
-					</p:column>
-					<p:column>
-					<h:outputText style="font-size: 18px;color:#FF0000" ></h:outputText>
-					
-					</p:column>
-					<p:column></p:column>
-					<p:column></p:column>
-				</p:row>
-				<p:row>
-					<p:column>
-					<p:dataTable value="#{controlAccesoController.newPersona.complexiones}" var="comp" id="listComplexiones">
-						<p:column headerText="Altura">
-							<p:inputText value="#{comp.altura}"/>
-						</p:column>
-						<p:column headerText="Peso en kg">
-							<p:inputText value="#{comp.peso}"/>
-						</p:column>
-					</p:dataTable>
-					</p:column>
-				</p:row>
+				
 			</p:panelGrid>
+			
+			
+				
 			<!-- <p:panel>
 				<p:media value="/resources/demo/images/video/m2.mp4" width="400" height="400" player="quicktime">
 					<f:param name="autoStart" value="false" ></f:param>
@@ -80,6 +61,16 @@ Notas:
          -->
         
 		</p:panelGrid>
+		<p:column>
+			<p:dataTable value="#{controlAccesoController.newPersona.complexiones}" var="comp" id="listComplexiones">
+				<p:column headerText="Altura">
+					<p:inputText value="#{comp.altura}"/>
+				</p:column>
+				<p:column headerText="Peso en kg">
+					<p:inputText value="#{comp.peso}"/>
+				</p:column>
+			</p:dataTable>
+		</p:column>
 		
 	</p:fieldset>
 	</ui:define>

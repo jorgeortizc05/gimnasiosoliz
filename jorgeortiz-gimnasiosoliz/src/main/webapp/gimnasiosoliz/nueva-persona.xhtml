@@ -53,6 +53,10 @@ Notas:
 			<p:inputText value="#{personaController.newPersona.nombres}" id="txtnombres"/>
 			<p:message for="txtnombres"/>
 			
+			<p:outputLabel value="Email" for="txtEmail"/>
+			<p:inputText value="#{personaController.newPersona.email}" pattern="dd-MM-yyyy" id="txtEmail" mask="true"/>
+			<p:message for="txtEmail"/>
+			
 			<p:outputLabel value="Fecha Nacimiento" for="txtdate"/>
 			<p:calendar value="#{personaController.newPersona.fechaNacimiento}" pattern="dd-MM-yyyy" id="txtdate" mask="true"/>
 			<p:message for="txtdate"/>
