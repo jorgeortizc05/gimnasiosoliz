@@ -65,23 +65,11 @@ Notas:
 			<p:inputText value="#{personaController.newPersona.direccion}" id="txtdireccion"/>
 			<p:message for="txtdireccion"/>
 			
+			<p:outputLabel value="Telefono"/>
+			<p:inputText value="#{personaController.newPersona.telefono}" id="txttelefono"/>
+			<p:message for="txttelefono"/>
+			
 		</p:panelGrid>
-		<p:commandButton value="+ TELEFONO" action="#{personaController.addTelefono()}" update="panelPersona"/>
-		<p:dataTable value="#{personaController.newPersona.telefonos}" var="tel" id="listTelefonos">
-			<p:column headerText="Eliminar">
-				<p:commandButton value="x" action="#{personaController.removeTelefono(tel)}" update="listTelefonos"/>
-			</p:column>
-			<p:column headerText="Tipo" >
-				<p:selectOneMenu value="#{tel.tipo}" style="width:125px">
-		            <f:selectItem itemLabel="Celular" itemValue="1" />
-		            <f:selectItem itemLabel="Telefono Convencional" itemValue="2" />
-		            <f:selectItem itemLabel="Trabajo" itemValue="3" />
-		        </p:selectOneMenu>
-			</p:column>
-			<p:column headerText="Numero">
-				<p:inputText value="#{tel.numero}"/>
-			</p:column>
-		</p:dataTable>
 
 	</p:fieldset>
 	<p:fieldset legend="REGISTRO DE CAMBIOS DE LA COMPLEXION" style="margin-bottom:20px" id="panelComplexion">

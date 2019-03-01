@@ -23,7 +23,6 @@ import org.primefaces.event.CaptureEvent;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.PersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
-import fusionsystem.jorgeortiz.gimnasiosoliz.model.Telefono;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
@@ -45,7 +44,6 @@ public class PersonaController {
 	private List<Persona> personas;
 	private List<Persona> filterPersonas;
 	private List<TipoPersona> tipoPersonas;
-	private Telefono newTelefono;
 	private Complexion newComplexion;
 	//Variable para verificar si estas editando
 	private boolean vEditing;
@@ -57,7 +55,6 @@ public class PersonaController {
 	@PostConstruct
 	public void init() {
 		newPersona = new Persona();
-		newTelefono = new Telefono();
 		newComplexion = new Complexion();
 		tipoPersonas = tpBuss.getTipoPersonas();
 		vEditing = false;
@@ -130,18 +127,6 @@ public class PersonaController {
             facesContext.addMessage(null, m);
 
 		}
-		
-		return null;
-	}
-	
-	public String addTelefono() {
-		newPersona.addTelefono(newTelefono);
-		newTelefono = new Telefono();
-		return null;
-	}
-	
-	public String removeTelefono(Telefono ejercicio) {
-		newPersona.removeTelefono(ejercicio);
 		
 		return null;
 	}
@@ -298,15 +283,6 @@ public class PersonaController {
 	public void setFilterPersonas(List<Persona> filterPersonas) {
 		this.filterPersonas = filterPersonas;
 	}
-
-	public Telefono getNewTelefono() {
-		return newTelefono;
-	}
-
-	public void setNewTelefono(Telefono newTelefono) {
-		this.newTelefono = newTelefono;
-	}
-
 	public boolean isvEditing() {
 		return vEditing;
 	}

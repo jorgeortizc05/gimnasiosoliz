@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.PersonaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.SuscripcionDAO;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.DetalleFactura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
@@ -43,6 +44,35 @@ public class ControlAccesoBussiness {
 		Date fechaActual = new Date();
 		int dias = (int) ((df.getFechaHasta().getTime()-fechaActual.getTime())/86400000);
 		return dias;
+	}
+	
+	public String estadoCorporal(Complexion c) {
+		try {
+			if(c.getIndiceCorporal()<18.5) {
+				return "PESO INSUFICIENTE";
+			}
+			if(c.getIndiceCorporal()>18.5) {
+				return "PESO NORMAL";
+			}
+			if(c.getIndiceCorporal()>25.0) {
+				return "PESO NORMAL GRADO I";
+			}
+			if(c.getIndiceCorporal()>30.0) {
+				return "OBESIDAD TIPO 1 (LEVE)";
+			}
+			if(c.getIndiceCorporal()>35.0) {
+				return "OBESIDAD TIPO 2 (MODERADA)";
+			}
+			if(c.getIndiceCorporal()>40.0) {
+				return "OBESIDAD TIPO 3 (MORBIDA)";
+			}
+			if(c.getIndiceCorporal()>50.0) {
+				return "PELIGRO OBESIDAD EXTREMA";
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return "Sin estado";
 	}
 
 }

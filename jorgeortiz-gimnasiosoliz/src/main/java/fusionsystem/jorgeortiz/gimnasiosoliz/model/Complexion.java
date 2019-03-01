@@ -87,6 +87,12 @@ public class Complexion {
 	public void setEstadoPeso(String estadoPeso) {
 		this.estadoPeso = estadoPeso;
 	}
+
+	@Override
+	public String toString() {
+		return "Complexion [idComplexion=" + idComplexion + ", altura=" + altura + ", peso=" + peso + ", estatura="
+				+ estatura + ", indiceCorporal=" + indiceCorporal + ", estadoPeso=" + estadoPeso + "]";
+	}
 	
 	
 }

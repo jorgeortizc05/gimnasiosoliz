@@ -16,6 +16,7 @@ import javax.inject.Inject;
 import javax.servlet.ServletContext;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.ControlAccesoBussiness;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
 
@@ -31,6 +32,7 @@ public class ControlAccesoController {
 	private String vCedula;
 	private int vDias;
 	private String vColorAdvertencia = "#070719";
+	private String vEstadoCorporal = "";
 	
 	private String vMensajeAdvertencia = "Ya vencio";
 	
@@ -45,6 +47,10 @@ public class ControlAccesoController {
 		System.out.println(vCedula);
 		enviarFotosServidor(vCedula);
 		newPersona = caBuss.getPersona(vCedula);
+		
+		Complexion comple = newPersona.getComplexiones().get(newPersona.getComplexiones().size()-1);
+		System.out.println(comple);
+		vEstadoCorporal = caBuss.estadoCorporal(comple);
 		
 		newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
 		System.out.println(newSuscripcion);
@@ -146,6 +152,16 @@ public class ControlAccesoController {
 
 	public void setvColorAdvertencia(String vColorAdvertencia) {
 		this.vColorAdvertencia = vColorAdvertencia;
+	}
+
+
+	public String getvEstadoCorporal() {
+		return vEstadoCorporal;
+	}
+
+
+	public void setvEstadoCorporal(String vEstadoCorporal) {
+		this.vEstadoCorporal = vEstadoCorporal;
 	}
 	
 	

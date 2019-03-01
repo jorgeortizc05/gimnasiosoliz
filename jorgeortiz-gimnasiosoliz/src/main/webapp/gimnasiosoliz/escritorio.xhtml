@@ -39,6 +39,12 @@ Notas:
 						<b><h:outputText value="#{controlAccesoController.vMensajeAdvertencia}" style="text-align:center;font-size:26px; margin:12px;color:#{controlAccesoController.vColorAdvertencia}"></h:outputText></b>
 					</p:column>
 				</p:row>
+				<p:row >
+				<p:column><b>Estado Corporal</b></p:column>
+					<p:column colspan="4">
+						<p:commandButton value="Ver" type="button" onclick="PF('dlg1').show();" />
+					</p:column>
+				</p:row>
 				<p:row>
 					<p:column><b>Días restantes</b></p:column>
 					<p:column>
@@ -50,29 +56,12 @@ Notas:
 				</p:row>
 				
 			</p:panelGrid>
-			
-			
-				
-			<!-- <p:panel>
-				<p:media value="/resources/demo/images/video/m2.mp4" width="400" height="400" player="quicktime">
-					<f:param name="autoStart" value="false" ></f:param>
-				</p:media>
-			</p:panel>
-         -->
-        
 		</p:panelGrid>
-		<p:column>
-			<p:dataTable value="#{controlAccesoController.newPersona.complexiones}" var="comp" id="listComplexiones">
-				<p:column headerText="Altura">
-					<p:inputText value="#{comp.altura}"/>
-				</p:column>
-				<p:column headerText="Peso en kg">
-					<p:inputText value="#{comp.peso}"/>
-				</p:column>
-			</p:dataTable>
-		</p:column>
-		
+		<p:dialog header="Estado Corporal" widgetVar="dlg1" minHeight="80">
+		    <h:outputText value="#{controlAccesoController.vEstadoCorporal}" />
+		</p:dialog>
 	</p:fieldset>
+	
 	</ui:define>
 	
 

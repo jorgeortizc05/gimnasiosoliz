@@ -7,6 +7,7 @@ import javax.faces.application.FacesMessage;
 import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.PersonaDAO;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 
 @Stateless
@@ -23,10 +24,16 @@ public class PersonaBussiness {
 		if(auxp != null || auxCedula != null) 
 			throw new Exception("Persona ya existe");
 		else {
-			if(vCedula)
+			if(vCedula) {
+				for(Complexion com: persona.getComplexiones()) {
+					Double calculaPesoIdeal = (com.getPeso())/Math.pow((com.getAltura()*0.01),2);
+					com.setIndiceCorporal(calculaPesoIdeal);
+				}
 				perDAO.insert(persona);
-			else
+			}
+			else {
 				throw new Exception("La cedula es incorrecta, no se puede guardar");
+			}
 		}
 	}
 	
@@ -76,10 +83,17 @@ public class PersonaBussiness {
 	public void doActualizar(Persona persona) throws Exception {
 		
 		Persona auxp = perDAO.read(persona.getIdPersona());
-		if(auxp == null) 
+		if(auxp == null) {
 			throw new Exception("Persona no existe");
-		else 
+		}
+		else { 
+			for(Complexion com: persona.getComplexiones()) {
+				Double calculaPesoIdeal = (com.getPeso())/Math.pow((com.getAltura()*0.01),2);
+				System.out.println("Calculo Peso Ideal "+calculaPesoIdeal);
+				com.setIndiceCorporal(calculaPesoIdeal);
+			}
 			perDAO.update(persona);
+		}
 		
 	}
 	

@@ -55,6 +55,9 @@ public class Persona {
 	@Column(name = "per_direccion")
 	private String direccion;
 	
+	@Column(name = "per_telefono")
+	private String telefono;
+	
 	//Parametros que ingresara el usuario en caso de movil o administrador.
 	@Email
 	@Column(name= "per_email")
@@ -62,22 +65,6 @@ public class Persona {
 	
 	@Column(name= "per_pass")
 	private String password;
-	
-	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-	@JoinColumn(name="per_id")
-	private List<Telefono> telefonos;
-	//Metodo para add telefono
-	//Telefono telefono es el parametro de la clase telefono
-	public void addTelefono(Telefono telefono) {
-		if(telefonos == null)
-			telefonos = new ArrayList<>();
-		telefonos.add(telefono);
-	}
-	//Metodo para remove Telefono
-	//Parametro telefono para ver que telefono se va a eliminar
-	public void removeTelefono(Telefono telefono) {
-		telefonos.remove(telefono);
-	}
 	
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name="per_id")
@@ -92,8 +79,8 @@ public class Persona {
 	
 	//Metodo para remove complexion
 	//Parametro complexion para ver que complexion se va a eliminar
-	public void removeComplexion(Complexion complexion) {
-		telefonos.remove(complexion);
+	public void removeComplexion(Complexion comp) {
+		complexiones.remove(comp);
 	}
 	
 	@OneToMany(cascade = CascadeType.ALL)
@@ -156,12 +143,6 @@ public class Persona {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public List<Telefono> getTelefonos() {
-		return telefonos;
-	}
-	public void setTelefonos(List<Telefono> telefonos) {
-		this.telefonos = telefonos;
-	}
 	public List<Complexion> getComplexiones() {
 		return complexiones;
 	}
@@ -179,6 +160,14 @@ public class Persona {
 	}
 	public void setEjercicios(List<Ejercicio> ejercicios) {
 		this.ejercicios = ejercicios;
+	}
+
+	public String getTelefono() {
+		return telefono;
+	}
+
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
 	
 }

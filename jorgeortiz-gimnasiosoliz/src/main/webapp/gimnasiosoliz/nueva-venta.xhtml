@@ -90,10 +90,6 @@ Funcion: Controlador Articulo Controller.
 				<p:column headerText="Lista">
 					<p:selectOneMenu value="#{ventaController.newFactura.tipoComprobante}" id="tComprob">
 						<f:selectItem itemLabel="Factura" itemValue="FACTURA"/>
-						<f:selectItem itemLabel="Boleta" itemValue="BOLETA"/>
-						<f:selectItem itemLabel="Ticket" itemValue="TICKET"/>
-						 <p:ajax listener="#{ventaController.tipoFactura()}"
-                    		update="imp" />
 					</p:selectOneMenu>
 				</p:column>
 				<p:column>
@@ -101,7 +97,7 @@ Funcion: Controlador Articulo Controller.
 				</p:column>
 				
 				<p:column> 
-					<p:outputLabel id="imp" value="#{ventaController.newFactura.iva}"></p:outputLabel>
+					<p:outputLabel id="imp" value="12"></p:outputLabel>
 				</p:column>
 			</p:row>
 			
@@ -205,21 +201,6 @@ Funcion: Controlador Articulo Controller.
 								<f:convertNumber currencySymbol="$" type="currency"  />
 							</h:outputText>
 						</p:column>
-						<p:columnGroup type="footer">
-							<p:row>
-				                <p:column colspan="5" style="text-align:right" footerText="Subtotal:" />
-				                <p:column footerText="$#{ventaController.vTotalVenta}"/>
-				                	
-				            </p:row>
-				            <p:row>
-				                <p:column colspan="5" style="text-align:right" footerText="Iva:" />
-				                <p:column footerText="#{ventaController.newFactura.iva}" />
-				            </p:row>
-				            <p:row>
-				            	<p:column colspan="5" style="text-align:right" footerText="Total:" />
-				                <p:column footerText="$#{ventaController.vSubtotal}" />
-				            </p:row>
-				        </p:columnGroup>
 				        
 					</p:dataTable>
 					
