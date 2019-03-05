@@ -239,6 +239,13 @@
         	<artifactId>jasperreports-fonts</artifactId>
         	<version>6.0.0</version>
         </dependency>
+        
+        <dependency>
+         <groupId>com.sun.xml.ws</groupId>
+         <artifactId>jaxws-rt</artifactId>
+         <version>2.3.2</version>
+         <scope>compile</scope>
+      	</dependency>
         <!-- PARA UTILIZAR JAVA MAIL que sirve para enviar correo electronicos por gmail, desactiva aplicaciones seguras
         en su cuenta gmail para que funcione 
          <dependency>
