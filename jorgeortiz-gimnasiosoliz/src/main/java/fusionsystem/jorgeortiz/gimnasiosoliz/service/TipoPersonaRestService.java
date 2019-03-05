@@ -14,7 +14,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
 public class TipoPersonaRestService {
 
 	@Inject
-	private TipoPersonaBussiness tpBuss;
+	private TipoPersonaLocal tpBuss;
 	
 	@GET
 	@Produces("application/json")

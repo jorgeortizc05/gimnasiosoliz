@@ -24,6 +24,7 @@ import org.primefaces.event.CaptureEvent;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.PersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
+import fusionsystem.jorgeortiz.gimnasiosoliz.service.TipoPersonaLocal;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 
@@ -35,7 +36,7 @@ public class PersonaController {
 	private PersonaBussiness perBuss;
 	
 	@Inject 
-	private TipoPersonaBussiness tpBuss;
+	private TipoPersonaLocal tpBuss;
 	
 	@Inject
 	private FacesContext facesContext;

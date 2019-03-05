@@ -1,5 +1,7 @@
 package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,7 +20,9 @@ import org.hibernate.validator.constraints.NotEmpty;
  * Nota: Mantenimiento para Tipo de Persona;.
  */
 @Entity
-public class TipoPersona {
+public class TipoPersona implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@SequenceGenerator(name="tper_generator", initialValue=1, allocationSize = 1,  sequenceName="tper_id_seq")

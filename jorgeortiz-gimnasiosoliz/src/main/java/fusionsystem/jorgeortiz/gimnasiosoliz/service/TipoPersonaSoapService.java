@@ -13,11 +13,58 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
 public class TipoPersonaSoapService {
 	
 	@Inject
-	private TipoPersonaBussiness tpBuss;
-	
+	private TipoPersonaLocal tpBuss;
 	
 	@WebMethod
-	public List<TipoPersona> getPersonas(){
+	public void guardar(TipoPersona tipoPersona) {
+		Respuesta respuesta = new Respuesta();
+		try {
+			tpBuss.doGuardar(tipoPersona);
+			respuesta.setCodigo(1);
+			respuesta.setMensaje("Guardado Exitoso");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			respuesta.setCodigo(-1);
+			respuesta.setMensaje("Error al guardar "+e.getMessage());
+		}
+	}
+	
+	public void actualizar(TipoPersona tipoPersona) {
+		Respuesta respuesta = new Respuesta();
+		try {
+			tpBuss.doActualizar(tipoPersona);
+			respuesta.setCodigo(1);
+			respuesta.setMensaje("Actualizacion Exitoso");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			respuesta.setCodigo(-1);
+			respuesta.setMensaje("Error en la actualizacion "+e.getMessage());
+		}
+	}
+	
+	public void eliminar(int id) {
+		Respuesta respuesta = new Respuesta();
+		try {
+			tpBuss.doEliminar(id);
+			respuesta.setCodigo(1);
+			respuesta.setMensaje("Eliminacion Exitoso");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			respuesta.setCodigo(-1);
+			respuesta.setMensaje("Error en la actualizacion "+e.getMessage());
+		}
+	}
+	
+	@WebMethod
+	public TipoPersona getTipoPersona(int id) {
+		return tpBuss.getTipoPersona(id);
+	}
+	
+	@WebMethod
+	public List<TipoPersona> getTipoPersonas(){
 		return tpBuss.getTipoPersonas();
 	}
 
