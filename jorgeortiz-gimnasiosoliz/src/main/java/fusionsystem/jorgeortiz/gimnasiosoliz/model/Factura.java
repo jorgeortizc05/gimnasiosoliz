@@ -53,7 +53,7 @@ public class Factura {
 	private Double subtotal;
 	
 	@Column(name = "fact_descuento")
-	private Double descuento;
+	private Double descuento = 0.0;
 	
 	@Column(name = "fact_iva")
 	private Double iva = 12.0;
