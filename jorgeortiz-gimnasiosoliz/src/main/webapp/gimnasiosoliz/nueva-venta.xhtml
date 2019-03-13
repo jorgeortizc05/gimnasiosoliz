@@ -68,9 +68,6 @@ Funcion: Controlador Articulo Controller.
 					<p:message for="tComprob"></p:message>
 				</p:column>
 				<p:column>
-					<p:message for="sComprob"></p:message>
-				</p:column>
-				<p:column>
 					<p:message for="imp"></p:message>
 				</p:column>
 				<p:column>
@@ -80,9 +77,6 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:column>
 					<b><h:outputLabel value="Tipo de Comprobante" for="tComprob"/></b>
-				</p:column>
-				<p:column>
-					<b><h:outputLabel value="Serie de Comprobante" for="sComprob"/></b>
 				</p:column>
 				<p:column>
 					<b><h:outputLabel value="Impuesto" for="imp"/></b>
@@ -97,9 +91,6 @@ Funcion: Controlador Articulo Controller.
 					<p:selectOneMenu value="#{ventaController.newFactura.tipoComprobante}" id="tComprob">
 						<f:selectItem itemLabel="Factura" itemValue="FACTURA"/>
 					</p:selectOneMenu>
-				</p:column>
-				<p:column>
-					<p:inputText id="sComprob" value="#{ventaController.newFactura.serie}" style="width:150px;"/>
 				</p:column>
 				
 				<p:column> 

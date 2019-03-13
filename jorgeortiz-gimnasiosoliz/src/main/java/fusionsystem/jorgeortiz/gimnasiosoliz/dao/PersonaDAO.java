@@ -63,7 +63,10 @@ public class PersonaDAO {
 		query.setParameter("vCedula", cedula);
 		try {
 			Persona persona = (Persona) query.getSingleResult();
-			persona.getComplexiones().size();
+			if(persona.getComplexiones()!=null) {
+				persona.getComplexiones().size();
+			}
+			
 			return persona;
 		} catch (Exception e) {
 			// TODO: handle exception

@@ -43,7 +43,7 @@ public class TarjetaGimnasio {
 		
 		//Protocolo http para guardar en tiempo real el reporte
 		HttpServletResponse response = (HttpServletResponse) FacesContext.getCurrentInstance().getExternalContext().getResponse();
-		response.addHeader("Content-disposition","attachment; filename=factura"+formato.formatoFecha()+".pdf");
+		response.addHeader("Content-disposition","attachment; filename=tarjeta"+cedula+".pdf");
 		ServletOutputStream stream = response.getOutputStream();
 		
 		//exporta

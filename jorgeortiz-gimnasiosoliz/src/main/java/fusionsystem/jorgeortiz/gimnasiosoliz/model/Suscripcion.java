@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Suscripcion {
 
 	@Id
-	@SequenceGenerator(name="sus_generator", initialValue=1, allocationSize = 1000,  sequenceName="sus_id_seq")
+	@SequenceGenerator(name="sus_generator", initialValue=1000, allocationSize = 1,  sequenceName="sus_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "sus_generator")
 	@NotNull
 	@Column(name = "sus_id")
