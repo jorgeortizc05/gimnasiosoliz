@@ -16,7 +16,7 @@ import javax.validation.constraints.NotNull;
 public class Suscripcion {
 
 	@Id
-	@SequenceGenerator(name="sus_generator", initialValue=1, allocationSize = 1,  sequenceName="sus_id_seq")
+	@SequenceGenerator(name="sus_generator", initialValue=1, allocationSize = 1000,  sequenceName="sus_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "sus_generator")
 	@NotNull
 	@Column(name = "sus_id")
@@ -30,9 +30,6 @@ public class Suscripcion {
 	
 	@Column(name = "sus_tipo")
 	private String tipo = "Normal";
-	
-	@Column(name = "sus_estado")
-	private String estado = "A";
 	
 	@ManyToOne
 	@JoinColumn(name = "per_id")
@@ -70,13 +67,6 @@ public class Suscripcion {
 		this.tipo = tipo;
 	}
 
-	public String getEstado() {
-		return estado;
-	}
-
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
 
 	public Persona getPersona() {
 		return persona;
@@ -89,7 +79,7 @@ public class Suscripcion {
 	@Override
 	public String toString() {
 		return "Suscripcion [idSuscripcion=" + idSuscripcion + ", fechaDesde=" + fechaDesde + ", fechaHasta="
-				+ fechaHasta + ", tipo=" + tipo + ", estado=" + estado + ", persona=" + persona + "]";
+				+ fechaHasta + ", tipo=" + tipo + ", persona=" + persona + "]";
 	}
 	
 	

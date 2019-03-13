@@ -26,11 +26,11 @@ Notas:
 	<ui:define name="cuerpo">
 	<p:fieldset legend="NUEVA FORMA DE PAGO" style="margin-bottom:20px" id="panelFormaPago">
 		<p:panelGrid columns="3" id="pgFormaPago">
-			<p:outputLabel value="Forma de Pago"/>
+			<p:outputLabel value="Forma de Pago:"/>
 			<p:inputText value="#{formaPagoController.newFormaPago.nombre}" id="txtnombre"/>
 			<p:message for="txtnombre" />
 			
-			<p:outputLabel value="Descripcion"/>
+			<p:outputLabel value="Descripción:"/>
 			<p:inputText value="#{formaPagoController.newFormaPago.descripcion}" id="txtdescripcion"/>
 			<p:message for="txtdescripcion"/>
 		</p:panelGrid>

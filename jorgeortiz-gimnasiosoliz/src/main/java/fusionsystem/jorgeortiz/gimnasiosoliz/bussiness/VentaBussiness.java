@@ -86,14 +86,15 @@ public class VentaBussiness {
 			df.setValorTotal(df.getValorUnitario()*df.getCantidad());
 			vTotal = vTotal + df.getValorTotal();
 		}
-		
+		//Calcula el descuento
+		vTotal = vTotal - factura.getDescuento();
 		//Verifica si tiene iva o no
 		if(factura.getIva() == 0) {
 			return vTotal;
 		}
 		else {
 			//Calcula el valor total con el iva
-			return vTotal+((vTotal*factura.getIva())/100);
+			return vTotal;
 		}	
 	}
 	

@@ -73,6 +73,9 @@ Funcion: Controlador Articulo Controller.
 				<p:column>
 					<p:message for="imp"></p:message>
 				</p:column>
+				<p:column>
+					<p:message for="descuento"></p:message>
+				</p:column>
 			</p:row>
 			<p:row>
 				<p:column>
@@ -83,6 +86,9 @@ Funcion: Controlador Articulo Controller.
 				</p:column>
 				<p:column>
 					<b><h:outputLabel value="Impuesto" for="imp"/></b>
+				</p:column>
+				<p:column>
+					<b><h:outputLabel value="Descuento" for="descuento"/></b>
 				</p:column>
 			</p:row>
 			
@@ -99,6 +105,9 @@ Funcion: Controlador Articulo Controller.
 				<p:column> 
 					<p:outputLabel id="imp" value="12"></p:outputLabel>
 				</p:column>
+				<p:column>
+					<p:inputNumber id="descuento" value="#{ventaController.newFactura.descuento}"/>
+				</p:column>
 			</p:row>
 			
 			<p:row>
@@ -112,9 +121,7 @@ Funcion: Controlador Articulo Controller.
 					<p:column>
 						<p:message for="pVenta"></p:message>
 					</p:column>
-					<p:column>
-						<p:message for="descuento"></p:message>
-					</p:column>
+					
 					
 				</p:columnGroup>
 			</p:row>
@@ -134,9 +141,7 @@ Funcion: Controlador Articulo Controller.
 					<p:column>
 						<b><h:outputLabel value="Precio Venta" for="pVenta"/></b>
 					</p:column>
-					<p:column>
-						<b><h:outputLabel value="Descuento" for="descuento"/></b>
-					</p:column>
+					
 					
 				</p:columnGroup>
 			</p:row>
@@ -159,10 +164,7 @@ Funcion: Controlador Articulo Controller.
 						
 						</h:outputText>
 					</p:column>
-					<p:column>
-						<p:inputNumber id="descuento" value="#{ventaController.newFactura.descuento}" symbol="%" 
-                                symbolPosition="s" emptyValue="zero"/>
-					</p:column>
+					
 				
 				</p:columnGroup>
 			</p:row>
@@ -211,9 +213,7 @@ Funcion: Controlador Articulo Controller.
 		</p:panelGrid>
 		<p:commandButton value="Guardar" action="#{ventaController.guardarFactura()}" update="gridVenta" icon="fa fa-save"></p:commandButton>
 		<p:commandButton value="Cancelar" action="list-ventas" immediate="true" icon="fa fa-hand-o-left"></p:commandButton>
-	 	
-	 
-	
+
 	</p:fieldset>
 
 	</ui:define>

@@ -24,7 +24,9 @@ import org.primefaces.event.CaptureEvent;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.PersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
+import fusionsystem.jorgeortiz.gimnasiosoliz.reporte.TarjetaGimnasio;
 import fusionsystem.jorgeortiz.gimnasiosoliz.service.TipoPersonaLocal;
+import net.sf.jasperreports.engine.JRException;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 
@@ -50,6 +52,7 @@ public class PersonaController {
 	private boolean vEditing;
 	private int vIdPersona;
 	private String vTitulo;
+	private TarjetaGimnasio tarjetaGimnasio;
 	//Recupera idTipoPersona del combo
 	private int vIdTipoPersona;
 	
@@ -58,6 +61,7 @@ public class PersonaController {
 		newPersona = new Persona();
 		newComplexion = new Complexion();
 		tipoPersonas = tpBuss.getTipoPersonas();
+		tarjetaGimnasio = new TarjetaGimnasio();
 		vEditing = false;
 		vTitulo = "NUEVO";
 		loadPersonas();
@@ -68,6 +72,8 @@ public class PersonaController {
 		TipoPersona tpersona = new TipoPersona();
 		tpersona.setIdTipoPersona(vIdTipoPersona);
 		newPersona.setTipoPersona(tpersona);
+		//Hago todo a mayusculas
+		newPersona.setNombres(newPersona.getNombres().toUpperCase());
 		try {
 			if(vEditing)
 				perBuss.doActualizar(newPersona);
@@ -107,6 +113,10 @@ public class PersonaController {
 
 	}
 	
+	public void generarTarjetaPorPersona(String cedula) throws JRException, IOException {
+		tarjetaGimnasio.generarTarjetaPorPersona(cedula);
+	}
+	
 	//Carga un objeto Persona en el formulario y se activa la edicion
 	public String editarPersona(Persona p) {
 		//newPersona = ts;
@@ -124,7 +134,7 @@ public class PersonaController {
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "Error");
+			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "No existe la persona");
             facesContext.addMessage(null, m);
 
 		}

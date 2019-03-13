@@ -27,11 +27,11 @@ Notas:
 	<p:fieldset legend="NUEVO TIPO PERSONA" style="margin-bottom:20px" id="panelRutina">
 	<h:inputHidden value="#{tipoPersonaController.newTipoPersona.idTipoPersona}" />
 		<p:panelGrid columns="3" id="pgRutina">
-			<p:outputLabel value="Tipo"/>
+			<p:outputLabel value="Tipo:"/>
 			<p:inputText value="#{tipoPersonaController.newTipoPersona.nombre}" id="txtnombre" placeholder="Cliente, Entrenador o Empleado"/>
 			<p:message for="txtnombre" />
 			
-			<p:outputLabel value="Descripcion"/>
+			<p:outputLabel value="Descripción:"/>
 			<p:inputText value="#{tipoPersonaController.newTipoPersona.descripcion}" id="txtdescripcion"/>
 			<p:message for="txtdescripcion"/>
 		</p:panelGrid>

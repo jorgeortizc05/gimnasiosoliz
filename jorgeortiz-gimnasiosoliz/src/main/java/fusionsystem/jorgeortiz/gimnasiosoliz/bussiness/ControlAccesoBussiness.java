@@ -21,9 +21,14 @@ public class ControlAccesoBussiness {
 	private SuscripcionDAO susDAO;
 	
 	//Carga un objeto Persona
-	public Persona getPersona(String cedula) {
-		
-		return perDAO.getPersonaCedula(cedula);
+	public Persona getPersona(String cedula) throws Exception {
+		Persona persona = perDAO.getPersonaCedula(cedula);
+		if(persona==null) {
+			throw new Exception("No esta registrado en el sistema");
+		}else {
+			return persona;
+			
+		}
 	}
 	
 	public List<Suscripcion> getSuscripcionesPersona(int idPersona){
@@ -31,12 +36,20 @@ public class ControlAccesoBussiness {
 		return susDAO.getSuscripcionsPersona(idPersona);
 	}
 	
-	public Suscripcion getSuscripcione(int idPersona){
+	public Suscripcion getSuscripcione(int idPersona) throws Exception{
 		List<Suscripcion> lista = susDAO.getSuscripcionsPersona(idPersona);
 		//Tomo el ultimo dato de la lista
-		Suscripcion sus = lista.get(lista.size()-1);
+		if(lista == null) {
+			throw new Exception("No tiene suscripción");
+		}
+		else {
+			Suscripcion sus = lista.get(lista.size()-1);
+			return sus;
+		}
+		
+		
 	
-		return sus;
+		
 	}
 	
 	//Para obtener un calculo de los dias restantes que vence las suscripcion al gimnasio

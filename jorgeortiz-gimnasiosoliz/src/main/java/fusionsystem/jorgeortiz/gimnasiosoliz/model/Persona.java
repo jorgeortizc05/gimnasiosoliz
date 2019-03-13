@@ -32,7 +32,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 @Entity
 public class Persona {
 	@Id
-	@SequenceGenerator(name="per_generator", initialValue=1, allocationSize = 1,  sequenceName="per_id_seq")
+	@SequenceGenerator(name="per_generator", initialValue=1, allocationSize = 1000,  sequenceName="per_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "per_generator")
 	@NotNull
 	@Column(name = "per_id")

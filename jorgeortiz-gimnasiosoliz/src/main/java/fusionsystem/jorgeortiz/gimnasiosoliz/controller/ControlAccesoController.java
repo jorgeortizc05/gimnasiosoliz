@@ -10,6 +10,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -26,12 +27,15 @@ public class ControlAccesoController {
 	@Inject
 	private ControlAccesoBussiness caBuss;
 	
+	@Inject
+	private FacesContext facesContext;
+	
 	private Persona newPersona;
 	private Suscripcion newSuscripcion;
 	//Variables
 	private String vCedula;
 	private int vDias;
-	private String vColorAdvertencia = "#070719";
+	private String vColorAdvertencia = "red";
 	private String vEstadoCorporal = "";
 	
 	private String vMensajeAdvertencia = "Ya vencio";
@@ -46,27 +50,35 @@ public class ControlAccesoController {
 	public String leerCodigo() {
 		System.out.println(vCedula);
 		enviarFotosServidor(vCedula);
-		newPersona = caBuss.getPersona(vCedula);
 		
-		Complexion comple = newPersona.getComplexiones().get(newPersona.getComplexiones().size()-1);
-		System.out.println(comple);
-		vEstadoCorporal = caBuss.estadoCorporal(comple);
-		
-		newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
-		System.out.println(newSuscripcion);
-		vDias = caBuss.calcularDiasRestantes(newSuscripcion);
-		
-		if(vDias <= 0) {
-			vMensajeAdvertencia = "PAGAR POR VENTANILLA";
-			vColorAdvertencia = "#FF0040";
-			vDias = 0;
-		}else
-		{
-			vMensajeAdvertencia = "CORRECTO";
-			vColorAdvertencia = "#070719";
+		try {
+			newPersona = caBuss.getPersona(vCedula);
+			Complexion comple = newPersona.getComplexiones().get(newPersona.getComplexiones().size()-1);
+			System.out.println(comple);
+			vEstadoCorporal = caBuss.estadoCorporal(comple);
+			
+			newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
+			System.out.println(newSuscripcion);
+			vDias = caBuss.calcularDiasRestantes(newSuscripcion);
+			
+			if(vDias <= 0) {
+				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
+				vColorAdvertencia = "red";
+				vDias = 0;
+			}else
+			{
+				vMensajeAdvertencia = "CORRECTO";
+				vColorAdvertencia = "black";
+			}			
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "Error, persona no existe");
+            facesContext.addMessage(null, m);
 		}
-		
 		vCedula = "";
+		
 		return null;
 		
 	}

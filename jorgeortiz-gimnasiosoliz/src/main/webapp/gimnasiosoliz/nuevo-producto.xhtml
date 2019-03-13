@@ -24,21 +24,21 @@ Notas:
 	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
 
 	<ui:define name="cuerpo">
-	<p:fieldset legend="NUEVA PRODUCTO" style="margin-bottom:20px" id="panelProducto">
+	<p:fieldset legend="NUEVO PRODUCTO" style="margin-bottom:20px" id="panelProducto">
 		<p:panelGrid columns="3" id="pgProducto">
-			<p:outputLabel value="Nombre"/>
+			<p:outputLabel value="Nombre:"/>
 			<p:inputText value="#{productoController.newProducto.nombre}" id="txtnombre"/>
 			<p:message for="txtnombre" />
 			
-			<p:outputLabel value="Codigo"/>
+			<p:outputLabel value="Código:"/>
 			<p:inputText value="#{productoController.newProducto.codigo}" id="txtcodigo"/>
 			<p:message for="txtcodigo"/>
 			
-			<p:outputLabel value="Precio"/>
+			<p:outputLabel value="Precio:"/>
 			<p:inputText value="#{productoController.newProducto.precio}" id="txtprecio"/>
 			<p:message for="txtprecio"/>
 			
-			<p:outputLabel value="Descripcion"/>
+			<p:outputLabel value="Descripción:"/>
 			<p:inputText value="#{productoController.newProducto.descripcion}" id="txtdescripcion"/>
 			<p:message for="txtdescripcion"/>
 		</p:panelGrid>

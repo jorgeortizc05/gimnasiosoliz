@@ -24,11 +24,11 @@ Notas:
 		<p:dataTable resizableColumns="true"  value="#{formaPagoController.formaPagos}" var="fp" id="dtFormaPagos" paginator="true" paginatorPosition="bottom"  
 				 	rows="15" style="margin-bottom:20px" widgetVar="dTWWFormaPagos" rowsPerPageTemplate="5,10,15,20,50" filteredValue="#{formaPagoController.filterFormaPagos}">
 			    
-		    <p:column headerText="Nombre" >
+		    <p:column headerText="Nombre" style="width:120px">
 		       <h:outputText  value="#{fp.nombre}"/>
 		    </p:column>
 		    
-		    <p:column headerText="Descripcion" >
+		    <p:column headerText="Descripción" >
 		       <h:outputText  value="#{fp.descripcion}"/>
 		    </p:column>
 

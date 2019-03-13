@@ -18,7 +18,7 @@ Notas:
 	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
 
 	<ui:define name="cuerpo">
-	<p:fieldset legend="INFORMACION DEL USUARIO" style="margin-bottom:20px" id="controlAcceso">
+	<p:fieldset legend="INFORMACIÓN DEL USUARIO" style="margin-bottom:20px" id="controlAcceso">
 	<p:focus context="controlAcceso"/>
 	<p:inputText value="#{controlAccesoController.vCedula}" />
 	<p:commandButton value="buscar" action="#{controlAccesoController.leerCodigo()}" id="buscar" update="controlAcceso, mensajes"/>

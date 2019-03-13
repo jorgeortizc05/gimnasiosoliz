@@ -22,7 +22,7 @@ Notas:
 	<p:fieldset legend="LISTA DE TIPO DE PERSONAS" style="margin-bottom:20px">
 		<p:commandButton value="Nuevo" action="nuevo-tipo-persona?faces-redirect=true" icon="fa fa-user-plus" ajax="false"/>
 		<p:dataTable resizableColumns="true"  value="#{tipoPersonaController.tipoPersonas}" var="tp" id="dtTipoPersonas">	    
-		    <p:column headerText="Tipo">
+		    <p:column headerText="Tipo" style="width:120px">
 		       <h:outputText  value="#{tp.nombre}"/>
 		    </p:column>
 		    

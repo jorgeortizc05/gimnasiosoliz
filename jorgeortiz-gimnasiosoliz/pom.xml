@@ -254,6 +254,12 @@
                 <version>1.6.2</version>
             </dependency>
             -->
+          <!-- PARA USAR CODIGO DE BARRAS-->
+          <dependency>
+		    <groupId>net.sourceforge.barbecue</groupId>
+		    <artifactId>barbecue</artifactId>
+		    <version>1.5-beta1</version>
+		</dependency>
     </dependencies>
 
     <build>
