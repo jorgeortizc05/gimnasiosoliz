@@ -7,11 +7,9 @@ import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.TipoPersonaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
-import fusionsystem.jorgeortiz.gimnasiosoliz.service.TipoPersonaLocal;
-import fusionsystem.jorgeortiz.gimnasiosoliz.service.TipoPersonaRemote;
 
 @Stateless
-public class TipoPersonaBussiness implements TipoPersonaRemote, TipoPersonaLocal {
+public class TipoPersonaBussiness {
 
 	@Inject
 	private TipoPersonaDAO rutDAO;

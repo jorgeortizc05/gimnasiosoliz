@@ -11,13 +11,12 @@ import javax.inject.Inject;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Ejercicio;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
-import fusionsystem.jorgeortiz.gimnasiosoliz.service.TipoPersonaLocal;
 
 @ManagedBean
 public class TipoPersonaController {
 
 	@Inject
-	private TipoPersonaLocal tperBuss;
+	private TipoPersonaBussiness tperBuss;
 	
 	@Inject
 	private FacesContext facesContext;

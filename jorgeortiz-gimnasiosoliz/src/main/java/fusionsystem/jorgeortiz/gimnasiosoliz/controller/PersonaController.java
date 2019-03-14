@@ -25,7 +25,6 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.PersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.reporte.TarjetaGimnasio;
-import fusionsystem.jorgeortiz.gimnasiosoliz.service.TipoPersonaLocal;
 import net.sf.jasperreports.engine.JRException;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
@@ -38,7 +37,7 @@ public class PersonaController {
 	private PersonaBussiness perBuss;
 	
 	@Inject 
-	private TipoPersonaLocal tpBuss;
+	private TipoPersonaBussiness tpBuss;
 	
 	@Inject
 	private FacesContext facesContext;

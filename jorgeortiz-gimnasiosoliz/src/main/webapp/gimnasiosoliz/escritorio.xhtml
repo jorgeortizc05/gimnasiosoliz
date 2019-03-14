@@ -57,6 +57,19 @@ Notas:
 				
 			</p:panelGrid>
 		</p:panelGrid>
+		<p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
+			<p:column headerText="Fecha Desde">
+				<p:outputLabel value="#{sus.fechaDesde}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+			<p:column headerText="Fecha Hasta">
+				<p:outputLabel value="#{sus.fechaHasta}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+		
+		</p:dataTable>
 		<p:dialog header="Estado Corporal" widgetVar="dlg1" minHeight="80">
 		    <h:outputText value="#{controlAccesoController.vEstadoCorporal}" />
 		</p:dialog>

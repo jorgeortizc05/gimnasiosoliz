@@ -24,16 +24,13 @@ public class PersonaBussiness {
 		if(auxp != null || auxCedula != null) 
 			throw new Exception("Persona ya existe");
 		else {
-			if(vCedula) {
+			
 				for(Complexion com: persona.getComplexiones()) {
 					Double calculaPesoIdeal = (com.getPeso())/Math.pow((com.getAltura()*0.01),2);
 					com.setIndiceCorporal(calculaPesoIdeal);
 				}
 				perDAO.insert(persona);
-			}
-			else {
-				throw new Exception("La cedula es incorrecta, no se puede guardar");
-			}
+			
 		}
 	}
 	

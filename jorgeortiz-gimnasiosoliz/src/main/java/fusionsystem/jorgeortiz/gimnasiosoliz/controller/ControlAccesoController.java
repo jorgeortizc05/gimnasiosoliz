@@ -32,6 +32,7 @@ public class ControlAccesoController {
 	
 	private Persona newPersona;
 	private Suscripcion newSuscripcion;
+	private List<Suscripcion> suscripciones;
 	//Variables
 	private String vCedula;
 	private int vDias;
@@ -44,6 +45,7 @@ public class ControlAccesoController {
 	public void init() {
 		newPersona = new Persona();
 		newSuscripcion = new Suscripcion();
+		
 	}
 	
 	
@@ -53,10 +55,13 @@ public class ControlAccesoController {
 		
 		try {
 			newPersona = caBuss.getPersona(vCedula);
-			Complexion comple = newPersona.getComplexiones().get(newPersona.getComplexiones().size()-1);
-			System.out.println(comple);
-			vEstadoCorporal = caBuss.estadoCorporal(comple);
+			/*if(newPersona.getComplexiones()!=null) {
+				Complexion comple = newPersona.getComplexiones().get(newPersona.getComplexiones().size()-1);
+				System.out.println(comple);
+				vEstadoCorporal = caBuss.estadoCorporal(comple);
+			}*/
 			
+			suscripciones = caBuss.getSuscripcionesPersona(newPersona.getIdPersona());
 			newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
 			System.out.println(newSuscripcion);
 			vDias = caBuss.calcularDiasRestantes(newSuscripcion);
@@ -174,6 +179,16 @@ public class ControlAccesoController {
 
 	public void setvEstadoCorporal(String vEstadoCorporal) {
 		this.vEstadoCorporal = vEstadoCorporal;
+	}
+
+
+	public List<Suscripcion> getSuscripciones() {
+		return suscripciones;
+	}
+
+
+	public void setSuscripciones(List<Suscripcion> suscripciones) {
+		this.suscripciones = suscripciones;
 	}
 	
 	
