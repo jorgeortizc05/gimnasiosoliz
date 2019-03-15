@@ -63,6 +63,11 @@ public class VentaBussiness {
 			factDAO.insert(factura);	
 	}
 	
+	public List<Suscripcion> getSuscripcionesPersona(int idPersona){
+		
+		return susDAO.getSuscripcionsPersona(idPersona);
+	}
+	
 	/*Para obtener un calculo de los dias restantes que vence las suscripcion al gimnasio
 	public int calcularDiasRestantes(DetalleFactura df) {
 		int dias = (int) ((df.getFechaHasta().getTime()-df.getFechaDesde().getTime())/86400000);

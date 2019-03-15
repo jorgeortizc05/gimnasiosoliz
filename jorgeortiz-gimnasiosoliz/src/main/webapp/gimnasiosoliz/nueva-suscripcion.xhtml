@@ -14,8 +14,8 @@ Funcion: Controlador Articulo Controller.
 -->
 <h:head>
 	<f:metadata>
-        <f:viewParam id="id" name="id" value="#{ventaController.vIdFactura}"/>
-        <f:viewAction action="#{ventaController.cargarFactura()}" />
+        <f:viewParam id="id" name="id" value="#{controlAccesoController.vIdPersona}"/>
+        <f:viewAction action="#{controlAccesoController.cargarPersona()}" />
  	</f:metadata>
 </h:head>
 <ui:composition
@@ -23,7 +23,7 @@ Funcion: Controlador Articulo Controller.
 
 	<ui:define name="cuerpo">
 	
-	<p:fieldset legend="NUEVA VENTA" style="margin-bottom:20px" id="fNuevaVenta">
+	<p:fieldset legend="NUEVA SUSCRIPCIÓN" style="margin-bottom:20px" id="fNuevaVenta">
 	
 		<p:panelGrid id="gridVenta">
 			<p:row>
@@ -36,9 +36,6 @@ Funcion: Controlador Articulo Controller.
 				</p:column>
 			</p:row>
 			<p:row>
-				<p:column>
-					<p:message for="lClientes"></p:message>
-				</p:column>
 				
 				<p:column>
 					<p:message for="lFPago"></p:message>
@@ -46,11 +43,7 @@ Funcion: Controlador Articulo Controller.
 			</p:row>
 			<p:row>
 				<p:column>
-					<p:selectOneListbox value="#{ventaController.vIdPersona}" style="width:300px"  filter="true" required="true" requiredMessage="Seleccione un cliente" filterMatchMode="contains" id="lClientes" scrollHeight="100">
-			            <f:selectItems value="#{personaController.personas}" var="p" itemLabel="#{p.cedula}/#{p.nombres}" itemValue="#{p.idPersona}"/>
-			        	<p:ajax process="@this"
-				            listener="#{ventaController.obtenerSuscripcionesPersona()}" update="dtSuscripciones"/>
-			        </p:selectOneListbox>
+					<p:outputLabel value="#{controlAccesoController.newPersona.nombres}"/>
 				</p:column>
 				
 				<p:column >
@@ -59,11 +52,6 @@ Funcion: Controlador Articulo Controller.
 			        </p:selectOneListbox>
 				</p:column>
 				
-			</p:row>
-			<p:row>
-				<p:column>		
-					<p:commandButton value="Añadir Cliente" type="button" onclick="PF('dlg2').show();"></p:commandButton>				
-				</p:column>
 			</p:row>
 			<p:row>
 				<p:column>
@@ -204,9 +192,12 @@ Funcion: Controlador Articulo Controller.
 			</p:row>
 			
 		</p:panelGrid>
+		
 		<p:commandButton value="Guardar" action="#{ventaController.guardarFactura()}" update="gridVenta" icon="fa fa-save"></p:commandButton>
 		<p:commandButton value="Cancelar" action="list-ventas" immediate="true" icon="fa fa-hand-o-left"></p:commandButton>
-		<p:dataTable value="#{ventaController.suscripciones}" var="sus" id="dtSuscripciones">
+		<p/>
+		<p:outputLabel value="HISTORIAL DE PAGOS DEL CLIENTE"/>
+		<p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
 			<p:column headerText="Fecha Desde">
 				<p:outputLabel value="#{sus.fechaDesde}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>

@@ -30,6 +30,15 @@ public class ControlAccesoBussiness {
 			
 		}
 	}
+	//Obtengo solo persona a partir del id
+	public Persona getPersona(int id) throws Exception {
+		Persona persona = perDAO.readPersona(id);
+		if(persona==null) {
+			throw new Exception("No esta registrado en el sistema");
+		}else {
+			return persona;
+		}
+	}
 	
 	public List<Suscripcion> getSuscripcionesPersona(int idPersona){
 		
@@ -43,13 +52,9 @@ public class ControlAccesoBussiness {
 			throw new Exception("No tiene suscripción");
 		}
 		else {
-			Suscripcion sus = lista.get(lista.size()-1);
+			Suscripcion sus = lista.get(0);
 			return sus;
-		}
-		
-		
-	
-		
+		}	
 	}
 	
 	//Para obtener un calculo de los dias restantes que vence las suscripcion al gimnasio

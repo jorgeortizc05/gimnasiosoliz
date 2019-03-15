@@ -12,6 +12,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
@@ -22,6 +23,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
 
 @ManagedBean
+@ViewScoped
 public class ControlAccesoController {
 
 	@Inject
@@ -38,6 +40,7 @@ public class ControlAccesoController {
 	private int vDias;
 	private String vColorAdvertencia = "red";
 	private String vEstadoCorporal = "";
+	private int vIdPersona;
 	
 	private String vMensajeAdvertencia = "Ya vencio";
 	
@@ -55,11 +58,11 @@ public class ControlAccesoController {
 		
 		try {
 			newPersona = caBuss.getPersona(vCedula);
-			/*if(newPersona.getComplexiones()!=null) {
-				Complexion comple = newPersona.getComplexiones().get(newPersona.getComplexiones().size()-1);
+			if(newPersona.getComplexiones().size()>0) {
+				Complexion comple = newPersona.getComplexiones().get(0);
 				System.out.println(comple);
 				vEstadoCorporal = caBuss.estadoCorporal(comple);
-			}*/
+			}
 			
 			suscripciones = caBuss.getSuscripcionesPersona(newPersona.getIdPersona());
 			newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
@@ -86,6 +89,31 @@ public class ControlAccesoController {
 		
 		return null;
 		
+	}
+	
+	public void cargarPersona() {
+		System.out.println("load data " + vIdPersona);
+		if(vIdPersona==0)
+			return;
+		try {
+			newPersona = caBuss.getPersona(vIdPersona);
+			//Cargo las suscripciones que tiene la persona
+			suscripciones = caBuss.getSuscripcionesPersona(newPersona.getIdPersona());
+			System.out.println(newPersona);
+			//vEditing = true;
+			//vTitulo = "EDITAR";
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
+					e.getMessage(), "Error al cargar la persona");
+            facesContext.addMessage(null, m);
+		}
+
+	}
+	
+	public String nuevaSuscripcion() {
+		return "nueva-suscripcion?faces-redirect=true&id="+newPersona.getIdPersona();
 	}
 
 	
@@ -190,7 +218,15 @@ public class ControlAccesoController {
 	public void setSuscripciones(List<Suscripcion> suscripciones) {
 		this.suscripciones = suscripciones;
 	}
-	
-	
+
+
+	public int getvIdPersona() {
+		return vIdPersona;
+	}
+
+
+	public void setvIdPersona(int vIdPersona) {
+		this.vIdPersona = vIdPersona;
+	}
 	
 }

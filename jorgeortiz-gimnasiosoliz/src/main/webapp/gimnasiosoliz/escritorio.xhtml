@@ -54,10 +54,12 @@ Notas:
 					<p:column></p:column>
 					
 				</p:row>
-				
 			</p:panelGrid>
 		</p:panelGrid>
-		<p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
+		<p:commandButton value="Editar"/>
+		<p:commandButton value="Nueva Suscripcion" action="#{controlAccesoController.nuevaSuscripcion()}"/>
+		<p:commandButton value="Historial de Suscripciones"/>
+		<!-- <p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
 			<p:column headerText="Fecha Desde">
 				<p:outputLabel value="#{sus.fechaDesde}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
@@ -69,7 +71,7 @@ Notas:
 				</p:outputLabel>
 			</p:column>
 		
-		</p:dataTable>
+		</p:dataTable> -->
 		<p:dialog header="Estado Corporal" widgetVar="dlg1" minHeight="80">
 		    <h:outputText value="#{controlAccesoController.vEstadoCorporal}" />
 		</p:dialog>

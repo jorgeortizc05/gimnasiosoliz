@@ -15,6 +15,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.FormaPago;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Producto;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
 
 @ManagedBean
 @ViewScoped
@@ -34,6 +35,7 @@ public class VentaController {
 	private List<Producto> productos;
 	private Producto newProducto;
 	private List<FormaPago> formaPagos;
+	private List<Suscripcion> suscripciones;
 	
 	private DetalleFactura newDetalleFactura;
 	
@@ -138,6 +140,10 @@ public class VentaController {
 	public void getProducto() {
 		newProducto = ventBuss.getProducto(vIdProducto);
 		// dIngreso = dIngresoDAO.detalleIngresoArticulo(articulo.getIdArticulo());
+	}
+	
+	public void obtenerSuscripcionesPersona() {
+		suscripciones = ventBuss.getSuscripcionesPersona(vIdPersona);
 	}
 	
 	//Carga todos los Factura en el formulario
@@ -284,6 +290,16 @@ public class VentaController {
 	public void setvSubtotal(Double vSubtotal) {
 		this.vSubtotal = vSubtotal;
 	}
+
+	public List<Suscripcion> getSuscripciones() {
+		return suscripciones;
+	}
+
+	public void setSuscripciones(List<Suscripcion> suscripciones) {
+		this.suscripciones = suscripciones;
+	}
+
+	
 
 	
 	

@@ -28,13 +28,19 @@ public class PersonaDAO {
 		em.persist(persona);
 	}
 	
-	//Select en DB recuperando la informacion con base del id
-	public Persona read(int id) {
+	//Obtengo persona junto con su complexion
+	public Persona readPersonaComplexion(int id) {
 		Persona persona = em.find(Persona.class, id);
 		if(persona != null) {
 		persona.getComplexiones().size();
 		}
 		//Persona.getDetalleIngresos().size();
+		return persona;
+	}
+	
+	//Obtengo solo persona
+	public Persona readPersona(int id) {
+		Persona persona = em.find(Persona.class, id);
 		return persona;
 	}
 	
@@ -45,7 +51,7 @@ public class PersonaDAO {
 	
 	//Delete en DB
 	public void delete(int id) {
-		em.remove(read(id));
+		em.remove(readPersonaComplexion(id));
 	}
 	
 	//Select en DB
@@ -58,7 +64,7 @@ public class PersonaDAO {
 	}
 	
 	public Persona getPersonaCedula(String cedula) {
-		String jpql = "SELECT a FROM Persona a WHERE a.cedula = :vCedula";
+		String jpql = "SELECT a FROM Persona a WHERE a.cedula = :vCedula ORDER BY a.idPersona DESC";
 		Query query = em.createQuery(jpql, Persona.class);
 		query.setParameter("vCedula", cedula);
 		try {

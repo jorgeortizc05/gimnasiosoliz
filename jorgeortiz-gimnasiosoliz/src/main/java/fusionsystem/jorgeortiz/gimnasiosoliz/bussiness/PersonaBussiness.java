@@ -19,7 +19,7 @@ public class PersonaBussiness {
 	//Guarda Persona verificando si existe o no
 	public void doGuardar(Persona persona) throws Exception {
 		boolean vCedula = valida(persona.getCedula());
-		Persona auxp = perDAO.read(persona.getIdPersona());
+		Persona auxp = perDAO.readPersonaComplexion(persona.getIdPersona());
 		Persona auxCedula = perDAO.getPersonaCedula(persona.getCedula());
 		if(auxp != null || auxCedula != null) 
 			throw new Exception("Persona ya existe");
@@ -79,7 +79,7 @@ public class PersonaBussiness {
 	//Actualiza Persona verificando si existe o no
 	public void doActualizar(Persona persona) throws Exception {
 		
-		Persona auxp = perDAO.read(persona.getIdPersona());
+		Persona auxp = perDAO.readPersonaComplexion(persona.getIdPersona());
 		if(auxp == null) {
 			throw new Exception("Persona no existe");
 		}
@@ -96,7 +96,7 @@ public class PersonaBussiness {
 	
 	//Elimina Persona verificando si existe o no
 	public void doEliminar(int id) throws Exception {
-		Persona auxp = perDAO.read(id);
+		Persona auxp = perDAO.readPersonaComplexion(id);
 		if(auxp != null) 
 			perDAO.delete(id);
 		else 
@@ -106,7 +106,7 @@ public class PersonaBussiness {
 	//Carga un objeto Persona
 	public Persona getPersona(int id) {
 		
-		return perDAO.read(id);
+		return perDAO.readPersonaComplexion(id);
 	}
 	
 	//Recupera una lista de Persona

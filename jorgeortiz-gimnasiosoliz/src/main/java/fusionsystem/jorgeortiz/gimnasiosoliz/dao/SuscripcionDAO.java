@@ -48,7 +48,7 @@ public class SuscripcionDAO {
 	
 	//Consulta, la persona tiene muchas suscripciones
 	public List<Suscripcion> getSuscripcionsPersona(int idPersona){
-		String jpql = "SELECT a FROM Suscripcion a where a.persona.idPersona = :vIdPersona";
+		String jpql = "SELECT a FROM Suscripcion a WHERE a.persona.idPersona = :vIdPersona ORDER BY a.idSuscripcion DESC";
 		Query query = em.createQuery(jpql, Suscripcion.class);
 		query.setParameter("vIdPersona", idPersona);
 		//query.setMaxResults(100);
