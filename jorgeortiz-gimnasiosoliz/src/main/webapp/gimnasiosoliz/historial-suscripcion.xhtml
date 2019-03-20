@@ -16,8 +16,8 @@ Notas:
 -->
 <h:head>
 	<f:metadata>
-        <f:viewParam id="id" name="id" value="#{productoController.vIdProducto}"/>
-        <f:viewAction action="#{productoController.cargarProducto()}" />
+        <f:viewParam id="id" name="id" value="#{controlAccesoController.vIdPersona}"/>
+        <f:viewAction action="#{controlAccesoController.cargarHistorialSuscripciones()}" />
  	</f:metadata>
 </h:head>
 <ui:composition
@@ -25,7 +25,7 @@ Notas:
 
 	<ui:define name="cuerpo">
 	<p:fieldset legend="HISTORIAL DE SUSCRIPCIONES" style="margin-bottom:20px" id="panelProducto">
-		<p:dataTable value="#{ventaController.suscripciones}" var="sus" id="dtSuscripciones">
+		<p:dataTable value="#{controlAccesoController.suscripciones}" var="sus" id="dtSuscripciones">
 			<p:column headerText="Fecha Desde">
 				<p:outputLabel value="#{sus.fechaDesde}">
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
@@ -49,8 +49,6 @@ Notas:
 
 	</p:fieldset>
 	</ui:define>
-	
-
 
 </ui:composition>
 </html>

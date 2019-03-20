@@ -12,6 +12,7 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -51,6 +52,26 @@ public class ControlAccesoController {
 		
 	}
 	
+	//Cargo persona por el parametro de la pagina
+	public void cargarHistorialSuscripciones() {
+		System.out.println("load data " + vIdPersona);
+		if(vIdPersona==0)
+			return;
+		try {
+			suscripciones = caBuss.getSuscripcionesPersona(vIdPersona);
+			System.out.println(newPersona.getIdPersona());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, 
+					e.getMessage(), "Error");
+            facesContext.addMessage(null, m);
+		}
+	}
+	
+	public String irHistorialSuscripciones() {
+		return "historial-suscripcion?faces-redirect=true&id="+newPersona.getIdPersona();
+	}
 	
 	public String leerCodigo() {
 		System.out.println(vCedula);

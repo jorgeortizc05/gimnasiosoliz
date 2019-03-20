@@ -50,15 +50,18 @@ Notas:
 					<p:column>
 						<b><h:outputText value="#{controlAccesoController.vDias}" style="color:#{controlAccesoController.vColorAdvertencia};font-size: 18px;"></h:outputText></b>
 					</p:column>
-					<p:column></p:column>
-					<p:column></p:column>
-					
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:commandButton value="Editar" action="#{personaController.editarPersona(controlAccesoController.newPersona)}"/>
+					</p:column>
+					<p:column>
+						<p:commandButton value="Historial de Suscripciones" action="#{controlAccesoController.irHistorialSuscripciones()}"/>
+					</p:column>
+				
 				</p:row>
 			</p:panelGrid>
 		</p:panelGrid>
-		<p:commandButton value="Editar" action="#{personaController.editarPersona(controlAccesoController.newPersona)}"/>
-		<p:commandButton value="Nueva Suscripcion" action="#{controlAccesoController.nuevaSuscripcion()}" disabled="true"/>
-		<p:commandButton value="Historial de Suscripciones" disabled="true"/>
 		<!-- <p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
 			<p:column headerText="Fecha Desde">
 				<p:outputLabel value="#{sus.fechaDesde}">
