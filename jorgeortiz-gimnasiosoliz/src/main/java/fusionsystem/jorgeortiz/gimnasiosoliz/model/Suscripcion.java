@@ -28,8 +28,21 @@ public class Suscripcion {
 	@Column(name = "sus_fecha_hasta")
 	private Date fechaHasta;
 	
+	@Column(name = "sus_precio_neto")
+	private Double precioNeto;
+	
+	@Column(name = "sus_descuento")
+	private Double descuento;
+	
+	@Column(name = "sus_total")
+	private Double total;
+	
 	@Column(name = "sus_tipo")
 	private String tipo = "Normal";
+	
+	@ManyToOne
+	@JoinColumn
+	private Factura factura;
 	
 	@ManyToOne
 	@JoinColumn(name = "per_id")
@@ -76,12 +89,39 @@ public class Suscripcion {
 		this.persona = persona;
 	}
 
-	@Override
-	public String toString() {
-		return "Suscripcion [idSuscripcion=" + idSuscripcion + ", fechaDesde=" + fechaDesde + ", fechaHasta="
-				+ fechaHasta + ", tipo=" + tipo + ", persona=" + persona + "]";
+	public Double getPrecioNeto() {
+		return precioNeto;
 	}
-	
+
+	public void setPrecioNeto(Double precioNeto) {
+		this.precioNeto = precioNeto;
+	}
+
+	public Double getDescuento() {
+		return descuento;
+	}
+
+	public void setDescuento(Double descuento) {
+		this.descuento = descuento;
+	}
+
+	public Double getTotal() {
+		return total;
+	}
+
+	public void setTotal(Double total) {
+		this.total = total;
+	}
+
+	public Factura getFactura() {
+		return factura;
+	}
+
+	public void setFactura(Factura factura) {
+		this.factura = factura;
+	}
+
+
 	
 	
 }

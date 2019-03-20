@@ -47,7 +47,7 @@ public class ControlAccesoBussiness {
 	
 	public Suscripcion getSuscripcione(int idPersona) throws Exception{
 		List<Suscripcion> lista = susDAO.getSuscripcionsPersona(idPersona);
-		//Tomo el ultimo dato de la lista
+		//Tomo el primer dato de la lista
 		if(lista == null) {
 			throw new Exception("No tiene suscripción");
 		}

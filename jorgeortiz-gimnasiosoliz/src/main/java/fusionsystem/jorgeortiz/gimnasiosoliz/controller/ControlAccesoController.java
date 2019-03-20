@@ -69,7 +69,7 @@ public class ControlAccesoController {
 			System.out.println(newSuscripcion);
 			vDias = caBuss.calcularDiasRestantes(newSuscripcion);
 			
-			if(vDias <= 0) {
+			if(vDias < 0) {
 				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
 				vColorAdvertencia = "red";
 				vDias = 0;

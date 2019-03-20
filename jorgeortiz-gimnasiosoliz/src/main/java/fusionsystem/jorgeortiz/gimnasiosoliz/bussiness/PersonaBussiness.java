@@ -24,11 +24,14 @@ public class PersonaBussiness {
 		if(auxp != null || auxCedula != null) 
 			throw new Exception("Persona ya existe");
 		else {
-			
-				for(Complexion com: persona.getComplexiones()) {
-					Double calculaPesoIdeal = (com.getPeso())/Math.pow((com.getAltura()*0.01),2);
-					com.setIndiceCorporal(calculaPesoIdeal);
+			//Verifico si hay complexiones anadidos
+				if(persona.getComplexiones()!=null) {
+					for(Complexion com: persona.getComplexiones()) {
+						Double calculaPesoIdeal = (com.getPeso())/Math.pow((com.getAltura()*0.01),2);
+						com.setIndiceCorporal(calculaPesoIdeal);
+					}
 				}
+				
 				perDAO.insert(persona);
 			
 		}

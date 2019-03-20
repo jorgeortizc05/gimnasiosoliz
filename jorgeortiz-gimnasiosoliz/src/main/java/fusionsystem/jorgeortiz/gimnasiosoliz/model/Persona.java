@@ -40,7 +40,7 @@ public class Persona {
 	
 	@NotNull
 	@NotEmpty
-	@Size(min = 9, max = 12)
+	@Size(min = 5, max = 12)
 	@Column(name = "per_cedula")
 	private String cedula;
 	

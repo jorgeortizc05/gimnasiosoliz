@@ -217,7 +217,12 @@ Funcion: Controlador Articulo Controller.
 					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
 				</p:outputLabel>
 			</p:column>
-		
+			<p:column headerText="Precio Neto">
+				<p:outputLabel value="#{sus.precioNeto}"/>
+			</p:column>
+			<p:column headerText="Total">
+				<p:outputLabel value="#{sus.total}"/>
+			</p:column>
 		</p:dataTable>
 	</p:fieldset>
 

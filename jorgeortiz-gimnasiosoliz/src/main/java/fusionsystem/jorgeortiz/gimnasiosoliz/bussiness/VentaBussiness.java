@@ -43,8 +43,9 @@ public class VentaBussiness {
 			factura.setIva(this.tipoFactura(factura.getTipoComprobante()));
 		    factura.setTotal(totalVenta(factura));
 		    System.out.println("Calculo total junto con IVA "+totalVenta(factura));
-		    
-		    //Un for para ir a cada detalle que tiene la factura.
+			factDAO.insert(factura);
+			
+			//Un for para ir a cada detalle que tiene la factura.
 		    for (DetalleFactura dv: factura.getDetalleFacturas()) {
 		    	//Del detalle de factura paso los datos a una tabla
 		    	//llamada suscripcion para obtener la fechaDesde y fechaHasta
@@ -55,12 +56,14 @@ public class VentaBussiness {
 		    	Suscripcion s = new Suscripcion();
 		    	s.setFechaDesde(dv.getFechaDesde());
 		    	s.setFechaHasta(dv.getFechaHasta());
+		    	s.setPrecioNeto(dv.getValorUnitario());
+		    	s.setDescuento(factura.getDescuento());
+		    	s.setTotal(factura.getTotal());
 		    	s.setPersona(p);
+		    	s.setFactura(factura);
 		    	//Guardo en la entidad suscripciones
 		    	susDAO.insert(s);
 		    }
-		    
-			factDAO.insert(factura);	
 	}
 	
 	public List<Suscripcion> getSuscripcionesPersona(int idPersona){
