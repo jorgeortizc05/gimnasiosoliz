@@ -57,8 +57,8 @@ Notas:
 			</p:panelGrid>
 		</p:panelGrid>
 		<p:commandButton value="Editar" action="#{personaController.editarPersona(controlAccesoController.newPersona)}"/>
-		<p:commandButton value="Nueva Suscripcion" action="#{controlAccesoController.nuevaSuscripcion()}"/>
-		<p:commandButton value="Historial de Suscripciones"/>
+		<p:commandButton value="Nueva Suscripcion" action="#{controlAccesoController.nuevaSuscripcion()}" disabled="true"/>
+		<p:commandButton value="Historial de Suscripciones" disabled="true"/>
 		<!-- <p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
 			<p:column headerText="Fecha Desde">
 				<p:outputLabel value="#{sus.fechaDesde}">

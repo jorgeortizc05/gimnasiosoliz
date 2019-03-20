@@ -36,11 +36,16 @@ Notas:
 		    	<p:commandButton action="#{formaPagoController.editarFormaPago(fp)}" icon="fa fa-edit" update="mensajes"/>
 		    	
 		       	<p:commandButton update="mensajes dtFormaPagos" action="#{formaPagoController.eliminarFormaPago(fp.idFormaPago)}" 
-		       	icon="fa fa-remove" oncomplete="PF('dTWWFormaPagos').filter()"/>
+		       	icon="fa fa-remove" oncomplete="PF('dTWWFormaPagos').filter()">
+		       		<p:confirm header="Confirmación" message="Estas seguro?" icon="ui-icon-alert" />
+		       	</p:commandButton>
 		    </p:column>
 		    <!-- oncomplete me sirve para eliminar con el filtro activado -->
 		</p:dataTable>
-		
+		<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+	      <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+	      <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+		</p:confirmDialog>
 	</p:fieldset>
 	</ui:define>
 	

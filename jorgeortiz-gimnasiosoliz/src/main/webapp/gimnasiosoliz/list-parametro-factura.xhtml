@@ -40,12 +40,18 @@ Notas:
 		    	<p:commandButton action="#{parametroFacturaController.editarParametroFactura(pf)}" icon="fa fa-edit" update="mensajes"/>
 		    	
 		       	<p:commandButton update="mensajes dtParametroFacturas" action="#{parametroFacturaController.eliminarParametroFactura(pf.idParametroFactura)}" 
-		       	icon="fa fa-remove" oncomplete="PF('dTWWParFac').filter()"/>
+		       	icon="fa fa-remove" oncomplete="PF('dTWWParFac').filter()">
+		       		<p:confirm header="Confirmación" message="Estas seguro?" icon="ui-icon-alert" />
+		       	</p:commandButton>
 		    </p:column>
 		    <!-- oncomplete me sirve para eliminar con el filtro activado -->
 		</p:dataTable>
 		
 	</p:fieldset>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+      <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+      <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	</p:confirmDialog>
 	</ui:define>
 	
 

@@ -56,7 +56,7 @@ public class PersonaDAO {
 	
 	//Select en DB
 	public List<Persona> getPersonas() {
-		String jpql = "SELECT a FROM Persona a";
+		String jpql = "SELECT a FROM Persona a ORDER BY a.idPersona DESC";
 		Query query = em.createQuery(jpql, Persona.class);
 		//query.setMaxResults(100);
 		List<Persona> listado = query.getResultList();
@@ -64,7 +64,7 @@ public class PersonaDAO {
 	}
 	
 	public Persona getPersonaCedula(String cedula) {
-		String jpql = "SELECT a FROM Persona a WHERE a.cedula = :vCedula ORDER BY a.idPersona DESC";
+		String jpql = "SELECT a FROM Persona a WHERE a.cedula = :vCedula";
 		Query query = em.createQuery(jpql, Persona.class);
 		query.setParameter("vCedula", cedula);
 		try {

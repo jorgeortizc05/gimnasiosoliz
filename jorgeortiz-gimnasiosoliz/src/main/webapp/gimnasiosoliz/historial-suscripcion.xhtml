@@ -24,30 +24,30 @@ Notas:
 	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
 
 	<ui:define name="cuerpo">
-	<p:fieldset legend="NUEVO PRODUCTO" style="margin-bottom:20px" id="panelProducto">
-		<p:panelGrid columns="3" id="pgProducto">
-			<p:outputLabel value="Nombre:"/>
-			<p:inputText value="#{productoController.newProducto.nombre}" id="txtnombre"/>
-			<p:message for="txtnombre" />
-			
-			<p:outputLabel value="Código:"/>
-			<p:inputText value="#{productoController.newProducto.codigo}" id="txtcodigo"/>
-			<p:message for="txtcodigo"/>
-			
-			<p:outputLabel value="Precio:"/>
-			<p:inputText value="#{productoController.newProducto.precio}" id="txtprecio"/>
-			<p:message for="txtprecio"/>
-			
-			<p:outputLabel value="Descripción:"/>
-			<p:inputText value="#{productoController.newProducto.descripcion}" id="txtdescripcion"/>
-			<p:message for="txtdescripcion"/>
-		</p:panelGrid>
+	<p:fieldset legend="HISTORIAL DE SUSCRIPCIONES" style="margin-bottom:20px" id="panelProducto">
+		<p:dataTable value="#{ventaController.suscripciones}" var="sus" id="dtSuscripciones">
+			<p:column headerText="Fecha Desde">
+				<p:outputLabel value="#{sus.fechaDesde}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+			<p:column headerText="Fecha Hasta">
+				<p:outputLabel value="#{sus.fechaHasta}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+			<p:column headerText="Precio Neto">
+				<p:outputLabel value="#{sus.precioNeto}"/>
+			</p:column>
+			<p:column headerText="Descuento Aplicado">
+				<p:outputLabel value="#{sus.descuento}"/>
+			</p:column>
+			<p:column headerText="Total">
+				<p:outputLabel value="#{sus.total}"/>
+			</p:column>
+		</p:dataTable>
 
 	</p:fieldset>
-	<h:inputHidden value="#{productoController.newProducto.idProducto}" />
-	<h:inputHidden value="#{productoController.vEditing}" />
-	<p:commandButton value="Guardar" action="#{productoController.guardarProducto()}" update="panelProducto, mensajes"/>
-	<p:commandButton value="Cancelar" action="list-productos?faces-redirect=true" immediate="true"/>
 	</ui:define>
 	
 

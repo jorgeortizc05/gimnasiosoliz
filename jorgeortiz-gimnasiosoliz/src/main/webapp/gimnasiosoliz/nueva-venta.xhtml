@@ -206,6 +206,8 @@ Funcion: Controlador Articulo Controller.
 		</p:panelGrid>
 		<p:commandButton value="Guardar" action="#{ventaController.guardarFactura()}" update="gridVenta" icon="fa fa-save"></p:commandButton>
 		<p:commandButton value="Cancelar" action="list-ventas" immediate="true" icon="fa fa-hand-o-left"></p:commandButton>
+	</p:fieldset>
+	<p:fieldset legend="HISTORIAL DE SUSCRIPCIONES" style="margin-bottom:20px" id="fHistorialSuscripcion">
 		<p:dataTable value="#{ventaController.suscripciones}" var="sus" id="dtSuscripciones">
 			<p:column headerText="Fecha Desde">
 				<p:outputLabel value="#{sus.fechaDesde}">
@@ -219,6 +221,9 @@ Funcion: Controlador Articulo Controller.
 			</p:column>
 			<p:column headerText="Precio Neto">
 				<p:outputLabel value="#{sus.precioNeto}"/>
+			</p:column>
+			<p:column headerText="Descuento Aplicado">
+				<p:outputLabel value="#{sus.descuento}"/>
 			</p:column>
 			<p:column headerText="Total">
 				<p:outputLabel value="#{sus.total}"/>

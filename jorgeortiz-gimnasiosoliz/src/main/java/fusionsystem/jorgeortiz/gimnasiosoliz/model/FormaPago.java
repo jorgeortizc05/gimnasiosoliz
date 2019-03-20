@@ -14,7 +14,7 @@ import org.hibernate.validator.constraints.NotEmpty;
 public class FormaPago {
 	
 	@Id
-	@SequenceGenerator(name="fp_generator", initialValue=1, allocationSize = 1,  sequenceName="fp_id_seq")
+	@SequenceGenerator(name="fp_generator", initialValue=2, allocationSize = 1,  sequenceName="fp_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "fp_generator")
 	@NotNull
 	@Column(name = "fp_id")

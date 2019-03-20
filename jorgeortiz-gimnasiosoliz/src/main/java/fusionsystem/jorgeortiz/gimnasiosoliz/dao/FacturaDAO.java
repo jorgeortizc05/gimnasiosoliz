@@ -42,7 +42,7 @@ public class FacturaDAO {
 	
 	//Select en DB
 	public List<Factura> getFacturas() {
-		String jpql = "SELECT a FROM Factura a";
+		String jpql = "SELECT a FROM Factura a ORDER BY a.idFactura DESC";
 		Query query = em.createQuery(jpql, Factura.class);
 		//query.setMaxResults(100);
 		List<Factura> listado = query.getResultList();
@@ -51,7 +51,7 @@ public class FacturaDAO {
 	
 	//Select en DetalleFactura solo activos
 	public List<Factura> getDetalleFacturas() {
-		String jpql = "SELECT a FROM Factura a where a.detallefactura.estado = A";
+		String jpql = "SELECT a FROM Factura a where a.detallefactura.estado = 'A' order by a.idFactura DESC";
 		Query query = em.createQuery(jpql, Factura.class);
 		//query.setMaxResults(100);
 		List<Factura> listado = query.getResultList();

@@ -35,12 +35,18 @@ Notas:
 		    	<p:commandButton action="#{tipoPersonaController.editarTipoPersona(tp)}" icon="fa fa-edit" update="mensajes"/>
 		    	
 		       	<p:commandButton update="mensajes dtTipoPersonas" action="#{tipoPersonaController.eliminarTipoPersona(tp.idTipoPersona)}" 
-		       	icon="fa fa-remove"/>
+		       	icon="fa fa-remove">
+		       		<p:confirm header="Confirmación" message="Estas seguro?" icon="ui-icon-alert" />
+		       	</p:commandButton>
 		    </p:column>
 		    <!-- oncomplete me sirve para eliminar con el filtro activado -->
 		</p:dataTable>
 		
 	</p:fieldset>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+      <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+      <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	</p:confirmDialog>
 	</ui:define>
 	
 

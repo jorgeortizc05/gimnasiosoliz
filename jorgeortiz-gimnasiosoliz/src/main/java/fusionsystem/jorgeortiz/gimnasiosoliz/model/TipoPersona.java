@@ -25,7 +25,7 @@ public class TipoPersona implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@SequenceGenerator(name="tper_generator", initialValue=1, allocationSize = 1,  sequenceName="tper_id_seq")
+	@SequenceGenerator(name="tper_generator", initialValue=2, allocationSize = 1,  sequenceName="tper_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "tper_generator")
 	@NotNull
 	@Column(name = "tper_id")

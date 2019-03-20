@@ -28,7 +28,7 @@ import javax.validation.constraints.NotNull;
 public class Factura {
 	
 	@Id
-	@SequenceGenerator(name="fact_generator", initialValue=1, allocationSize = 1,  sequenceName="fact_id_seq")
+	@SequenceGenerator(name="fact_generator", initialValue=1000, allocationSize = 1,  sequenceName="fact_id_seq")
 	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator = "fact_generator")
 	@NotNull
 	@Column(name = "fact_id")
