@@ -58,12 +58,14 @@ public class ControlAccesoBussiness {
 	}
 	
 	//Para obtener un calculo de los dias restantes que vence las suscripcion al gimnasio
+	//Estan ordenados por descendente (el ultimo en inscribirse)
 	public int calcularDiasRestantes(Suscripcion df) {
 		Date fechaActual = new Date();
 		int dias = (int) ((df.getFechaHasta().getTime()-fechaActual.getTime())/86400000);
 		return dias;
 	}
 	
+	//Verifica su estado corporal, usa el ultimo en registrarse
 	public String estadoCorporal(Complexion c) {
 		try {
 			if(c.getIndiceCorporal()<18.5) {

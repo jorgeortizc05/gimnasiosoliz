@@ -94,7 +94,6 @@ public class ControlAccesoController {
 			if(vDias < 0) {
 				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
 				vColorAdvertencia = "red";
-				
 			}else
 			{
 				vMensajeAdvertencia = "CORRECTO";
@@ -138,7 +137,7 @@ public class ControlAccesoController {
 		return "nueva-suscripcion?faces-redirect=true&id="+newPersona.getIdPersona();
 	}
 
-	
+	//Metodo para copiar un archivo..
 	public void copiarArchivo(String origen, String destino) throws IOException {
 		Path ORIGEN = Paths.get(origen);
 		Path DESTINO = Paths.get(destino);
@@ -149,13 +148,15 @@ public class ControlAccesoController {
 		Files.copy(ORIGEN, DESTINO, options);
 	}
 	
+	//Copia las fotos de una ruta hacia el servidor para poder ser leido.
+	//Cada vez que el servidor se apaga,esta borra todos sus datos incluido las fotos.
 	public void enviarFotosServidor(String cedula) {
 		final ServletContext servletContext = (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
 		try {
 			String origen = UbicacionArchivo.getPathOrigenFotos()+cedula+".png";
 			String destino = servletContext.getRealPath("") + File.separator + "resources" + File.separator + "gimnasiosoliz"+ File.separator + "camera" + File.separator + cedula +".png";
-			System.out.println("Ruta de mis fotos socios "+origen);
-			System.out.println("Ruta del servidor "+destino);
+//			System.out.println("Ruta de mis fotos socios "+origen);
+//			System.out.println("Ruta del servidor "+destino);
 			copiarArchivo(origen, destino);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

@@ -26,6 +26,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.PersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.reporte.TarjetaGimnasio;
+import fusionsystem.jorgeortiz.gimnasiosoliz.util.UbicacionArchivo;
 import net.sf.jasperreports.engine.JRException;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
@@ -164,52 +165,19 @@ public class PersonaController {
 	
 	//Carga todos los Persona en el formulario
 	public void loadPersonas() {
-//		try {
-//			personas = perBuss.getPersonas();
-//			
-//			for(personas:)
-//				
-//				
-//			suscripciones = caBuss.getSuscripcionesPersona(newPersona.getIdPersona());
-//			newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
-//			System.out.println(newSuscripcion);
-//			vDias = caBuss.calcularDiasRestantes(newSuscripcion);
-//			
-//			if(vDias < 0) {
-//				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
-//				vColorAdvertencia = "red";
-//				vDias = 0;
-//			}else
-//			{
-//				vMensajeAdvertencia = "CORRECTO";
-//				vColorAdvertencia = "black";
-//			}			
-//			
-//		} catch (Exception e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "Error, persona no existe");
-//            facesContext.addMessage(null, m);
-//		}
-//		vCedula = "";
-//		
-//		return null;
-		
 		
 		personas = perBuss.getPersonas();
 	}	
 	
-	//Se creo para obtener una etiqueta de activo para personas con suscripcion de inactividad
-	//menor a 2 meses e inactivo para aquellas personas con inactividad mayor a 6 meses.
+	//Se creo para obtener una etiqueta de ACTIVO para personas con suscripcion de inactividad
+	//menor a 2 meses e INACTIVO para aquellas personas con inactividad mayor a 6 meses.
 	public void loadPersonaSuscripciones() {
 		personas = perBuss.getPersonaSuscripciones();
 		int dia = 0;
 			for(Persona per: personas) {
 				try {
+				//Calculo el dia segun la ultima suscripcion registrada
 				dia = caBuss.calcularDiasRestantes(per.getSuscripciones().get(0));
-				
-				System.out.println("/////////////////////////////////////////////");
-				System.out.println(dia);
 				if(dia > -60) {
 					per.setActivo("activo");
 					//vEstadoSuscripcion = "activo";
@@ -218,10 +186,10 @@ public class PersonaController {
 				}else {
 					per.setActivo("Sin suscripcion");
 				}
-				
 				dia = 0;
 				}catch (Exception e) {
-					// TODO: handle exception
+					System.out.println(e.getMessage());;
+					System.out.println("Problemas al calcular los dias y la suscripciones");
 				}
 				
 			}
@@ -296,7 +264,7 @@ public class PersonaController {
 			outputStream = new FileImageOutputStream(new File(fileFoto));
 			// guardamos la imagen
 			outputStream.write(datos, 0, datos.length);
-			copiarArchivo(fileFoto, "/fusionsystem/jorgeortiz/fotos-socios/"+newPersona.getCedula()+".png");
+			copiarArchivo(fileFoto, UbicacionArchivo.getPathOrigenFotos()+newPersona.getCedula()+".png");
 		} catch (IOException e) {
 			throw new FacesException("Error guardando la foto.", e);
 		} finally {
@@ -317,10 +285,12 @@ public class PersonaController {
 		Files.copy(ORIGEN, DESTINO, options);
 	}
 	
+	//Copia las fotos de una ruta hacia el servidor para poder ser leido.
+	//Cada vez que el servidor se apaga,esta borra todos sus datos incluido las fotos.
 	public void enviarFotosServidor(String cedula) {
 		final ServletContext servletContext = (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
 		try {
-			String origen = "/fusionsystem/jorgeortiz/fotos-socios/"+cedula+".png";
+			String origen = UbicacionArchivo.getPathOrigenFotos()+cedula+".png";
 			String destino = servletContext.getRealPath("") + File.separator + "resources" + File.separator + "gimnasiosoliz"+ File.separator + "camera" + File.separator + cedula +".png";
 			System.out.println("Ruta de mis fotos socios "+origen);
 			System.out.println("Ruta del servidor "+destino);
@@ -340,7 +310,6 @@ public class PersonaController {
 	}
 	
 	//Setter and Getters
-
 	public Persona getNewPersona() {
 		return newPersona;
 	}
