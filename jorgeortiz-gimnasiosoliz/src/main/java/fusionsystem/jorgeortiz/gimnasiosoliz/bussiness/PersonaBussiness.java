@@ -112,9 +112,14 @@ public class PersonaBussiness {
 		return perDAO.readPersonaComplexion(id);
 	}
 	
+
 	//Recupera una lista de Persona
 	public List<Persona> getPersonas(){
 		
 		return perDAO.getPersonas();
+	}
+	
+	public List<Persona> getPersonaSuscripciones(){
+		return perDAO.getPersonasSuscripciones();
 	}
 }

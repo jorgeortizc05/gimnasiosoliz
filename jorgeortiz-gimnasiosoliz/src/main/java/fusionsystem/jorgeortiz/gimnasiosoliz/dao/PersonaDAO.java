@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
 /*
  * Realizado por: Jorge Luis Ortiz Caceres
  * Fecha Creacion: 20/02/2019
@@ -78,10 +79,22 @@ public class PersonaDAO {
 			// TODO: handle exception
 			return null;
 		}
+	}
+	
+	public List<Persona> getPersonasSuscripciones() {
+		String jpql = "SELECT a FROM Persona a ORDER BY a.idPersona DESC";
+		Query query = em.createQuery(jpql, Persona.class);
+		//query.setMaxResults(100);
+		List<Persona> listado = query.getResultList();
+		
+		for(Persona per:listado) {
+			per.getSuscripciones().size();
+			
+		}
 		
 		
-		
-		
+		return listado;
+			
 		
 	}
 }

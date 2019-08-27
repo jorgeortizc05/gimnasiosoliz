@@ -21,6 +21,7 @@ import javax.servlet.ServletContext;
 
 import org.primefaces.event.CaptureEvent;
 
+import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.ControlAccesoBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.PersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
@@ -40,6 +41,9 @@ public class PersonaController {
 	private TipoPersonaBussiness tpBuss;
 	
 	@Inject
+	private ControlAccesoBussiness caBuss;
+	
+	@Inject
 	private FacesContext facesContext;
 	
 	private Persona newPersona;
@@ -55,6 +59,9 @@ public class PersonaController {
 	//Recupera idTipoPersona del combo
 	private int vIdTipoPersona;
 	
+	//Ver el estado de la suscripcion
+	private String vEstadoSuscripcion;
+	
 	@PostConstruct
 	public void init() {
 		newPersona = new Persona();
@@ -63,7 +70,8 @@ public class PersonaController {
 		tarjetaGimnasio = new TarjetaGimnasio();
 		vEditing = false;
 		vTitulo = "NUEVO";
-		loadPersonas();
+		vEstadoSuscripcion = "";
+		loadPersonaSuscripciones();
 	}
 	
 	//Guarda y actualiza Persona con control de exceptions
@@ -152,11 +160,74 @@ public class PersonaController {
 		
 		return null;
 	}
+
 	
 	//Carga todos los Persona en el formulario
 	public void loadPersonas() {
+//		try {
+//			personas = perBuss.getPersonas();
+//			
+//			for(personas:)
+//				
+//				
+//			suscripciones = caBuss.getSuscripcionesPersona(newPersona.getIdPersona());
+//			newSuscripcion = caBuss.getSuscripcione(newPersona.getIdPersona());
+//			System.out.println(newSuscripcion);
+//			vDias = caBuss.calcularDiasRestantes(newSuscripcion);
+//			
+//			if(vDias < 0) {
+//				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
+//				vColorAdvertencia = "red";
+//				vDias = 0;
+//			}else
+//			{
+//				vMensajeAdvertencia = "CORRECTO";
+//				vColorAdvertencia = "black";
+//			}			
+//			
+//		} catch (Exception e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//			FacesMessage m = new FacesMessage(FacesMessage.SEVERITY_ERROR, e.getMessage(), "Error, persona no existe");
+//            facesContext.addMessage(null, m);
+//		}
+//		vCedula = "";
+//		
+//		return null;
+		
+		
 		personas = perBuss.getPersonas();
 	}	
+	
+	//Se creo para obtener una etiqueta de activo para personas con suscripcion de inactividad
+	//menor a 2 meses e inactivo para aquellas personas con inactividad mayor a 6 meses.
+	public void loadPersonaSuscripciones() {
+		personas = perBuss.getPersonaSuscripciones();
+		int dia = 0;
+			for(Persona per: personas) {
+				try {
+				dia = caBuss.calcularDiasRestantes(per.getSuscripciones().get(0));
+				
+				System.out.println("/////////////////////////////////////////////");
+				System.out.println(dia);
+				if(dia > -60) {
+					per.setActivo("activo");
+					//vEstadoSuscripcion = "activo";
+				}else if(dia < -60) {
+					per.setActivo("inactivo");
+				}else {
+					per.setActivo("Sin suscripcion");
+				}
+				
+				dia = 0;
+				}catch (Exception e) {
+					// TODO: handle exception
+				}
+				
+			}
+		
+		
+	}
 	
 	//Validar cedula
 	public void valida(String x){

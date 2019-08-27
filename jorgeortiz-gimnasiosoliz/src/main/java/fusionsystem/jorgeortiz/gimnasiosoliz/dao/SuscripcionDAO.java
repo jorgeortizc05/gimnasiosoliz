@@ -43,6 +43,9 @@ public class SuscripcionDAO {
 		Query query = em.createQuery(jpql, Suscripcion.class);
 		//query.setMaxResults(100);
 		List<Suscripcion> listado = query.getResultList();
+		for(Suscripcion sus: listado) {
+			sus.getPersona().getIdPersona();
+		}
 		return listado;
 	}
 	
@@ -53,6 +56,9 @@ public class SuscripcionDAO {
 		query.setParameter("vIdPersona", idPersona);
 		//query.setMaxResults(100);
 		List<Suscripcion> listado = query.getResultList();
+		for(Suscripcion sus: listado) {
+			sus.getPersona().getIdPersona();
+		}
 		return listado;
 	}
 }

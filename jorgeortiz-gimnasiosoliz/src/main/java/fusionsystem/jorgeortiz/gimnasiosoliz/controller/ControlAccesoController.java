@@ -22,6 +22,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.ControlAccesoBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
+import fusionsystem.jorgeortiz.gimnasiosoliz.util.UbicacionArchivo;
 
 @ManagedBean
 @ViewScoped
@@ -81,7 +82,7 @@ public class ControlAccesoController {
 			newPersona = caBuss.getPersona(vCedula);
 			if(newPersona.getComplexiones().size()>0) {
 				Complexion comple = newPersona.getComplexiones().get(0);
-				System.out.println(comple);
+				//System.out.println(comple);
 				vEstadoCorporal = caBuss.estadoCorporal(comple);
 			}
 			
@@ -93,7 +94,7 @@ public class ControlAccesoController {
 			if(vDias < 0) {
 				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
 				vColorAdvertencia = "red";
-				vDias = 0;
+				
 			}else
 			{
 				vMensajeAdvertencia = "CORRECTO";
@@ -151,7 +152,7 @@ public class ControlAccesoController {
 	public void enviarFotosServidor(String cedula) {
 		final ServletContext servletContext = (ServletContext)FacesContext.getCurrentInstance().getExternalContext().getContext();
 		try {
-			String origen = "/fusionsystem/jorgeortiz/fotos-socios/"+cedula+".png";
+			String origen = UbicacionArchivo.getPathOrigenFotos()+cedula+".png";
 			String destino = servletContext.getRealPath("") + File.separator + "resources" + File.separator + "gimnasiosoliz"+ File.separator + "camera" + File.separator + cedula +".png";
 			System.out.println("Ruta de mis fotos socios "+origen);
 			System.out.println("Ruta del servidor "+destino);

@@ -58,6 +58,9 @@ public class Persona {
 	@Column(name = "per_telefono")
 	private String telefono;
 	
+	@Column(name = "per_activo")
+	private String activo;
+	
 	//Parametros que ingresara el usuario en caso de movil o administrador.
 	@Email
 	@Column(name= "per_email")
@@ -95,6 +98,20 @@ public class Persona {
 	
 	public void removeEjercicio(Ejercicio ejercicio) {
 		ejercicios.remove(ejercicio);
+	}
+	
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name="per_id")
+	private List<Suscripcion> suscripciones;
+	
+	public void addSuscripcion(Suscripcion suscripcion) {
+		if(suscripciones == null)
+			suscripciones = new ArrayList<>();
+		suscripciones.add(suscripcion);
+	}
+	
+	public void removeSuscripcion(Suscripcion suscripcion) {
+		suscripciones.remove(suscripcion);
 	}
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -169,5 +186,23 @@ public class Persona {
 	public void setTelefono(String telefono) {
 		this.telefono = telefono;
 	}
+
+	public List<Suscripcion> getSuscripciones() {
+		return suscripciones;
+	}
+
+	public void setSuscripciones(List<Suscripcion> suscripciones) {
+		this.suscripciones = suscripciones;
+	}
+
+	public String getActivo() {
+		return activo;
+	}
+
+	public void setActivo(String activo) {
+		this.activo = activo;
+	}
+	
+	
 	
 }
