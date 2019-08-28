@@ -6,7 +6,7 @@ public class UbicacionArchivo {
 	private static String pathCopiaSeguridadDatos = "C:\\Users\\gimnasio\\Documents\\MEGA\\GIMNASIOSOLIZ\\reportes\\";
 	private static String pathSonidoOk = "C:\\Users\\gimnasio\\Documents\\MEGA\\GIMNASIOSOLIZ\\EfectoSonido\\Ok\\";
 	private static String pathSonidoError = "C:\\Users\\gimnasio\\Documents\\MEGA/GIMNASIOSOLIZ\\EfectoSonido\\Error\\";
-	private static String pathOrigenFotos = "/fusionsystem/jorgeortiz/gimnasiosoliz/fotos_socios/";
+	private static String pathOrigenFotos = "C:\\fusionsystem\\jorgeortiz\\gimnasiosoliz\\fotos-socios\\";
 	
 	public static String getPathSonidoOk() {
 		return pathSonidoOk;

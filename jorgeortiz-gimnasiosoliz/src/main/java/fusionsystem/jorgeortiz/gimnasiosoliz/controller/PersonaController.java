@@ -177,16 +177,21 @@ public class PersonaController {
 			for(Persona per: personas) {
 				try {
 				//Calculo el dia segun la ultima suscripcion registrada
-				dia = caBuss.calcularDiasRestantes(per.getSuscripciones().get(0));
-				if(dia > -60) {
-					per.setActivo("activo");
-					//vEstadoSuscripcion = "activo";
-				}else if(dia < -60) {
-					per.setActivo("inactivo");
+				if(per.getSuscripciones() != null) {
+					dia = caBuss.calcularDiasRestantes(per.getSuscripciones().get(per.getSuscripciones().size()-1));//ultima suscripcion
+					if(dia > -60) {
+						per.setActivo("activo");
+						//vEstadoSuscripcion = "activo";
+					}else if(dia < -60) {
+						per.setActivo("inactivo");
+					}else {
+						per.setActivo("Sin suscripcion");
+					}
+					dia = 0;
 				}else {
-					per.setActivo("Sin suscripcion");
+					dia = 0;
+					per.setActivo("Desconocido");
 				}
-				dia = 0;
 				}catch (Exception e) {
 					System.out.println(e.getMessage());;
 					System.out.println("Problemas al calcular los dias y la suscripciones");

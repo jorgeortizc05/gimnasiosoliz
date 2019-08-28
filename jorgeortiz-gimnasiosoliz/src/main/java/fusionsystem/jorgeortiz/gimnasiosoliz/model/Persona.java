@@ -202,6 +202,11 @@ public class Persona {
 	public void setActivo(String activo) {
 		this.activo = activo;
 	}
+
+	@Override
+	public String toString() {
+		return "Persona [idPersona=" + idPersona + ", cedula=" + cedula + ", nombres=" + nombres + "]";
+	}
 	
 	
 	
