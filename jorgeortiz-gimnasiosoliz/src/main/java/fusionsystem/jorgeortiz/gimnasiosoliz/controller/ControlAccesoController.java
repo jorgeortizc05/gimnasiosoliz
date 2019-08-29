@@ -17,11 +17,13 @@ import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.servlet.ServletContext;
+import javax.sound.sampled.Clip;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.ControlAccesoBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion;
+import fusionsystem.jorgeortiz.gimnasiosoliz.util.Sonido;
 import fusionsystem.jorgeortiz.gimnasiosoliz.util.UbicacionArchivo;
 
 @ManagedBean
@@ -91,13 +93,20 @@ public class ControlAccesoController {
 			System.out.println(newSuscripcion);
 			vDias = caBuss.calcularDiasRestantes(newSuscripcion);
 			
+			Clip sound = null;
+					
+			
 			if(vDias < 0) {
 				vMensajeAdvertencia = "PAGAR POR VENTANILLA";
 				vColorAdvertencia = "red";
+				sound = Sonido.getSound("error.wav");
+				Sonido.playSound(sound);
 			}else
 			{
 				vMensajeAdvertencia = "CORRECTO";
 				vColorAdvertencia = "black";
+				sound = Sonido.getSound("ok.wav");
+				Sonido.playSound(sound);
 			}			
 			
 		} catch (Exception e) {
