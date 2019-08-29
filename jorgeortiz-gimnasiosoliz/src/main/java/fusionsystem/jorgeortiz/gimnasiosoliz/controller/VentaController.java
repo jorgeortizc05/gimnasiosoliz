@@ -117,6 +117,7 @@ public class VentaController {
 		//newFactura = ts;
 		vEditing = true;
 		vTitulo = "EDITAR";
+		//vSubtotal = tp.getTotal() + tp.getDescuento();
 		return "info-factura?faces-redirect=true&id="+tp.getIdFactura();
 	}
 	

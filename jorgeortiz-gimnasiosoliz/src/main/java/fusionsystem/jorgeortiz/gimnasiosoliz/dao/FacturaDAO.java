@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.DetalleFactura;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
 
 @Stateless
