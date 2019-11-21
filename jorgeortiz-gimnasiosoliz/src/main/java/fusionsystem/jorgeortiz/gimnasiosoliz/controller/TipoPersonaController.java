@@ -8,6 +8,17 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFCellStyle;
+import org.apache.poi.hssf.usermodel.HSSFRow;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFCellStyle;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.TipoPersonaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Ejercicio;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
@@ -97,6 +108,22 @@ public class TipoPersonaController {
 		}
 		
 		return null;
+	}
+	
+	/*Metodo para exportar a excel en formato xlsx*/
+	public void postProcessXLS(Object document) {
+		XSSFWorkbook wb = (XSSFWorkbook) document;
+		XSSFSheet sheet = wb.getSheetAt(0);
+		XSSFRow header = sheet.getRow(0);
+		
+		XSSFCellStyle cellStyle = wb.createCellStyle();
+		
+		for(int i=0; i < header.getPhysicalNumberOfCells(); i++) {
+			XSSFCell cell = header.getCell(i);
+			cell.setCellValue(cell.getStringCellValue().toUpperCase());
+			cell.setCellStyle(cellStyle);
+			sheet.autoSizeColumn(i);
+		}
 	}
 	
 	//Carga todos los TipoPersona en el formulario

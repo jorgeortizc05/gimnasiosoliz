@@ -172,6 +172,19 @@
             <artifactId>hibernate-jpamodelgen</artifactId>
             <scope>provided</scope>
         </dependency>
+        
+        <!-- <dependency>
+	        <groupId>org.apache.poi</groupId>
+	        <artifactId>poi</artifactId>
+	        <version>3.11-beta2</version>
+	    </dependency> -->
+	    
+	    <!-- Para exportar a excel -->
+	    <dependency>
+	        <groupId>org.apache.poi</groupId>
+	        <artifactId>poi-ooxml</artifactId>
+	        <version>4.1.1</version>
+		</dependency>
 
         <!-- Annotation processor that raising compilation errors whenever constraint 
             annotations are incorrectly used. -->
