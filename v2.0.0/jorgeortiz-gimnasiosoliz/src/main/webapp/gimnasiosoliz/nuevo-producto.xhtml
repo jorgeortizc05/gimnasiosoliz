@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:20/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{productoController.vProdId}"/>
+        <f:viewAction action="#{productoController.cargarProducto()}" />
+ 	</f:metadata>
+</h:head>
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<b:panel title="Nuevo Producto" styleClass="giocodePanelPeq">
+		<h:panelGrid columns="3" id="pgProducto" autoUpdate="true">
+			<p:outputLabel value="Nombre:"/>
+			<b:inputText value="#{productoController.newProducto.prodNombre}" id="txtnombre"/>
+			<b:message for="txtnombre" />
+			
+			<p:outputLabel value="Código:"/>
+			<b:inputText value="#{productoController.newProducto.prodCodigo}" id="txtcodigo"/>
+			<b:message for="txtcodigo"/>
+			
+			<p:outputLabel value="Precio:"/>
+			<b:inputText value="#{productoController.newProducto.prodPrecio}" id="txtprecio">
+				<f:facet name="prepend">
+		    		<h:outputText value="$" />
+		      	</f:facet>
+		      	<f:facet name="append">
+		        	<h:outputText value=".00" />
+		      	</f:facet>
+			</b:inputText>
+			<b:message for="txtprecio"/>
+			
+			<p:outputLabel value="Descripción:"/>
+			<b:inputText value="#{productoController.newProducto.prodDescripcion}" id="txtdescripcion"/>
+			<b:message for="txtdescripcion"/>
+		</h:panelGrid>
+	</b:panel>
+	<h:inputHidden value="#{productoController.newProducto.prodId}" />
+	<h:inputHidden value="#{productoController.vEditing}" />
+	<p:commandButton value="Guardar" action="#{productoController.guardarProducto()}" update="mensajes"/>
+	<p:commandButton value="Cancelar" action="list-productos?faces-redirect=true" immediate="true"/>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>

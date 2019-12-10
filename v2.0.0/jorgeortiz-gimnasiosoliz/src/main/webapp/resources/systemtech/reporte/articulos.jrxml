@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="articulos" pageWidth="595" pageHeight="842" columnWidth="453" leftMargin="71" rightMargin="71" topMargin="71" bottomMargin="71" uuid="01d462d2-7776-43cb-81c6-9155a7f63633">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="postgresDA.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.unit." value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="cm"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="cm"/>
+	<queryString>
+		<![CDATA[SELECT articulo.art_codigo,
+	articulo.art_nombre,
+	categoria.cat_nombre,
+	articulo.art_stock
+FROM categoria
+	INNER JOIN articulo ON 
+	 articulo.cat_id = categoria.cat_id]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="art_nombre"/>
+	</field>
+	<field name="descripcion" class="java.lang.String"/>
+	<field name="categoria.nombre" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cat_nombre"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="102" y="24" width="248" height="30" uuid="dcc77f75-98c6-4d32-8f20-c6904d7e8984"/>
+				<textElement textAlignment="Center">
+					<font size="18" isBold="true"/>
+				</textElement>
+				<text><![CDATA[REPORTE DE ARTICULOS]]></text>
+			</staticText>
+			<image>
+				<reportElement x="0" y="0" width="130" height="40" uuid="b1091143-f4b2-4c2e-9f19-f0075950d125"/>
+				<imageExpression><![CDATA["/fusionsystem/jorgeortiz/logo/systemtech/logoSystemTechReporte.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="33" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="150" height="30" uuid="0a099b3b-7158-479b-8f02-2a5abb3f3482">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bcff28f-eb22-4fae-a72d-3160c517afce"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[ARTICULO]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="302" y="0" width="128" height="30" uuid="8281480f-2b8c-4cdd-913f-d7f8a1b62340">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b28cbca6-e5f5-44bd-92c3-89d146c1aa20"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[CATEGORIA]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="150" y="0" width="152" height="30" uuid="276bfcca-d046-425a-8c97-bd3811b13036">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b65efb58-6e0e-446f-a25a-1ccb5f48f9fc"/>
+				</reportElement>
+				<textElement>
+					<font fontName="SansSerif" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[DESCRIPCION]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="41" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="150" height="30" uuid="963319ba-8833-4828-8716-018bde7fbb8f">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="9bcff28f-eb22-4fae-a72d-3160c517afce"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="302" y="0" width="128" height="30" uuid="a41e8016-c190-4e40-9585-dd5aa486e951">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b28cbca6-e5f5-44bd-92c3-89d146c1aa20"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{categoria.nombre}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="150" y="0" width="152" height="30" uuid="d4ff7eb5-05b1-4cef-9eb7-449610802dee">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b65efb58-6e0e-446f-a25a-1ccb5f48f9fc"/>
+				</reportElement>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="35">
+			<textField pattern="d/M/yyyy h:mm:ss a">
+				<reportElement x="275" y="0" width="155" height="30" uuid="6599d383-8ad7-4ba4-8523-c335d5c91a19"/>
+				<textElement textAlignment="Right">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="100" height="30" uuid="42a3f9c2-f9bc-4393-9c86-b441c60c2cc2"/>
+				<textElement textAlignment="Left">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

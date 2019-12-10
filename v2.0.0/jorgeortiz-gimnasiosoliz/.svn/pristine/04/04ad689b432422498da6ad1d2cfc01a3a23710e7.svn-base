@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:20/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{tipoPersonaController.vIdTipoPersona}"/>
+        <f:viewAction action="#{tipoPersonaController.cargarTipoPersona()}" />
+ 	</f:metadata>
+</h:head>
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<p:fieldset legend="NUEVO TIPO PERSONA" style="margin-bottom:20px" id="panelRutina">
+	<h:inputHidden value="#{tipoPersonaController.newTipoPersona.idTipoPersona}" />
+		<p:panelGrid columns="3" id="pgRutina">
+			<p:outputLabel value="Tipo:"/>
+			<p:inputText value="#{tipoPersonaController.newTipoPersona.nombre}" id="txtnombre" placeholder="Cliente, Entrenador o Empleado"/>
+			<p:message for="txtnombre" />
+			
+			<p:outputLabel value="Descripción:"/>
+			<p:inputText value="#{tipoPersonaController.newTipoPersona.descripcion}" id="txtdescripcion"/>
+			<p:message for="txtdescripcion"/>
+		</p:panelGrid>
+		
+	</p:fieldset>
+	<h:inputHidden value="#{tipoPersonaController.vEditing}" />
+	<p:commandButton value="Guardar" action="#{tipoPersonaController.guardarTipoPersona()}" update="panelRutina, mensajes"/>
+	<p:commandButton value="Cancelar" action="list-tipo-personas?faces-redirect=true" immediate="true" ajax="false"/>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>

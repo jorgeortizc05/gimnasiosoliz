@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:14/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<p:fieldset legend="LISTA DE PRODUCTOS" style="margin-bottom:20px">
+		<p:commandButton value="Nuevo" action="nuevo-producto?faces-redirect=true" icon="fa fa-user-plus" ajax="false"/>
+		<p:dataTable resizableColumns="true"  value="#{productoController.productos}" var="prod" id="dtProductos" paginator="true" paginatorPosition="bottom"  
+				 	rows="15" style="margin-bottom:20px" widgetVar="dTWWProductos" rowsPerPageTemplate="5,10,15,20,50" filteredValue="#{productoController.filterProductos}">
+			    
+		    <p:column filterBy="#{prod.nombre}" headerText="Producto" >
+		       <h:outputText  value="#{prod.nombre}"/>
+		    </p:column>
+		    
+		    <p:column filterBy="#{prod.codigo}" headerText="Código" >
+		       <h:outputText  value="#{prod.codigo}"/>
+		    </p:column>
+		    
+		    <p:column headerText="Precio" style="width:100px; text-align:right">
+		       <h:outputText  value="#{prod.precio}"/>
+		    </p:column>
+		    
+		    <p:column headerText="Descripción">
+		       <h:outputText  value="#{prod.descripcion}"/>
+		    </p:column>
+		    
+		 
+		    
+		    <p:column headerText="Opciones" style="width:80px;">
+		    	<p:commandButton action="#{productoController.editarProducto(prod)}" icon="fa fa-edit" update="mensajes"/>
+		    	
+		       	<p:commandButton update="mensajes dtProductos" action="#{productoController.eliminarProducto(prod.idProducto)}" 
+		       	icon="fa fa-remove" oncomplete="PF('dTWWProductos').filter()">
+		       		<p:confirm header="Confirmación" message="Estas seguro?" icon="ui-icon-alert" />
+		       	</p:commandButton>
+		    </p:column>
+		    <!-- oncomplete me sirve para eliminar con el filtro activado -->
+		</p:dataTable>
+		
+	</p:fieldset>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+      <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+      <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	</p:confirmDialog>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>

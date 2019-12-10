@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:14/09/2018
+Fecha de Modificacion: 22/09/2018
+Empresa: FUSIONSYSTEM JORGE INC F.S.J
+Funcion: Controlador Articulo Controller.
+-->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{parametroFacturaController.vIdParametroFactura}"/>
+        <f:viewAction action="#{parametroFacturaController.cargarParametroFactura()}" />
+ 	</f:metadata>
+</h:head>
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<p:fieldset legend="PARAMETROS PARA FACTURAS" style="margin-bottom:20px">
+	
+	 	<p:panelGrid columns="3" id="gridNuevoPF" >
+	 		<p:outputLabel value="Serie Establecimiento:" for="sEsta"></p:outputLabel>
+	 		<p:inputText value="#{parametroFacturaController.newParametroFactura.serieEstablecimiento}" id="sEsta"/>
+	 		<p:message for="sEsta"/>
+	 
+	 		<p:outputLabel value="Serie Punto Emisión:" for="sPEmision"></p:outputLabel>
+	 		<p:inputText value="#{parametroFacturaController.newParametroFactura.seriePuntoEmision}"  id="sPEmision"/>
+	 		<p:message for="sPEmision"/>
+	 		
+	 		<p:outputLabel value="Número Secuencial:" for="numSec"></p:outputLabel>
+	 		<p:inputText value="#{parametroFacturaController.newParametroFactura.desdeNumComprobante}"  id="numSec"/>
+	 		<p:message for="numSec"/>
+	 	</p:panelGrid>
+	 	<h:inputHidden value="#{parametroFacturaController.newParametroFactura.idParametroFactura}" />
+	 	<h:inputHidden value="#{parametroFacturaController.vEditing}" />
+	 	<p:commandButton value="Guardar" action="#{parametroFacturaController.guardarParametroFactura()}" icon="fa fa-save" ></p:commandButton>
+	 	<p:commandButton value="Cancelar" action="list-parametro-factura?faces-redirect=true" immediate="true" icon="fa fa-hand-o-left" ajax="false"></p:commandButton>
+		
+	</p:fieldset>
+	<p:panelGrid columns="3">
+		<p:graphicImage name="gimnasiosoliz/sriFact/sEstablecimiento.jpg" width="550"/>
+		<p:graphicImage name="gimnasiosoliz/sriFact/sPEmision.jpg" width="550"/>
+	
+	</p:panelGrid>
+	
+		
+		
+	</ui:define>
+
+
+
+</ui:composition>
+</html>

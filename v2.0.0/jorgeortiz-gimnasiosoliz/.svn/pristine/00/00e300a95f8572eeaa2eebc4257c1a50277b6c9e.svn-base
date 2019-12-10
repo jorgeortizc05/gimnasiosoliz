@@ -1,0 +1,233 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:14/09/2018
+Fecha de Modificacion: 22/09/2018
+Empresa: FUSIONSYSTEM JORGE INC F.S.J
+Funcion: Controlador Articulo Controller.
+-->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{ventaController.vIdFactura}"/>
+        <f:viewAction action="#{ventaController.cargarFactura()}" />
+ 	</f:metadata>
+</h:head>
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	
+	<p:fieldset legend="NUEVA VENTA" style="margin-bottom:20px" id="fNuevaVenta">
+	
+		<p:panelGrid id="gridVenta">
+			<p:row>
+				<p:column>
+					<b><h:outputLabel value="CLIENTES" /></b>
+				</p:column>
+				
+				<p:column>
+					<b><h:outputLabel value="FORMA DE PAGO" /></b>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:message for="lClientes"></p:message>
+				</p:column>
+				
+				<p:column>
+					<p:message for="lFPago"></p:message>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:selectOneListbox value="#{ventaController.vIdPersona}" style="width:300px"  filter="true" required="true" requiredMessage="Seleccione un cliente" filterMatchMode="contains" id="lClientes" scrollHeight="100">
+			            <f:selectItems value="#{personaController.personas}" var="p" itemLabel="#{p.cedula}/#{p.nombres}" itemValue="#{p.idPersona}"/>
+			        	<p:ajax process="@this"
+				            listener="#{ventaController.obtenerSuscripcionesPersona()}" update="dtSuscripciones"/>
+			        </p:selectOneListbox>
+				</p:column>
+				
+				<p:column >
+					<p:selectOneListbox value="#{ventaController.vIdFormaPago}" style="width:200px"  filter="true" required="true" requiredMessage="Seleccione una forma pago" filterMatchMode="contains" id="lFPago" scrollHeight="100">
+			            <f:selectItems value="#{formaPagoController.formaPagos}" var="fp" itemLabel="#{fp.nombre}" itemValue="#{fp.idFormaPago}"/>
+			        </p:selectOneListbox>
+				</p:column>
+				
+			</p:row>
+			<p:row>
+				<p:column>
+					<p:message for="tComprob"></p:message>
+				</p:column>
+				<p:column>
+					<p:message for="imp"></p:message>
+				</p:column>
+				<p:column>
+					<p:message for="descuento"></p:message>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:column>
+					<b><h:outputLabel value="Tipo de Comprobante" for="tComprob"/></b>
+				</p:column>
+				<p:column>
+					<b><h:outputLabel value="Impuesto" for="imp"/></b>
+				</p:column>
+				<p:column>
+					<b><h:outputLabel value="Descuento" for="descuento"/></b>
+				</p:column>
+			</p:row>
+			
+			<p:row>
+				<p:column headerText="Lista">
+					<p:selectOneMenu value="#{ventaController.newFactura.tipoComprobante}" id="tComprob">
+						<f:selectItem itemLabel="Factura" itemValue="FACTURA"/>
+					</p:selectOneMenu>
+				</p:column>
+				
+				<p:column> 
+					<p:outputLabel id="imp" value="12"></p:outputLabel>
+				</p:column>
+				<p:column>
+					<p:inputNumber id="descuento" value="#{ventaController.newFactura.descuento}"/>
+				</p:column>
+			</p:row>
+			
+			<p:row>
+				<p:columnGroup>
+					<p:column>
+						<p:message for="lProductos"></p:message>
+					</p:column>
+					<p:column>
+						<p:message for="cantidad"></p:message>
+					</p:column>
+					<p:column>
+						<p:message for="pVenta"></p:message>
+					</p:column>
+					
+					
+				</p:columnGroup>
+			</p:row>
+			<p:row>
+				<p:column colspan="6">
+					<p:separator/>
+				</p:column>
+			</p:row>
+			<p:row>
+				<p:columnGroup>
+					<p:column>
+						<b><h:outputLabel value="Producto o Servicio" for="lProductos"/></b>
+					</p:column>
+					<p:column>
+						<b><h:outputLabel value="Cantidad" for="cantidad"/></b>
+					</p:column>
+					<p:column>
+						<b><h:outputLabel value="Precio Venta" for="pVenta"/></b>
+					</p:column>
+					
+					
+				</p:columnGroup>
+			</p:row>
+			<p:row>
+				<p:columnGroup>
+					<p:column>
+						<p:selectOneListbox value="#{ventaController.vIdProducto}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Producto o Servicio" filterMatchMode="contains" id="lProductos" scrollHeight="100">
+				            <f:selectItems value="#{ventaController.productos}" var="pro" itemLabel="#{pro.nombre}" itemValue="#{pro.idProducto}"/>
+				        	<p:ajax process="@this"
+				            listener="#{ventaController.getProducto()}" update="pVenta cantidad"/>
+				        
+				        </p:selectOneListbox>
+					</p:column>
+					<p:column>
+						<p:spinner id="cantidad" value="#{ventaController.newDetalleFactura.cantidad}" min="1" />
+						
+					</p:column>
+					<p:column>
+						<h:outputText value="#{ventaController.newProducto.precio}" id="pVenta">	
+						
+						</h:outputText>
+					</p:column>
+					
+				
+				</p:columnGroup>
+			</p:row>
+			<p:row>
+				<p:column>		
+					<p:commandButton value="Agregar" actionListener="#{ventaController.addDetalleFactura()}" update="dTFacturas mensajes"></p:commandButton>				
+				</p:column>
+				
+			</p:row>
+			<p:row>
+				<p:column colspan="5">
+				  
+					<p:dataTable value="#{ventaController.newFactura.detalleFacturas}" var="d" rowIndexVar="row" id="dTFacturas">
+						<p:column headerText="Remover">
+							<p:commandButton value="Remover" actionListener="#{ventaController.removeDetalleFactura(d)}" update="dTFacturas" immediate="true"></p:commandButton>
+						</p:column>
+						<p:column headerText="cantidad">
+							<h:outputText value="#{d.cantidad}" />
+						</p:column>
+						
+						<p:column headerText="Fecha Desde">
+							<p:calendar value="#{d.fechaDesde}" pattern="dd-MM-yyyy" id="txtFechaDesde" mask="true"/>
+						</p:column>
+						
+						<p:column headerText="Fecha Hasta">
+							<p:calendar value="#{d.fechaHasta}" pattern="dd-MM-yyyy" id="txtFechaHasta" mask="true"/>
+						</p:column>
+						
+						<p:column headerText="Precio Venta">
+							<p:outputLabel value="#{d.valorUnitario}">
+							
+							</p:outputLabel>
+						</p:column>
+						<p:column headerText="Valor Total">
+							<h:outputText value="#{d.valorTotal}">
+								<f:convertNumber currencySymbol="$" type="currency"  />
+							</h:outputText>
+						</p:column>
+				        
+					</p:dataTable>
+					
+				</p:column>
+				
+			</p:row>
+			
+		</p:panelGrid>
+		<p:commandButton value="Guardar" action="#{ventaController.guardarFactura()}" update="gridVenta" icon="fa fa-save"></p:commandButton>
+		<p:commandButton value="Cancelar" action="list-ventas" immediate="true" icon="fa fa-hand-o-left"></p:commandButton>
+	</p:fieldset>
+	<p:fieldset legend="HISTORIAL DE SUSCRIPCIONES" style="margin-bottom:20px" id="fHistorialSuscripcion">
+		<p:dataTable value="#{ventaController.suscripciones}" var="sus" id="dtSuscripciones">
+			<p:column headerText="Fecha Desde">
+				<p:outputLabel value="#{sus.fechaDesde}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+			<p:column headerText="Fecha Hasta">
+				<p:outputLabel value="#{sus.fechaHasta}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+			<p:column headerText="Precio Neto">
+				<p:outputLabel value="#{sus.precioNeto}"/>
+			</p:column>
+			<p:column headerText="Descuento Aplicado">
+				<p:outputLabel value="#{sus.descuento}"/>
+			</p:column>
+			<p:column headerText="Total">
+				<p:outputLabel value="#{sus.total}"/>
+			</p:column>
+		</p:dataTable>
+	</p:fieldset>
+
+	</ui:define>
+
+
+</ui:composition>
+</html>
