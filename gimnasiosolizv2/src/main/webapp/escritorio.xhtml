@@ -1,0 +1,88 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:27/02/2019
+Notas: Vista para el codigo de barras
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<p:fieldset legend="INFORMACIÓN DEL USUARIO" style="margin-bottom:20px" id="controlAcceso">
+	<p:focus context="controlAcceso"/>
+	<p:inputText value="#{controlAccesoController.vCedula}" />
+	<p:commandButton value="buscar" action="#{controlAccesoController.leerCodigo()}" id="buscar" update="controlAcceso, mensajes"/>
+	
+	<p:panelGrid id="panelInfoSocio" columns="3"  border="1" style="margin: 0 auto;">
+			
+				
+			<p:graphicImage id="image4" value="#{pageContext.contextPath}/resources/gimnasiosoliz/camera/#{controlAccesoController.newPersona.cedula}.png" width="300" cache="false"></p:graphicImage>
+			
+			<p:panelGrid>
+				<p:row>
+					<p:column colspan="4">
+						<b><h:outputText value="#{controlAccesoController.newPersona.nombres}" style="font-size: 30px;"></h:outputText></b>
+					</p:column>
+				</p:row>
+				<p:row >
+					<p:column colspan="4">
+						<b><h:outputText value="#{controlAccesoController.vMensajeAdvertencia}" style="text-align:center;font-size:26px; margin:12px;color:#{controlAccesoController.vColorAdvertencia}"></h:outputText></b>
+					</p:column>
+				</p:row>
+				<p:row >
+				<p:column><b>Estado Corporal</b></p:column>
+					<p:column colspan="4">
+						<p:commandButton value="Ver" type="button" onclick="PF('dlg1').show();" />
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column><b>Días restantes</b></p:column>
+					<p:column>
+						<b><h:outputText value="#{controlAccesoController.vDias}" style="color:#{controlAccesoController.vColorAdvertencia};font-size: 18px;"></h:outputText></b>
+					</p:column>
+				</p:row>
+				<p:row>
+					<p:column>
+						<p:commandButton value="Editar" action="#{personaController.editarPersona(controlAccesoController.newPersona)}"/>
+					</p:column>
+					<p:column>
+						<p:commandButton value="Historial de Suscripciones" action="#{controlAccesoController.irHistorialSuscripciones()}"/>
+					</p:column>
+				
+				</p:row>
+			</p:panelGrid>
+		</p:panelGrid>
+		<!-- <p:dataTable value="#{controlAccesoController.suscripciones}" var="sus">
+			<p:column headerText="Fecha Desde">
+				<p:outputLabel value="#{sus.fechaDesde}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+			<p:column headerText="Fecha Hasta">
+				<p:outputLabel value="#{sus.fechaHasta}">
+					<f:convertDateTime type="date" pattern="dd-MM-yyyy"/>
+				</p:outputLabel>
+			</p:column>
+		
+		</p:dataTable> -->
+		<p:dialog header="Estado Corporal" widgetVar="dlg1" minHeight="80">
+		    <h:outputText value="#{controlAccesoController.vEstadoCorporal}" />
+		</p:dialog>
+	</p:fieldset>
+	
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:20/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+<h:head>
+	<f:metadata>
+        <f:viewParam id="id" name="id" value="#{personaController.vPerId}"/>
+        <f:viewAction action="#{personaController.cargarPersona()}" />
+ 	</f:metadata>
+</h:head>
+
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<b:panel title="Nueva Persona" id="panelPersona">
+		<p:panelGrid columns="3" id="pgPersona">
+			<p:outputLabel value="Cédula:"/>
+			<p:inputText value="#{personaController.newPersona.perCedula}" id="txtcedula" style="width: 250px">
+				<p:ajax event="blur" update="mensajes" listener="#{personaController.valida(personaController.newPersona.perCedula)}"/>
+			</p:inputText>
+			<b:message for="txtcedula" />
+			
+		   <p:outputLabel value="Tipo:" />
+	       <b:selectOneMenu value="#{personaController.vTipPerId}" id="tper" required="true" 
+	       					requiredMessage="Seleccione un tipo">
+				<f:selectItems value="#{tipoPersonaController.listTipPers}" var="tp" itemLabel="#{tp.tperNombre}" itemValue="#{tp.tperId}"/>
+			</b:selectOneMenu>
+	        <b:message for="tper"/>
+			
+			<p:outputLabel value="Nombres y Apellidos:"/>
+			<b:inputText value="#{personaController.newPersona.perNombres}" id="txtnombres" />
+			<b:message for="txtnombres"/>
+			
+			
+			<p:outputLabel value="Email:"/>
+			<b:inputText value="#{personaController.newPersona.perEmail}" id="txtEmail"/>
+			<b:message for="txtEmail"/>
+			
+			
+			<p:outputLabel value="Fecha Nacimiento:" for="txtdate"/>
+				<p:calendar value="#{personaController.newPersona.perFechaNac}" pattern="dd-MM-yyyy" id="txtdate" mask="true" />
+			<b:message for="txtdate"/>
+		
+			
+			<p:outputLabel value="Dirección:"/>
+			<b:inputText value="#{personaController.newPersona.perDireccion}" id="txtdireccion"/>
+			<b:message for="txtdireccion"/>
+			
+			
+			<p:outputLabel value="Teléfono:"/>
+			<b:inputText value="#{personaController.newPersona.perTelefono}" id="txttelefono"/>
+			<b:message for="txttelefono"/>
+			
+		</p:panelGrid>
+
+	</b:panel>
+	
+	<b:commandButton value="Guardar" action="#{personaController.guardarPersona()}" update="panelPersona, mensajes" look="primary"/>
+	<b:commandButton value="Cancelar" action="list-personas?faces-redirect=true" immediate="true"/>
+	
+	
+	</ui:define>
+
+</ui:composition>
+</html>

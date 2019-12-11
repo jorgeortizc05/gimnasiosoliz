@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:14/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	
+	<b:panel title="Personas" look="primary">
+		<b:dataTable value="#{personaController.listPer}" var="per" id="dtPersonas" widgetVar="dTWWPersonas" excel="true" autoUpdate="true">
+		   <b:dataTableColumn value="#{per.perId}" label="id"/>
+		   <b:dataTableColumn value="#{per.perCedula}" label="Cédula"/>
+		   <b:dataTableColumn value="#{per.perNombres}" label="Nombres"/>
+		   <b:dataTableColumn value="#{per.perTelefono}" label="Teléfono"/>
+		   <b:dataTableColumn value="#{per.perActivo}" label="Estado suscripción"/>
+		   
+		   <b:dataTableColumn label="Opciones">
+		   		<b:commandButton  
+		       	 ajax="false" icon-awesome="fas fa-file-pdf"/>
+		    	<b:commandButton action="#{personaController.irUpdPersona(per)}" icon-awesome="fas fa-edit"/>
+		       	<p:commandButton action="#{personaController.deletePersona(per)}" update="mensajes mensajes1" icon="fas fa-trash-alt"
+		       	 oncomplete="PF('dTWWPersonas').filter()">
+		       		<p:confirm header="Confirmación" message="Estas seguro?" icon="ui-icon-alert" />
+		       	</p:commandButton>
+		   </b:dataTableColumn>
+		</b:dataTable>		
+	</b:panel>
+	<b:commandButton value="Nuevo" action="nueva-persona?faces-redirect=true" ajax="false" look="primary" />
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+      <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+      <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	</p:confirmDialog>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>
