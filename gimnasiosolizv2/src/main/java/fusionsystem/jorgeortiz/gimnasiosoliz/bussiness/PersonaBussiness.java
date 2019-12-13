@@ -5,6 +5,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 
+import fusionsystem.jorgeortiz.gimnasiosoliz.dao.ComplexionDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.PersonaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.TipoPersonaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona;
@@ -14,10 +15,7 @@ import fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona;
 public class PersonaBussiness {
 	@Inject
 	private PersonaDAO prodDAO;
-	
-	@Inject 
-	private TipoPersonaDAO tpDAO;
-	
+
 	public void guardarPersona(Persona item) throws Exception {
 		Persona aux = prodDAO.readPerId(item.getPerId());
 		
@@ -67,36 +65,4 @@ public class PersonaBussiness {
 		}else
 			throw new Exception("List [Personas: null]");
 	}
-	
-	/////////////////////////Tipo Persona/////////////////////////////////
-	/*public TipoPersona buscarTipPersID(int id) throws Exception {
-		TipoPersona aux = tpDAO.readTipPersId(id);
-		
-		if(aux != null) {
-			return aux;
-		}else
-			throw new Exception("Buscar [Tipo Persona: null]");
-	}
-	
-	public List<Persona> getListPer() throws Exception{
-		
-		List<Persona> auxs = prodDAO.getListPer();
-		
-		if(auxs != null) {
-			return auxs;
-		}else
-			throw new Exception("List [Personas: null]");
-	}
-	
-	public List<TipoPersona> getListTipPer() throws Exception{
-		
-		List<TipoPersona> auxs = tpDAO.getListTipPers();
-		
-		if(auxs != null) {
-			return auxs;
-		}else
-			throw new Exception("List [Tipo Personas: null]");
-	}*/
-	
-	
 }

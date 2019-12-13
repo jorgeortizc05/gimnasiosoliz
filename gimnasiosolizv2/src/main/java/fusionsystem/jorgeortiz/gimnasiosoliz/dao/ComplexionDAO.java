@@ -44,12 +44,20 @@ public class ComplexionDAO {
 	}
 		
 	//Listar
-	public List<Complexion> getListProd(){
+	public List<Complexion> getListComplex(){
 		Query query = emG.createNamedQuery("Complexion.findAll");
 		List<Complexion> items = query.getResultList();
 		
 		return items;
 		
+	}
+	
+	public List<Complexion> getListPerCompl(int perId){
+		Query query = emG.createQuery("Select c FROM Complexion c where c.perId = :perId", Complexion.class);
+		query.setParameter("perId", perId);
+		List<Complexion> items = query.getResultList();
+		
+		return items;
 	}
 	
 	//Sequencias

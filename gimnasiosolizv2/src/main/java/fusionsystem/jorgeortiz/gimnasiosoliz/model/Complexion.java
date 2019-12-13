@@ -89,4 +89,12 @@ public class Complexion implements Serializable {
 		this.peso = peso;
 	}
 
+	@Override
+	public String toString() {
+		return "Complexion [telId=" + telId + ", altura=" + altura + ", estadopeso=" + estadopeso + ", estatura="
+				+ estatura + ", indicecorporal=" + indicecorporal + ", perId=" + perId + ", peso=" + peso + "]";
+	}
+	
+	
+
 }
