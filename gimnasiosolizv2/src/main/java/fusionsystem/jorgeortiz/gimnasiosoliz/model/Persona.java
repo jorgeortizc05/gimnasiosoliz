@@ -7,7 +7,6 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
-import java.sql.Timestamp;
 import java.util.Date;
 
 

@@ -7,7 +7,9 @@ import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.FacturaBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.FacturaDAO;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.ReporteVentasView;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.ReporteVentasView;
 
 @Stateless
 public class FacturacionBussiness {
@@ -37,6 +39,11 @@ public class FacturacionBussiness {
 	
 	public List<Factura> getListFact() throws Exception{
 		List<Factura> auxs = factBuss.getListFact();
+		return auxs;
+	}
+	
+	public List<ReporteVentasView> getListFact1() throws Exception{
+		List<ReporteVentasView> auxs = factBuss.getListFact1();
 		return auxs;
 	}
 	

@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:uti="http://java.sun.com/jsf/composite/util"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:b="http://bootsfaces.net/ui">
+
+<!-- 
+Autor: ING. JORGE LUIS ORTIZ CACERES
+Fecha de Creacion:14/09/2018
+Notas: Vista de una lista de rutinas
+Modificaciones
+Fecha Modificacion
+Notas:
+-->
+
+<ui:composition
+	template="/WEB-INF/facelets/templates/plantillaGeneral.xhtml">
+
+	<ui:define name="cuerpo">
+	<b:panel title="Ventas" look="primary">
+		
+		<b:dataTable resizableColumns="true"  value="#{facturacionController.listFact1}" var="fact" id="dtVentas"
+				 	 widgetVar="dTWWVentas">
+			    
+			<b:dataTableColumn value="#{fact.factId}" label="ID Factura"/>
+			<b:dataTableColumn value="#{fact.perNombres}" label="Persona"/>
+			<b:dataTableColumn value="#{fact.factFecEmision}" label="Fecha de Emision"/>
+			<b:dataTableColumn value="#{fact.factVtotal}" label="VTotal"/>
+			<b:dataTableColumn value="#{fact.factEstado}" label="Estado"/>
+			<b:dataTableColumn label="Opciones">
+				<b:commandButton value="info"/>
+				<b:commandButton value="Pasar a Inactivo"/>
+			</b:dataTableColumn>
+		    
+		</b:dataTable>
+		
+	</b:panel>
+	<b:commandButton value="Nuevo" action="nueva-venta?faces-redirect=true" icon="fa fa-user-plus" ajax="false" look="primary"/>
+	<p:confirmDialog global="true" showEffect="fade" hideEffect="fade">
+      <p:commandButton value="Si" type="button" styleClass="ui-confirmdialog-yes" icon="ui-icon-check" />
+      <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" icon="ui-icon-close" />
+	</p:confirmDialog>
+	</ui:define>
+	
+
+
+</ui:composition>
+</html>

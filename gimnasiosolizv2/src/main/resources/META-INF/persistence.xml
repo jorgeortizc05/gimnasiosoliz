@@ -32,6 +32,7 @@
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Rutina</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Suscripcion</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.TipoPersona</class>
+      <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.ReporteVentasView</class>
       <properties>
          <!-- Properties for Hibernate -->
          <property name="hibernate.hbm2ddl.auto" value="none" />

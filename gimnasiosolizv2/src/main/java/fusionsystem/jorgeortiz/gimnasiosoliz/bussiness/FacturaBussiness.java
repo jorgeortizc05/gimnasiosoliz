@@ -7,6 +7,7 @@ import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.dao.FacturaDAO;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.ReporteVentasView;
 
 @Stateless
 public class FacturaBussiness {
@@ -55,6 +56,16 @@ public class FacturaBussiness {
 	public List<Factura> getListFact() throws Exception{
 		
 		List<Factura> auxs = factDAO.getListFact();
+		
+		if(auxs != null) {
+			return auxs;
+		}else
+			throw new Exception("List [Facturas: null]");
+	}
+	
+	public List<ReporteVentasView> getListFact1() throws Exception{
+		
+		List<ReporteVentasView> auxs = factDAO.getListFact1();
 		
 		if(auxs != null) {
 			return auxs;

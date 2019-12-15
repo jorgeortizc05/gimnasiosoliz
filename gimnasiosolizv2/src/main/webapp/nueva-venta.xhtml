@@ -46,16 +46,16 @@ Funcion: Controlador Articulo Controller.
 			</p:row>
 			<p:row>
 				<p:column>
-					<p:selectOneListbox value="#{ventaController.vIdPersona}" style="width:300px"  filter="true" required="true" requiredMessage="Seleccione un cliente" filterMatchMode="contains" id="lClientes" scrollHeight="100">
-			            <f:selectItems value="#{personaController.personas}" var="p" itemLabel="#{p.cedula}/#{p.nombres}" itemValue="#{p.idPersona}"/>
+					<p:selectOneListbox value="#{facturacionController.vPerId}" style="width:300px"  filter="true" required="true" requiredMessage="Seleccione un cliente" filterMatchMode="contains" id="lClientes" scrollHeight="100">
+			            <f:selectItems value="#{personaController.listPer}" var="p" itemLabel="#{p.perCedula}/#{p.perNombres}" itemValue="#{p.perId}"/>
 			        	<p:ajax process="@this"
 				            listener="#{ventaController.obtenerSuscripcionesPersona()}" update="dtSuscripciones"/>
 			        </p:selectOneListbox>
 				</p:column>
 				
 				<p:column >
-					<p:selectOneListbox value="#{ventaController.vIdFormaPago}" style="width:200px"  filter="true" required="true" requiredMessage="Seleccione una forma pago" filterMatchMode="contains" id="lFPago" scrollHeight="100">
-			            <f:selectItems value="#{formaPagoController.formaPagos}" var="fp" itemLabel="#{fp.nombre}" itemValue="#{fp.idFormaPago}"/>
+					<p:selectOneListbox value="#{facturacionController.vFPId}" style="width:200px"  filter="true" required="true" requiredMessage="Seleccione una forma pago" filterMatchMode="contains" id="lFPago" scrollHeight="100">
+			            <f:selectItems value="#{formaPagoController.listFormPag}" var="fp" itemLabel="#{fp.fpNombre}" itemValue="#{fp.fpId}"/>
 			        </p:selectOneListbox>
 				</p:column>
 				
@@ -85,7 +85,7 @@ Funcion: Controlador Articulo Controller.
 			
 			<p:row>
 				<p:column headerText="Lista">
-					<p:selectOneMenu value="#{ventaController.newFactura.tipoComprobante}" id="tComprob">
+					<p:selectOneMenu value="#{facturacionController.newFactura.factTipoComprobante}" id="tComprob">
 						<f:selectItem itemLabel="Factura" itemValue="FACTURA"/>
 					</p:selectOneMenu>
 				</p:column>
@@ -94,7 +94,7 @@ Funcion: Controlador Articulo Controller.
 					<p:outputLabel id="imp" value="12"></p:outputLabel>
 				</p:column>
 				<p:column>
-					<p:inputNumber id="descuento" value="#{ventaController.newFactura.descuento}"/>
+					<p:inputNumber id="descuento" value="#{facturacionController.newFactura.factDescuento}"/>
 				</p:column>
 			</p:row>
 			
@@ -136,8 +136,8 @@ Funcion: Controlador Articulo Controller.
 			<p:row>
 				<p:columnGroup>
 					<p:column>
-						<p:selectOneListbox value="#{ventaController.vIdProducto}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Producto o Servicio" filterMatchMode="contains" id="lProductos" scrollHeight="100">
-				            <f:selectItems value="#{ventaController.productos}" var="pro" itemLabel="#{pro.nombre}" itemValue="#{pro.idProducto}"/>
+						<p:selectOneListbox value="#{facturacionController.vProdId}" style="width:400px" filter="true" required="true" requiredMessage="Seleccione un Producto o Servicio" filterMatchMode="contains" id="lProductos" scrollHeight="100">
+				            <f:selectItems value="#{productoController.listProd}" var="pro" itemLabel="#{pro.prodNombre}" itemValue="#{pro.prodId}"/>
 				        	<p:ajax process="@this"
 				            listener="#{ventaController.getProducto()}" update="pVenta cantidad"/>
 				        
@@ -148,7 +148,7 @@ Funcion: Controlador Articulo Controller.
 						
 					</p:column>
 					<p:column>
-						<h:outputText value="#{ventaController.newProducto.precio}" id="pVenta">	
+						<h:outputText value="#{ventaController.newProducto.precio}" id="pVenta">
 						
 						</h:outputText>
 					</p:column>

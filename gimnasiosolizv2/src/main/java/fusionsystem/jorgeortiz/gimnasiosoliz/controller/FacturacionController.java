@@ -9,6 +9,7 @@ import javax.inject.Inject;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.bussiness.fachada.FacturacionBussiness;
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.ReporteVentasView;
 import fusionsystem.jorgeortiz.gimnasiosoliz.util.Mensajes;
 
 @ManagedBean
@@ -21,16 +22,21 @@ public class FacturacionController {
 		
 		private Factura newFactura;
 		private List<Factura> listFact;
+		private List<ReporteVentasView> listFact1;
 		
 		//Variables
 		private int vFactId;
 		private boolean vEditing;
+		private int vPerId;
+		private int vFPId;
+		private int vProdId;
 		
 		@PostConstruct
 		public void init() {
 			vEditing = false;
 			newFactura = new Factura();
-			loadListFact();
+			//loadListFact();
+			loadListFact1();
 		}
 		
 		public String guardarFactura() {
@@ -112,6 +118,17 @@ public class FacturacionController {
 			}
 			
 		}
+		
+		public void loadListFact1() {
+			try {
+				listFact1 = factBuss.getListFact1();
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				Mensajes.addMessageInfo(e.getMessage());
+			}
+			
+		}
 
 		public Factura getNewFactura() {
 			return newFactura;
@@ -140,6 +157,33 @@ public class FacturacionController {
 		public List<Factura> getListFact() {
 			return listFact;
 		}
-		
+
+		public List<ReporteVentasView> getListFact1() {
+			return listFact1;
+		}
+
+		public int getvPerId() {
+			return vPerId;
+		}
+
+		public void setvPerId(int vPerId) {
+			this.vPerId = vPerId;
+		}
+
+		public int getvFPId() {
+			return vFPId;
+		}
+
+		public void setvFPId(int vFPId) {
+			this.vFPId = vFPId;
+		}
+
+		public int getvProdId() {
+			return vProdId;
+		}
+
+		public void setvProdId(int vProdId) {
+			this.vProdId = vProdId;
+		}
 		
 }

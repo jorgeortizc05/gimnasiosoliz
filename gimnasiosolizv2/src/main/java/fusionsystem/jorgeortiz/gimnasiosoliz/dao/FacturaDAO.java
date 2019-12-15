@@ -9,6 +9,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
 import fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura;
+import fusionsystem.jorgeortiz.gimnasiosoliz.model.ReporteVentasView;
 
 @Stateless
 public class FacturaDAO {
@@ -51,6 +52,23 @@ public class FacturaDAO {
 		try {
 			Query query = emG.createNamedQuery("Factura.findAll");
 			List<Factura> items = query.getResultList();
+			
+			return items;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		
+		return null;
+		
+		
+	}
+	
+	//Listar
+	public List<ReporteVentasView> getListFact1(){
+		
+		try {
+			Query query = emG.createNamedQuery("ReporteVentasView.findAll");
+			List<ReporteVentasView> items = query.getResultList();
 			
 			return items;
 		} catch (Exception e) {
