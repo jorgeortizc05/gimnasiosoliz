@@ -3,6 +3,7 @@ package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 /**
@@ -25,28 +26,28 @@ public class Suscripcion implements Serializable {
 	private Integer perId;
 
 	@Column(name="sus_descuento")
-	private double susDescuento;
+	private Double susDescuento;
 
 	@Column(name="sus_fecha_desde")
-	private Timestamp susFechaDesde;
+	private Date susFechaDesde;
 
 	@Column(name="sus_fecha_hasta")
-	private Timestamp susFechaHasta;
+	private Date susFechaHasta;
 
 	@Column(name="sus_precio_neto")
-	private double susPrecioNeto;
+	private Double susPrecioNeto;
 
 	@Column(name="sus_tipo")
 	private String susTipo;
 
 	@Column(name="sus_total")
-	private double susTotal;
+	private Double susTotal;
 
 	public Suscripcion() {
 	}
 
 	public Integer getSusId() {
-		return this.susId;
+		return susId;
 	}
 
 	public void setSusId(Integer susId) {
@@ -54,7 +55,7 @@ public class Suscripcion implements Serializable {
 	}
 
 	public Integer getFacturaFactId() {
-		return this.facturaFactId;
+		return facturaFactId;
 	}
 
 	public void setFacturaFactId(Integer facturaFactId) {
@@ -62,59 +63,60 @@ public class Suscripcion implements Serializable {
 	}
 
 	public Integer getPerId() {
-		return this.perId;
+		return perId;
 	}
 
 	public void setPerId(Integer perId) {
 		this.perId = perId;
 	}
 
-	public double getSusDescuento() {
-		return this.susDescuento;
+	public Double getSusDescuento() {
+		return susDescuento;
 	}
 
-	public void setSusDescuento(double susDescuento) {
+	public void setSusDescuento(Double susDescuento) {
 		this.susDescuento = susDescuento;
 	}
 
-	public Timestamp getSusFechaDesde() {
-		return this.susFechaDesde;
+	public Date getSusFechaDesde() {
+		return susFechaDesde;
 	}
 
-	public void setSusFechaDesde(Timestamp susFechaDesde) {
+	public void setSusFechaDesde(Date susFechaDesde) {
 		this.susFechaDesde = susFechaDesde;
 	}
 
-	public Timestamp getSusFechaHasta() {
-		return this.susFechaHasta;
+	public Date getSusFechaHasta() {
+		return susFechaHasta;
 	}
 
-	public void setSusFechaHasta(Timestamp susFechaHasta) {
+	public void setSusFechaHasta(Date susFechaHasta) {
 		this.susFechaHasta = susFechaHasta;
 	}
 
-	public double getSusPrecioNeto() {
-		return this.susPrecioNeto;
+	public Double getSusPrecioNeto() {
+		return susPrecioNeto;
 	}
 
-	public void setSusPrecioNeto(double susPrecioNeto) {
+	public void setSusPrecioNeto(Double susPrecioNeto) {
 		this.susPrecioNeto = susPrecioNeto;
 	}
 
 	public String getSusTipo() {
-		return this.susTipo;
+		return susTipo;
 	}
 
 	public void setSusTipo(String susTipo) {
 		this.susTipo = susTipo;
 	}
 
-	public double getSusTotal() {
-		return this.susTotal;
+	public Double getSusTotal() {
+		return susTotal;
 	}
 
-	public void setSusTotal(double susTotal) {
+	public void setSusTotal(Double susTotal) {
 		this.susTotal = susTotal;
 	}
 
+	
 }

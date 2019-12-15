@@ -25,7 +25,6 @@
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Complexion</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Detallefactura</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Ejercicio</class>
-      <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Factura</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.FormaPago</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Parametrofactura</class>
       <class>fusionsystem.jorgeortiz.gimnasiosoliz.model.Persona</class>

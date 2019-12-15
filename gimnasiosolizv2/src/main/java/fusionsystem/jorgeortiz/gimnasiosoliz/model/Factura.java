@@ -3,6 +3,7 @@ package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 /**
@@ -16,16 +17,16 @@ public class Factura implements Serializable {
 
 	@Id
 	@Column(name="fact_id")
-	private Integer factId = 0;
+	private Integer factId;
 
 	@Column(name="fact_descuento")
-	private double factDescuento;
+	private Double factDescuento;
 
 	@Column(name="fact_estado")
 	private String factEstado;
 
 	@Column(name="fact_fec_emision")
-	private Timestamp factFecEmision;
+	private Date factFecEmision;
 
 	@Column(name="fact_iva")
 	private double factIva;
@@ -37,13 +38,13 @@ public class Factura implements Serializable {
 	private String factSerie;
 
 	@Column(name="fact_subtotal")
-	private double factSubtotal;
+	private Double factSubtotal;
 
 	@Column(name="fact_tipo_comprobante")
 	private String factTipoComprobante;
 
 	@Column(name="fact_vtotal")
-	private double factVtotal;
+	private Double factVtotal;
 
 	@Column(name="fp_id")
 	private Integer fpId;
@@ -55,39 +56,39 @@ public class Factura implements Serializable {
 	}
 
 	public Integer getFactId() {
-		return this.factId;
+		return factId;
 	}
 
 	public void setFactId(Integer factId) {
 		this.factId = factId;
 	}
 
-	public double getFactDescuento() {
-		return this.factDescuento;
+	public Double getFactDescuento() {
+		return factDescuento;
 	}
 
-	public void setFactDescuento(double factDescuento) {
+	public void setFactDescuento(Double factDescuento) {
 		this.factDescuento = factDescuento;
 	}
 
 	public String getFactEstado() {
-		return this.factEstado;
+		return factEstado;
 	}
 
 	public void setFactEstado(String factEstado) {
 		this.factEstado = factEstado;
 	}
 
-	public Timestamp getFactFecEmision() {
-		return this.factFecEmision;
+	public Date getFactFecEmision() {
+		return factFecEmision;
 	}
 
-	public void setFactFecEmision(Timestamp factFecEmision) {
+	public void setFactFecEmision(Date factFecEmision) {
 		this.factFecEmision = factFecEmision;
 	}
 
 	public double getFactIva() {
-		return this.factIva;
+		return factIva;
 	}
 
 	public void setFactIva(double factIva) {
@@ -95,7 +96,7 @@ public class Factura implements Serializable {
 	}
 
 	public String getFactLugEmision() {
-		return this.factLugEmision;
+		return factLugEmision;
 	}
 
 	public void setFactLugEmision(String factLugEmision) {
@@ -103,39 +104,39 @@ public class Factura implements Serializable {
 	}
 
 	public String getFactSerie() {
-		return this.factSerie;
+		return factSerie;
 	}
 
 	public void setFactSerie(String factSerie) {
 		this.factSerie = factSerie;
 	}
 
-	public double getFactSubtotal() {
-		return this.factSubtotal;
+	public Double getFactSubtotal() {
+		return factSubtotal;
 	}
 
-	public void setFactSubtotal(double factSubtotal) {
+	public void setFactSubtotal(Double factSubtotal) {
 		this.factSubtotal = factSubtotal;
 	}
 
 	public String getFactTipoComprobante() {
-		return this.factTipoComprobante;
+		return factTipoComprobante;
 	}
 
 	public void setFactTipoComprobante(String factTipoComprobante) {
 		this.factTipoComprobante = factTipoComprobante;
 	}
 
-	public double getFactVtotal() {
-		return this.factVtotal;
+	public Double getFactVtotal() {
+		return factVtotal;
 	}
 
-	public void setFactVtotal(double factVtotal) {
+	public void setFactVtotal(Double factVtotal) {
 		this.factVtotal = factVtotal;
 	}
 
 	public Integer getFpId() {
-		return this.fpId;
+		return fpId;
 	}
 
 	public void setFpId(Integer fpId) {
@@ -143,11 +144,13 @@ public class Factura implements Serializable {
 	}
 
 	public Integer getPerId() {
-		return this.perId;
+		return perId;
 	}
 
 	public void setPerId(Integer perId) {
 		this.perId = perId;
 	}
+
+	
 
 }

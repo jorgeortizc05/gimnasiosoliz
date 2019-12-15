@@ -27,7 +27,7 @@ public class FormaPago implements Serializable {
 	}
 
 	public Integer getFpId() {
-		return this.fpId;
+		return fpId;
 	}
 
 	public void setFpId(Integer fpId) {
@@ -35,7 +35,7 @@ public class FormaPago implements Serializable {
 	}
 
 	public String getFpDescipcion() {
-		return this.fpDescipcion;
+		return fpDescipcion;
 	}
 
 	public void setFpDescipcion(String fpDescipcion) {
@@ -43,11 +43,13 @@ public class FormaPago implements Serializable {
 	}
 
 	public String getFpNombre() {
-		return this.fpNombre;
+		return fpNombre;
 	}
 
 	public void setFpNombre(String fpNombre) {
 		this.fpNombre = fpNombre;
 	}
+
+	
 
 }

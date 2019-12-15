@@ -30,7 +30,7 @@ public class Parametrofactura implements Serializable {
 	}
 
 	public Integer getPfId() {
-		return this.pfId;
+		return pfId;
 	}
 
 	public void setPfId(Integer pfId) {
@@ -38,7 +38,7 @@ public class Parametrofactura implements Serializable {
 	}
 
 	public String getPfDnumComprobante() {
-		return this.pfDnumComprobante;
+		return pfDnumComprobante;
 	}
 
 	public void setPfDnumComprobante(String pfDnumComprobante) {
@@ -46,7 +46,7 @@ public class Parametrofactura implements Serializable {
 	}
 
 	public String getPfSPuntoEmision() {
-		return this.pfSPuntoEmision;
+		return pfSPuntoEmision;
 	}
 
 	public void setPfSPuntoEmision(String pfSPuntoEmision) {
@@ -54,11 +54,13 @@ public class Parametrofactura implements Serializable {
 	}
 
 	public String getPfSerieEstablecimiento() {
-		return this.pfSerieEstablecimiento;
+		return pfSerieEstablecimiento;
 	}
 
 	public void setPfSerieEstablecimiento(String pfSerieEstablecimiento) {
 		this.pfSerieEstablecimiento = pfSerieEstablecimiento;
 	}
+
+	
 
 }

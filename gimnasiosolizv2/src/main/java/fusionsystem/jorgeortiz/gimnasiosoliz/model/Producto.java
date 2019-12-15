@@ -29,13 +29,13 @@ public class Producto implements Serializable {
 
 	@Column(name="prod_precio")
 	@Digits(fraction = 2, integer = 6)
-	private double prodPrecio;
+	private Double prodPrecio;
 
 	public Producto() {
 	}
 
 	public Integer getProdId() {
-		return this.prodId;
+		return prodId;
 	}
 
 	public void setProdId(Integer prodId) {
@@ -43,7 +43,7 @@ public class Producto implements Serializable {
 	}
 
 	public String getProdCodigo() {
-		return this.prodCodigo;
+		return prodCodigo;
 	}
 
 	public void setProdCodigo(String prodCodigo) {
@@ -51,7 +51,7 @@ public class Producto implements Serializable {
 	}
 
 	public String getProdDescripcion() {
-		return this.prodDescripcion;
+		return prodDescripcion;
 	}
 
 	public void setProdDescripcion(String prodDescripcion) {
@@ -59,18 +59,18 @@ public class Producto implements Serializable {
 	}
 
 	public String getProdNombre() {
-		return this.prodNombre;
+		return prodNombre;
 	}
 
 	public void setProdNombre(String prodNombre) {
 		this.prodNombre = prodNombre;
 	}
 
-	public double getProdPrecio() {
-		return this.prodPrecio;
+	public Double getProdPrecio() {
+		return prodPrecio;
 	}
 
-	public void setProdPrecio(double prodPrecio) {
+	public void setProdPrecio(Double prodPrecio) {
 		this.prodPrecio = prodPrecio;
 	}
 

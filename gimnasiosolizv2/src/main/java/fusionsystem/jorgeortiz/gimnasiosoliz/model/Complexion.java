@@ -17,77 +17,107 @@ public class Complexion implements Serializable {
 	@Column(name="tel_id")
 	private Integer telId = 0;
 
-	private double altura;
+	private Double altura;
 
 	private String estadopeso;
 
 	private String estatura;
 
-	private double indicecorporal;
+	private Double indicecorporal;
 
 	@Column(name="per_id")
 	private Integer perId;
 
-	private double peso;
+	private Double peso;
 
 	public Complexion() {
 	}
 
+	
+
 	public Integer getTelId() {
-		return this.telId;
+		return telId;
 	}
+
+
 
 	public void setTelId(Integer telId) {
 		this.telId = telId;
 	}
 
-	public double getAltura() {
-		return this.altura;
+
+
+	public Double getAltura() {
+		return altura;
 	}
 
-	public void setAltura(double altura) {
+
+
+	public void setAltura(Double altura) {
 		this.altura = altura;
 	}
 
+
+
 	public String getEstadopeso() {
-		return this.estadopeso;
+		return estadopeso;
 	}
+
+
 
 	public void setEstadopeso(String estadopeso) {
 		this.estadopeso = estadopeso;
 	}
 
+
+
 	public String getEstatura() {
-		return this.estatura;
+		return estatura;
 	}
+
+
 
 	public void setEstatura(String estatura) {
 		this.estatura = estatura;
 	}
 
-	public double getIndicecorporal() {
-		return this.indicecorporal;
+
+
+	public Double getIndicecorporal() {
+		return indicecorporal;
 	}
 
-	public void setIndicecorporal(double indicecorporal) {
+
+
+	public void setIndicecorporal(Double indicecorporal) {
 		this.indicecorporal = indicecorporal;
 	}
 
+
+
 	public Integer getPerId() {
-		return this.perId;
+		return perId;
 	}
+
+
 
 	public void setPerId(Integer perId) {
 		this.perId = perId;
 	}
 
-	public double getPeso() {
-		return this.peso;
+
+
+	public Double getPeso() {
+		return peso;
 	}
 
-	public void setPeso(double peso) {
+
+
+	public void setPeso(Double peso) {
 		this.peso = peso;
 	}
+
+
 
 	@Override
 	public String toString() {

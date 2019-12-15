@@ -33,29 +33,43 @@ public class TipoPersona implements Serializable {
 	public TipoPersona() {
 	}
 
+	
+
 	public Integer getTperId() {
-		return this.tperId;
+		return tperId;
 	}
+
+
 
 	public void setTperId(Integer tperId) {
 		this.tperId = tperId;
 	}
 
+
+
 	public String getTperDescripcion() {
-		return this.tperDescripcion;
+		return tperDescripcion;
 	}
+
+
 
 	public void setTperDescripcion(String tperDescripcion) {
 		this.tperDescripcion = tperDescripcion;
 	}
 
+
+
 	public String getTperNombre() {
-		return this.tperNombre;
+		return tperNombre;
 	}
+
+
 
 	public void setTperNombre(String tperNombre) {
 		this.tperNombre = tperNombre;
 	}
+
+
 
 	@Override
 	public String toString() {

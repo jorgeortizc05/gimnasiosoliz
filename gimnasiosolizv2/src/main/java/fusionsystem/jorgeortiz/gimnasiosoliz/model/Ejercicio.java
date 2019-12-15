@@ -36,7 +36,7 @@ public class Ejercicio implements Serializable {
 	}
 
 	public Integer getEjerId() {
-		return this.ejerId;
+		return ejerId;
 	}
 
 	public void setEjerId(Integer ejerId) {
@@ -44,7 +44,7 @@ public class Ejercicio implements Serializable {
 	}
 
 	public String getEjerNombre() {
-		return this.ejerNombre;
+		return ejerNombre;
 	}
 
 	public void setEjerNombre(String ejerNombre) {
@@ -52,7 +52,7 @@ public class Ejercicio implements Serializable {
 	}
 
 	public String getEjerRepeticiones() {
-		return this.ejerRepeticiones;
+		return ejerRepeticiones;
 	}
 
 	public void setEjerRepeticiones(String ejerRepeticiones) {
@@ -60,7 +60,7 @@ public class Ejercicio implements Serializable {
 	}
 
 	public Integer getEjerSeries() {
-		return this.ejerSeries;
+		return ejerSeries;
 	}
 
 	public void setEjerSeries(Integer ejerSeries) {
@@ -68,7 +68,7 @@ public class Ejercicio implements Serializable {
 	}
 
 	public Integer getPerId() {
-		return this.perId;
+		return perId;
 	}
 
 	public void setPerId(Integer perId) {
@@ -76,7 +76,7 @@ public class Ejercicio implements Serializable {
 	}
 
 	public Integer getRutId() {
-		return this.rutId;
+		return rutId;
 	}
 
 	public void setRutId(Integer rutId) {

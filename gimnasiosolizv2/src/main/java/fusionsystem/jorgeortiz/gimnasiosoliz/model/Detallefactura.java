@@ -3,6 +3,7 @@ package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 import java.io.Serializable;
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 
 /**
@@ -25,16 +26,16 @@ public class Detallefactura implements Serializable {
 	private Integer dfactDiasRestantes;
 
 	@Column(name="dfact_fecha_desde")
-	private Timestamp dfactFechaDesde;
+	private Date dfactFechaDesde;
 
 	@Column(name="dfact_fecha_hasta")
-	private Timestamp dfactFechaHasta;
+	private Date dfactFechaHasta;
 
 	@Column(name="dfact_val_total")
-	private double dfactValTotal;
+	private Double dfactValTotal;
 
 	@Column(name="dfact_val_unitario")
-	private double dfactValUnitario;
+	private Double dfactValUnitario;
 
 	@Column(name="fact_id")
 	private Integer factId;
@@ -46,7 +47,7 @@ public class Detallefactura implements Serializable {
 	}
 
 	public Integer getDfactId() {
-		return this.dfactId;
+		return dfactId;
 	}
 
 	public void setDfactId(Integer dfactId) {
@@ -54,7 +55,7 @@ public class Detallefactura implements Serializable {
 	}
 
 	public Integer getDfactCantidad() {
-		return this.dfactCantidad;
+		return dfactCantidad;
 	}
 
 	public void setDfactCantidad(Integer dfactCantidad) {
@@ -62,47 +63,47 @@ public class Detallefactura implements Serializable {
 	}
 
 	public Integer getDfactDiasRestantes() {
-		return this.dfactDiasRestantes;
+		return dfactDiasRestantes;
 	}
 
 	public void setDfactDiasRestantes(Integer dfactDiasRestantes) {
 		this.dfactDiasRestantes = dfactDiasRestantes;
 	}
 
-	public Timestamp getDfactFechaDesde() {
-		return this.dfactFechaDesde;
+	public Date getDfactFechaDesde() {
+		return dfactFechaDesde;
 	}
 
-	public void setDfactFechaDesde(Timestamp dfactFechaDesde) {
+	public void setDfactFechaDesde(Date dfactFechaDesde) {
 		this.dfactFechaDesde = dfactFechaDesde;
 	}
 
-	public Timestamp getDfactFechaHasta() {
-		return this.dfactFechaHasta;
+	public Date getDfactFechaHasta() {
+		return dfactFechaHasta;
 	}
 
-	public void setDfactFechaHasta(Timestamp dfactFechaHasta) {
+	public void setDfactFechaHasta(Date dfactFechaHasta) {
 		this.dfactFechaHasta = dfactFechaHasta;
 	}
 
-	public double getDfactValTotal() {
-		return this.dfactValTotal;
+	public Double getDfactValTotal() {
+		return dfactValTotal;
 	}
 
-	public void setDfactValTotal(double dfactValTotal) {
+	public void setDfactValTotal(Double dfactValTotal) {
 		this.dfactValTotal = dfactValTotal;
 	}
 
-	public double getDfactValUnitario() {
-		return this.dfactValUnitario;
+	public Double getDfactValUnitario() {
+		return dfactValUnitario;
 	}
 
-	public void setDfactValUnitario(double dfactValUnitario) {
+	public void setDfactValUnitario(Double dfactValUnitario) {
 		this.dfactValUnitario = dfactValUnitario;
 	}
 
 	public Integer getFactId() {
-		return this.factId;
+		return factId;
 	}
 
 	public void setFactId(Integer factId) {
@@ -110,11 +111,13 @@ public class Detallefactura implements Serializable {
 	}
 
 	public Integer getProdId() {
-		return this.prodId;
+		return prodId;
 	}
 
 	public void setProdId(Integer prodId) {
 		this.prodId = prodId;
 	}
+
+	
 
 }

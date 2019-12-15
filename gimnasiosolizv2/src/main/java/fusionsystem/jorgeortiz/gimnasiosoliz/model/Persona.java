@@ -2,6 +2,11 @@ package fusionsystem.jorgeortiz.gimnasiosoliz.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+import javax.validation.constraints.Past;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+
 import java.sql.Timestamp;
 import java.util.Date;
 
@@ -20,18 +25,21 @@ public class Persona implements Serializable {
 	private Integer perId = 0;
 
 	@Column(name="per_activo")
-	private String perActivo;
+	private String perActivo = "A";
 
 	@Column(name="per_cedula")
+	@Size(min = 5, max = 12)
 	private String perCedula;
 
 	@Column(name="per_direccion")
 	private String perDireccion;
 
 	@Column(name="per_email")
+	@Email
 	private String perEmail;
 
 	@Column(name="per_fecha_nac")
+	@Past
 	private Date perFechaNac;
 
 	@Column(name="per_nombres")
@@ -50,7 +58,7 @@ public class Persona implements Serializable {
 	}
 
 	public Integer getPerId() {
-		return this.perId;
+		return perId;
 	}
 
 	public void setPerId(Integer perId) {
@@ -58,7 +66,7 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerActivo() {
-		return this.perActivo;
+		return perActivo;
 	}
 
 	public void setPerActivo(String perActivo) {
@@ -66,7 +74,7 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerCedula() {
-		return this.perCedula;
+		return perCedula;
 	}
 
 	public void setPerCedula(String perCedula) {
@@ -74,7 +82,7 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerDireccion() {
-		return this.perDireccion;
+		return perDireccion;
 	}
 
 	public void setPerDireccion(String perDireccion) {
@@ -82,13 +90,12 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerEmail() {
-		return this.perEmail;
+		return perEmail;
 	}
 
 	public void setPerEmail(String perEmail) {
 		this.perEmail = perEmail;
 	}
-
 
 	public Date getPerFechaNac() {
 		return perFechaNac;
@@ -99,7 +106,7 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerNombres() {
-		return this.perNombres;
+		return perNombres;
 	}
 
 	public void setPerNombres(String perNombres) {
@@ -107,7 +114,7 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerPass() {
-		return this.perPass;
+		return perPass;
 	}
 
 	public void setPerPass(String perPass) {
@@ -115,7 +122,7 @@ public class Persona implements Serializable {
 	}
 
 	public String getPerTelefono() {
-		return this.perTelefono;
+		return perTelefono;
 	}
 
 	public void setPerTelefono(String perTelefono) {
@@ -123,7 +130,7 @@ public class Persona implements Serializable {
 	}
 
 	public Integer getTperId() {
-		return this.tperId;
+		return tperId;
 	}
 
 	public void setTperId(Integer tperId) {

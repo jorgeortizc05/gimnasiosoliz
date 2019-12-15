@@ -27,7 +27,7 @@ public class Rutina implements Serializable {
 	}
 
 	public Integer getRutId() {
-		return this.rutId;
+		return rutId;
 	}
 
 	public void setRutId(Integer rutId) {
@@ -35,7 +35,7 @@ public class Rutina implements Serializable {
 	}
 
 	public String getRutDescripcion() {
-		return this.rutDescripcion;
+		return rutDescripcion;
 	}
 
 	public void setRutDescripcion(String rutDescripcion) {
@@ -43,11 +43,13 @@ public class Rutina implements Serializable {
 	}
 
 	public String getRutNombre() {
-		return this.rutNombre;
+		return rutNombre;
 	}
 
 	public void setRutNombre(String rutNombre) {
 		this.rutNombre = rutNombre;
 	}
+
+	
 
 }
