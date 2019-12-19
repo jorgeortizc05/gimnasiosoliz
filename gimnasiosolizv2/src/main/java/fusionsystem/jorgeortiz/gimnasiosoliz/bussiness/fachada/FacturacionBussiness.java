@@ -42,8 +42,8 @@ public class FacturacionBussiness {
 		return auxs;
 	}
 	
-	public List<ReporteVentasView> getListFact1() throws Exception{
-		List<ReporteVentasView> auxs = factBuss.getListFact1();
+	public List<ReporteVentasView> getReporteVentas() throws Exception{
+		List<ReporteVentasView> auxs = factBuss.getReporteVentas();
 		return auxs;
 	}
 	

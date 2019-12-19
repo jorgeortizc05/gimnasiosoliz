@@ -22,7 +22,7 @@ public class FacturacionController {
 		
 		private Factura newFactura;
 		private List<Factura> listFact;
-		private List<ReporteVentasView> listFact1;
+		private List<ReporteVentasView> listReporteVentas;
 		
 		//Variables
 		private int vFactId;
@@ -31,12 +31,14 @@ public class FacturacionController {
 		private int vFPId;
 		private int vProdId;
 		
+		private double vTotal;
+		
 		@PostConstruct
 		public void init() {
 			vEditing = false;
 			newFactura = new Factura();
 			//loadListFact();
-			loadListFact1();
+			getReporteVentas();
 		}
 		
 		public String guardarFactura() {
@@ -119,9 +121,12 @@ public class FacturacionController {
 			
 		}
 		
-		public void loadListFact1() {
+		public void getReporteVentas() {
 			try {
-				listFact1 = factBuss.getListFact1();
+				listReporteVentas = factBuss.getReporteVentas();
+				for(ReporteVentasView r : listReporteVentas) {
+					vTotal = vTotal + r.getFactVtotal();
+				}
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -158,8 +163,8 @@ public class FacturacionController {
 			return listFact;
 		}
 
-		public List<ReporteVentasView> getListFact1() {
-			return listFact1;
+		public List<ReporteVentasView> getListReporteVentas() {
+			return listReporteVentas;
 		}
 
 		public int getvPerId() {
@@ -185,5 +190,15 @@ public class FacturacionController {
 		public void setvProdId(int vProdId) {
 			this.vProdId = vProdId;
 		}
+
+		public double getvTotal() {
+			return vTotal;
+		}
+
+		public void setvTotal(double vTotal) {
+			this.vTotal = vTotal;
+		}
+		
+		
 		
 }

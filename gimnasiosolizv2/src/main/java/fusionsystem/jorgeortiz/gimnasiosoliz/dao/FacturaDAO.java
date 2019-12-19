@@ -64,7 +64,7 @@ public class FacturaDAO {
 	}
 	
 	//Listar
-	public List<ReporteVentasView> getListFact1(){
+	public List<ReporteVentasView> getReporteVentas(){
 		
 		try {
 			Query query = emG.createNamedQuery("ReporteVentasView.findAll");

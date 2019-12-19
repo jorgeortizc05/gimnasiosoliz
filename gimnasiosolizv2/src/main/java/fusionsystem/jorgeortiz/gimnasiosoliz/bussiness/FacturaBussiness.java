@@ -63,9 +63,9 @@ public class FacturaBussiness {
 			throw new Exception("List [Facturas: null]");
 	}
 	
-	public List<ReporteVentasView> getListFact1() throws Exception{
+	public List<ReporteVentasView> getReporteVentas() throws Exception{
 		
-		List<ReporteVentasView> auxs = factDAO.getListFact1();
+		List<ReporteVentasView> auxs = factDAO.getReporteVentas();
 		
 		if(auxs != null) {
 			return auxs;
