@@ -1,0 +1,11 @@
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\bin\Debug\gimnasiosoliz.exe.config
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\bin\Debug\gimnasiosoliz.exe
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\bin\Debug\gimnasiosoliz.pdb
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.csprojAssemblyReference.cache
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.PL.frmPersona.resources
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.Properties.Resources.resources
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.csproj.GenerateResource.cache
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.csproj.CoreCompileInputs.cache
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.exe
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.pdb
+C:\Users\jorge\source\repos\gimnasiosoliz\gimnasiosoliz\obj\Debug\gimnasiosoliz.PL.frmProductos.resources
