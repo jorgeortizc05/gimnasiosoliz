@@ -28,9 +28,13 @@ public class EmpresaDAO {
         Connection connect = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("insert into empresa (nombre, descripcion) values (?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into empresa (nombre, descripcion, RUC, direccion_matriz, direccion_sucursal, id_canton) values (?,?,?,?,?,?)");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
+            st.setString(3, item.getRUC());
+            st.setString(4, item.getDireccionMatriz());
+            st.setString(5, item.getDireccionSucursal());
+            st.setInt(6, item.getIdCanton());
             st.execute();
             conector.close(connect);
             return true;
@@ -48,13 +52,16 @@ public class EmpresaDAO {
         Empresa item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from empresa c where c.id = ?");
-            st.setInt(0, id);
+            PreparedStatement st = connect.prepareStatement("select * from empresa e where e.id = "+id);
             result = st.executeQuery();
             item = new Empresa();
             item.setId(result.getInt("id"));
             item.setNombre(result.getString("nombre"));
             item.setDescripcion(result.getString("descripcion"));
+            item.setRUC(result.getString("RUC"));
+            item.setDireccionMatriz(result.getString("direccion_matriz"));
+            item.setDireccionSucursal(result.getString("direccion_sucursal"));
+            item.setIdCanton(result.getInt("id_canton"));
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -70,10 +77,14 @@ public class EmpresaDAO {
         connect = conector.getConexion();
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("update empresa set nombre = ?, descripcion = ? where id = ?");
+            PreparedStatement st = connect.prepareStatement("update empresa set nombre = ?, descripcion = ?, RUC = ?, direccion_matriz = ?, direccion_sucursal = ?, id_canton = ? where id = ?");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
-            st.setInt(3, item.getId());
+            st.setString(3, item.getRUC());
+            st.setString(4, item.getDireccionMatriz());
+            st.setString(5, item.getDireccionSucursal());
+            st.setInt(6, item.getIdCanton());
+            st.setInt(7, item.getId());
             st.execute();
             conector.close(connect);
             return true;            
@@ -115,6 +126,10 @@ public class EmpresaDAO {
                 item.setId(result.getInt("id"));
                 item.setNombre(result.getString("nombre"));
                 item.setDescripcion(result.getString("descripcion"));
+                item.setRUC(result.getString("RUC"));
+                item.setDireccionMatriz(result.getString("direccion_matriz"));
+                item.setDireccionSucursal(result.getString("direccion_sucursal"));
+                item.setIdCanton(result.getInt("id_canton"));
                 items.add(item);
             }
             connect.close();

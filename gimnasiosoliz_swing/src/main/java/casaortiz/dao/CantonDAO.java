@@ -48,8 +48,7 @@ public class CantonDAO {
         Canton item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from canton c where c.id = ?");
-            st.setInt(0, id);
+            PreparedStatement st = connect.prepareStatement("select * from canton c where c.id ="+id);
             result = st.executeQuery();
             item = new Canton();
             item.setId(result.getInt("id"));

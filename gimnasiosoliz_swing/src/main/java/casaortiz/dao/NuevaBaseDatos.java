@@ -49,7 +49,7 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE IF NOT EXISTS empresa (\n" +
+            stmt.execute("CREATE TABLE empresa (\n" +
                 "    id                 INTEGER           PRIMARY KEY AUTOINCREMENT,\n" +
                 "    nombre             VARCHAR (70),\n" +
                 "    descripcion        VARCHAR (300),\n" +
@@ -58,6 +58,7 @@ public class NuevaBaseDatos {
                 "    direccion_sucursal VARCHAR (300),\n" +
                 "    id_canton          INTEGER (1000000) REFERENCES canton (id) ON DELETE CASCADE\n" +
                 "                                                                ON UPDATE CASCADE\n" +
+                "                                         CONSTRAINT id_canton_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
                 ");");
             conector.close(connect);
             return true;

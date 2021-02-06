@@ -5,9 +5,8 @@
  */
 package casaortiz.buss;
 
-import casaortiz.dao.CantonDAO;
-import casaortiz.model.Canton;
-import casaortiz.model.Producto;
+import casaortiz.dao.PersonaDAO;
+import casaortiz.model.Persona;
 import java.util.List;
 
 /**
@@ -16,21 +15,21 @@ import java.util.List;
  */
 public class PersonaBuss {
     
-    private CantonDAO canDAO = new CantonDAO();
+    private PersonaDAO perDAO = new PersonaDAO();
     
-    public boolean guardar(Canton item){
+    public boolean guardar(Persona item){
         
         try {
-            canDAO.guardar(item);
+            perDAO.guardar(item);
             return true;
         } catch (Exception e) {
             return false;
         }   
     }
     
-    public boolean actualizar(Canton item){
+    public boolean actualizar(Persona item){
         try {
-            canDAO.actualizar(item);
+            perDAO.actualizar(item);
             return true;
         } catch (Exception e) {
             return false;
@@ -39,17 +38,27 @@ public class PersonaBuss {
     
     public boolean eliminar(int id){
         try {
-            canDAO.eliminar(id);
+            perDAO.eliminar(id);
             return true;
         } catch (Exception e) {
             return false;
         }
     }
     
-    public List<Canton> getPersonas(){
-        List<Canton> items = null;
+    public Persona getPersona(int id){
+        Persona item = null;
         try {
-            items = canDAO.getCantones();
+            item = perDAO.getPersona(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
+    }
+    
+    public List<Persona> getPersonas(){
+        List<Persona> items = null;
+        try {
+            items = perDAO.getPersonas();
             return items;
         } catch (Exception e) {
             return items;

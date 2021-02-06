@@ -47,6 +47,16 @@ public class EmpresaBuss {
         }
     }
     
+    public Empresa getEmpresa(int id){
+        Empresa item = null;
+        try {
+            item = empDAO.getEmpresa(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
+    }
+    
     public List<Empresa> getEmpresas(){
         List<Empresa> items = null;
         try {

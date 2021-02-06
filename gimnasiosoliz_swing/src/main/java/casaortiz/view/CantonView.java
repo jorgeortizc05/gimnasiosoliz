@@ -26,7 +26,7 @@ public class CantonView extends javax.swing.JPanel {
         loadCantones();
     }
     
-    public void guardarCanton(){
+    public void guardar(){
         canton = new Canton();
         canton.setNombre(jTFNombre.getText());
         canton.setDescripcion(jTADescripcion.getText());
@@ -40,23 +40,22 @@ public class CantonView extends javax.swing.JPanel {
         }
     }
     
-    public void actualizarCanton(){
+    public void actualizar(){
         canton = new Canton();
         canton.setId(Integer.parseInt(jLID.getText()));
         canton.setNombre(jTFNombre.getText());
         canton.setDescripcion(jTADescripcion.getText());
         boolean estadoGuardado = canBuss.actualizar(canton);
         if(estadoGuardado){
-            JOptionPane.showMessageDialog(this, "Cantón guardado");
+            JOptionPane.showMessageDialog(this, "Cantón actualizado");
             loadCantones();
             vaciarFormulario();
         }else{
-            JOptionPane.showMessageDialog(this, "Error al guardar el cantón");
+            JOptionPane.showMessageDialog(this, "Error al actualizar el cantón");
         }
     }
     
-    public void eliminarCanton(){
-        canBuss = new CantonBuss();
+    public void eliminar(){
         int fila = jTListaCantones.getSelectedRow();
         if(fila == -1){
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
@@ -82,11 +81,10 @@ public class CantonView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
             int id = Integer.parseInt((String)jTListaCantones.getValueAt(fila, 0).toString());
-            String nombre = (String) jTListaCantones.getValueAt(fila, 1);
-            String descripcion = (String) jTListaCantones.getValueAt(fila, 2);
-            jLID.setText(""+id);
-            jTFNombre.setText(nombre);
-            jTADescripcion.setText(descripcion);
+            Canton item = canBuss.getCanton(id);
+            jLID.setText(""+item.getId());
+            jTFNombre.setText(item.getNombre());
+            jTADescripcion.setText(item.getDescripcion());
         }
     }
     
@@ -134,7 +132,7 @@ public class CantonView extends javax.swing.JPanel {
         jTFNombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
-        jBGuardarProducto = new javax.swing.JButton();
+        jBGuardar = new javax.swing.JButton();
         JBListar = new javax.swing.JButton();
         JBEditar = new javax.swing.JButton();
         JBOk = new javax.swing.JButton();
@@ -146,144 +144,105 @@ public class CantonView extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaCantones = new javax.swing.JTable();
 
-        setBackground(java.awt.Color.white);
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBackground(java.awt.Color.white);
         jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel1.setText("ID:");
+        jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 37, -1, -1));
 
+        jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 91, 20));
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel3.setText("Canton:");
+        jPDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 79, -1, -1));
 
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Descripcion:");
+        jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 125, -1, -1));
+
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 210, -1));
 
         jTADescripcion.setColumns(20);
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
 
-        jBGuardarProducto.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
-        jBGuardarProducto.setText("Guardar");
-        jBGuardarProducto.addActionListener(new java.awt.event.ActionListener() {
+        jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 210, -1));
+
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBGuardarProductoActionPerformed(evt);
+                jBGuardarActionPerformed(evt);
             }
         });
+        jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 150, -1));
 
-        JBListar.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        JBListar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBListarActionPerformed(evt);
             }
         });
+        jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 150, -1));
 
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        JBEditar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBEditar.setText("Editar");
         JBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBEditarActionPerformed(evt);
             }
         });
+        jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 80, -1));
 
-        JBOk.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        JBOk.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBOk.setText("Ok");
         JBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBOkActionPerformed(evt);
             }
         });
+        jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 70, -1));
 
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 15)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBEliminarActionPerformed(evt);
             }
         });
+        jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 170, 150, -1));
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Ubuntu", 1, 15)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBVaciarFormularioActionPerformed(evt);
             }
         });
+        jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 220, -1, -1));
 
-        javax.swing.GroupLayout jPDatosLayout = new javax.swing.GroupLayout(jPDatos);
-        jPDatos.setLayout(jPDatosLayout);
-        jPDatosLayout.setHorizontalGroup(
-            jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPDatosLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel1))
-                .addGap(46, 46, 46)
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFNombre))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jBGuardarProducto, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBListar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPDatosLayout.createSequentialGroup()
-                        .addComponent(JBEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(10, 10, 10)
-                        .addComponent(JBOk, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(JBEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(JBVaciarFormulario, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(282, Short.MAX_VALUE))
-        );
-        jPDatosLayout.setVerticalGroup(
-            jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPDatosLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addComponent(jLID, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTFNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(26, 26, 26)
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel4)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPDatosLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jBGuardarProducto)
-                .addGap(22, 22, 22)
-                .addComponent(JBListar)
-                .addGap(22, 22, 22)
-                .addGroup(jPDatosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(JBEditar)
-                    .addComponent(JBOk))
-                .addGap(22, 22, 22)
-                .addComponent(JBEliminar)
-                .addGap(22, 22, 22)
-                .addComponent(JBVaciarFormulario)
-                .addContainerGap())
-        );
+        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 280));
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 270));
-
-        jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
-        jLabel8.setFont(new java.awt.Font("Ubuntu", 1, 24)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel8.setText("CANTONES");
         jPanel2.add(jLabel8, new java.awt.GridBagConstraints());
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 860, 40));
 
-        JPListaCantones.setBackground(java.awt.Color.white);
         JPListaCantones.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Cantones"));
+        JPListaCantones.setLayout(new java.awt.GridLayout(1, 0));
 
+        jTListaCantones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -314,29 +273,14 @@ public class CantonView extends javax.swing.JPanel {
             jTListaCantones.getColumnModel().getColumn(2).setPreferredWidth(400);
         }
 
-        javax.swing.GroupLayout JPListaCantonesLayout = new javax.swing.GroupLayout(JPListaCantones);
-        JPListaCantones.setLayout(JPListaCantonesLayout);
-        JPListaCantonesLayout.setHorizontalGroup(
-            JPListaCantonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPListaCantonesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 816, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        JPListaCantonesLayout.setVerticalGroup(
-            JPListaCantonesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JPListaCantonesLayout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 337, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        JPListaCantones.add(jScrollPane2);
 
         add(JPListaCantones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 350, 850, 400));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jBGuardarProductoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarProductoActionPerformed
-        guardarCanton();
-    }//GEN-LAST:event_jBGuardarProductoActionPerformed
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
+        guardar();
+    }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
         // TODO add your handling code here:
@@ -345,20 +289,23 @@ public class CantonView extends javax.swing.JPanel {
 
     private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
         //seleccionarItemTabla();
+        jBGuardar.setVisible(false);
         seleccionarItemTabla();
     }//GEN-LAST:event_JBEditarActionPerformed
 
     private void JBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBOkActionPerformed
-        actualizarCanton();
+        actualizar();
+        jBGuardar.setVisible(true);
     }//GEN-LAST:event_JBOkActionPerformed
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
         //eliminarProducto();
-        eliminarCanton();
+        eliminar();
     }//GEN-LAST:event_JBEliminarActionPerformed
 
     private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
         vaciarFormulario();
+        jBGuardar.setVisible(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
 
 
@@ -369,7 +316,7 @@ public class CantonView extends javax.swing.JPanel {
     private javax.swing.JButton JBOk;
     private javax.swing.JButton JBVaciarFormulario;
     private javax.swing.JPanel JPListaCantones;
-    private javax.swing.JButton jBGuardarProducto;
+    private javax.swing.JButton jBGuardar;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;

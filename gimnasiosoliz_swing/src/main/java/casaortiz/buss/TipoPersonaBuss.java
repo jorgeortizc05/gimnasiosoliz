@@ -37,6 +37,16 @@ public class TipoPersonaBuss {
         }
     }
     
+    public TipoPersona getTipoPersona(int id){
+        TipoPersona item = null;
+        try {
+            item = tpDAO.getTipoPersona(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
+    }
+    
     public boolean eliminar(int id){
         try {
             tpDAO.eliminar(id);

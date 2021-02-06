@@ -48,8 +48,7 @@ public class TipoComprobanteDAO {
         TipoComprobante item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from tipo_comprobante c where c.id = ?");
-            st.setInt(0, id);
+            PreparedStatement st = connect.prepareStatement("select * from tipo_comprobante c where c.id = "+id);
             result = st.executeQuery();
             item = new TipoComprobante();
             item.setId(result.getInt("id"));

@@ -21,12 +21,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    ProductoView pv = null;
-    CantonView cv = null;
-    EmpresaView ev = null;
+    private ProductoView pv = new ProductoView();
+    private CantonView cv = new CantonView();
+    private EmpresaView ev = new EmpresaView();
+    private FormaPagoView fpv = new FormaPagoView();
+    private TipoComprobanteView tcv = new TipoComprobanteView();
+    private TipoPersonaView tpv = new TipoPersonaView();
+    private PersonaView perv = new PersonaView();
     public VentanaPrincipal() {
         initComponents();
-        this.setLayout(new FlowLayout());
+        this.setLayout(new FlowLayout());;
+        pv = new ProductoView();
+        this.add(pv, BorderLayout.CENTER);
+        this.pack();
         
     }
 
@@ -44,14 +51,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JMIProductos = new javax.swing.JMenuItem();
         jMICantones = new javax.swing.JMenuItem();
         jMIEmpresa = new javax.swing.JMenuItem();
+        jMIFormaPago = new javax.swing.JMenuItem();
+        jMITipoComprobantes = new javax.swing.JMenuItem();
+        jMITipoPersona = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMIPersonas = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gimnasio Soliz");
         setBackground(java.awt.Color.white);
+        setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(1280, 760));
-        getContentPane().setLayout(null);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jMenu1.setText("Archivo");
 
@@ -79,9 +91,42 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMIEmpresa);
 
+        jMIFormaPago.setText("Formas de Pago");
+        jMIFormaPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIFormaPagoActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMIFormaPago);
+
+        jMITipoComprobantes.setText("Tipo de Comprobantes");
+        jMITipoComprobantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMITipoComprobantesActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMITipoComprobantes);
+
+        jMITipoPersona.setText("Tipos de Personas");
+        jMITipoPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMITipoPersonaActionPerformed(evt);
+            }
+        });
+        jMenu1.add(jMITipoPersona);
+
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
+        jMenu2.setText("Persona");
+
+        jMIPersonas.setText("Personas");
+        jMIPersonas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIPersonasActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMIPersonas);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -113,13 +158,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_jMIEmpresaActionPerformed
 
+    private void jMIFormaPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIFormaPagoActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        fpv = new FormaPagoView();
+        this.add(fpv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMIFormaPagoActionPerformed
+
+    private void jMITipoComprobantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoComprobantesActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        tcv = new TipoComprobanteView();
+        this.add(tcv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMITipoComprobantesActionPerformed
+
+    private void jMITipoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoPersonaActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        tpv = new TipoPersonaView();
+        this.add(tpv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMITipoPersonaActionPerformed
+
+    private void jMIPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIPersonasActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        perv = new PersonaView();
+        this.add(perv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMIPersonasActionPerformed
+
     public void vaciarVentana(){
-        if(pv == null || cv == null){
-            
-        }else{
-            this.remove(pv);
-            this.remove(cv);
-        } 
+        
+        this.remove(pv);
+        this.remove(cv);
+        this.remove(ev);
+        this.remove(fpv);
+        this.remove(tcv);
+        this.remove(tpv);
+        this.remove(perv);
+        
     }
     /**
      * @param args the command line arguments
@@ -152,7 +232,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 try {
-                    UIManager.setLookAndFeel("com.sun.java.swing.plaf.gtk.GTKLookAndFeel");
+                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
                 } catch (ClassNotFoundException ex) {
                     Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                 } catch (InstantiationException ex) {
@@ -162,7 +242,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 } catch (UnsupportedLookAndFeelException ex) {
                     Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                new VentanaPrincipal().setVisible(true);
+                VentanaPrincipal v = new VentanaPrincipal();
+                v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro                
+                v.setVisible(true);
+                
             }
         });
     }
@@ -171,6 +254,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem JMIProductos;
     private javax.swing.JMenuItem jMICantones;
     private javax.swing.JMenuItem jMIEmpresa;
+    private javax.swing.JMenuItem jMIFormaPago;
+    private javax.swing.JMenuItem jMIPersonas;
+    private javax.swing.JMenuItem jMITipoComprobantes;
+    private javax.swing.JMenuItem jMITipoPersona;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;

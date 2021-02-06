@@ -5,11 +5,8 @@
  */
 package casaortiz.buss;
 
-import casaortiz.dao.CantonDAO;
 import casaortiz.dao.FormaPagoDAO;
-import casaortiz.model.Canton;
 import casaortiz.model.FormaPago;
-import casaortiz.model.Producto;
 import java.util.List;
 
 /**
@@ -28,6 +25,16 @@ public class FormaPagoBuss {
         } catch (Exception e) {
             return false;
         }   
+    }
+    
+    public FormaPago getFormaPago(int id){
+        FormaPago item = null;
+        try {
+            item = fpDAO.getFormaPago(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
     }
     
     public boolean actualizar(FormaPago item){

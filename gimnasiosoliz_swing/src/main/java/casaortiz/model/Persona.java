@@ -5,7 +5,7 @@
  */
 package casaortiz.model;
 
-import java.sql.Date;
+import java.util.Date;
 
 /**
  *
@@ -21,7 +21,7 @@ public class Persona {
     private Date fechaNacimiento;
     private String telefono;
     private String activo;
-    private String idTipoPersona;
+    private int idTipoPersona;
 
     public int getId() {
         return id;
@@ -95,11 +95,11 @@ public class Persona {
         this.activo = activo;
     }
 
-    public String getIdTipoPersona() {
+    public int getIdTipoPersona() {
         return idTipoPersona;
     }
 
-    public void setIdTipoPersona(String idTipoPersona) {
+    public void setIdTipoPersona(int idTipoPersona) {
         this.idTipoPersona = idTipoPersona;
     }
 

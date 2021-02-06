@@ -36,6 +36,16 @@ public class TipoComprobanteBuss {
         }
     }
     
+    public TipoComprobante getTipoComprobante(int id){
+        TipoComprobante item = null;
+        try {
+            item = tcDAO.getTipoComprobante(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
+    }
+    
     public boolean eliminar(int id){
         try {
             tcDAO.eliminar(id);

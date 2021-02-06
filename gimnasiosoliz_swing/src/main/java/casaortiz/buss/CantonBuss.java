@@ -46,6 +46,16 @@ public class CantonBuss {
         }
     }
     
+    public Canton getCanton(int id){
+        Canton item = null;
+        try {
+            item = canDAO.getCanton(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
+    }
+    
     public List<Canton> getCantones(){
         List<Canton> items = null;
         try {

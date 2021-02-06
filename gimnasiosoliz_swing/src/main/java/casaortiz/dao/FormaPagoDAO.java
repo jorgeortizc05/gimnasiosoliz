@@ -48,8 +48,7 @@ public class FormaPagoDAO {
         FormaPago item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from forma_pago c where c.id = ?");
-            st.setInt(0, id);
+            PreparedStatement st = connect.prepareStatement("select * from forma_pago fp where fp.id = "+id);
             result = st.executeQuery();
             item = new FormaPago();
             item.setId(result.getInt("id"));
@@ -102,7 +101,7 @@ public class FormaPagoDAO {
         }
     }
     
-    public List<FormaPago> getFormaPagos(){
+    public List<FormaPago> getFormaPagos() throws SQLException{
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
@@ -120,15 +119,10 @@ public class FormaPagoDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(FormaPagoDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            connect.close();
+            return null;
+                
         }
-        return null;
         
     }
     
