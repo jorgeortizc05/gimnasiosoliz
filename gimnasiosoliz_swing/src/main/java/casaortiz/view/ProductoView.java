@@ -281,19 +281,19 @@ public class ProductoView extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel6.setText("Codigo Barras:");
-        jPDatosProducto.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, -1, -1));
+        jPDatosProducto.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Precio:");
-        jPDatosProducto.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, -1, -1));
+        jPDatosProducto.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
 
         JTFPrecio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
-        jPDatosProducto.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 240, 100, -1));
+        jPDatosProducto.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 110, -1));
 
         JTFCodigoBarra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPDatosProducto.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 280, 260, -1));
+        jPDatosProducto.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 260, -1));
 
         JBEditar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBEditar.setText("Editar");
@@ -323,7 +323,7 @@ public class ProductoView extends javax.swing.JPanel {
         jPDatosProducto.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 160, -1));
 
         jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPDatosProducto.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 20, 340, 300));
+        jPDatosProducto.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 340, 300));
 
         jBEligirImagen.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jBEligirImagen.setText("Elegir Imagen");
@@ -332,7 +332,7 @@ public class ProductoView extends javax.swing.JPanel {
                 jBEligirImagenActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 130, 30));
+        jPDatosProducto.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 340, 130, 30));
 
         JTADescripcion.setColumns(20);
         JTADescripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -352,11 +352,11 @@ public class ProductoView extends javax.swing.JPanel {
         jPDatosProducto.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 160, -1));
 
         jLabel9.setText("Ex: 15.89");
-        jPDatosProducto.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 240, -1, -1));
+        jPDatosProducto.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, 30));
 
         jLabel10.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         jLabel10.setText("$");
-        jPDatosProducto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 10, -1));
+        jPDatosProducto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 20, 30));
 
         add(jPDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 390));
 

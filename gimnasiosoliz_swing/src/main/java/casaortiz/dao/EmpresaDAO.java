@@ -67,7 +67,7 @@ public class EmpresaDAO {
         } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
             conector.close(connect);
-            return null;
+            return item;
         }
     }
     
@@ -117,10 +117,11 @@ public class EmpresaDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<Empresa> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from empresa");
             result = st.executeQuery();
-            List<Empresa> items = new ArrayList<Empresa>();
+            items = new ArrayList<Empresa>();
             while(result.next()){
                 Empresa item = new Empresa();
                 item.setId(result.getInt("id"));
@@ -135,16 +136,9 @@ public class EmpresaDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(EmpresaDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
-        }
-        return null;
-        
+            conector.close(connect);
+            return items;
+        }       
     }
     
 }

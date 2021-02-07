@@ -65,7 +65,7 @@ public class ProductoDAO {
         } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
             conector.close(connect);
-            return null;
+            return item;
         }
     }
     
@@ -114,10 +114,11 @@ public class ProductoDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<Producto> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from producto");
             result = st.executeQuery();
-            List<Producto> items = new ArrayList<Producto>();
+            items = new ArrayList<Producto>();
             while(result.next()){
                 Producto producto = new Producto();
                 producto.setId(result.getInt("id"));
@@ -131,15 +132,9 @@ public class ProductoDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
         
     }
     
@@ -147,10 +142,11 @@ public class ProductoDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<Producto> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from producto p where p.nombre like '%"+nombre+"%'");
             result = st.executeQuery();
-            List<Producto> items = new ArrayList<Producto>();
+            items = new ArrayList<Producto>();
             while(result.next()){
                 Producto producto = new Producto();
                 producto.setId(result.getInt("id"));
@@ -164,15 +160,9 @@ public class ProductoDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
         
     }
     
@@ -180,10 +170,11 @@ public class ProductoDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<Producto> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from producto p where p.codigo_barra like '%"+codigoBarra+"%'");
             result = st.executeQuery();
-            List<Producto> items = new ArrayList<Producto>();
+            items = new ArrayList<Producto>();
             while(result.next()){
                 Producto producto = new Producto();
                 producto.setId(result.getInt("id"));
@@ -197,15 +188,9 @@ public class ProductoDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(ProductoDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
         
     }
     

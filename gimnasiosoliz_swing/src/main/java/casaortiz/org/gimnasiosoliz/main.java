@@ -28,5 +28,6 @@ public class main {
         ndb.crearTablaTipoComprobante();
         ndb.crearTablaTipoPersona();
         ndb.crearTablaPersona();
+        ndb.crearTablaTipoSuscripción();
     }
 }

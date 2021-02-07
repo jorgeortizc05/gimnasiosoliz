@@ -6,7 +6,7 @@
 package casaortiz.dao;
 
 import casaortiz.db.Conector;
-import casaortiz.model.FormaPago;
+import casaortiz.model.TipoSuscripcion;
 import java.sql.PreparedStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -18,17 +18,18 @@ import java.util.List;
  *
  * @author jorge
  */
-public class FormaPagoDAO {
+public class TipoSuscripcionDAO {
     
     private Conector conector = new Conector();
     
-    public boolean guardar(FormaPago item){
+    public boolean guardar(TipoSuscripcion item){
         Connection connect = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("insert into forma_pago (nombre, descripcion) values (?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into tipo_suscripcion (nombre, precio, descripcion) values (?,?,?)");
             st.setString(1, item.getNombre());
-            st.setString(2, item.getDescripcion());
+            st.setDouble(2, item.getPrecio());
+            st.setString(3, item.getDescripcion());
             st.execute();
             conector.close(connect);
             return true;
@@ -39,18 +40,19 @@ public class FormaPagoDAO {
         }
     }
     
-    public FormaPago getFormaPago(int id){
+    public TipoSuscripcion getTipoSuscripcion(int id){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
-        FormaPago item = null;
+        TipoSuscripcion item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from forma_pago fp where fp.id = "+id);
+            PreparedStatement st = connect.prepareStatement("select * from tipo_suscripcion ts where ts.id ="+id);
             result = st.executeQuery();
-            item = new FormaPago();
+            item = new TipoSuscripcion();
             item.setId(result.getInt("id"));
             item.setNombre(result.getString("nombre"));
+            item.setPrecio(result.getDouble("precio"));
             item.setDescripcion(result.getString("descripcion"));
             conector.close(connect);
             return item;
@@ -61,16 +63,17 @@ public class FormaPagoDAO {
         }
     }
     
-    public boolean actualizar(FormaPago item){
+    public boolean actualizar(TipoSuscripcion item){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("update forma_pago set nombre = ?, descripcion = ? where id = ?");
+            PreparedStatement st = connect.prepareStatement("update tipo_suscripcion set nombre = ?, precio = ?, descripcion = ? where id = ?");
             st.setString(1, item.getNombre());
-            st.setString(2, item.getDescripcion());
-            st.setInt(3, item.getId());
+            st.setDouble(2, item.getPrecio());
+            st.setString(3, item.getDescripcion());
+            st.setInt(4, item.getId());
             st.execute();
             conector.close(connect);
             return true;            
@@ -88,7 +91,7 @@ public class FormaPagoDAO {
         try {
             System.out.println(id);
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("delete from forma_pago where id = "+id);
+            PreparedStatement st = connect.prepareStatement("delete from tipo_suscripcion where id = "+id);
             st.executeUpdate();
             conector.close(connect);
             return true;            
@@ -99,19 +102,20 @@ public class FormaPagoDAO {
         }
     }
     
-    public List<FormaPago> getFormaPagos(){
+    public List<TipoSuscripcion> getCantones(){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
-        List<FormaPago> items = null;
+        List<TipoSuscripcion> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from forma_pago");
+            PreparedStatement st = connect.prepareStatement("select * from tipo_suscripcion");
             result = st.executeQuery();
-            items = new ArrayList<FormaPago>();
+            items = new ArrayList<TipoSuscripcion>();
             while(result.next()){
-                FormaPago item = new FormaPago();
+                TipoSuscripcion item = new TipoSuscripcion();
                 item.setId(result.getInt("id"));
                 item.setNombre(result.getString("nombre"));
+                item.setPrecio(result.getDouble("precio"));
                 item.setDescripcion(result.getString("descripcion"));
                 items.add(item);
             }
@@ -120,9 +124,7 @@ public class FormaPagoDAO {
         }catch(SQLException ex){
             conector.close(connect);
             return items;
-                
         }
-        
     }
     
 }

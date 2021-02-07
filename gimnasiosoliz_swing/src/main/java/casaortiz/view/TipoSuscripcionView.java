@@ -5,8 +5,8 @@
  */
 package casaortiz.view;
 
-import casaortiz.buss.CantonBuss;
-import casaortiz.model.Canton;
+import casaortiz.buss.TipoSuscripcionBuss;
+import casaortiz.model.TipoSuscripcion;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -15,75 +15,78 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author jorge
  */
-public class CantonView extends javax.swing.JPanel {
+public class TipoSuscripcionView extends javax.swing.JPanel {
 
-    private CantonBuss canBuss;
-    private Canton canton;
+    private TipoSuscripcionBuss tsBuss;
+    private TipoSuscripcion tipoSuscripcion;
     
-    public CantonView() {
+    public TipoSuscripcionView() {
         initComponents();
-        canBuss = new CantonBuss();
-        loadCantones();
+        tsBuss = new TipoSuscripcionBuss();
+        loadTipoSuscripciones();
     }
     
     public void guardar(){
-        canton = new Canton();
-        canton.setNombre(jTFNombre.getText());
-        canton.setDescripcion(jTADescripcion.getText());
-        boolean estadoGuardado = canBuss.guardar(canton);
+        tipoSuscripcion = new TipoSuscripcion();
+        tipoSuscripcion.setNombre(jTFNombre.getText());
+        tipoSuscripcion.setPrecio(Double.parseDouble(JTFPrecio.getText()));
+        tipoSuscripcion.setDescripcion(jTADescripcion.getText());
+        boolean estadoGuardado = tsBuss.guardar(tipoSuscripcion);
         if(estadoGuardado){
-            JOptionPane.showMessageDialog(this, "Cantón guardado");
-            loadCantones();
+            JOptionPane.showMessageDialog(this, "Tipo de Suscripcion guardado");
+            loadTipoSuscripciones();
             vaciarFormulario();
         }else{
-            JOptionPane.showMessageDialog(this, "Error al guardar el cantón");
+            JOptionPane.showMessageDialog(this, "Error al guardar el Tipo de Suscripcion");
         }
     }
     
     public void actualizar(){
-        canton = new Canton();
-        canton.setId(Integer.parseInt(jLID.getText()));
-        canton.setNombre(jTFNombre.getText());
-        canton.setDescripcion(jTADescripcion.getText());
-        boolean estadoGuardado = canBuss.actualizar(canton);
+        tipoSuscripcion = new TipoSuscripcion();
+        tipoSuscripcion.setId(Integer.parseInt(jLID.getText()));
+        tipoSuscripcion.setNombre(jTFNombre.getText());
+        tipoSuscripcion.setPrecio(Double.parseDouble(JTFPrecio.getText()));
+        tipoSuscripcion.setDescripcion(jTADescripcion.getText());
+        boolean estadoGuardado = tsBuss.actualizar(tipoSuscripcion);
         if(estadoGuardado){
-            JOptionPane.showMessageDialog(this, "Cantón actualizado");
-            loadCantones();
+            JOptionPane.showMessageDialog(this, "Tipo de Suscripcion actualizado");
+            loadTipoSuscripciones();
             vaciarFormulario();
         }else{
-            JOptionPane.showMessageDialog(this, "Error al actualizar el cantón");
+            JOptionPane.showMessageDialog(this, "Error al actualizar el Tipo de Suscripcion");
         }
     }
     
     public void eliminar(){
-        int fila = jTListaCantones.getSelectedRow();
+        int fila = jTListaTipoSuscripciones.getSelectedRow();
         if(fila == -1){
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
-            int id = Integer.parseInt((String)jTListaCantones.getValueAt(fila, 0).toString());
-            String nombre = (String)jTListaCantones.getValueAt(fila, 1);        
+            int id = Integer.parseInt((String)jTListaTipoSuscripciones.getValueAt(fila, 0).toString());
+            String nombre = (String)jTListaTipoSuscripciones.getValueAt(fila, 1);        
             int estadoEliminacionDialog = JOptionPane.showConfirmDialog(this, "Seguro que desea eliminar "+nombre+"?","Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(estadoEliminacionDialog == 0){
-                boolean estadoEliminacion = canBuss.eliminar(id);
+                boolean estadoEliminacion = tsBuss.eliminar(id);
                 if(estadoEliminacion){
-                    JOptionPane.showMessageDialog(this, "Cantón eliminado");
-                    loadCantones();
+                    JOptionPane.showMessageDialog(this, "Tipo de Suscripcion eliminado");
+                    loadTipoSuscripciones();
                 }else{
-                    JOptionPane.showMessageDialog(this, "Error al eliminar el cantón");
+                    JOptionPane.showMessageDialog(this, "Error al eliminar el Tipo de Suscripcion");
                 }
             }
         }
     }
     
     public void seleccionarItemTabla(){
-        int fila = jTListaCantones.getSelectedRow();
+        int fila = jTListaTipoSuscripciones.getSelectedRow();
         if(fila == -1){
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
-            int id = Integer.parseInt((String)jTListaCantones.getValueAt(fila, 0).toString());
-            Canton item = canBuss.getCanton(id);
+            int id = Integer.parseInt((String)jTListaTipoSuscripciones.getValueAt(fila, 0).toString());
+            TipoSuscripcion item = tsBuss.getTipoSuscripcion(id);
             jLID.setText(""+item.getId());
             jTFNombre.setText(item.getNombre());
+            JTFPrecio.setText(String.valueOf(item.getPrecio()));
             jTADescripcion.setText(item.getDescripcion());
         }
     }
@@ -91,28 +94,29 @@ public class CantonView extends javax.swing.JPanel {
     public void vaciarFormulario(){
         jLID.setText("");
         jTFNombre.setText("");
+        JTFPrecio.setText("");
         jTADescripcion.setText("");
     }
     
     public void vaciarTabla(){
-        DefaultTableModel modelo = (DefaultTableModel) jTListaCantones.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTListaTipoSuscripciones.getModel();
         modelo.setRowCount(0);
-        jTListaCantones.setModel(modelo);
+        jTListaTipoSuscripciones.setModel(modelo);
     }
     
-    public void loadCantones(){
+    public void loadTipoSuscripciones(){
         vaciarTabla();
-        DefaultTableModel modelo = (DefaultTableModel) jTListaCantones.getModel();
-        List<Canton> cantones = canBuss.getCantones();
-        Object rowData[] = new Object[3];
-        for(Canton c: cantones){
-            System.out.println(c);
-            rowData[0] = c.getId();
-            rowData[1] = c.getNombre();
-            rowData[2] = c.getDescripcion();
+        DefaultTableModel modelo = (DefaultTableModel) jTListaTipoSuscripciones.getModel();
+        List<TipoSuscripcion> items = tsBuss.getTipoSuscripciones();
+        Object rowData[] = new Object[4];
+        for(TipoSuscripcion ts: items){
+            rowData[0] = ts.getId();
+            rowData[1] = ts.getNombre();
+            rowData[2] = ts.getPrecio();
+            rowData[3] = ts.getDescripcion();
             modelo.addRow(rowData);
         }
-        jTListaCantones.setModel(modelo);
+        jTListaTipoSuscripciones.setModel(modelo);
     }
 
     /**
@@ -138,11 +142,15 @@ public class CantonView extends javax.swing.JPanel {
         JBOk = new javax.swing.JButton();
         JBEliminar = new javax.swing.JButton();
         JBVaciarFormulario = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        JTFPrecio = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
-        JPListaCantones = new javax.swing.JPanel();
+        JPListaTipoSuscripciones = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTListaCantones = new javax.swing.JTable();
+        jTListaTipoSuscripciones = new javax.swing.JTable();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -154,18 +162,18 @@ public class CantonView extends javax.swing.JPanel {
         jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 37, -1, -1));
 
         jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 91, 20));
+        jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 91, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
-        jLabel3.setText("Canton:");
+        jLabel3.setText("Tipo Suscripción:");
         jPDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 79, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Descripcion:");
-        jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 125, -1, -1));
+        jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 210, -1));
+        jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 210, -1));
 
         jTADescripcion.setColumns(20);
         jTADescripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -173,7 +181,7 @@ public class CantonView extends javax.swing.JPanel {
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
 
-        jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 210, -1));
+        jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jBGuardar.setText("Guardar");
@@ -182,7 +190,7 @@ public class CantonView extends javax.swing.JPanel {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 150, -1));
+        jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 20, 150, -1));
 
         JBListar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBListar.setText("Listar");
@@ -191,7 +199,7 @@ public class CantonView extends javax.swing.JPanel {
                 JBListarActionPerformed(evt);
             }
         });
-        jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 70, 150, -1));
+        jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 70, 150, -1));
 
         JBEditar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBEditar.setText("Editar");
@@ -200,7 +208,7 @@ public class CantonView extends javax.swing.JPanel {
                 JBEditarActionPerformed(evt);
             }
         });
-        jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 80, -1));
+        jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 120, 80, -1));
 
         JBOk.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBOk.setText("Ok");
@@ -209,7 +217,7 @@ public class CantonView extends javax.swing.JPanel {
                 JBOkActionPerformed(evt);
             }
         });
-        jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 120, 70, -1));
+        jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 70, -1));
 
         JBEliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBEliminar.setText("Eliminar");
@@ -218,7 +226,7 @@ public class CantonView extends javax.swing.JPanel {
                 JBEliminarActionPerformed(evt);
             }
         });
-        jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 160, 150, -1));
+        jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 160, 150, -1));
 
         JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
@@ -227,35 +235,51 @@ public class CantonView extends javax.swing.JPanel {
                 JBVaciarFormularioActionPerformed(evt);
             }
         });
-        jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 200, 150, -1));
+        jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 200, 150, -1));
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 240));
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setText("Precio:");
+        jPDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+
+        jLabel9.setText("Ex: 15.89");
+        jPDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, 30));
+
+        jLabel10.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
+        jLabel10.setText("$");
+        jPDatos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 20, 30));
+
+        JTFPrecio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
+        jPDatos.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 110, -1));
+
+        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 300));
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel8.setText("CANTONES");
+        jLabel8.setText("Tipo de Suscripciones");
         jPanel2.add(jLabel8, new java.awt.GridBagConstraints());
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 860, 40));
 
-        JPListaCantones.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Cantones"));
-        JPListaCantones.setLayout(new java.awt.GridLayout(1, 0));
+        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Cantones"));
+        JPListaTipoSuscripciones.setLayout(new java.awt.GridLayout(1, 0));
 
-        jTListaCantones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
+        jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTListaTipoSuscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Descripcion"
+                "ID", "Nombre", "Precio", "Descripcion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -266,16 +290,16 @@ public class CantonView extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTListaCantones);
-        if (jTListaCantones.getColumnModel().getColumnCount() > 0) {
-            jTListaCantones.getColumnModel().getColumn(0).setPreferredWidth(40);
-            jTListaCantones.getColumnModel().getColumn(1).setPreferredWidth(120);
-            jTListaCantones.getColumnModel().getColumn(2).setPreferredWidth(400);
+        jScrollPane2.setViewportView(jTListaTipoSuscripciones);
+        if (jTListaTipoSuscripciones.getColumnModel().getColumnCount() > 0) {
+            jTListaTipoSuscripciones.getColumnModel().getColumn(0).setPreferredWidth(40);
+            jTListaTipoSuscripciones.getColumnModel().getColumn(1).setPreferredWidth(120);
+            jTListaTipoSuscripciones.getColumnModel().getColumn(3).setPreferredWidth(400);
         }
 
-        JPListaCantones.add(jScrollPane2);
+        JPListaTipoSuscripciones.add(jScrollPane2);
 
-        add(JPListaCantones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 850, 400));
+        add(JPListaTipoSuscripciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 850, 400));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -284,7 +308,7 @@ public class CantonView extends javax.swing.JPanel {
 
     private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
         // TODO add your handling code here:
-        loadCantones();
+        loadTipoSuscripciones();
     }//GEN-LAST:event_JBListarActionPerformed
 
     private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
@@ -315,19 +339,23 @@ public class CantonView extends javax.swing.JPanel {
     private javax.swing.JButton JBListar;
     private javax.swing.JButton JBOk;
     private javax.swing.JButton JBVaciarFormulario;
-    private javax.swing.JPanel JPListaCantones;
+    private javax.swing.JPanel JPListaTipoSuscripciones;
+    private javax.swing.JTextField JTFPrecio;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPDatos;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTADescripcion;
     private javax.swing.JTextField jTFNombre;
-    private javax.swing.JTable jTListaCantones;
+    private javax.swing.JTable jTListaTipoSuscripciones;
     // End of variables declaration//GEN-END:variables
 }

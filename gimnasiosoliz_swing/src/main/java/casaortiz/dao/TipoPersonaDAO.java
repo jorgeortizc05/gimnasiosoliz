@@ -59,7 +59,7 @@ public class TipoPersonaDAO {
         } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
             conector.close(connect);
-            return null;
+            return item;
         }
     }
     
@@ -105,10 +105,11 @@ public class TipoPersonaDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<TipoPersona> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from tipo_persona");
             result = st.executeQuery();
-            List<TipoPersona> items = new ArrayList<TipoPersona>();
+            items = new ArrayList<TipoPersona>();
             while(result.next()){
                 TipoPersona item = new TipoPersona();
                 item.setId(result.getInt("id"));
@@ -119,16 +120,9 @@ public class TipoPersonaDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(TipoPersonaDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
-        
     }
     
 }

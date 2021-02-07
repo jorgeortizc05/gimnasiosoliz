@@ -59,7 +59,7 @@ public class CantonDAO {
         } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
             conector.close(connect);
-            return null;
+            return item;
         }
     }
     
@@ -105,10 +105,11 @@ public class CantonDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<Canton> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from canton");
             result = st.executeQuery();
-            List<Canton> items = new ArrayList<Canton>();
+            items = new ArrayList<Canton>();
             while(result.next()){
                 Canton item = new Canton();
                 item.setId(result.getInt("id"));
@@ -119,16 +120,8 @@ public class CantonDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(CantonDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
-        
     }
-    
 }

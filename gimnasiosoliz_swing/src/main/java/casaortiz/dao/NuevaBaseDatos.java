@@ -187,5 +187,29 @@ public class NuevaBaseDatos {
         }
     }
     
+    public boolean crearTablaTipoSuscripción(){
+        Connection connect = null;
+        ResultSet result = null;
+        connect = conector.getConexion();
+        try {
+            connect = conector.getConexion();
+            Statement stmt = connect.createStatement();
+            stmt.execute("CREATE TABLE tipo_suscripcion (\n" +
+                "    id          INTEGER          CONSTRAINT id_pk PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT\n" +
+                "                                 CONSTRAINT id_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
+                "    nombre      VARCHAR (50)     CONSTRAINT nombre_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
+                "                                 CONSTRAINT nombre_unique UNIQUE ON CONFLICT ROLLBACK,\n" +
+                "    precio      DOUBLE (1000, 2),\n" +
+                "    descripcion VARCHAR (300) \n" +
+                ");");
+            conector.close(connect);
+            return true;
+        } catch (SQLException ex) { 
+            System.err.println(ex.getMessage());
+            conector.close(connect);
+            return false;
+        }
+    }
+    
     
 }

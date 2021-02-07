@@ -59,7 +59,7 @@ public class TipoComprobanteDAO {
         } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
             conector.close(connect);
-            return null;
+            return item;
         }
     }
     
@@ -105,10 +105,11 @@ public class TipoComprobanteDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<TipoComprobante> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from tipo_comprobante");
             result = st.executeQuery();
-            List<TipoComprobante> items = new ArrayList<TipoComprobante>();
+            items = new ArrayList<TipoComprobante>();
             while(result.next()){
                 TipoComprobante item = new TipoComprobante();
                 item.setId(result.getInt("id"));
@@ -119,15 +120,9 @@ public class TipoComprobanteDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(TipoComprobanteDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
         
     }
     

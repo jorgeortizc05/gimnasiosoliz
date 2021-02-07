@@ -374,7 +374,7 @@ public class PersonaView extends javax.swing.JPanel {
         rSDCFechaNacimiento.setPlaceholder("");
         jPDatos.add(rSDCFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 270, -1));
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 950, 470));
+        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 950, 510));
 
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Empresas"));
         JPListaPersonas.setLayout(new java.awt.GridLayout(1, 0));
@@ -407,7 +407,7 @@ public class PersonaView extends javax.swing.JPanel {
 
         JPListaPersonas.add(jScrollPane2);
 
-        add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, 950, 380));
+        add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 950, 380));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCedulaActionPerformed

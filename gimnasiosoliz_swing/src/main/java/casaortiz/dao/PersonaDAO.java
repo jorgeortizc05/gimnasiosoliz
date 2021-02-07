@@ -76,7 +76,7 @@ public class PersonaDAO {
         } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
             conector.close(connect);
-            return null;
+            return item;
         }
     }
     
@@ -132,10 +132,11 @@ public class PersonaDAO {
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
+        List<Persona> items = null;
         try{
             PreparedStatement st = connect.prepareStatement("select * from persona");
             result = st.executeQuery();
-            List<Persona> items = new ArrayList<Persona>();
+            items = new ArrayList<Persona>();
             while(result.next()){
                 Persona item = new Persona();
                 item.setId(result.getInt("id"));
@@ -154,15 +155,9 @@ public class PersonaDAO {
             connect.close();
             return items;
         }catch(SQLException ex){
-            try {
-                System.err.println(ex.getMessage());
-                connect.close();
-                return null;
-            } catch (SQLException ex1) {
-                Logger.getLogger(PersonaDAO.class.getName()).log(Level.SEVERE, null, ex1);
-            }
+            conector.close(connect);
+            return items;
         }
-        return null;
         
     }
     

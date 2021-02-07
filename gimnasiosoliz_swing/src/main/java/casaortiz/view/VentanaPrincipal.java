@@ -28,6 +28,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private TipoComprobanteView tcv = new TipoComprobanteView();
     private TipoPersonaView tpv = new TipoPersonaView();
     private PersonaView perv = new PersonaView();
+    private TipoSuscripcionView tsv = new TipoSuscripcionView();
     public VentanaPrincipal() {
         initComponents();
         this.setLayout(new FlowLayout());;
@@ -51,11 +52,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JMIProductos = new javax.swing.JMenuItem();
         jMICantones = new javax.swing.JMenuItem();
         jMIEmpresa = new javax.swing.JMenuItem();
-        jMIFormaPago = new javax.swing.JMenuItem();
-        jMITipoComprobantes = new javax.swing.JMenuItem();
-        jMITipoPersona = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMIPersonas = new javax.swing.JMenuItem();
+        jMITipoPersona = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMIFormaPago = new javax.swing.JMenuItem();
+        jMITipoComprobantes = new javax.swing.JMenuItem();
+        jMITipoSuscripcion = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gimnasio Soliz");
@@ -65,7 +68,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1280, 760));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jMenu1.setText("Archivo");
+        jMenu1.setText("Empresa");
 
         JMIProductos.setText("Productos");
         JMIProductos.addActionListener(new java.awt.event.ActionListener() {
@@ -91,30 +94,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMIEmpresa);
 
-        jMIFormaPago.setText("Formas de Pago");
-        jMIFormaPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMIFormaPagoActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMIFormaPago);
-
-        jMITipoComprobantes.setText("Tipo de Comprobantes");
-        jMITipoComprobantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMITipoComprobantesActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMITipoComprobantes);
-
-        jMITipoPersona.setText("Tipos de Personas");
-        jMITipoPersona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMITipoPersonaActionPerformed(evt);
-            }
-        });
-        jMenu1.add(jMITipoPersona);
-
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Persona");
@@ -127,7 +106,43 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMIPersonas);
 
+        jMITipoPersona.setText("Tipos de Personas");
+        jMITipoPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMITipoPersonaActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMITipoPersona);
+
         jMenuBar1.add(jMenu2);
+
+        jMenu3.setText("Caja");
+
+        jMIFormaPago.setText("Formas de Pago");
+        jMIFormaPago.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIFormaPagoActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMIFormaPago);
+
+        jMITipoComprobantes.setText("Tipo de Comprobantes");
+        jMITipoComprobantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMITipoComprobantesActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMITipoComprobantes);
+
+        jMITipoSuscripcion.setText("Tipo de Suscripción");
+        jMITipoSuscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMITipoSuscripcionActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMITipoSuscripcion);
+
+        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -190,6 +205,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_jMIPersonasActionPerformed
 
+    private void jMITipoSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoSuscripcionActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        tsv = new TipoSuscripcionView();
+        this.add(tsv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMITipoSuscripcionActionPerformed
+
     public void vaciarVentana(){
         
         this.remove(pv);
@@ -199,6 +222,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.remove(tcv);
         this.remove(tpv);
         this.remove(perv);
+        this.remove(tsv);
         
     }
     /**
@@ -258,8 +282,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMIPersonas;
     private javax.swing.JMenuItem jMITipoComprobantes;
     private javax.swing.JMenuItem jMITipoPersona;
+    private javax.swing.JMenuItem jMITipoSuscripcion;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
