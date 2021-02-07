@@ -6,6 +6,7 @@
 package casaortiz.view;
 
 import casaortiz.buss.PersonaBuss;
+import casaortiz.buss.TipoPersonaBuss;
 import casaortiz.model.Persona;
 import casaortiz.model.TipoPersona;
 import java.sql.Date;
@@ -22,11 +23,14 @@ public class PersonaView extends javax.swing.JPanel {
     private Persona persona;
     private List<Persona> personas;
     private PersonaBuss perBuss;
+    private TipoPersonaBuss tpBuss;
     
     public PersonaView() {
         initComponents();
         perBuss = new PersonaBuss();
+        tpBuss = new TipoPersonaBuss();
         loadPersonas();
+        loadTipoPersonas();
     }
 
     public void guardar(){
@@ -39,6 +43,8 @@ public class PersonaView extends javax.swing.JPanel {
         persona.setFechaNacimiento(rSDCFechaNacimiento.getDatoFecha());
         persona.setTelefono(jTFTele.getText());
         persona.setActivo("A");
+        TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
+        persona.setIdTipoPersona(item.getId());
         boolean estadoGuardado = perBuss.guardar(persona);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Persona guardado");
@@ -61,6 +67,8 @@ public class PersonaView extends javax.swing.JPanel {
         persona.setFechaNacimiento(rSDCFechaNacimiento.getDatoFecha());
         persona.setTelefono(jTFTele.getText());
         persona.setActivo("A");
+        TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
+        persona.setIdTipoPersona(item.getId());
         boolean estadoGuardado = perBuss.actualizar(persona);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Persona actualizada");
@@ -106,6 +114,8 @@ public class PersonaView extends javax.swing.JPanel {
             jTFEmail.setText(item.getEmail());
             rSDCFechaNacimiento.setDatoFecha(item.getFechaNacimiento());
             jTFTele.setText(item.getTelefono());
+            TipoPersona itemTipoPersona = tpBuss.getTipoPersona(item.getIdTipoPersona());
+            jCBTipoPersona.getModel().setSelectedItem(itemTipoPersona);
             
         }
     }
@@ -127,6 +137,13 @@ public class PersonaView extends javax.swing.JPanel {
         jTListaPersonas.setModel(modelo);
     }
     
+    public void loadTipoPersonas(){
+        List<TipoPersona> items = tpBuss.getTipoPersonas();
+        for(TipoPersona tp: items){
+           jCBTipoPersona.addItem(tp);
+        }
+    }
+    
     public void loadPersonas(){
         vaciarTabla();
         DefaultTableModel modelo = (DefaultTableModel) jTListaPersonas.getModel();
@@ -143,6 +160,9 @@ public class PersonaView extends javax.swing.JPanel {
         }
         jTListaPersonas.setModel(modelo);
     }
+    
+    
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -187,7 +207,7 @@ public class PersonaView extends javax.swing.JPanel {
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel8.setText("EMPRESA");
+        jLabel8.setText("Persona");
         jPanel2.add(jLabel8, new java.awt.GridBagConstraints());
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 11, 950, 40));
@@ -357,7 +377,7 @@ public class PersonaView extends javax.swing.JPanel {
         add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 950, 470));
 
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Empresas"));
-        JPListaPersonas.setLayout(new java.awt.GridLayout());
+        JPListaPersonas.setLayout(new java.awt.GridLayout(1, 0));
 
         jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTListaPersonas.setModel(new javax.swing.table.DefaultTableModel(

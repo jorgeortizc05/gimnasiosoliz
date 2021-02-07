@@ -43,7 +43,6 @@ public class EmpresaView extends javax.swing.JPanel {
         empresa.setDireccionSucursal(JTADireccSucur.getText());
         //recupero id del canton
         Canton item = (Canton) jCBCanton.getSelectedItem();
-        System.out.println(empresa);
         empresa.setIdCanton(item.getId());
         boolean estadoGuardado = empBuss.guardar(empresa);
         if(estadoGuardado){

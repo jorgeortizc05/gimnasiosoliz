@@ -97,20 +97,21 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE IF NOT EXISTS persona (\n" +
-                "    id               INTEGER           PRIMARY KEY AUTOINCREMENT,\n" +
-                "    nombre           VARCHAR (70)      CONSTRAINT nombre_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
-                "    apellido         VARCHAR (70)      CONSTRAINT apellido_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
-                "    cedula           VARCHAR (16)      CONSTRAINT cedula_unique UNIQUE ON CONFLICT ROLLBACK\n" +
-                "                                       CONSTRAINT cedula_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
-                "    direccion        VARCHAR (300),\n" +
-                "    email            VARCHAR (150),\n" +
-                "    fecha_nacimiento DATE,\n" +
-                "    telefono         VARCHAR (40),\n" +
-                "    activo           VARCHAR (1),\n" +
-                "    id_tipo_persona  INTEGER (1000000) REFERENCES tipo_persona (id) ON DELETE CASCADE\n" +
-                "                                                                    ON UPDATE CASCADE\n" +
-                ");");
+            stmt.execute("CREATE TABLE persona (\n" +
+            "    id               INTEGER           PRIMARY KEY AUTOINCREMENT,\n" +
+            "    nombre           VARCHAR (70)      CONSTRAINT nombre_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
+            "    apellido         VARCHAR (70)      CONSTRAINT apellido_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
+            "    cedula           VARCHAR (16)      CONSTRAINT cedula_unique UNIQUE ON CONFLICT ROLLBACK\n" +
+            "                                       CONSTRAINT cedula_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
+            "    direccion        VARCHAR (300),\n" +
+            "    email            VARCHAR (150),\n" +
+            "    fecha_nacimiento DATE,\n" +
+            "    telefono         VARCHAR (40),\n" +
+            "    activo           VARCHAR (1),\n" +
+            "    id_tipo_persona  INTEGER (1000000) REFERENCES tipo_persona (id) ON DELETE CASCADE\n" +
+            "                                                                    ON UPDATE CASCADE\n" +
+            "                                       CONSTRAINT id_tipo_persona_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
+            ");");
             conector.close(connect);
             return true;
         } catch (SQLException ex) { 

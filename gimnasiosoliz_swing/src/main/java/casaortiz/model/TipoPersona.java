@@ -41,7 +41,7 @@ public class TipoPersona {
 
     @Override
     public String toString() {
-        return "TipoPersona{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + '}';
+        return this.nombre;
     }
     
     
