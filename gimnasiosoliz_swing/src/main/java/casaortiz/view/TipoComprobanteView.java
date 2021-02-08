@@ -145,7 +145,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -238,7 +238,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 850, 40));
 
-        JPListaTipoComprobantes.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Tipos de Comprobantes"));
+        JPListaTipoComprobantes.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Tipos de Comprobantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoComprobantes.setLayout(new java.awt.GridLayout(1, 0));
 
         jTListaTipoComprobantes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

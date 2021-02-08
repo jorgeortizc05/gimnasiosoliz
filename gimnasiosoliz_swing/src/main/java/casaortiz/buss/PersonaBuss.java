@@ -65,4 +65,35 @@ public class PersonaBuss {
         }
     }
     
+    
+    public List<Persona> buscarPersonaPorNombre(String nombre){
+        List<Persona> items = null;
+        try {
+            items = perDAO.buscarPersonaPorNombre(nombre);
+            return items;
+        } catch (Exception e) {
+            return items;
+        }
+    }
+    
+    public List<Persona> buscarPersonaPorApellido(String apellido){
+        List<Persona> items = null;
+        try {
+            items = perDAO.buscarPersonaPorApellido(apellido);
+            return items;
+        } catch (Exception e) {
+            return items;
+        }
+    }
+    
+    public List<Persona> buscarPersonaPorCedula(String cedula){
+        List<Persona> items = null;
+        try {
+            items = perDAO.buscarPersonaPorCedula(cedula);
+            return items;
+        } catch (Exception e) {
+            return items;
+        }
+    }
+    
 }

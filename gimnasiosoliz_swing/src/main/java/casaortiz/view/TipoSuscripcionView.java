@@ -154,7 +154,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -263,7 +263,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 860, 40));
 
-        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Cantones"));
+        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Cantones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoSuscripciones.setLayout(new java.awt.GridLayout(1, 0));
 
         jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

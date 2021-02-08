@@ -234,7 +234,7 @@ public class ProductoView extends javax.swing.JPanel {
         setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatosProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -360,7 +360,7 @@ public class ProductoView extends javax.swing.JPanel {
 
         add(jPDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 390));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Productos"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTProductos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N

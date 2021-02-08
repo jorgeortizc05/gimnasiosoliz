@@ -149,7 +149,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 850, 40));
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -234,8 +234,8 @@ public class TipoPersonaView extends javax.swing.JPanel {
 
         add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 280));
 
-        JPListaTipoPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Tipo de Personas"));
-        JPListaTipoPersonas.setLayout(new java.awt.GridLayout());
+        JPListaTipoPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Tipo de Personas", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        JPListaTipoPersonas.setLayout(new java.awt.GridLayout(1, 0));
 
         jTListaTipoPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTListaTipoPersonas.setModel(new javax.swing.table.DefaultTableModel(
