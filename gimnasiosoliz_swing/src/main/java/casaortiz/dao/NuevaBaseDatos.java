@@ -199,6 +199,7 @@ public class NuevaBaseDatos {
                 "                                 CONSTRAINT id_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
                 "    nombre      VARCHAR (50)     CONSTRAINT nombre_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
                 "                                 CONSTRAINT nombre_unique UNIQUE ON CONFLICT ROLLBACK,\n" +
+                "    numero_dias INTEGER (4)      CONSTRAINT numero_dias_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
                 "    precio      DOUBLE (1000, 2),\n" +
                 "    descripcion VARCHAR (300) \n" +
                 ");");
@@ -211,5 +212,58 @@ public class NuevaBaseDatos {
         }
     }
     
+    public boolean crearTablaSuscripcion(){
+        Connection connect = null;
+        ResultSet result = null;
+        connect = conector.getConexion();
+        try {
+            connect = conector.getConexion();
+            Statement stmt = connect.createStatement();
+            stmt.execute("CREATE TABLE suscripcion (\n" +
+            "    id              INTEGER           CONSTRAINT id_pk PRIMARY KEY AUTOINCREMENT\n" +
+            "                                      CONSTRAINT id_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
+            "                                      CONSTRAINT id_unique UNIQUE ON CONFLICT ROLLBACK,\n" +
+            "    numero_recibo   VARCHAR (70)      CONSTRAINT numero_recibo_unique UNIQUE ON CONFLICT ROLLBACK\n" +
+            "                                      CONSTRAINT numero_recibo_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
+            "    fecha_desde     DATE,\n" +
+            "    fecha_hasta     DATE,\n" +
+            "    precio          DOUBLE (1000, 2),\n" +
+            "    descuento       DOUBLE (100, 2),\n" +
+            "    importe_total   DOUBLE (1000, 2),\n" +
+            "    observaciones   VARCHAR (300),\n" +
+            "    id_persona      INTEGER (1000000) CONSTRAINT id_persona_fk REFERENCES persona (id) ON DELETE CASCADE\n" +
+            "                                                                                       ON UPDATE CASCADE\n" +
+            "                                      CONSTRAINT id_persona_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
+            "    id_tipo_persona INTEGER (1000000) CONSTRAINT id_tipo_suscripcion_fk REFERENCES tipo_suscripcion (id) ON DELETE CASCADE\n" +
+            "                                                                                                         ON UPDATE CASCADE\n" +
+            "                                      CONSTRAINT id_tipo_suscripcion_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
+            ");");
+            conector.close(connect);
+            return true;
+        } catch (SQLException ex) { 
+            System.err.println(ex.getMessage());
+            conector.close(connect);
+            return false;
+        }
+    }
     
+    public boolean crearTablaParámetros(){
+        Connection connect = null;
+        ResultSet result = null;
+        connect = conector.getConexion();
+        try {
+            connect = conector.getConexion();
+            Statement stmt = connect.createStatement();
+            stmt.execute("CREATE TABLE parametro (\n" +
+                "    id                 INTEGER CONSTRAINT id_pk PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT,\n" +
+                "    numero_comprobante\n" +
+                ");");
+            conector.close(connect);
+            return true;
+        } catch (SQLException ex) { 
+            System.err.println(ex.getMessage());
+            conector.close(connect);
+            return false;
+        }
+    }
 }

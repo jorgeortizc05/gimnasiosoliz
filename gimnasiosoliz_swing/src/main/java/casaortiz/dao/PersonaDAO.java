@@ -160,7 +160,7 @@ public class PersonaDAO {
         } 
     }
     
-    public List<Persona> buscarPersonaPorNombre(String nombre){
+    public List<Persona> buscarPersonasPorNombre(String nombre){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
@@ -192,7 +192,7 @@ public class PersonaDAO {
         } 
     }
     
-    public List<Persona> buscarPersonaPorApellido(String apellido){
+    public List<Persona> buscarPersonasPorApellido(String apellido){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
@@ -224,7 +224,36 @@ public class PersonaDAO {
         } 
     }
     
-    public List<Persona> buscarPersonaPorCedula(String cedula){
+    public Persona buscarPersonaPorCedula(String cedula){
+        Connection connect = null;
+        ResultSet result = null;
+        connect = conector.getConexion();
+        Persona item = null;
+        try {
+            connect = conector.getConexion();
+            PreparedStatement st = connect.prepareStatement("select * from persona p where p.cedula like '"+cedula+"'");
+            result = st.executeQuery();
+            item = new Persona();
+            item.setId(result.getInt("id"));
+            item.setNombre(result.getString("nombre"));
+            item.setApellido(result.getString("apellido"));
+            item.setCedula(result.getString("cedula"));
+            item.setDireccion(result.getString("direccion"));
+            item.setEmail(result.getString("email"));
+            item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
+            item.setTelefono(result.getString("telefono"));
+            item.setActivo(result.getString("activo"));
+            item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+            conector.close(connect);
+            return item;
+        } catch (SQLException ex) { 
+            System.err.println(ex.getMessage());
+            conector.close(connect);
+            return item;
+        }
+    }
+    
+    public List<Persona> buscarPersonasPorCedula(String cedula){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();

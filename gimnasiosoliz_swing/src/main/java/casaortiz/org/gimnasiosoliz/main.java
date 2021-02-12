@@ -29,5 +29,6 @@ public class main {
         ndb.crearTablaTipoPersona();
         ndb.crearTablaPersona();
         ndb.crearTablaTipoSuscripción();
+        ndb.crearTablaSuscripcion();
     }
 }

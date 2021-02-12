@@ -26,10 +26,11 @@ public class TipoSuscripcionDAO {
         Connection connect = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("insert into tipo_suscripcion (nombre, precio, descripcion) values (?,?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into tipo_suscripcion (nombre, numero_dias, precio, descripcion) values (?,?,?,?)");
             st.setString(1, item.getNombre());
-            st.setDouble(2, item.getPrecio());
-            st.setString(3, item.getDescripcion());
+            st.setInt(2, item.getNumeroDias());
+            st.setDouble(3, item.getPrecio());
+            st.setString(4, item.getDescripcion());
             st.execute();
             conector.close(connect);
             return true;
@@ -52,6 +53,7 @@ public class TipoSuscripcionDAO {
             item = new TipoSuscripcion();
             item.setId(result.getInt("id"));
             item.setNombre(result.getString("nombre"));
+            item.setNumeroDias(result.getInt("numero_dias"));
             item.setPrecio(result.getDouble("precio"));
             item.setDescripcion(result.getString("descripcion"));
             conector.close(connect);
@@ -69,11 +71,12 @@ public class TipoSuscripcionDAO {
         connect = conector.getConexion();
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("update tipo_suscripcion set nombre = ?, precio = ?, descripcion = ? where id = ?");
+            PreparedStatement st = connect.prepareStatement("update tipo_suscripcion set nombre = ?, numero_dias = ?, precio = ?, descripcion = ? where id = ?");
             st.setString(1, item.getNombre());
-            st.setDouble(2, item.getPrecio());
-            st.setString(3, item.getDescripcion());
-            st.setInt(4, item.getId());
+            st.setInt(2, item.getNumeroDias());
+            st.setDouble(3, item.getPrecio());
+            st.setString(4, item.getDescripcion());
+            st.setInt(5, item.getId());
             st.execute();
             conector.close(connect);
             return true;            
@@ -115,6 +118,7 @@ public class TipoSuscripcionDAO {
                 TipoSuscripcion item = new TipoSuscripcion();
                 item.setId(result.getInt("id"));
                 item.setNombre(result.getString("nombre"));
+                item.setNumeroDias(result.getInt("numero_dias"));
                 item.setPrecio(result.getDouble("precio"));
                 item.setDescripcion(result.getString("descripcion"));
                 items.add(item);

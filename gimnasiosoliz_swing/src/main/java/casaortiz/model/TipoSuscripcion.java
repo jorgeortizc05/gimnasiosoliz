@@ -13,6 +13,7 @@ public class TipoSuscripcion {
     
     private int id;
     private String nombre;
+    private int numeroDias;
     private Double precio;
     private String descripcion;
 
@@ -28,6 +29,14 @@ public class TipoSuscripcion {
         return nombre;
     }
 
+    public int getNumeroDias() {
+        return numeroDias;
+    }
+
+    public void setNumeroDias(int numeroDias) {
+        this.numeroDias = numeroDias;
+    }
+       
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }

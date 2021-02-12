@@ -45,6 +45,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         tipoSuscripcion = new TipoSuscripcion();
         tipoSuscripcion.setId(Integer.parseInt(jLID.getText()));
         tipoSuscripcion.setNombre(jTFNombre.getText());
+        tipoSuscripcion.setNumeroDias((int) jSNumeroDias.getValue());
         tipoSuscripcion.setPrecio(Double.parseDouble(JTFPrecio.getText()));
         tipoSuscripcion.setDescripcion(jTADescripcion.getText());
         boolean estadoGuardado = tsBuss.actualizar(tipoSuscripcion);
@@ -86,6 +87,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
             TipoSuscripcion item = tsBuss.getTipoSuscripcion(id);
             jLID.setText(""+item.getId());
             jTFNombre.setText(item.getNombre());
+            jSNumeroDias.setValue(item.getNumeroDias());
             JTFPrecio.setText(String.valueOf(item.getPrecio()));
             jTADescripcion.setText(item.getDescripcion());
         }
@@ -94,6 +96,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
     public void vaciarFormulario(){
         jLID.setText("");
         jTFNombre.setText("");
+        jSNumeroDias.setValue(0);
         JTFPrecio.setText("");
         jTADescripcion.setText("");
     }
@@ -108,12 +111,13 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         vaciarTabla();
         DefaultTableModel modelo = (DefaultTableModel) jTListaTipoSuscripciones.getModel();
         List<TipoSuscripcion> items = tsBuss.getTipoSuscripciones();
-        Object rowData[] = new Object[4];
+        Object rowData[] = new Object[5];
         for(TipoSuscripcion ts: items){
             rowData[0] = ts.getId();
             rowData[1] = ts.getNombre();
-            rowData[2] = ts.getPrecio();
-            rowData[3] = ts.getDescripcion();
+            rowData[2] = ts.getNumeroDias();
+            rowData[3] = ts.getPrecio();
+            rowData[4] = ts.getDescripcion();
             modelo.addRow(rowData);
         }
         jTListaTipoSuscripciones.setModel(modelo);
@@ -146,6 +150,8 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         JTFPrecio = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jSNumeroDias = new javax.swing.JSpinner();
         jPanel2 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         JPListaTipoSuscripciones = new javax.swing.JPanel();
@@ -161,7 +167,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jLabel1.setText("ID:");
         jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 37, -1, -1));
 
-        jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 40, 91, 20));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -170,7 +176,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel4.setText("Descripcion:");
-        jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
+        jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, -1, -1));
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 210, -1));
@@ -181,7 +187,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
 
-        jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 180, 210, -1));
+        jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 210, 210, -1));
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jBGuardar.setText("Guardar");
@@ -239,21 +245,28 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel5.setText("Precio:");
-        jPDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, -1, -1));
+        jPDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, -1, -1));
 
         jLabel9.setText("Ex: 15.89");
-        jPDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 130, -1, 30));
+        jPDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 160, -1, 30));
 
         jLabel10.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         jLabel10.setText("$");
-        jPDatos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 130, 20, 30));
+        jPDatos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 160, 20, 30));
 
         JTFPrecio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
-        jPDatos.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 130, 110, -1));
+        jPDatos.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 160, 110, -1));
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 300));
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setText("No. de Días:");
+        jPDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, -1, -1));
+
+        jSNumeroDias.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jPDatos.add(jSNumeroDias, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 120, 110, -1));
+
+        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 850, 330));
 
         jPanel2.setLayout(new java.awt.GridBagLayout());
 
@@ -263,7 +276,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
         add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 860, 40));
 
-        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Cantones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoSuscripciones.setLayout(new java.awt.GridLayout(1, 0));
 
         jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -272,14 +285,14 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Nombre", "Precio", "Descripcion"
+                "ID", "Nombre", "Numero Días", "Precio", "Descripcion"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -294,12 +307,12 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         if (jTListaTipoSuscripciones.getColumnModel().getColumnCount() > 0) {
             jTListaTipoSuscripciones.getColumnModel().getColumn(0).setPreferredWidth(40);
             jTListaTipoSuscripciones.getColumnModel().getColumn(1).setPreferredWidth(120);
-            jTListaTipoSuscripciones.getColumnModel().getColumn(3).setPreferredWidth(400);
+            jTListaTipoSuscripciones.getColumnModel().getColumn(4).setPreferredWidth(400);
         }
 
         JPListaTipoSuscripciones.add(jScrollPane2);
 
-        add(JPListaTipoSuscripciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 850, 400));
+        add(JPListaTipoSuscripciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 400, 850, 420));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -348,10 +361,12 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPDatos;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JSpinner jSNumeroDias;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextArea jTADescripcion;

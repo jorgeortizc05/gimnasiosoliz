@@ -184,8 +184,6 @@ public class PersonaView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         jPDatos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLID = new javax.swing.JLabel();
@@ -228,15 +226,7 @@ public class PersonaView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel2.setLayout(new java.awt.GridBagLayout());
-
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel8.setText("Persona");
-        jPanel2.add(jLabel8, new java.awt.GridBagConstraints());
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 11, 950, 40));
-
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder("Datos"));
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -398,9 +388,9 @@ public class PersonaView extends javax.swing.JPanel {
         rSDCFechaNacimiento.setPlaceholder("");
         jPDatos.add(rSDCFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 270, -1));
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 970, 510));
+        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 970, 480));
 
-        JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista de Empresas"));
+        JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -429,7 +419,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jTListaPersonas);
 
-        JPListaPersonas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 938, 357));
+        JPListaPersonas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 938, 340));
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel13.setText("Nombre:");
@@ -476,7 +466,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         JPListaPersonas.add(jTFBusApell, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 140, -1));
 
-        add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 950, 380));
+        add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 970, 410));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCedulaActionPerformed
@@ -525,17 +515,17 @@ public class PersonaView extends javax.swing.JPanel {
     }//GEN-LAST:event_jTFEmailActionPerformed
 
     private void jTFBusNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusNombreKeyReleased
-        loadPersonasBusqueda(perBuss.buscarPersonaPorNombre(jTFBusNombre.getText()));
+        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText()));
     }//GEN-LAST:event_jTFBusNombreKeyReleased
 
     private void jTFBusApellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusApellKeyReleased
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonaPorApellido(jTFBusApell.getText()));
+        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText()));
     }//GEN-LAST:event_jTFBusApellKeyReleased
 
     private void jTFBusCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusCedulaKeyReleased
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonaPorCedula(jTFBusCedula.getText()));
+        loadPersonasBusqueda(perBuss.buscarPersonasPorCedula(jTFBusCedula.getText()));
     }//GEN-LAST:event_jTFBusCedulaKeyReleased
 
     private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
@@ -576,10 +566,8 @@ public class PersonaView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPDatos;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTFApellido;
