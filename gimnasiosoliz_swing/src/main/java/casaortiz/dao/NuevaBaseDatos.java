@@ -234,7 +234,7 @@ public class NuevaBaseDatos {
             "    id_persona      INTEGER (1000000) CONSTRAINT id_persona_fk REFERENCES persona (id) ON DELETE CASCADE\n" +
             "                                                                                       ON UPDATE CASCADE\n" +
             "                                      CONSTRAINT id_persona_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
-            "    id_tipo_persona INTEGER (1000000) CONSTRAINT id_tipo_suscripcion_fk REFERENCES tipo_suscripcion (id) ON DELETE CASCADE\n" +
+            "    id_tipo_suscripcion INTEGER (1000000) CONSTRAINT id_tipo_suscripcion_fk REFERENCES tipo_suscripcion (id) ON DELETE CASCADE\n" +
             "                                                                                                         ON UPDATE CASCADE\n" +
             "                                      CONSTRAINT id_tipo_suscripcion_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
             ");");

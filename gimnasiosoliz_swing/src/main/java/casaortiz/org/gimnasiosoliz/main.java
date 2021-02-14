@@ -11,6 +11,7 @@ import casaortiz.db.Conector;
 import casaortiz.model.Producto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -20,7 +21,7 @@ import java.util.List;
 public class main {
     
     public static void main(String args[]){
-        NuevaBaseDatos ndb = new NuevaBaseDatos();
+        /*NuevaBaseDatos ndb = new NuevaBaseDatos();
         ndb.crearTablaProducto();
         ndb.crearTablaFormaPago();
         ndb.crearTablaCanton();
@@ -29,6 +30,7 @@ public class main {
         ndb.crearTablaTipoPersona();
         ndb.crearTablaPersona();
         ndb.crearTablaTipoSuscripción();
-        ndb.crearTablaSuscripcion();
+        ndb.crearTablaSuscripcion();*/
+        System.out.println(new Date());
     }
 }

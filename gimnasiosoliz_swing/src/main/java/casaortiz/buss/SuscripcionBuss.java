@@ -7,6 +7,7 @@ package casaortiz.buss;
 
 import casaortiz.dao.SuscripcionDAO;
 import casaortiz.model.Suscripcion;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -48,7 +49,7 @@ public class SuscripcionBuss {
         }
     }
     
-    public Suscripcion getCanton(int id){
+    public Suscripcion getSuscripcion(int id){
         Suscripcion item = null;
         try {
             item = susDAO.getSuscripcion(id);
@@ -58,7 +59,7 @@ public class SuscripcionBuss {
         }
     }
     
-    public List<Suscripcion> getSuscripcion(){
+    public List<Suscripcion> getSuscripciones(){
         List<Suscripcion> items = null;
         try {
             items = susDAO.getSuscripciones();
@@ -75,6 +76,16 @@ public class SuscripcionBuss {
             return items;
         } catch (Exception e) {
             return items;
+        }
+    }
+    
+    public Date getFechaMaximaPorPersona(int idPersona){
+        Date fechaMaxima = null;
+        try {
+            fechaMaxima = susDAO.getFechaMaximaPorPersona(idPersona);
+            return fechaMaxima;
+        } catch (Exception e) {
+            return fechaMaxima;
         }
     }
 }

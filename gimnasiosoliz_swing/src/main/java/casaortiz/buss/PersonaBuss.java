@@ -20,6 +20,8 @@ public class PersonaBuss {
     public boolean guardar(Persona item){
         
         try {
+            item.setNombre(item.getNombre().toUpperCase());
+            item.setApellido(item.getApellido().toUpperCase());
             perDAO.guardar(item);
             return true;
         } catch (Exception e) {
@@ -29,6 +31,8 @@ public class PersonaBuss {
     
     public boolean actualizar(Persona item){
         try {
+            item.setNombre(item.getNombre().toUpperCase());
+            item.setApellido(item.getApellido().toUpperCase());
             perDAO.actualizar(item);
             return true;
         } catch (Exception e) {

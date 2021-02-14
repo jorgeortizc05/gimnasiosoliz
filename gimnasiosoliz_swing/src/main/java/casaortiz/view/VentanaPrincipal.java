@@ -30,11 +30,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private PersonaView perv = new PersonaView();
     private TipoSuscripcionView tsv = new TipoSuscripcionView();
     private SuscripcionView sv = new SuscripcionView();
+    private VerificarSuscripcionView vsv = new VerificarSuscripcionView();
     public VentanaPrincipal() {
         initComponents();
-        this.setLayout(new FlowLayout());;
-        pv = new ProductoView();
-        this.add(pv, BorderLayout.CENTER);
+        this.setLayout(new FlowLayout());
+        this.add(vsv, BorderLayout.CENTER);
         this.pack();
         
     }
@@ -49,6 +49,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void initComponents() {
 
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu4 = new javax.swing.JMenu();
+        jMIVerificarSuscripcion = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
         JMIProductos = new javax.swing.JMenuItem();
         jMICantones = new javax.swing.JMenuItem();
@@ -72,6 +74,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 28));
+
+        jMenu4.setText("Control de Acceso");
+        jMenu4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        jMIVerificarSuscripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMIVerificarSuscripcion.setText("Verificar Suscripción");
+        jMIVerificarSuscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIVerificarSuscripcionActionPerformed(evt);
+            }
+        });
+        jMenu4.add(jMIVerificarSuscripcion);
+
+        jMenuBar1.add(jMenu4);
 
         jMenu1.setText("Empresa");
         jMenu1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -246,6 +262,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_jMISuscripcionActionPerformed
 
+    private void jMIVerificarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIVerificarSuscripcionActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        vsv = new VerificarSuscripcionView();
+        this.add(vsv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMIVerificarSuscripcionActionPerformed
+
     public void vaciarVentana(){
         
         this.remove(pv);
@@ -257,6 +281,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.remove(perv);
         this.remove(tsv);
         this.remove(sv);
+        this.remove(vsv);
+        
+        
+        
         
     }
     /**
@@ -318,9 +346,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMITipoComprobantes;
     private javax.swing.JMenuItem jMITipoPersona;
     private javax.swing.JMenuItem jMITipoSuscripcion;
+    private javax.swing.JMenuItem jMIVerificarSuscripcion;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
