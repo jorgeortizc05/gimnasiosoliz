@@ -11,9 +11,11 @@ import casaortiz.model.Persona;
 import casaortiz.model.Suscripcion;
 import com.sun.glass.events.KeyEvent;
 import java.awt.Color;
+import java.awt.Image;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -41,6 +43,25 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(jLNombres, "No existe esta persona");
         }else{
             jLNombres.setText(persona.getNombre()+' '+persona.getApellido());
+            loadImageGuardada(persona.getFoto());
+        }
+    }
+    
+    private void loadImageGuardada(String name) {
+
+        try {
+            String string = System.getProperty("user.dir") + "/media/persona/" +name;
+            
+            Image img = new ImageIcon(string).getImage();
+            
+            //Me permite redimensionar la imagen para que se adapte al jLabel
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(400, 300, Image.SCALE_SMOOTH));
+
+            jLFoto.setIcon(ii);
+            jLFoto.validate();
+            jLFoto.repaint();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     
@@ -75,7 +96,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jTFBusqCedula = new javax.swing.JTextField();
         jBVerificar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jLFoto = new javax.swing.JLabel();
         jLNombres = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLDiasRestantes = new javax.swing.JLabel();
@@ -110,9 +131,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Estado Suscripción", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setText("jLabel1");
-        jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 400, 340));
+        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 400, 340));
 
         jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -216,9 +236,9 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JButton jBVerificar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLDiasRestantes;
+    private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLMensajeAdvertencia;
     private javax.swing.JLabel jLNombres;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -6,9 +6,7 @@
 package casaortiz.dao;
 
 import casaortiz.db.Conector;
-import casaortiz.model.Canton;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -49,7 +47,7 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE empresa (\n" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS empresa (\n" +
                 "    id                 INTEGER           PRIMARY KEY AUTOINCREMENT,\n" +
                 "    nombre             VARCHAR (70),\n" +
                 "    descripcion        VARCHAR (300),\n" +
@@ -97,7 +95,7 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE persona (\n" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS persona (\n" +
             "    id               INTEGER           PRIMARY KEY AUTOINCREMENT,\n" +
             "    nombre           VARCHAR (70)      CONSTRAINT nombre_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
             "    apellido         VARCHAR (70)      CONSTRAINT apellido_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
@@ -108,6 +106,7 @@ public class NuevaBaseDatos {
             "    fecha_nacimiento DATE,\n" +
             "    telefono         VARCHAR (40),\n" +
             "    activo           VARCHAR (1),\n" +
+            "    foto             STRING (300),\n" +
             "    id_tipo_persona  INTEGER (1000000) REFERENCES tipo_persona (id) ON DELETE CASCADE\n" +
             "                                                                    ON UPDATE CASCADE\n" +
             "                                       CONSTRAINT id_tipo_persona_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
@@ -194,7 +193,7 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE tipo_suscripcion (\n" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS tipo_suscripcion (\n" +
                 "    id          INTEGER          CONSTRAINT id_pk PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT\n" +
                 "                                 CONSTRAINT id_not_null NOT NULL ON CONFLICT ROLLBACK,\n" +
                 "    nombre      VARCHAR (50)     CONSTRAINT nombre_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
@@ -219,7 +218,7 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE suscripcion (\n" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS suscripcion (\n" +
             "    id              INTEGER           CONSTRAINT id_pk PRIMARY KEY AUTOINCREMENT\n" +
             "                                      CONSTRAINT id_not_null NOT NULL ON CONFLICT ROLLBACK\n" +
             "                                      CONSTRAINT id_unique UNIQUE ON CONFLICT ROLLBACK,\n" +
@@ -254,7 +253,7 @@ public class NuevaBaseDatos {
         try {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
-            stmt.execute("CREATE TABLE parametro (\n" +
+            stmt.execute("CREATE TABLE IF NOT EXISTS parametro (\n" +
                 "    id                 INTEGER CONSTRAINT id_pk PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT,\n" +
                 "    numero_comprobante\n" +
                 ");");

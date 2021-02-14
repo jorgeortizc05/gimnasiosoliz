@@ -21,6 +21,7 @@ public class Persona {
     private Date fechaNacimiento;
     private String telefono;
     private String activo;
+    private String foto;
     private int idTipoPersona;
 
     public int getId() {
@@ -99,6 +100,14 @@ public class Persona {
         return idTipoPersona;
     }
 
+    public String getFoto() {
+        return foto;
+    }
+
+    public void setFoto(String foto) {
+        this.foto = foto;
+    }
+    
     public void setIdTipoPersona(int idTipoPersona) {
         this.idTipoPersona = idTipoPersona;
     }

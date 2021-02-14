@@ -13,8 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -30,8 +28,8 @@ public class PersonaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("insert into persona "
                     + "(nombre, apellido, cedula, direccion, email, "
-                    + "fecha_nacimiento, telefono, activo, id_tipo_persona) "
-                    + "values (?,?,?,?,?,?,?,?,?)");
+                    + "fecha_nacimiento, telefono, activo, foto, id_tipo_persona) "
+                    + "values (?,?,?,?,?,?,?,?,?,?)");
             st.setString(1, item.getNombre());
             st.setString(2, item.getApellido());
             st.setString(3, item.getCedula());
@@ -40,7 +38,8 @@ public class PersonaDAO {
             st.setDate(6, new java.sql.Date(item.getFechaNacimiento().getTime()));
             st.setString(7, item.getTelefono());
             st.setString(8, item.getActivo());
-            st.setInt(9, item.getIdTipoPersona());
+            st.setString(9, item.getFoto());
+            st.setInt(10, item.getIdTipoPersona());
             st.execute();
             conector.close(connect);
             return true;
@@ -70,6 +69,7 @@ public class PersonaDAO {
             item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
             item.setTelefono(result.getString("telefono"));
             item.setActivo(result.getString("activo"));
+            item.setFoto(result.getString("foto"));
             item.setIdTipoPersona(result.getInt("id_tipo_persona"));
             conector.close(connect);
             return item;
@@ -88,7 +88,7 @@ public class PersonaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update persona set "
                     + "nombre = ?, apellido = ?, cedula = ?, direccion = ?, "
-                    + "email = ?, fecha_nacimiento = ?, telefono = ?, activo = ?, "
+                    + "email = ?, fecha_nacimiento = ?, telefono = ?, activo = ?, foto = ?, "
                     + "id_tipo_persona = ? where id = ?");
             st.setString(1, item.getNombre());
             st.setString(2, item.getApellido());
@@ -98,8 +98,9 @@ public class PersonaDAO {
             st.setDate(6, new java.sql.Date(item.getFechaNacimiento().getTime()));
             st.setString(7, item.getTelefono());
             st.setString(8, item.getActivo());
-            st.setInt(9, item.getIdTipoPersona());
-            st.setInt(10, item.getId());
+            st.setString(9, item.getFoto());
+            st.setInt(10, item.getIdTipoPersona());
+            st.setInt(11, item.getId());
             st.execute();
             conector.close(connect);
             return true;            
@@ -148,6 +149,7 @@ public class PersonaDAO {
                 item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
+                item.setFoto(result.getString("foto"));
                 item.setIdTipoPersona(result.getInt("id_tipo_persona"));
                 items.add(item);
                 
@@ -180,6 +182,7 @@ public class PersonaDAO {
                 item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
+                item.setFoto(result.getString("foto"));
                 item.setIdTipoPersona(result.getInt("id_tipo_persona"));
                 items.add(item);
                 
@@ -212,6 +215,7 @@ public class PersonaDAO {
                 item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
+                item.setFoto(result.getString("foto"));
                 item.setIdTipoPersona(result.getInt("id_tipo_persona"));
                 items.add(item);
                 
@@ -243,6 +247,7 @@ public class PersonaDAO {
             item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
             item.setTelefono(result.getString("telefono"));
             item.setActivo(result.getString("activo"));
+            item.setFoto(result.getString("foto"));
             item.setIdTipoPersona(result.getInt("id_tipo_persona"));
             conector.close(connect);
             return item;
@@ -273,6 +278,7 @@ public class PersonaDAO {
                 item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
+                item.setFoto(result.getString("foto"));
                 item.setIdTipoPersona(result.getInt("id_tipo_persona"));
                 items.add(item);
                 

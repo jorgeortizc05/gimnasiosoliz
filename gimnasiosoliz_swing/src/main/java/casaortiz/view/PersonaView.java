@@ -9,8 +9,22 @@ import casaortiz.buss.PersonaBuss;
 import casaortiz.buss.TipoPersonaBuss;
 import casaortiz.model.Persona;
 import casaortiz.model.TipoPersona;
+import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamPanel;
+import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.sql.Date;
 import java.util.List;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+import java.util.concurrent.atomic.AtomicBoolean;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -25,12 +39,64 @@ public class PersonaView extends javax.swing.JPanel {
     private PersonaBuss perBuss;
     private TipoPersonaBuss tpBuss;
     
+    private Executor executor = Executors.newSingleThreadExecutor();
+    private AtomicBoolean initialized = new AtomicBoolean(false);
+    private Webcam webcam = null;
+    private WebcamPanel panel = null;
+    
     public PersonaView() {
         initComponents();
         perBuss = new PersonaBuss();
         tpBuss = new TipoPersonaBuss();
         loadPersonas();
         loadTipoPersonas();
+        
+    }
+    
+    public void encenderCamara(){
+        if(webcam == null){
+            webcam = Webcam.getDefault();
+            webcam.setViewSize(webcam.getViewSizes()[0]);
+            panel = new WebcamPanel(webcam, false);
+            panel.setPreferredSize(webcam.getViewSize());
+            panel.setOpaque(true);
+            panel.setBackground(Color.BLACK);
+            panel.setBounds(0, 0, 400, 300);
+            jPCamera.add(panel);
+            if (initialized.compareAndSet(false, true)) {
+                executor.execute(new Runnable() {
+                    @Override
+                    public void run() {
+                        panel.start();
+                    }
+                });
+            }
+        }else{
+            webcam.open();
+            panel.start();
+        }
+    }
+    
+    private void loadImageGuardada(String name) {
+        System.out.println(name);
+        try {
+            String string = System.getProperty("user.dir") + "/media/persona/" +name;
+            
+            Image img = new ImageIcon(string).getImage();
+            
+            //Me permite redimensionar la imagen para que se adapte al jLabel
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(400, 300, Image.SCALE_SMOOTH));
+
+            jLFoto.setIcon(ii);
+            jLFoto.validate();
+            jLFoto.repaint();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public void apagarCamara(){
+        webcam.close();
     }
 
     public void guardar(){
@@ -43,6 +109,7 @@ public class PersonaView extends javax.swing.JPanel {
         persona.setFechaNacimiento(rSDCFechaNacimiento.getDatoFecha());
         persona.setTelefono(jTFTele.getText());
         persona.setActivo("A");
+        persona.setFoto(jTFCedula.getText()+".png");
         TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
         persona.setIdTipoPersona(item.getId());
         boolean estadoGuardado = perBuss.guardar(persona);
@@ -67,6 +134,7 @@ public class PersonaView extends javax.swing.JPanel {
         persona.setFechaNacimiento(rSDCFechaNacimiento.getDatoFecha());
         persona.setTelefono(jTFTele.getText());
         persona.setActivo("A");
+        persona.setFoto(jTFCedula.getText()+".png");
         TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
         persona.setIdTipoPersona(item.getId());
         boolean estadoGuardado = perBuss.actualizar(persona);
@@ -116,6 +184,7 @@ public class PersonaView extends javax.swing.JPanel {
             jTFTele.setText(item.getTelefono());
             TipoPersona itemTipoPersona = tpBuss.getTipoPersona(item.getIdTipoPersona());
             jCBTipoPersona.getModel().setSelectedItem(itemTipoPersona);
+            loadImageGuardada(item.getFoto());
             
         }
     }
@@ -129,6 +198,7 @@ public class PersonaView extends javax.swing.JPanel {
         jTFEmail.setText("");
         rSDCFechaNacimiento.setDatoFecha(null);
         jTFTele.setText("");
+        jLFoto.setIcon(null);
     }
     
     public void vaciarTabla(){
@@ -208,11 +278,14 @@ public class PersonaView extends javax.swing.JPanel {
         jTFApellido = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jTFEmail = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jLFoto = new javax.swing.JLabel();
+        jBTomarFoto = new javax.swing.JButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         rSDCFechaNacimiento = new rojeru_san.componentes.RSDateChooser();
+        jBEncenderCam = new javax.swing.JButton();
+        jBApagarCam = new javax.swing.JButton();
+        jPCamera = new javax.swing.JPanel();
         JPListaPersonas = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaPersonas = new javax.swing.JTable();
@@ -226,7 +299,7 @@ public class PersonaView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cliente", 0, 0, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
@@ -364,12 +437,16 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jTFEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 270, -1));
 
-        jLabel12.setText("jLabel12");
-        jLabel12.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
-        jPDatos.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 100, 360, 260));
+        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
+        jPDatos.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 400, 300));
 
-        jButton1.setText("Seleccionar");
-        jPDatos.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 370, -1, -1));
+        jBTomarFoto.setText("Tomar Foto");
+        jBTomarFoto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBTomarFotoActionPerformed(evt);
+            }
+        });
+        jPDatos.add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 330, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jLabel7.setText("Fecha");
@@ -388,9 +465,29 @@ public class PersonaView extends javax.swing.JPanel {
         rSDCFechaNacimiento.setPlaceholder("");
         jPDatos.add(rSDCFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 270, -1));
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 970, 480));
+        jBEncenderCam.setText("Encender Cámara");
+        jBEncenderCam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEncenderCamActionPerformed(evt);
+            }
+        });
+        jPDatos.add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, -1, -1));
 
-        JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jBApagarCam.setText("Apagar Cámara");
+        jBApagarCam.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBApagarCamActionPerformed(evt);
+            }
+        });
+        jPDatos.add(jBApagarCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 330, -1, -1));
+
+        jPCamera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jPCamera.setLayout(new java.awt.GridLayout());
+        jPDatos.add(jPCamera, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 20, 400, 300));
+
+        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1010, 690));
+
+        JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", 0, 0, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -466,7 +563,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         JPListaPersonas.add(jTFBusApell, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 140, -1));
 
-        add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 500, 970, 410));
+        add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 730, 1010, 410));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCedulaActionPerformed
@@ -534,6 +631,33 @@ public class PersonaView extends javax.swing.JPanel {
         vaciarCamposBusqueda();
     }//GEN-LAST:event_jBLimpiarActionPerformed
 
+    private void jBEncenderCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEncenderCamActionPerformed
+        // TODO add your handling code here:
+        encenderCamara();
+    }//GEN-LAST:event_jBEncenderCamActionPerformed
+
+    private void jBApagarCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBApagarCamActionPerformed
+        // TODO add your handling code here:
+        apagarCamara();
+    }//GEN-LAST:event_jBApagarCamActionPerformed
+
+    private void jBTomarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTomarFotoActionPerformed
+        // TODO add your handling code here:
+         try {
+            if(jTFCedula.getText().equals("")){
+                JOptionPane.showMessageDialog(jTFCedula, "Debe ingresar primero la cédula");
+            }else{
+                BufferedImage image = webcam.getImage();
+                //nombre y formato de la imagen de salida
+                ImageIO.write(image, "PNG", new File(System.getProperty("user.dir") + "/media/persona/" +jTFCedula.getText()+".png"));
+                loadImageGuardada(jTFCedula.getText());
+            }
+            
+        } catch (IOException ex) {
+            Logger.getLogger(JFrameWindow.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBTomarFotoActionPerformed
+
     public void vaciarCamposBusqueda(){
         jTFBusNombre.setText("");
         jTFBusApell.setText("");
@@ -548,15 +672,17 @@ public class PersonaView extends javax.swing.JPanel {
     private javax.swing.JButton JBVaciarFormulario;
     private javax.swing.JPanel JPListaPersonas;
     private javax.swing.JTextArea JTADirecc;
+    private javax.swing.JButton jBApagarCam;
+    private javax.swing.JButton jBEncenderCam;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBLimpiar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jBTomarFoto;
     private javax.swing.JComboBox<TipoPersona> jCBTipoPersona;
+    private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -567,6 +693,7 @@ public class PersonaView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPCamera;
     private javax.swing.JPanel jPDatos;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
