@@ -650,7 +650,7 @@ public class PersonaView extends javax.swing.JPanel {
                 BufferedImage image = webcam.getImage();
                 //nombre y formato de la imagen de salida
                 ImageIO.write(image, "PNG", new File(System.getProperty("user.dir") + "/media/persona/" +jTFCedula.getText()+".png"));
-                loadImageGuardada(jTFCedula.getText());
+                loadImageGuardada(jTFCedula.getText()+".png");
             }
             
         } catch (IOException ex) {

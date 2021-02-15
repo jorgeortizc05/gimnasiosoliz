@@ -132,18 +132,18 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, 400, 340));
+        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 400, 300));
 
         jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 480, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel3.setText("DIAS RESTANTES:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 220, -1));
+        jLabel3.setText("Días Restantes:");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 220, -1));
 
         jLDiasRestantes.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 200, 190, 30));
+        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 120, 30));
 
         jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);

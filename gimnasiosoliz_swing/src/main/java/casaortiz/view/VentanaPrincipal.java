@@ -52,17 +52,18 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu4 = new javax.swing.JMenu();
         jMIVerificarSuscripcion = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
-        JMIProductos = new javax.swing.JMenuItem();
         jMICantones = new javax.swing.JMenuItem();
         jMIEmpresa = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMIPersonas = new javax.swing.JMenuItem();
         jMITipoPersona = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
+        jMISuscripcion = new javax.swing.JMenuItem();
         jMIFormaPago = new javax.swing.JMenuItem();
         jMITipoComprobantes = new javax.swing.JMenuItem();
         jMITipoSuscripcion = new javax.swing.JMenuItem();
-        jMISuscripcion = new javax.swing.JMenuItem();
+        jMenu5 = new javax.swing.JMenu();
+        JMIProductos = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gimnasio Soliz");
@@ -92,15 +93,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.setText("Empresa");
         jMenu1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
-        JMIProductos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        JMIProductos.setText("Productos");
-        JMIProductos.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JMIProductosActionPerformed(evt);
-            }
-        });
-        jMenu1.add(JMIProductos);
-
         jMICantones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jMICantones.setText("Cantones");
         jMICantones.addActionListener(new java.awt.event.ActionListener() {
@@ -121,7 +113,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Persona");
+        jMenu2.setText("Clientes");
         jMenu2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
 
         jMIPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -146,6 +138,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenu3.setText("Caja");
         jMenu3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        jMISuscripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMISuscripcion.setText("Suscripcion");
+        jMISuscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMISuscripcionActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMISuscripcion);
 
         jMIFormaPago.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jMIFormaPago.setText("Formas de Pago");
@@ -174,16 +175,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMITipoSuscripcion);
 
-        jMISuscripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jMISuscripcion.setText("Suscripcion");
-        jMISuscripcion.addActionListener(new java.awt.event.ActionListener() {
+        jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Inventarios");
+        jMenu5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+
+        JMIProductos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        JMIProductos.setText("Productos");
+        JMIProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMISuscripcionActionPerformed(evt);
+                JMIProductosActionPerformed(evt);
             }
         });
-        jMenu3.add(jMISuscripcion);
+        jMenu5.add(JMIProductos);
 
-        jMenuBar1.add(jMenu3);
+        jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
 
@@ -351,6 +357,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

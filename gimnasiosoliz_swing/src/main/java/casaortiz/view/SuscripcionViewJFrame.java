@@ -84,6 +84,25 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         
     }
     
+    public void eliminar(){
+        int fila = jTHistorialSuscripcion.getSelectedRow();
+        if(fila == -1){
+            JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
+        }else{
+            int id = Integer.parseInt((String)jTHistorialSuscripcion.getValueAt(fila, 0).toString());       
+            int estadoEliminacionDialog = JOptionPane.showConfirmDialog(this, "Seguro que desea eliminar la suscripcion numero "+id+" del cliente "+persona.getNombre()+"?","Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            if(estadoEliminacionDialog == 0){
+                boolean estadoEliminacion = susBuss.eliminar(id);
+                if(estadoEliminacion){
+                    JOptionPane.showMessageDialog(this, "Suscripcion eliminado");
+                    loadSuscripcionesPorPersona();
+                }else{
+                    JOptionPane.showMessageDialog(this, "Error al eliminar la suscripcion");
+                }
+            }
+        }
+    }
+    
     private void calcularImporteTotal(){
         double importeTotal = Double.parseDouble(jLPrecio.getText()) - Double.parseDouble(jTFDescuento.getText());
         jLImporteTotal.setText(importeTotal+"");
@@ -177,6 +196,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         jTHistorialSuscripcion = new javax.swing.JTable();
         jBGuardar = new javax.swing.JButton();
+        jBEliminar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Suscripciones");
@@ -344,6 +364,14 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         });
         jPanel4.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 80, -1));
 
+        jBEliminar.setText("Eliminar Suscripción");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(850, 580, -1, -1));
+
         getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 3, -1, 610));
 
         pack();
@@ -393,10 +421,16 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         guardar();
     }//GEN-LAST:event_jBGuardarActionPerformed
+
+    private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
+        // TODO add your handling code here:
+        eliminar();
+    }//GEN-LAST:event_jBEliminarActionPerformed
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBBuscarPersona;
+    private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JComboBox<TipoSuscripcion> jCBTipoSuscripcion;
     private javax.swing.JLabel jLDiasDisponibles;
