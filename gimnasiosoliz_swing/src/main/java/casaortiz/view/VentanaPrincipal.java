@@ -71,7 +71,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(1280, 760));
-        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 28));
@@ -192,6 +191,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 849, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 437, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

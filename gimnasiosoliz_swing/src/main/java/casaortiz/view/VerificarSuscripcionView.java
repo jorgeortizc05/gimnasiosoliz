@@ -65,29 +65,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         }
     }
     
-    public void loadSuscripcionesPorPersona(){
-        vaciarTabla();
-        DefaultTableModel modelo = (DefaultTableModel) jTHistorialSuscripcion.getModel();
-        List<Suscripcion> items = susBuss.getHistorialSuscripcionesPersona(persona.getId());
-        Object rowData[] = new Object[4];
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        for(Suscripcion s: items){
-            System.out.println(s);
-            rowData[0] = s.getId();
-            rowData[1] = sdf.format(s.getFechaDesde());
-            rowData[2] = sdf.format(s.getFechaHasta());
-            rowData[3] = s.getImporteTotal();
-            modelo.addRow(rowData);
-        }
-        jTHistorialSuscripcion.setModel(modelo);
-    }
-    
-    public void vaciarTabla(){
-        DefaultTableModel modelo = (DefaultTableModel) jTHistorialSuscripcion.getModel();
-        modelo.setRowCount(0);
-        jTHistorialSuscripcion.setModel(modelo);
-    }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -103,92 +80,75 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jLMensajeAdvertencia = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jBAgregarSuscripcion = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTHistorialSuscripcion = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jTFBusqCedula.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jTFBusqCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTFBusqCedulaKeyPressed(evt);
             }
         });
-        jPanel1.add(jTFBusqCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 183, -1));
+        jPanel1.add(jTFBusqCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 270, -1));
 
+        jBVerificar.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jBVerificar.setText("Verificar");
         jBVerificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBVerificarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 10, -1, -1));
+        jPanel1.add(jBVerificar, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 10, -1, -1));
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 980, 40));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 980, 60));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2), "Estado Suscripción", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 400, 300));
+        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 400, 300));
 
-        jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLNombres.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 70, 480, 30));
+        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 480, 30));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLabel3.setText("Días Restantes:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 200, 220, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 310, 220, -1));
 
-        jLDiasRestantes.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 200, 120, 30));
+        jLDiasRestantes.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, 120, 30));
 
-        jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLMensajeAdvertencia.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 130, 480, 30));
+        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, 480, 30));
 
+        jButton1.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         jButton1.setText("Editar");
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 270, 100, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 230, -1));
 
-        jBAgregarSuscripcion.setText("Agregar una Suscripción");
+        jBAgregarSuscripcion.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jBAgregarSuscripcion.setText("Agregar Suscripción");
         jBAgregarSuscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAgregarSuscripcionActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 270, -1, -1));
+        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 270, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 960, 390));
+        jButton2.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton2.setText("Generar Tarjeta");
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 400, 230, -1));
 
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jButton3.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
+        jButton3.setText("Eliminar Cliente");
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 400, 270, -1));
 
-        jTHistorialSuscripcion.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Fecha Desde", "Fecha Hasta"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.Object.class, java.lang.Object.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTHistorialSuscripcion);
-        if (jTHistorialSuscripcion.getColumnModel().getColumnCount() > 0) {
-            jTHistorialSuscripcion.getColumnModel().getColumn(0).setPreferredWidth(6);
-        }
-
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 940, 450));
-
-        add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 470, 960, 490));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 1280, 768));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAgregarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarSuscripcionActionPerformed
@@ -206,7 +166,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private void jBVerificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVerificarActionPerformed
         // TODO add your handling code here:
         buscarPersonaPorCedula();
-        loadSuscripcionesPorPersona();
         jTFBusqCedula.setText("");
     }//GEN-LAST:event_jBVerificarActionPerformed
 
@@ -214,7 +173,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         // TODO add your handling code here:
         if(evt.getKeyCode() == KeyEvent.VK_ENTER){
             buscarPersonaPorCedula();
-            loadSuscripcionesPorPersona();
             jTFBusqCedula.setText("");
             Date hoy = new Date();
             Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
@@ -235,6 +193,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JButton jBAgregarSuscripcion;
     private javax.swing.JButton jBVerificar;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLDiasRestantes;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLMensajeAdvertencia;
@@ -242,9 +202,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTFBusqCedula;
-    private javax.swing.JTable jTHistorialSuscripcion;
     // End of variables declaration//GEN-END:variables
 }

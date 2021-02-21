@@ -228,137 +228,129 @@ public class ProductoView extends javax.swing.JPanel {
         jLabel5 = new javax.swing.JLabel();
         jTFBuscarCodigoBarras = new javax.swing.JTextField();
         JBLimpiar = new javax.swing.JButton();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
 
         setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatosProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 60, 160, -1));
+        jPDatosProducto.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 160, -1));
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("ID:");
         jPDatosProducto.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nombre:");
         jPDatosProducto.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Descripcion:");
-        jPDatosProducto.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        jPDatosProducto.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
 
-        jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jLID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPDatosProducto.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 30, 70, 20));
+        jPDatosProducto.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 70, 20));
 
-        JTFNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JTFNombreActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 60, 260, -1));
+        jPDatosProducto.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 260, -1));
 
-        JBListar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBListar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBListarActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 110, 160, -1));
+        jPDatosProducto.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 160, -1));
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel6.setText("Codigo Barras:");
-        jPDatosProducto.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, -1, -1));
+        jPDatosProducto.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel7.setText("Precio:");
-        jPDatosProducto.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+        jPDatosProducto.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        JTFPrecio.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
-        jPDatosProducto.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 110, -1));
+        jPDatosProducto.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 110, -1));
+        jPDatosProducto.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 260, -1));
 
-        JTFCodigoBarra.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        jPDatosProducto.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 260, -1));
-
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         JBEditar.setText("Editar");
         JBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBEditarActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 160, 80, -1));
+        jPDatosProducto.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 80, -1));
 
-        JBOk.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBOk.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         JBOk.setText("Ok");
         JBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBOkActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 160, 70, -1));
+        jPDatosProducto.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 70, -1));
 
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBEliminarActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 210, 160, -1));
+        jPDatosProducto.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 160, -1));
 
         jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPDatosProducto.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 30, 340, 300));
+        jPDatosProducto.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 340, 300));
 
-        jBEligirImagen.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jBEligirImagen.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jBEligirImagen.setText("Elegir Imagen");
         jBEligirImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEligirImagenActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 340, 130, 30));
+        jPDatosProducto.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, 130, 30));
 
         JTADescripcion.setColumns(20);
-        JTADescripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        JTADescripcion.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         JTADescripcion.setLineWrap(true);
         JTADescripcion.setRows(5);
         jScrollPane2.setViewportView(JTADescripcion);
 
-        jPDatosProducto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 260, -1));
+        jPDatosProducto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 260, -1));
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 JBVaciarFormularioActionPerformed(evt);
             }
         });
-        jPDatosProducto.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 260, 160, -1));
+        jPDatosProducto.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 160, -1));
 
         jLabel9.setText("Ex: 15.89");
-        jPDatosProducto.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 220, -1, 30));
+        jPDatosProducto.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, 20));
 
-        jLabel10.setFont(new java.awt.Font("Ubuntu", 0, 14)); // NOI18N
         jLabel10.setText("$");
-        jPDatosProducto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 20, 30));
+        jPDatosProducto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 10, 20));
 
-        add(jPDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 1100, 390));
+        add(jPDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1070, 370));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -393,9 +385,8 @@ public class ProductoView extends javax.swing.JPanel {
             jTProductos.getColumnModel().getColumn(5).setMaxWidth(80);
         }
 
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 1070, 290));
+        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 1040, 290));
 
-        jTFBuscarNombre.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTFBuscarNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTFBuscarNombreKeyPressed(evt);
@@ -403,15 +394,14 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jPanel2.add(jTFBuscarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 190, -1));
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel4.setText("Producto:");
         jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 37, 70, 20));
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel5.setText("Código Barras:");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 120, 20));
 
-        jTFBuscarCodigoBarras.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTFBuscarCodigoBarras.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBuscarCodigoBarrasKeyReleased(evt);
@@ -419,7 +409,7 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jPanel2.add(jTFBuscarCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 200, -1));
 
-        JBLimpiar.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        JBLimpiar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         JBLimpiar.setText("Limpiar");
         JBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -428,15 +418,7 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jPanel2.add(JBLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 110, -1));
 
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 460, 1100, 410));
-
-        jPanel1.setLayout(new java.awt.GridBagLayout());
-
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel8.setText("PRODUCTOS");
-        jPanel1.add(jLabel8, new java.awt.GridBagConstraints());
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1100, 40));
+        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 1070, 380));
     }// </editor-fold>//GEN-END:initComponents
 
     
@@ -611,10 +593,8 @@ public class ProductoView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPDatosProducto;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

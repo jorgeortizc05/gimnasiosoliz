@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class main {
     
-    public static void main(String args[]){
+    /*public static void main(String args[]){
         /*NuevaBaseDatos ndb = new NuevaBaseDatos();
         ndb.crearTablaProducto();
         ndb.crearTablaFormaPago();
@@ -30,7 +30,7 @@ public class main {
         ndb.crearTablaTipoPersona();
         ndb.crearTablaPersona();
         ndb.crearTablaTipoSuscripción();
-        ndb.crearTablaSuscripcion();*/
+        ndb.crearTablaSuscripcion();
         System.out.println(new Date());
-    }
+    }*/
 }
