@@ -223,10 +223,9 @@ public class FormaPagoView extends javax.swing.JPanel {
         });
         jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 150, -1));
 
-        JPListaFormaPagos.setBorder(javax.swing.BorderFactory.createTitledBorder("Lista Formas de Pagos"));
+        JPListaFormaPagos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Formas de Pagos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         JPListaFormaPagos.setLayout(new java.awt.GridLayout(1, 0));
 
-        jTListaFormaPagos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTListaFormaPagos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

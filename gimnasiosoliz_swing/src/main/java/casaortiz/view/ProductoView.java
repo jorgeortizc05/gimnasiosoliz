@@ -232,7 +232,7 @@ public class ProductoView extends javax.swing.JPanel {
         setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatosProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

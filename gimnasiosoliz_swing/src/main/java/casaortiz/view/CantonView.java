@@ -145,7 +145,7 @@ public class CantonView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cantón", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cantón", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         jPDatos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -225,11 +225,10 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 150, -1));
 
-        JPListaCantones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Cantones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        JPListaCantones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Cantones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
         JPListaCantones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JPListaCantones.setLayout(new java.awt.GridLayout(1, 0));
 
-        jTListaCantones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

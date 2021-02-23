@@ -16,13 +16,10 @@ import java.awt.Image;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.sql.Date;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -104,7 +101,7 @@ public class PersonaView extends javax.swing.JPanel {
         persona.setNombre(jTFNombre.getText());
         persona.setApellido(jTFApellido.getText());
         persona.setCedula(jTFCedula.getText());
-        persona.setDireccion(jTFApellido.getText());
+        persona.setDireccion(JTADirecc.getText());
         persona.setEmail(jTFEmail.getText());
         persona.setFechaNacimiento(rSDCFechaNacimiento.getDatoFecha());
         persona.setTelefono(jTFTele.getText());
@@ -128,7 +125,7 @@ public class PersonaView extends javax.swing.JPanel {
         persona.setNombre(jTFNombre.getText());
         persona.setApellido(jTFApellido.getText());
         persona.setCedula(jTFCedula.getText());
-        persona.setDireccion(jTFApellido.getText());
+        persona.setDireccion(JTADirecc.getText());
         persona.setEmail(jTFEmail.getText());
         System.out.println(rSDCFechaNacimiento.getFormatoFecha());
         persona.setFechaNacimiento(rSDCFechaNacimiento.getDatoFecha());
@@ -565,6 +562,9 @@ public class PersonaView extends javax.swing.JPanel {
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
         //guardarCanton();
         guardar();
+        if (webcam != null){
+            webcam.close();
+        }
     }//GEN-LAST:event_jBGuardarActionPerformed
 
     private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
@@ -580,6 +580,9 @@ public class PersonaView extends javax.swing.JPanel {
     private void JBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBOkActionPerformed
         actualizar();
         jBGuardar.setVisible(true);
+        if (webcam != null){
+            webcam.close();
+        }
     }//GEN-LAST:event_JBOkActionPerformed
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
@@ -643,6 +646,7 @@ public class PersonaView extends javax.swing.JPanel {
                 //nombre y formato de la imagen de salida
                 ImageIO.write(image, "PNG", new File(System.getProperty("user.dir") + "/media/persona/" +jTFCedula.getText()+".png"));
                 loadImageGuardada(jTFCedula.getText()+".png");
+                webcam.close();
             }
             
         } catch (IOException ex) {

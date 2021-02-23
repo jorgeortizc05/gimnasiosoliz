@@ -72,13 +72,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(1280, 760));
 
-        jMenuBar1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jMenuBar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 28));
 
         jMenu4.setText("Control de Acceso");
-        jMenu4.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jMenu4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        jMIVerificarSuscripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMIVerificarSuscripcion.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMIVerificarSuscripcion.setText("Verificar Suscripción");
         jMIVerificarSuscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -90,9 +91,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu1.setText("Empresa");
-        jMenu1.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jMenu1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        jMICantones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMICantones.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMICantones.setText("Cantones");
         jMICantones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +102,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu1.add(jMICantones);
 
-        jMIEmpresa.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMIEmpresa.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMIEmpresa.setText("Empresa");
         jMIEmpresa.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -113,9 +114,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Clientes");
-        jMenu2.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jMenu2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        jMIPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMIPersonas.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMIPersonas.setText("Clientes");
         jMIPersonas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -124,7 +125,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMIPersonas);
 
-        jMITipoPersona.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMITipoPersona.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMITipoPersona.setText("Tipos de Clientes");
         jMITipoPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,9 +137,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu3.setText("Caja");
-        jMenu3.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jMenu3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        jMISuscripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMISuscripcion.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMISuscripcion.setText("Suscripcion");
         jMISuscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +148,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMISuscripcion);
 
-        jMIFormaPago.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMIFormaPago.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMIFormaPago.setText("Formas de Pago");
         jMIFormaPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -156,7 +157,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMIFormaPago);
 
-        jMITipoComprobantes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMITipoComprobantes.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMITipoComprobantes.setText("Tipo de Comprobantes");
         jMITipoComprobantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -165,7 +166,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu3.add(jMITipoComprobantes);
 
-        jMITipoSuscripcion.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jMITipoSuscripcion.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         jMITipoSuscripcion.setText("Tipo de Suscripción");
         jMITipoSuscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -177,9 +178,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu3);
 
         jMenu5.setText("Inventarios");
-        jMenu5.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
+        jMenu5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
 
-        JMIProductos.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        JMIProductos.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         JMIProductos.setText("Productos");
         JMIProductos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
