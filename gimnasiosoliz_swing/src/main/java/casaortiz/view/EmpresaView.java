@@ -193,24 +193,25 @@ public class EmpresaView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos de la Empresa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos de la Empresa", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 37, -1, -1));
 
-        jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 91, 17));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Empresa:");
         jPDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 65, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Descripcion:");
         jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 103, -1, -1));
 
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
@@ -219,14 +220,14 @@ public class EmpresaView extends javax.swing.JPanel {
         jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 70, 304, -1));
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
 
         jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 304, -1));
 
-        jBGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -235,7 +236,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 140, -1));
 
-        JBListar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -244,7 +245,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 80, 140, -1));
 
-        JBEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEditar.setText("Editar");
         JBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +254,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 130, -1, -1));
 
-        JBOk.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBOk.setText("Ok");
         JBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -262,7 +263,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 130, 60, -1));
 
-        JBEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -271,7 +272,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 180, 140, -1));
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -280,27 +281,30 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 220, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Cantón:");
         jPDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 220, -1, -1));
 
+        jCBCanton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPDatos.add(jCBCanton, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 192, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("RUC:");
         jPDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("Dirección Matriz:");
         jPDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 70, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Direccion Sucursal:");
         jPDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, -1, -1));
+
+        jTFRUC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPDatos.add(jTFRUC, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, 230, -1));
 
         JTADireccMatriz.setColumns(20);
-        JTADireccMatriz.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        JTADireccMatriz.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTADireccMatriz.setLineWrap(true);
         JTADireccMatriz.setRows(5);
         jScrollPane3.setViewportView(JTADireccMatriz);
@@ -308,7 +312,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jPDatos.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 70, 230, 100));
 
         JTADireccSucur.setColumns(20);
-        JTADireccSucur.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        JTADireccSucur.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTADireccSucur.setLineWrap(true);
         JTADireccSucur.setRows(5);
         jScrollPane4.setViewportView(JTADireccSucur);
@@ -317,6 +321,7 @@ public class EmpresaView extends javax.swing.JPanel {
 
         JPListaEmpresas.setLayout(new java.awt.GridLayout(1, 0));
 
+        jTListaEmpresas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaEmpresas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

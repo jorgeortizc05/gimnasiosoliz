@@ -300,17 +300,18 @@ public class PersonaView extends javax.swing.JPanel {
         jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
-        jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 130, 17));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Cédula:");
         jPDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, 20));
 
+        jTFCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFCedulaActionPerformed(evt);
@@ -318,7 +319,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jTFCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 270, -1));
 
-        jBGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -327,7 +328,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 110, -1));
 
-        JBListar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -336,7 +337,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 410, 100, -1));
 
-        JBEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEditar.setText("Editar");
         JBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -345,7 +346,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 410, 70, -1));
 
-        JBOk.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBOk.setText("Ok");
         JBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -354,7 +355,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 410, 90, -1));
 
-        JBEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -363,7 +364,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 410, 120, -1));
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -372,33 +373,37 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 410, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Tipo Persona:");
         jPDatos.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, -1, -1));
 
+        jCBTipoPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPDatos.add(jCBTipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 270, -1));
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Teléfono:");
         jPDatos.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("Dirección:");
         jPDatos.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 80, -1));
+
+        jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPDatos.add(jTFTele, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 270, -1));
 
         JTADirecc.setColumns(20);
-        JTADirecc.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        JTADirecc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTADirecc.setLineWrap(true);
         JTADirecc.setRows(5);
         jScrollPane3.setViewportView(JTADirecc);
 
         jPDatos.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 270, 100));
 
-        jLabel9.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Nombre:");
         jPDatos.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, 20));
 
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
@@ -406,10 +411,11 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 270, -1));
 
-        jLabel10.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Apellido:");
         jPDatos.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, -1, 20));
 
+        jTFApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFApellidoActionPerformed(evt);
@@ -417,10 +423,11 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 270, -1));
 
-        jLabel11.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("Email:");
         jPDatos.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 150, -1, 20));
 
+        jTFEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFEmailActionPerformed(evt);
@@ -431,7 +438,7 @@ public class PersonaView extends javax.swing.JPanel {
         jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 3));
         jPDatos.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 30, 400, 300));
 
-        jBTomarFoto.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBTomarFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBTomarFoto.setText("Tomar Foto");
         jBTomarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,11 +447,11 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 340, -1, -1));
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Fecha");
         jPDatos.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 50, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Nacimiento");
         jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, -1));
 
@@ -457,7 +464,7 @@ public class PersonaView extends javax.swing.JPanel {
         rSDCFechaNacimiento.setPlaceholder("");
         jPDatos.add(rSDCFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 270, -1));
 
-        jBEncenderCam.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEncenderCam.setText("Encender Cámara");
         jBEncenderCam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -466,7 +473,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         jPDatos.add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
 
-        jBApagarCam.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBApagarCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBApagarCam.setText("Apagar Cámara");
         jBApagarCam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -482,7 +489,7 @@ public class PersonaView extends javax.swing.JPanel {
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -510,15 +517,19 @@ public class PersonaView extends javax.swing.JPanel {
 
         JPListaPersonas.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1220, 340));
 
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel13.setText("Nombre:");
         JPListaPersonas.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, 20));
 
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setText("Apellido:");
         JPListaPersonas.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, -1, 20));
 
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel15.setText("Cedula:");
         JPListaPersonas.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, -1, 20));
 
+        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -527,6 +538,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         JPListaPersonas.add(jBLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(660, 30, -1, -1));
 
+        jTFBusCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusCedulaKeyReleased(evt);
@@ -534,6 +546,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         JPListaPersonas.add(jTFBusCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 30, 140, -1));
 
+        jTFBusNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusNombreKeyReleased(evt);
@@ -541,6 +554,7 @@ public class PersonaView extends javax.swing.JPanel {
         });
         JPListaPersonas.add(jTFBusNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 140, -1));
 
+        jTFBusApell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusApellKeyReleased(evt);

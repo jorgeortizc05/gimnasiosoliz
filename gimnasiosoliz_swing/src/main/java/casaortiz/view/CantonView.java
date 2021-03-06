@@ -145,33 +145,37 @@ public class CantonView extends javax.swing.JPanel {
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cantón", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cantón", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPDatos.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 91, 20));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Canton:");
         jPDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Descripcion:");
         jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
+
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 210, -1));
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
 
         jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 210, -1));
 
-        jBGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,7 +184,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 150, -1));
 
-        JBListar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -189,7 +193,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 50, 150, -1));
 
-        JBEditar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEditar.setText("Editar");
         JBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -198,7 +202,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 80, 80, -1));
 
-        JBOk.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBOk.setText("Ok");
         JBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -207,7 +211,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, 70, -1));
 
-        JBEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,7 +220,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 110, 150, -1));
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,10 +229,11 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 140, 150, -1));
 
-        JPListaCantones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Cantones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
+        JPListaCantones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Cantones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         JPListaCantones.setFont(new java.awt.Font("Arial", 1, 14)); // NOI18N
         JPListaCantones.setLayout(new java.awt.GridLayout(1, 0));
 
+        jTListaCantones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
