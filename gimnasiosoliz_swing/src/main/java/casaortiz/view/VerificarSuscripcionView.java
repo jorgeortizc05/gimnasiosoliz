@@ -186,6 +186,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton2.setText("Generar Tarjeta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 270, -1));
 
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -280,19 +285,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {
             if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-                buscarPersonaPorCedula(jTFBusqCedula.getText());
-                jTFBusqCedula.setText("");
-                Date hoy = new Date();
-                Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
-                int dias = (int) ((fechaMaxima.getTime() - hoy.getTime())/86400000);
-                jLDiasRestantes.setText(dias+"");
-                if(dias < 0){
-                    jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
-                    jLMensajeAdvertencia.setForeground(Color.red);
-                }else{
-                    jLMensajeAdvertencia.setText("BIENVENIDO "+persona.getNombre());
-                    jLMensajeAdvertencia.setForeground(Color.BLACK);
-                }
+                verificarSuscripcion(jTFBusqCedula.getText());
             }
         } catch (Exception e) {
             
@@ -306,23 +299,29 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
             String cedula = jTListaPersonas.getValueAt(fila, 0).toString();
-            buscarPersonaPorCedula(cedula);
-                jTFBusqCedula.setText("");
-                Date hoy = new Date();
-                Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
-                int dias = (int) ((fechaMaxima.getTime() - hoy.getTime())/86400000);
-                jLDiasRestantes.setText(dias+"");
-                if(dias < 0){
-                    jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
-                    jLMensajeAdvertencia.setForeground(Color.red);
-                }else{
-                    jLMensajeAdvertencia.setText("BIENVENIDO "+persona.getNombre());
-                    jLMensajeAdvertencia.setForeground(Color.BLACK);
-                }
-            
-            
+            verificarSuscripcion(cedula);
         }
     }
+    
+    public void verificarSuscripcion(String cedula){
+        buscarPersonaPorCedula(cedula);
+        jTFBusqCedula.setText("");
+        Date hoy = new Date();
+        Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
+        int dias = (int) ((fechaMaxima.getTime() - hoy.getTime())/86400000);
+        
+        if(dias < 0){
+            jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
+            jLMensajeAdvertencia.setForeground(Color.red);
+            jLDiasRestantes.setText(dias+"");
+            jLDiasRestantes.setForeground(Color.red);
+        }else{
+            jLMensajeAdvertencia.setText("BIENVENIDO "+persona.getNombre());
+            jLMensajeAdvertencia.setForeground(Color.BLACK);
+            jLDiasRestantes.setText(dias+"");
+        }
+    }
+    
     public void loadPersonasBusqueda(List<Persona> items){
         vaciarTabla();
         DefaultTableModel modelo = (DefaultTableModel) jTListaPersonas.getModel();
@@ -374,6 +373,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         // TODO add your handling code here:
         seleccionarItemTabla();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_jButton2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
