@@ -122,7 +122,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jTFBusCedula = new javax.swing.JTextField();
         jTFBusNombre = new javax.swing.JTextField();
         jTFBusApell = new javax.swing.JTextField();
-        jButton4 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1280, 768));
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -150,22 +149,22 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 160, 400, 300));
+        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 40, 400, 300));
 
         jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 180, 480, 30));
+        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 60, 480, 30));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Días Restantes:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 310, 220, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 190, 220, -1));
 
         jLDiasRestantes.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 310, 120, 30));
+        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(980, 190, 120, 30));
 
         jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 240, 480, 30));
+        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 480, 30));
 
         jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton1.setText("Editar");
@@ -174,7 +173,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 360, 230, -1));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 230, -1));
 
         jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jBAgregarSuscripcion.setText("Agregar Suscripción");
@@ -183,11 +182,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jBAgregarSuscripcionActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 360, 270, -1));
+        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 240, 270, -1));
 
         jButton2.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton2.setText("Generar Tarjeta");
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 410, 230, -1));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 290, 270, -1));
 
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaPersonas.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -258,11 +257,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         JPListaPersonas.add(jTFBusApell, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 30, 140, -1));
 
-        jPanel2.add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 520, 1240, 410));
-
-        jButton4.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton4.setText("Suscripción Diaria");
-        jPanel2.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 410, 270, -1));
+        jPanel2.add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 1240, 410));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -388,7 +383,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLDiasRestantes;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLMensajeAdvertencia;

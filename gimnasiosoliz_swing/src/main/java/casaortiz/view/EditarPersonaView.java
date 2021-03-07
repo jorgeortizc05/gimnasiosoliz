@@ -46,6 +46,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         perBuss = new PersonaBuss();
         tpBuss = new TipoPersonaBuss();
         loadPersona();
+        loadTipoPersonas();
     }
     
     public void loadPersona(){
@@ -60,6 +61,13 @@ public class EditarPersonaView extends javax.swing.JFrame {
         TipoPersona itemTipoPersona = tpBuss.getTipoPersona(persona.getIdTipoPersona());
         jCBTipoPersona.getModel().setSelectedItem(itemTipoPersona);
         loadImageGuardada(persona.getFoto());
+    }
+    
+    public void loadTipoPersonas(){
+        List<TipoPersona> items = tpBuss.getTipoPersonas();
+        for(TipoPersona tp: items){
+           jCBTipoPersona.addItem(tp);
+        }
     }
     
     public void actualizar(){
