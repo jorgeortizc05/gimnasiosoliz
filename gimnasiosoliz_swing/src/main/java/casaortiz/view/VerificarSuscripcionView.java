@@ -64,14 +64,12 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         vaciarTabla();
         DefaultTableModel modelo = (DefaultTableModel) jTListaPersonas.getModel();
         List<Persona> personas = perBuss.getPersonas();
-        Object rowData[] = new Object[6];
+        Object rowData[] = new Object[4];
         for(Persona p: personas){
-            rowData[0] = p.getId();
+            rowData[0] = p.getCedula();
             rowData[1] = p.getNombre();
             rowData[2] = p.getApellido();
-            rowData[3] = p.getEmail();
-            rowData[4] = p.getTelefono();
-            rowData[5] = p.getActivo();
+            rowData[3] = p.getTelefono();
             modelo.addRow(rowData);
         }
         jTListaPersonas.setModel(modelo);
