@@ -31,6 +31,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private TipoSuscripcionView tsv = new TipoSuscripcionView();
     private SuscripcionView sv = new SuscripcionView();
     private VerificarSuscripcionView vsv = new VerificarSuscripcionView();
+    private ProductoCatalogoView pcv = new ProductoCatalogoView();
     public VentanaPrincipal() {
         initComponents();
         this.setLayout(new FlowLayout());
@@ -64,6 +65,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMITipoSuscripcion = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         JMIProductos = new javax.swing.JMenuItem();
+        jMICatalogo = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gimnasio Soliz");
@@ -189,6 +191,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(JMIProductos);
 
+        jMICatalogo.setText("Catalogo");
+        jMICatalogo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICatalogoActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMICatalogo);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -287,6 +297,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_jMIVerificarSuscripcionActionPerformed
 
+    private void jMICatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICatalogoActionPerformed
+        // TODO add your handling code here:
+        vaciarVentana();
+        pcv = new ProductoCatalogoView();
+        this.add(pcv, BorderLayout.CENTER);
+        this.pack();
+    }//GEN-LAST:event_jMICatalogoActionPerformed
+
     public void vaciarVentana(){
         
         this.remove(pv);
@@ -299,6 +317,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.remove(tsv);
         this.remove(sv);
         this.remove(vsv);
+        this.remove(pcv);
         
         
         
@@ -361,6 +380,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMIProductos;
     private javax.swing.JMenuItem jMICantones;
+    private javax.swing.JMenuItem jMICatalogo;
     private javax.swing.JMenuItem jMIEmpresa;
     private javax.swing.JMenuItem jMIFormaPago;
     private javax.swing.JMenuItem jMIPersonas;
