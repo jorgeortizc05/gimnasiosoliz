@@ -107,7 +107,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jLDiasRestantes = new javax.swing.JLabel();
         jLMensajeAdvertencia = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        jBEditarPersona = new javax.swing.JButton();
         jBAgregarSuscripcion = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         JPListaPersonas = new javax.swing.JPanel();
@@ -164,14 +164,14 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 120, 480, 30));
 
-        jButton1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton1.setText("Editar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jBEditarPersona.setText("Editar");
+        jBEditarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jBEditarPersonaActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 230, -1));
+        jPanel2.add(jBEditarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 240, 230, -1));
 
         jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jBAgregarSuscripcion.setText("Agregar Suscripción");
@@ -264,7 +264,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jScrollPane1.setViewportView(jPanel2);
 
-        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1280, 768));
+        add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1280, 668));
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBAgregarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBAgregarSuscripcionActionPerformed
@@ -335,7 +335,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jTListaPersonas.setModel(modelo);
     }
     
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jBEditarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarPersonaActionPerformed
         // TODO add your handling code here:
         if(persona == null){
             JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes cargar el cliente");
@@ -345,11 +345,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             epv.setVisible(true);
             
         }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jBEditarPersonaActionPerformed
 
     private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
         // TODO add your handling code here:
-        loadPersonas();
+        vaciarTabla();
         vaciarCamposBusqueda();
     }//GEN-LAST:event_jBLimpiarActionPerformed
 
@@ -381,8 +381,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JPListaPersonas;
     private javax.swing.JButton jBAgregarSuscripcion;
+    private javax.swing.JButton jBEditarPersona;
     private javax.swing.JButton jBLimpiar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLDiasRestantes;

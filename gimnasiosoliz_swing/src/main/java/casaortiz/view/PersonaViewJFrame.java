@@ -13,23 +13,23 @@ import com.github.sarxos.webcam.Webcam;
 import com.github.sarxos.webcam.WebcamPanel;
 import java.awt.Color;
 import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
-import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import java.awt.image.BufferedImage;
+import javax.imageio.ImageIO;
+import java.io.File;
+import java.io.IOException;
 
 /**
  *
  * @author jorge
  */
-public class PersonaView extends javax.swing.JPanel {
+public class PersonaViewJFrame extends javax.swing.JFrame {
 
     private Persona persona;
     private List<Persona> personas;
@@ -40,14 +40,12 @@ public class PersonaView extends javax.swing.JPanel {
     private AtomicBoolean initialized = new AtomicBoolean(false);
     private Webcam webcam = null;
     private WebcamPanel panel = null;
-    
-    public PersonaView() {
+    public PersonaViewJFrame() {
         initComponents();
         perBuss = new PersonaBuss();
         tpBuss = new TipoPersonaBuss();
         loadPersonas();
         loadTipoPersonas();
-        
     }
     
     public void encenderCamara(){
@@ -245,13 +243,17 @@ public class PersonaView extends javax.swing.JPanel {
         jTListaPersonas.setModel(modelo);
     }
     
-    
+    public void vaciarCamposBusqueda(){
+        jTFBusNombre.setText("");
+        jTFBusApell.setText("");
+        jTFBusCedula.setText("");
+    }
+
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane4 = new javax.swing.JScrollPane();
         jPDatos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLID = new javax.swing.JLabel();
@@ -295,7 +297,7 @@ public class PersonaView extends javax.swing.JPanel {
         jTFBusNombre = new javax.swing.JTextField();
         jTFBusApell = new javax.swing.JTextField();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos del Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -483,7 +485,7 @@ public class PersonaView extends javax.swing.JPanel {
         jPDatos.add(jBApagarCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
 
         jPCamera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPCamera.setLayout(new java.awt.GridLayout(1, 0));
+        jPCamera.setLayout(new java.awt.GridLayout());
         jPDatos.add(jPCamera, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 400, 300));
 
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
@@ -564,9 +566,28 @@ public class PersonaView extends javax.swing.JPanel {
 
         jPDatos.add(JPListaPersonas, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 450, 1240, 410));
 
-        jScrollPane4.setViewportView(jPDatos);
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1261, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPDatos, javax.swing.GroupLayout.PREFERRED_SIZE, 1261, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 860, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPDatos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
 
-        add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1280, 768));
+        pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCedulaActionPerformed
@@ -620,25 +641,23 @@ public class PersonaView extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFEmailActionPerformed
 
-    private void jTFBusNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusNombreKeyReleased
-        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText()));
-    }//GEN-LAST:event_jTFBusNombreKeyReleased
-
-    private void jTFBusApellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusApellKeyReleased
+    private void jBTomarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTomarFotoActionPerformed
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText()));
-    }//GEN-LAST:event_jTFBusApellKeyReleased
+        try {
+            if(jTFCedula.getText().equals("")){
+                JOptionPane.showMessageDialog(jTFCedula, "Debe ingresar primero la cédula");
+            }else{
+                BufferedImage image = webcam.getImage();
+                //nombre y formato de la imagen de salida
+                ImageIO.write(image, "PNG", new File(System.getProperty("user.dir") + "/media/persona/" +jTFCedula.getText()+".png"));
+                loadImageGuardada(jTFCedula.getText()+".png");
+                webcam.close();
+            }
 
-    private void jTFBusCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusCedulaKeyReleased
-        // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorCedula(jTFBusCedula.getText()));
-    }//GEN-LAST:event_jTFBusCedulaKeyReleased
+        } catch (IOException ex) {
 
-    private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
-        // TODO add your handling code here:
-        loadPersonas();
-        vaciarCamposBusqueda();
-    }//GEN-LAST:event_jBLimpiarActionPerformed
+        }
+    }//GEN-LAST:event_jBTomarFotoActionPerformed
 
     private void jBEncenderCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEncenderCamActionPerformed
         // TODO add your handling code here:
@@ -650,28 +669,59 @@ public class PersonaView extends javax.swing.JPanel {
         apagarCamara();
     }//GEN-LAST:event_jBApagarCamActionPerformed
 
-    private void jBTomarFotoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBTomarFotoActionPerformed
+    private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
         // TODO add your handling code here:
-         try {
-            if(jTFCedula.getText().equals("")){
-                JOptionPane.showMessageDialog(jTFCedula, "Debe ingresar primero la cédula");
-            }else{
-                BufferedImage image = webcam.getImage();
-                //nombre y formato de la imagen de salida
-                ImageIO.write(image, "PNG", new File(System.getProperty("user.dir") + "/media/persona/" +jTFCedula.getText()+".png"));
-                loadImageGuardada(jTFCedula.getText()+".png");
-                webcam.close();
-            }
-            
-        } catch (IOException ex) {
-            
-        }
-    }//GEN-LAST:event_jBTomarFotoActionPerformed
+        loadPersonas();
+        vaciarCamposBusqueda();
+    }//GEN-LAST:event_jBLimpiarActionPerformed
 
-    public void vaciarCamposBusqueda(){
-        jTFBusNombre.setText("");
-        jTFBusApell.setText("");
-        jTFBusCedula.setText("");
+    private void jTFBusCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusCedulaKeyReleased
+        // TODO add your handling code here:
+        loadPersonasBusqueda(perBuss.buscarPersonasPorCedula(jTFBusCedula.getText()));
+    }//GEN-LAST:event_jTFBusCedulaKeyReleased
+
+    private void jTFBusNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusNombreKeyReleased
+        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText()));
+    }//GEN-LAST:event_jTFBusNombreKeyReleased
+
+    private void jTFBusApellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusApellKeyReleased
+        // TODO add your handling code here:
+        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText()));
+    }//GEN-LAST:event_jTFBusApellKeyReleased
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PersonaViewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PersonaViewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PersonaViewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PersonaViewJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new PersonaViewJFrame().setVisible(true);
+            }
+        });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -707,7 +757,6 @@ public class PersonaView extends javax.swing.JPanel {
     private javax.swing.JPanel jPDatos;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTextField jTFApellido;
     private javax.swing.JTextField jTFBusApell;
     private javax.swing.JTextField jTFBusCedula;

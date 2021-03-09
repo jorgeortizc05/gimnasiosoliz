@@ -27,7 +27,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private FormaPagoView fpv = new FormaPagoView();
     private TipoComprobanteView tcv = new TipoComprobanteView();
     private TipoPersonaView tpv = new TipoPersonaView();
-    private PersonaView perv = new PersonaView();
+    
     private TipoSuscripcionView tsv = new TipoSuscripcionView();
     private SuscripcionView sv = new SuscripcionView();
     private VerificarSuscripcionView vsv = new VerificarSuscripcionView();
@@ -267,10 +267,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMIPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIPersonasActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        perv = new PersonaView();
-        this.add(perv, BorderLayout.CENTER);
-        this.pack();
+        
+        PersonaViewJFrame perv = new PersonaViewJFrame();
+        perv.setLocationRelativeTo(null);
+        perv.setVisible(true);
     }//GEN-LAST:event_jMIPersonasActionPerformed
 
     private void jMITipoSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoSuscripcionActionPerformed
@@ -313,7 +313,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.remove(fpv);
         this.remove(tcv);
         this.remove(tpv);
-        this.remove(perv);
         this.remove(tsv);
         this.remove(sv);
         this.remove(vsv);
@@ -370,8 +369,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                    // handle exception
                 }
                 VentanaPrincipal v = new VentanaPrincipal();
+                v.setSize(1366,768);
                 v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro                
                 v.setVisible(true);
+                
                 
             }
         });
