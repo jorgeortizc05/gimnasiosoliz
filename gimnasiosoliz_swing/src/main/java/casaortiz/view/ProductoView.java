@@ -28,19 +28,18 @@ import javax.swing.table.DefaultTableModel;
  * @author jorge
  */
 public class ProductoView extends javax.swing.JPanel {
-    
+
     private Producto producto;
     private ProductoBuss prodBuss;
     private JFileChooser fc;
     private File file;
     private File dest;
-    
     public ProductoView() {
         initComponents();
         prodBuss = new ProductoBuss();
         loadProductos();
     }
-    
+
     public void guardar() throws IOException{
         prodBuss = new ProductoBuss();
         producto = new Producto();
@@ -193,338 +192,7 @@ public class ProductoView extends javax.swing.JPanel {
         } catch (Exception e) {
         }  
     }
-
-    @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
-    private void initComponents() {
-
-        jPDatosProducto = new javax.swing.JPanel();
-        jBGuardar = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLID = new javax.swing.JLabel();
-        JTFNombre = new javax.swing.JTextField();
-        JBListar = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        JTFPrecio = new javax.swing.JTextField();
-        JTFCodigoBarra = new javax.swing.JTextField();
-        JBEditar = new javax.swing.JButton();
-        JBOk = new javax.swing.JButton();
-        JBEliminar = new javax.swing.JButton();
-        jLFoto = new javax.swing.JLabel();
-        jBEligirImagen = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        JTADescripcion = new javax.swing.JTextArea();
-        JBVaciarFormulario = new javax.swing.JButton();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTProductos = new javax.swing.JTable();
-        jTFBuscarNombre = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTFBuscarCodigoBarras = new javax.swing.JTextField();
-        JBLimpiar = new javax.swing.JButton();
-
-        setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
-        setForeground(java.awt.Color.white);
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPDatosProducto.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        jPDatosProducto.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBGuardar.setText("Guardar");
-        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBGuardarActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 20, 160, -1));
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("ID:");
-        jPDatosProducto.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
-
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setText("Nombre:");
-        jPDatosProducto.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, -1, -1));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setText("Descripcion:");
-        jPDatosProducto.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 90, -1, -1));
-
-        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLID.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jPDatosProducto.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 70, 20));
-
-        JTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        JTFNombre.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JTFNombreActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 260, -1));
-
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 160, -1));
-
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel6.setText("Codigo Barras:");
-        jPDatosProducto.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, -1, -1));
-
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel7.setText("Precio:");
-        jPDatosProducto.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, -1, -1));
-
-        JTFPrecio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
-        JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
-        jPDatosProducto.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 110, -1));
-
-        JTFCodigoBarra.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPDatosProducto.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 260, -1));
-
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 120, 80, -1));
-
-        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBOk.setText("Ok");
-        JBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBOkActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 120, 70, -1));
-
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEliminar.setText("Eliminar");
-        JBEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEliminarActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 170, 160, -1));
-
-        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPDatosProducto.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 10, 340, 300));
-
-        jBEligirImagen.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEligirImagen.setText("Elegir Imagen");
-        jBEligirImagen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEligirImagenActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 320, 130, 30));
-
-        JTADescripcion.setColumns(20);
-        JTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        JTADescripcion.setLineWrap(true);
-        JTADescripcion.setRows(5);
-        jScrollPane2.setViewportView(JTADescripcion);
-
-        jPDatosProducto.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 260, -1));
-
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBVaciarFormulario.setText("Vaciar Formulario");
-        JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBVaciarFormularioActionPerformed(evt);
-            }
-        });
-        jPDatosProducto.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 220, 160, -1));
-
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel9.setText("Ex: 15.89");
-        jPDatosProducto.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 180, -1, 20));
-
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel10.setText("$");
-        jPDatosProducto.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 180, 10, 20));
-
-        add(jPDatosProducto, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1070, 370));
-
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jTProductos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTProductos.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "ID", "Producto", "Descripción", "Precio", "Código Barra", "Foto"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
-            };
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTProductos);
-        if (jTProductos.getColumnModel().getColumnCount() > 0) {
-            jTProductos.getColumnModel().getColumn(0).setMaxWidth(70);
-            jTProductos.getColumnModel().getColumn(5).setMaxWidth(80);
-        }
-
-        jPanel2.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 1040, 290));
-
-        jTFBuscarNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBuscarNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                jTFBuscarNombreKeyPressed(evt);
-            }
-        });
-        jPanel2.add(jTFBuscarNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 190, -1));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel4.setText("Producto:");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 37, 70, 20));
-
-        jLabel5.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jLabel5.setText("Código Barras:");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 40, 120, 20));
-
-        jTFBuscarCodigoBarras.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBuscarCodigoBarras.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBuscarCodigoBarrasKeyReleased(evt);
-            }
-        });
-        jPanel2.add(jTFBuscarCodigoBarras, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 40, 200, -1));
-
-        JBLimpiar.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        JBLimpiar.setText("Limpiar");
-        JBLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBLimpiarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 40, 110, -1));
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 390, 1070, 380));
-    }// </editor-fold>//GEN-END:initComponents
-
     
-    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
-        try {
-            // TODO add your handling code here:
-            guardar();
-        } catch (IOException ex) {
-            Logger.getLogger(ProductoView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_jBGuardarActionPerformed
-
-    private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
-        // TODO add your handling code here:
-        loadProductos();
-    }//GEN-LAST:event_JBListarActionPerformed
-
-    private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
-        jBGuardar.setVisible(false);
-        seleccionarItemTabla();
-    }//GEN-LAST:event_JBEditarActionPerformed
-
-    private void JBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBOkActionPerformed
-        try {       
-            actualizar();
-            jBGuardar.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(ProductoView.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }//GEN-LAST:event_JBOkActionPerformed
-
-    private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
-        eliminar();        
-    }//GEN-LAST:event_JBEliminarActionPerformed
-
-    private void jBEligirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEligirImagenActionPerformed
-        // TODO add your handling code here:
-        fc = new JFileChooser();
-        fc.setDialogTitle("Elegir foto o imagen de producto");
-        if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
-            file = fc.getSelectedFile();
-            try {
-                String nombreImg = file.getName();
-                System.out.println(nombreImg);
-                if (nombreImg.endsWith(".jpg")
-                        || nombreImg.endsWith(".png")
-                        || nombreImg.endsWith(".bmp")
-                        || nombreImg.endsWith(".jpeg")) {
-                    UUID uuid = UUID.randomUUID();
-                    String codigoImagen = uuid.toString();
-                    dest = new File(System.getProperty("user.dir") + "/media/producto/" + codigoImagen);
-                    //this.imagen= (dest.getName());
-                    loadImageSrc(file.getAbsolutePath());
-
-            }
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Error abriendo fichero");
-            }
-        }
-                
-    }//GEN-LAST:event_jBEligirImagenActionPerformed
-
-    private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
-        vaciarFormulario();
-        jBGuardar.setVisible(true);
-    }//GEN-LAST:event_JBVaciarFormularioActionPerformed
-
-    private void JBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBLimpiarActionPerformed
-        // TODO add your handling code here:
-        vaciarCamposBusqueda();
-        loadProductos();
-    }//GEN-LAST:event_JBLimpiarActionPerformed
-
-    public void vaciarCamposBusqueda(){
-        jTFBuscarCodigoBarras.setText("");
-        jTFBuscarNombre.setText("");
-    }
-    
-    private void jTFBuscarNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBuscarNombreKeyPressed
-        // TODO add your handling code here:
-        String buscarNombre = jTFBuscarNombre.getText();
-        loadProductosPorNombre(buscarNombre);
-    }//GEN-LAST:event_jTFBuscarNombreKeyPressed
-
-    private void jTFBuscarCodigoBarrasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBuscarCodigoBarrasKeyReleased
-        // TODO add your handling code here:
-        String codigoBarra = jTFBuscarCodigoBarras.getText();
-        loadProductosPorCodigoBarra(codigoBarra);
-    }//GEN-LAST:event_jTFBuscarCodigoBarrasKeyReleased
-
-    private void JTFNombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JTFNombreActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_JTFNombreActionPerformed
-  
     private void loadImageGuardada(String name) {
 
         try {
@@ -579,35 +247,367 @@ public class ProductoView extends javax.swing.JPanel {
         }
         
     }
+    
+    public void vaciarCamposBusqueda(){
+        jTFBuscarCodigoBarras.setText("");
+        jTFBuscarNombre.setText("");
+    }
+    
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        JTFNombre = new javax.swing.JTextField();
+        JTFPrecio = new javax.swing.JTextField();
+        JTFCodigoBarra = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLID = new javax.swing.JLabel();
+        jLFoto = new javax.swing.JLabel();
+        jBEligirImagen = new javax.swing.JButton();
+        jBGuardar = new javax.swing.JButton();
+        jBListar = new javax.swing.JButton();
+        jBEliminar = new javax.swing.JButton();
+        jBVaciarFormulario = new javax.swing.JButton();
+        jBEditar = new javax.swing.JButton();
+        jBOk = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jTFBuscarCodigoBarras = new javax.swing.JTextField();
+        jTFBuscarNombre = new javax.swing.JTextField();
+        jBLimpiar = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTProductos = new javax.swing.JTable();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        JTADescripcion = new javax.swing.JTextArea();
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Datos de Productos"));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel1.setText("ID:");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 31, -1, -1));
+
+        jLabel2.setText("Nombre:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+
+        jLabel3.setText("Descripción:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+
+        jLabel4.setText("Precio:");
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
+
+        jLabel5.setText("Código de Barras:");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
+        jPanel1.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 290, -1));
+
+        JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
+        jPanel1.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 93, -1));
+        jPanel1.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 290, -1));
+
+        jLabel6.setText("$");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
+
+        jLabel7.setText("Ex. 15.89");
+        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
+        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 31, 129, 17));
+
+        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jPanel1.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, 400, 300));
+
+        jBEligirImagen.setText("Elegir Imágen");
+        jBEligirImagen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEligirImagenActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 340, -1, -1));
+
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGuardarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 150, -1));
+
+        jBListar.setText("Listar");
+        jBListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBListarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 150, -1));
+
+        jBEliminar.setText("Eliminar");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 150, -1));
+
+        jBVaciarFormulario.setText("Vaciar Formulario");
+        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVaciarFormularioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 150, -1));
+
+        jBEditar.setText("Editar");
+        jBEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEditarActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 81, -1));
+
+        jBOk.setText("Ok");
+        jBOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOkActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 60, -1));
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Lista de Productos"));
+
+        jLabel10.setText("Producto:");
+
+        jLabel11.setText("Código Barra:");
+
+        jTFBuscarCodigoBarras.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTFBuscarCodigoBarrasKeyReleased(evt);
+            }
+        });
+
+        jTFBuscarNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jTFBuscarNombreKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTFBuscarNombreKeyReleased(evt);
+            }
+        });
+
+        jBLimpiar.setText("Limpiar");
+        jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBLimpiarActionPerformed(evt);
+            }
+        });
+
+        jTProductos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "ID", "Producto", "Descripción", "Precio", "Cód. Barra", "Foto"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        jScrollPane2.setViewportView(jTProductos);
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFBuscarCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 958, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel11)
+                    .addComponent(jTFBuscarCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBLimpiar))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 1760, 660));
+
+        JTADescripcion.setColumns(20);
+        JTADescripcion.setRows(5);
+        jScrollPane3.setViewportView(JTADescripcion);
+
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 290, -1));
+
+        jScrollPane1.setViewportView(jPanel1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
+        // TODO add your handling code here:
+        try {
+            // TODO add your handling code here:
+            guardar();
+        } catch (IOException ex) {
+            Logger.getLogger(ProductoView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBGuardarActionPerformed
+
+    private void jBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBListarActionPerformed
+        // TODO add your handling code here:
+        loadProductos();
+    }//GEN-LAST:event_jBListarActionPerformed
+
+    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
+        // TODO add your handling code here:
+        jBGuardar.setVisible(false);
+        seleccionarItemTabla();
+    }//GEN-LAST:event_jBEditarActionPerformed
+
+    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
+        // TODO add your handling code here:
+        try {       
+            actualizar();
+            jBGuardar.setVisible(true);
+        } catch (IOException ex) {
+            Logger.getLogger(ProductoView.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jBOkActionPerformed
+
+    private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
+        // TODO add your handling code here:
+        eliminar();
+    }//GEN-LAST:event_jBEliminarActionPerformed
+
+    private void jBEligirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEligirImagenActionPerformed
+        // TODO add your handling code here:
+        fc = new JFileChooser();
+        fc.setDialogTitle("Elegir foto o imagen de producto");
+        if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+            file = fc.getSelectedFile();
+            try {
+                String nombreImg = file.getName();
+                System.out.println(nombreImg);
+                if (nombreImg.endsWith(".jpg")
+                        || nombreImg.endsWith(".png")
+                        || nombreImg.endsWith(".bmp")
+                        || nombreImg.endsWith(".jpeg")) {
+                    UUID uuid = UUID.randomUUID();
+                    String codigoImagen = uuid.toString();
+                    dest = new File(System.getProperty("user.dir") + "/media/producto/" + codigoImagen);
+                    //this.imagen= (dest.getName());
+                    loadImageSrc(file.getAbsolutePath());
+
+            }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Error abriendo fichero");
+            }
+        }
+    }//GEN-LAST:event_jBEligirImagenActionPerformed
+
+    private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
+        // TODO add your handling code here:
+        vaciarFormulario();
+        jBGuardar.setVisible(true);
+    }//GEN-LAST:event_jBVaciarFormularioActionPerformed
+
+    private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
+        // TODO add your handling code here:
+        vaciarCamposBusqueda();
+        loadProductos();
+    }//GEN-LAST:event_jBLimpiarActionPerformed
+
+    private void jTFBuscarNombreKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBuscarNombreKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFBuscarNombreKeyPressed
+
+    private void jTFBuscarNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBuscarNombreKeyReleased
+        // TODO add your handling code here:
+        String buscarNombre = jTFBuscarNombre.getText();
+        loadProductosPorNombre(buscarNombre);
+    }//GEN-LAST:event_jTFBuscarNombreKeyReleased
+
+    private void jTFBuscarCodigoBarrasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBuscarCodigoBarrasKeyReleased
+        // TODO add your handling code here:
+        String codigoBarra = jTFBuscarCodigoBarras.getText();
+        loadProductosPorCodigoBarra(codigoBarra);
+    }//GEN-LAST:event_jTFBuscarCodigoBarrasKeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBEditar;
-    private javax.swing.JButton JBEliminar;
-    private javax.swing.JButton JBLimpiar;
-    private javax.swing.JButton JBListar;
-    private javax.swing.JButton JBOk;
-    private javax.swing.JButton JBVaciarFormulario;
     private javax.swing.JTextArea JTADescripcion;
     private javax.swing.JTextField JTFCodigoBarra;
     private javax.swing.JTextField JTFNombre;
     private javax.swing.JTextField JTFPrecio;
+    private javax.swing.JButton jBEditar;
     private javax.swing.JButton jBEligirImagen;
+    private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
+    private javax.swing.JButton jBLimpiar;
+    private javax.swing.JButton jBListar;
+    private javax.swing.JButton jBOk;
+    private javax.swing.JButton jBVaciarFormulario;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPDatosProducto;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTFBuscarCodigoBarras;
     private javax.swing.JTextField jTFBuscarNombre;
     private javax.swing.JTable jTProductos;
