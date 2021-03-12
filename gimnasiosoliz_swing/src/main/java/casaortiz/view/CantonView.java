@@ -137,7 +137,7 @@ public class CantonView extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTListaCantones = new javax.swing.JTable();
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Datos del Cantón"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), null));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("ID:");
@@ -205,7 +205,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 70, -1));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Lista de Cantones\n"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), null));
 
         jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

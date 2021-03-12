@@ -25,7 +25,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         fpBuss = new FormaPagoBuss();
         loadFormaPagos();
     }
-    
+
     public void guardar(){
         formaPago = new FormaPago();
         formaPago.setNombre(jTFNombre.getText());
@@ -123,127 +123,108 @@ public class FormaPagoView extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jPDatos = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLID = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jTFNombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTADescripcion = new javax.swing.JTextArea();
-        jBGuardar = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
-        JBEditar = new javax.swing.JButton();
-        JBOk = new javax.swing.JButton();
-        JBEliminar = new javax.swing.JButton();
-        JBVaciarFormulario = new javax.swing.JButton();
-        JPListaFormaPagos = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLID = new javax.swing.JLabel();
+        jTFNombre = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
+        jTADescripcion = new javax.swing.JTextArea();
+        jBVaciarFormulario = new javax.swing.JButton();
+        jBGuardar = new javax.swing.JButton();
+        jBListar = new javax.swing.JButton();
+        jBEliminar = new javax.swing.JButton();
+        jBEditar = new javax.swing.JButton();
+        jBOk = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane3 = new javax.swing.JScrollPane();
         jTListaFormaPagos = new javax.swing.JTable();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos de Forma de Pago"));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos de Forma de Pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
-        jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
-        jPDatos.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 29, -1, -1));
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jPDatos.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 91, 20));
+        jLabel2.setText("Forma de Pago:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel3.setText("Forma de Pago:");
-        jPDatos.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
-
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setText("Descripcion:");
-        jPDatos.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jPDatos.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 50, 210, -1));
+        jLabel3.setText("Descripción:");
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
+        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 120, 20));
+        jPanel1.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 220, -1));
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
-        jScrollPane1.setViewportView(jTADescripcion);
+        jScrollPane2.setViewportView(jTADescripcion);
 
-        jPDatos.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 80, 210, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setText("Vaciar Formulario");
+        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVaciarFormularioActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 160, -1));
+
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPDatos.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 150, -1));
+        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 160, -1));
 
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
+        jBListar.setText("Listar");
+        jBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
+                jBListarActionPerformed(evt);
             }
         });
-        jPDatos.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 150, -1));
+        jPanel1.add(jBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 160, -1));
 
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
+        jBEliminar.setText("Eliminar");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
+                jBEliminarActionPerformed(evt);
             }
         });
-        jPDatos.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 80, -1));
+        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 160, -1));
 
-        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBOk.setText("Ok");
-        JBOk.addActionListener(new java.awt.event.ActionListener() {
+        jBEditar.setText("Editar");
+        jBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBOkActionPerformed(evt);
+                jBEditarActionPerformed(evt);
             }
         });
-        jPDatos.add(JBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 70, -1));
+        jPanel1.add(jBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 90, -1));
 
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEliminar.setText("Eliminar");
-        JBEliminar.addActionListener(new java.awt.event.ActionListener() {
+        jBOk.setText("Ok");
+        jBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEliminarActionPerformed(evt);
+                jBOkActionPerformed(evt);
             }
         });
-        jPDatos.add(JBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 150, -1));
+        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 70, -1));
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBVaciarFormulario.setText("Vaciar Formulario");
-        JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBVaciarFormularioActionPerformed(evt);
-            }
-        });
-        jPDatos.add(JBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 150, -1));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista Forma de Pagos"));
 
-        JPListaFormaPagos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Formas de Pagos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
-        JPListaFormaPagos.setLayout(new java.awt.GridLayout(1, 0));
-
-        jTListaFormaPagos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaFormaPagos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "ID", "Nombre", "Descripcion"
+                "ID", "Nombre", "Descripción"
             }
         ) {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, true, true
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -254,59 +235,92 @@ public class FormaPagoView extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTListaFormaPagos);
+        jScrollPane3.setViewportView(jTListaFormaPagos);
 
-        JPListaFormaPagos.add(jScrollPane2);
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 1206, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 514, Short.MAX_VALUE)
+                .addContainerGap())
+        );
 
-        jPDatos.add(JPListaFormaPagos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 180, 920, 400));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 1240, 560));
 
-        jScrollPane3.setViewportView(jPDatos);
+        jScrollPane1.setViewportView(jPanel1);
 
-        add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1280, 768));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
+        // TODO add your handling code here:
         guardar();
     }//GEN-LAST:event_jBGuardarActionPerformed
 
-    private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
+    private void jBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBListarActionPerformed
         // TODO add your handling code here:
         loadFormaPagos();
-    }//GEN-LAST:event_JBListarActionPerformed
+    }//GEN-LAST:event_jBListarActionPerformed
 
-    private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
+    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
+        // TODO add your handling code here:
         jBGuardar.setVisible(false);
         seleccionarItemTabla();
-    }//GEN-LAST:event_JBEditarActionPerformed
+    }//GEN-LAST:event_jBEditarActionPerformed
 
-    private void JBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBOkActionPerformed
+    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
+        // TODO add your handling code here:
         actualizar();
         jBGuardar.setVisible(true);
-    }//GEN-LAST:event_JBOkActionPerformed
+    }//GEN-LAST:event_jBOkActionPerformed
 
-    private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
+    private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
+        // TODO add your handling code here:
         eliminar();
-    }//GEN-LAST:event_JBEliminarActionPerformed
+    }//GEN-LAST:event_jBEliminarActionPerformed
 
-    private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
+    private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
+        // TODO add your handling code here:
         vaciarFormulario();
         jBGuardar.setVisible(true);
-    }//GEN-LAST:event_JBVaciarFormularioActionPerformed
+    }//GEN-LAST:event_jBVaciarFormularioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBEditar;
-    private javax.swing.JButton JBEliminar;
-    private javax.swing.JButton JBListar;
-    private javax.swing.JButton JBOk;
-    private javax.swing.JButton JBVaciarFormulario;
-    private javax.swing.JPanel JPListaFormaPagos;
+    private javax.swing.JButton jBEditar;
+    private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
+    private javax.swing.JButton jBListar;
+    private javax.swing.JButton jBOk;
+    private javax.swing.JButton jBVaciarFormulario;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPDatos;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
