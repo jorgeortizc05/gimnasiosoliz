@@ -137,7 +137,7 @@ public class CantonView extends javax.swing.JPanel {
         jScrollPane3 = new javax.swing.JScrollPane();
         jTListaCantones = new javax.swing.JTable();
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), null));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Datos del Cantón"));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("ID:");
@@ -148,14 +148,14 @@ public class CantonView extends javax.swing.JPanel {
 
         jLabel3.setText("Descripción:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, -1, -1));
-        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 20, 110, 20));
-        jPanel1.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 220, -1));
+        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 20, 110, 20));
+        jPanel1.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 50, 220, -1));
 
         jTADescripcion.setColumns(20);
         jTADescripcion.setRows(5);
         jScrollPane2.setViewportView(jTADescripcion);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 80, -1, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, -1, -1));
 
         JBListar.setText("Listar");
         JBListar.addActionListener(new java.awt.event.ActionListener() {
@@ -163,7 +163,7 @@ public class CantonView extends javax.swing.JPanel {
                 JBListarActionPerformed(evt);
             }
         });
-        jPanel1.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 50, 150, -1));
+        jPanel1.add(JBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 150, -1));
 
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
@@ -171,7 +171,7 @@ public class CantonView extends javax.swing.JPanel {
                 jBVaciarFormularioActionPerformed(evt);
             }
         });
-        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 140, 150, -1));
+        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 150, -1));
 
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -179,7 +179,7 @@ public class CantonView extends javax.swing.JPanel {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 150, -1));
+        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, 150, -1));
 
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -187,7 +187,7 @@ public class CantonView extends javax.swing.JPanel {
                 jBEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 110, 150, -1));
+        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 110, 150, -1));
 
         JBEditar.setText("Editar");
         JBEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -195,7 +195,7 @@ public class CantonView extends javax.swing.JPanel {
                 JBEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 80, 80, -1));
+        jPanel1.add(JBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 80, -1));
 
         jBOk.setText("Ok");
         jBOk.addActionListener(new java.awt.event.ActionListener() {
@@ -203,9 +203,9 @@ public class CantonView extends javax.swing.JPanel {
                 jBOkActionPerformed(evt);
             }
         });
-        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 80, 70, -1));
+        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 80, 70, -1));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), null));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista de Cantones\n"));
 
         jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

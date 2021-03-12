@@ -153,14 +153,14 @@ public class FormaPagoView extends javax.swing.JPanel {
 
         jLabel3.setText("Descripción:");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, -1, -1));
-        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, 120, 20));
-        jPanel1.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 60, 220, -1));
+        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 120, 20));
+        jPanel1.add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 220, -1));
 
         jTADescripcion.setColumns(20);
         jTADescripcion.setRows(5);
         jScrollPane2.setViewportView(jTADescripcion);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 90, -1, -1));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, -1, -1));
 
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBVaciarFormularioActionPerformed(evt);
             }
         });
-        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 150, 160, -1));
+        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 150, 160, -1));
 
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -176,7 +176,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, 160, -1));
+        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, 160, -1));
 
         jBListar.setText("Listar");
         jBListar.addActionListener(new java.awt.event.ActionListener() {
@@ -184,7 +184,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBListarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 160, -1));
+        jPanel1.add(jBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 60, 160, -1));
 
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -192,7 +192,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 120, 160, -1));
+        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 120, 160, -1));
 
         jBEditar.setText("Editar");
         jBEditar.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +200,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 90, -1));
+        jPanel1.add(jBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 90, 90, -1));
 
         jBOk.setText("Ok");
         jBOk.addActionListener(new java.awt.event.ActionListener() {
@@ -208,7 +208,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBOkActionPerformed(evt);
             }
         });
-        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 90, 70, -1));
+        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 90, 70, -1));
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista Forma de Pagos"));
 

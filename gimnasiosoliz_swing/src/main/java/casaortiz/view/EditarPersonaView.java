@@ -178,7 +178,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        getContentPane().add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 130, 17));
+        getContentPane().add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 30, 130, 17));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Cédula:");
@@ -190,7 +190,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jTFCedulaActionPerformed(evt);
             }
         });
-        getContentPane().add(jTFCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 60, 270, -1));
+        getContentPane().add(jTFCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 270, -1));
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Teléfono:");
@@ -201,7 +201,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 80, -1));
 
         jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        getContentPane().add(jTFTele, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 180, 270, -1));
+        getContentPane().add(jTFTele, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 180, 270, -1));
 
         JTADirecc.setColumns(20);
         JTADirecc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -209,7 +209,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         JTADirecc.setRows(5);
         jScrollPane3.setViewportView(JTADirecc);
 
-        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 270, 100));
+        getContentPane().add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 260, 270, 100));
 
         jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Nombre:");
@@ -221,7 +221,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jTFNombreActionPerformed(evt);
             }
         });
-        getContentPane().add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 90, 270, -1));
+        getContentPane().add(jTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 270, -1));
 
         jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Apellido:");
@@ -233,7 +233,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jTFApellidoActionPerformed(evt);
             }
         });
-        getContentPane().add(jTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 120, 270, -1));
+        getContentPane().add(jTFApellido, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 270, -1));
 
         jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("Email:");
@@ -245,7 +245,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jTFEmailActionPerformed(evt);
             }
         });
-        getContentPane().add(jTFEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 270, -1));
+        getContentPane().add(jTFEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 270, -1));
 
         jBTomarFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBTomarFoto.setText("Tomar Foto");
@@ -254,7 +254,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBTomarFotoActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 340, -1, -1));
+        getContentPane().add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 340, -1, -1));
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Fecha");
@@ -271,7 +271,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         rSDCFechaNacimiento.setFormatoFecha("dd/MM/yyyy");
         rSDCFechaNacimiento.setFuente(new java.awt.Font("Arial", 0, 14)); // NOI18N
         rSDCFechaNacimiento.setPlaceholder("");
-        getContentPane().add(rSDCFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 270, -1));
+        getContentPane().add(rSDCFechaNacimiento, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 210, 270, -1));
 
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEncenderCam.setText("Encender Cámara");
@@ -280,7 +280,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBEncenderCamActionPerformed(evt);
             }
         });
-        getContentPane().add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+        getContentPane().add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 340, -1, -1));
 
         jBApagarCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBApagarCam.setText("Apagar Cámara");
@@ -289,9 +289,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBApagarCamActionPerformed(evt);
             }
         });
-        getContentPane().add(jBApagarCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
+        getContentPane().add(jBApagarCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 340, -1, -1));
 
-        getContentPane().add(jCBTipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 270, -1));
+        getContentPane().add(jCBTipoPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 370, 270, -1));
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Tipo Persona:");
@@ -306,11 +306,11 @@ public class EditarPersonaView extends javax.swing.JFrame {
         });
         getContentPane().add(jBActualizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 420, 100, -1));
 
-        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        getContentPane().add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 30, 400, 300));
+        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 30, 400, 300));
 
-        jPCamera.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        getContentPane().add(jPCamera, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 30, 400, 300));
+        jPCamera.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(jPCamera, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 400, 300));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

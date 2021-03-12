@@ -31,7 +31,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
             Image img = new ImageIcon(string).getImage();
             
             //Me permite redimensionar la imagen para que se adapte al jLabel
-            ImageIcon ii = new ImageIcon(img.getScaledInstance(1220, 580, Image.SCALE_SMOOTH));
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(1100, 560, Image.SCALE_SMOOTH));
 
             jLFoto.setIcon(ii);
             jLFoto.validate();

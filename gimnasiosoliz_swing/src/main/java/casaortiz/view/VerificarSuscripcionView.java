@@ -182,10 +182,10 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1090, 50));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Estado de Suscripción"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Estado de Suscripción"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(null));
+        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 400, 300));
 
         jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
@@ -225,27 +225,28 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jButton3.setText("Generar Tarjeta");
         jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 250, -1));
 
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista de Clientes\n"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nombre:");
-        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+        jPanel3.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusNombreKeyReleased(evt);
             }
         });
-        jPanel3.add(jTFBusNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(65, 10, 160, -1));
+        jPanel3.add(jTFBusNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 160, -1));
 
         jLabel2.setText("Apellido:");
-        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, -1, -1));
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 20, -1, -1));
 
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusApellKeyReleased(evt);
             }
         });
-        jPanel3.add(jTFBusApell, new org.netbeans.lib.awtextra.AbsoluteConstraints(305, 10, 150, -1));
+        jPanel3.add(jTFBusApell, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 20, 150, -1));
 
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -253,7 +254,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jBLimpiarActionPerformed(evt);
             }
         });
-        jPanel3.add(jBLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 10, -1, -1));
+        jPanel3.add(jBLimpiar, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 20, -1, -1));
 
         jTListaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -273,17 +274,17 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jTListaPersonas);
 
-        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 54, 1210, 420));
+        jPanel3.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 1210, 420));
 
         jLabel4.setText("Cédula:");
-        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 10, 50, -1));
+        jPanel3.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 20, 50, -1));
 
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusCedulaKeyReleased(evt);
             }
         });
-        jPanel3.add(jTFBusCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 10, 150, -1));
+        jPanel3.add(jTFBusCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 150, -1));
 
         jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 1230, 330));
 
