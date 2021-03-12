@@ -185,23 +185,28 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Estado de Suscripción"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLFoto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
         jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 400, 300));
 
         jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 480, 30));
+        jLMensajeAdvertencia.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Estado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 510, 40));
 
         jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 100, 480, 30));
+        jLNombres.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 510, 40));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Días Restantes:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 220, -1, -1));
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 260, -1));
 
         jLDiasRestantes.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 220, 150, 30));
+        jLDiasRestantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 240, 30));
 
         jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jBEditarPersona.setText("Editar");
@@ -210,7 +215,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jBEditarPersonaActionPerformed(evt);
             }
         });
-        jPanel2.add(jBEditarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 270, 200, -1));
+        jPanel2.add(jBEditarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 250, -1));
 
         jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jBAgregarSuscripcion.setText("Agregar Suscripción");
@@ -219,11 +224,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jBAgregarSuscripcionActionPerformed(evt);
             }
         });
-        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 270, -1, -1));
+        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 270, 270, -1));
 
         jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton3.setText("Generar Tarjeta");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 250, -1));
+        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 270, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista de Clientes\n"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());

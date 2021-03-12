@@ -135,7 +135,7 @@ public class PersonaDAO {
         connect = conector.getConexion();
         List<Persona> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from persona");
+            PreparedStatement st = connect.prepareStatement("select * from persona p order by p.id desc");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
             while(result.next()){
@@ -168,7 +168,7 @@ public class PersonaDAO {
         connect = conector.getConexion();
         List<Persona> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from persona p where p.nombre like '%"+nombre+"%'");
+            PreparedStatement st = connect.prepareStatement("select * from persona p where p.nombre like '%"+nombre+"%' order by p.id desc");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
             while(result.next()){
@@ -201,7 +201,7 @@ public class PersonaDAO {
         connect = conector.getConexion();
         List<Persona> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from persona p where p.apellido like '%"+apellido+"%'");
+            PreparedStatement st = connect.prepareStatement("select * from persona p where p.apellido like '%"+apellido+"%' order by p.id desc");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
             while(result.next()){
@@ -235,7 +235,7 @@ public class PersonaDAO {
         Persona item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from persona p where p.cedula like '"+cedula+"'");
+            PreparedStatement st = connect.prepareStatement("select * from persona p where p.cedula like '"+cedula+"' order by p.id desc");
             result = st.executeQuery();
             item = new Persona();
             item.setId(result.getInt("id"));
@@ -264,7 +264,7 @@ public class PersonaDAO {
         connect = conector.getConexion();
         List<Persona> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from persona p where p.cedula like '%"+cedula+"%'");
+            PreparedStatement st = connect.prepareStatement("select * from persona p where p.cedula like '%"+cedula+"%' order by p.id desc");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
             while(result.next()){
