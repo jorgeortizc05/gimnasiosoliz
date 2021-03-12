@@ -136,20 +136,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jPanel1 = new javax.swing.JPanel();
         jTFBusqCedula = new javax.swing.JTextField();
         jBBuscar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel2 = new javax.swing.JPanel();
-        jLFoto = new javax.swing.JLabel();
-        jLMensajeAdvertencia = new javax.swing.JLabel();
-        jLNombres = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLDiasRestantes = new javax.swing.JLabel();
-        jBEditarPersona = new javax.swing.JButton();
-        jBAgregarSuscripcion = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jTFBusNombre = new javax.swing.JTextField();
@@ -160,75 +153,58 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jTListaPersonas = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
         jTFBusCedula = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
+        jLFoto = new javax.swing.JLabel();
+        jLNombres = new javax.swing.JLabel();
+        jLMensajeAdvertencia = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLDiasRestantes = new javax.swing.JLabel();
+        jBEditarPersona = new javax.swing.JButton();
+        jBAgregarSuscripcion = new javax.swing.JButton();
+        jButton3 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0};
+        jPanel1.setLayout(jPanel1Layout);
 
+        jTFBusqCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusqCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTFBusqCedulaKeyPressed(evt);
             }
         });
-        jPanel1.add(jTFBusqCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 270, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.ipady = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jTFBusqCedula, gridBagConstraints);
 
+        jBBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBBuscar.setText("Buscar");
         jBBuscar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBBuscarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBBuscar, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipady = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jBBuscar, gridBagConstraints);
 
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 1090, 50));
+        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 330, 50));
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Estado de Suscripción"));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLFoto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
-        jPanel2.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 80, 400, 300));
-
-        jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLMensajeAdvertencia.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Estado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
-        jPanel2.add(jLMensajeAdvertencia, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 150, 510, 40));
-
-        jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLNombres.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
-        jPanel2.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 90, 510, 40));
-
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel3.setText("Días Restantes:");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 220, 260, -1));
-
-        jLDiasRestantes.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLDiasRestantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jPanel2.add(jLDiasRestantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 220, 240, 30));
-
-        jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jBEditarPersona.setText("Editar");
-        jBEditarPersona.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEditarPersonaActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBEditarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 270, 250, -1));
-
-        jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jBAgregarSuscripcion.setText("Agregar Suscripción");
-        jBAgregarSuscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBAgregarSuscripcionActionPerformed(evt);
-            }
-        });
-        jPanel2.add(jBAgregarSuscripcion, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 270, 270, -1));
-
-        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jButton3.setText("Generar Tarjeta");
-        jPanel2.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 310, 270, -1));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista de Clientes\n"));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -291,7 +267,112 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel3.add(jTFBusCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 20, 150, -1));
 
-        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 1230, 330));
+        jPanel2.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 440, 1230, 330));
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Estado de Suscripción"));
+        java.awt.GridBagLayout jPanel4Layout = new java.awt.GridBagLayout();
+        jPanel4Layout.columnWidths = new int[] {0, 5, 0, 5, 0};
+        jPanel4Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel4.setLayout(jPanel4Layout);
+
+        jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLFoto.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLFoto.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true));
+        jLFoto.setPreferredSize(new java.awt.Dimension(400, 300));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 17;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jLFoto, gridBagConstraints);
+
+        jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLNombres.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jLNombres, gridBagConstraints);
+
+        jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLMensajeAdvertencia.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Estado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jLMensajeAdvertencia, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("Días Restantes:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jLabel3, gridBagConstraints);
+
+        jLDiasRestantes.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLDiasRestantes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 12;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.weighty = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jLDiasRestantes, gridBagConstraints);
+
+        jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jBEditarPersona.setText("Editar");
+        jBEditarPersona.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEditarPersonaActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.ipadx = 80;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jBEditarPersona, gridBagConstraints);
+
+        jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jBAgregarSuscripcion.setText("Agregar Suscripción");
+        jBAgregarSuscripcion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBAgregarSuscripcionActionPerformed(evt);
+            }
+        });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jBAgregarSuscripcion, gridBagConstraints);
+
+        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton3.setText("Generar Tarjeta");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 16;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_START;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel4.add(jButton3, gridBagConstraints);
+
+        jPanel2.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 1220, 420));
 
         jScrollPane1.setViewportView(jPanel2);
 
@@ -376,6 +457,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTextField jTFBusApell;

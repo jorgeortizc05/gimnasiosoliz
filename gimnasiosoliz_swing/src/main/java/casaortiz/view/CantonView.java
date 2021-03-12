@@ -140,10 +140,15 @@ public class CantonView extends javax.swing.JPanel {
         jBVaciarFormulario = new javax.swing.JButton();
         jLID = new javax.swing.JLabel();
 
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
+
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0, 5, 0};
+        jPanel1.setLayout(jPanel1Layout);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Cantones\n", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
-        jPanel2.setLayout(new java.awt.GridLayout());
+        jPanel2.setLayout(new java.awt.GridLayout(1, 0));
 
         jTListaCantones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,7 +170,13 @@ public class CantonView extends javax.swing.JPanel {
 
         jPanel2.add(jScrollPane3);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 1260, 570));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jPanel2, gridBagConstraints);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos del Cantón", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
@@ -177,8 +188,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFNombre, gridBagConstraints);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -186,8 +198,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -195,7 +208,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -203,8 +218,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel3, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
@@ -217,7 +233,8 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.gridheight = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 30;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -230,7 +247,8 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.ipadx = 70;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jBGuardar, gridBagConstraints);
 
         JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -244,7 +262,8 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.ipadx = 83;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(JBListar, gridBagConstraints);
 
         JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -257,8 +276,8 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 8;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(JBEditar, gridBagConstraints);
 
         jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -271,8 +290,8 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 20;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jBOk, gridBagConstraints);
 
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -285,8 +304,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.ipadx = 70;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_END;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jBEliminar, gridBagConstraints);
 
         jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -300,8 +320,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 8;
         gridBagConstraints.gridwidth = java.awt.GridBagConstraints.REMAINDER;
-        gridBagConstraints.ipadx = 15;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_END;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jBVaciarFormulario, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -309,29 +330,22 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 280;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLID, gridBagConstraints);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 20, 540, 210));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jPanel3, gridBagConstraints);
 
         jScrollPane1.setViewportView(jPanel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed

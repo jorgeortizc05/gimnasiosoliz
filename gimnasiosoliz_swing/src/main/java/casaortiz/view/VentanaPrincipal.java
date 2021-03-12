@@ -221,6 +221,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         vaciarVentana();
         pv = new ProductoView();
+        
         this.add(pv, BorderLayout.CENTER);
         this.pack();
     }//GEN-LAST:event_JMIProductosActionPerformed

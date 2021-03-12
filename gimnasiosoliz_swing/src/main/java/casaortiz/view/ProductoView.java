@@ -201,7 +201,7 @@ public class ProductoView extends javax.swing.JPanel {
             Image img = new ImageIcon(string).getImage();
             
             //Me permite redimensionar la imagen para que se adapte al jLabel
-            ImageIcon ii = new ImageIcon(img.getScaledInstance(340, 300, Image.SCALE_SMOOTH));
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(400, 300, Image.SCALE_SMOOTH));
 
             jLFoto.setIcon(ii);
             jLFoto.validate();
@@ -256,20 +256,10 @@ public class ProductoView extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        JTFNombre = new javax.swing.JTextField();
-        JTFPrecio = new javax.swing.JTextField();
-        JTFCodigoBarra = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLID = new javax.swing.JLabel();
         jLFoto = new javax.swing.JLabel();
         jBEligirImagen = new javax.swing.JButton();
         jBGuardar = new javax.swing.JButton();
@@ -286,110 +276,184 @@ public class ProductoView extends javax.swing.JPanel {
         jBLimpiar = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTProductos = new javax.swing.JTable();
+        jPanel3 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        JTFNombre = new javax.swing.JTextField();
+        JTFPrecio = new javax.swing.JTextField();
+        JTFCodigoBarra = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLID = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         JTADescripcion = new javax.swing.JTextArea();
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Datos de Productos"));
-        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(new java.awt.CardLayout());
 
-        jLabel1.setText("ID:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(17, 31, -1, -1));
+        jScrollPane1.setPreferredSize(new java.awt.Dimension(1280, 728));
 
-        jLabel2.setText("Nombre:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
-        jLabel3.setText("Descripción:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, -1, -1));
+        jLFoto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Foto", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        jLFoto.setPreferredSize(new java.awt.Dimension(400, 300));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jLFoto, gridBagConstraints);
 
-        jLabel4.setText("Precio:");
-        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, -1, -1));
-
-        jLabel5.setText("Código de Barras:");
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
-        jPanel1.add(JTFNombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 70, 290, -1));
-
-        JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
-        jPanel1.add(JTFPrecio, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 220, 93, -1));
-        jPanel1.add(JTFCodigoBarra, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 260, 290, -1));
-
-        jLabel6.setText("$");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, -1, -1));
-
-        jLabel7.setText("Ex. 15.89");
-        jPanel1.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, -1, -1));
-        jPanel1.add(jLID, new org.netbeans.lib.awtextra.AbsoluteConstraints(133, 31, 129, 17));
-
-        jLFoto.setBorder(javax.swing.BorderFactory.createLineBorder(null));
-        jPanel1.add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 30, 400, 300));
-
-        jBEligirImagen.setText("Elegir Imágen");
+        jBEligirImagen.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEligirImagen.setText("Elegir Imagen");
         jBEligirImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEligirImagenActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEligirImagen, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 340, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jBEligirImagen, gridBagConstraints);
 
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 60, 150, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 70;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 1, 2);
+        jPanel1.add(jBGuardar, gridBagConstraints);
 
+        jBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBListar.setText("Listar");
         jBListar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBListarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBListar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 110, 150, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 83;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 1, 2);
+        jPanel1.add(jBListar, gridBagConstraints);
 
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEliminarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEliminar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 200, 150, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 70;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 1, 2);
+        jPanel1.add(jBEliminar, gridBagConstraints);
 
+        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBVaciarFormularioActionPerformed(evt);
             }
         });
-        jPanel1.add(jBVaciarFormulario, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 240, 150, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.ipadx = 15;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 1, 2);
+        jPanel1.add(jBVaciarFormulario, gridBagConstraints);
 
+        jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEditar.setText("Editar");
         jBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEditarActionPerformed(evt);
             }
         });
-        jPanel1.add(jBEditar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 160, 81, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.ipady = 3;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 1, 2);
+        jPanel1.add(jBEditar, gridBagConstraints);
 
+        jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBOk.setText("Ok");
         jBOk.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBOkActionPerformed(evt);
             }
         });
-        jPanel1.add(jBOk, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 160, 60, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jBOk, gridBagConstraints);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(null), "Lista de Productos"));
+        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Lista de Productos"));
+        jPanel2.setLayout(new java.awt.GridBagLayout());
 
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Producto:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jLabel10, gridBagConstraints);
 
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("Código Barra:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 10;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jLabel11, gridBagConstraints);
 
+        jTFBuscarCodigoBarras.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBuscarCodigoBarras.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBuscarCodigoBarrasKeyReleased(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 3;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jTFBuscarCodigoBarras, gridBagConstraints);
 
+        jTFBuscarNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBuscarNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 jTFBuscarNombreKeyPressed(evt);
@@ -398,13 +462,26 @@ public class ProductoView extends javax.swing.JPanel {
                 jTFBuscarNombreKeyReleased(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jTFBuscarNombre, gridBagConstraints);
 
+        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBLimpiarActionPerformed(evt);
             }
         });
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        jPanel2.add(jBLimpiar, gridBagConstraints);
 
         jTProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -424,66 +501,162 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(jTProductos);
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTFBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabel11)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTFBuscarCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jBLimpiar, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 958, Short.MAX_VALUE)))
-                .addContainerGap())
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel11)
-                    .addComponent(jTFBuscarCodigoBarras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTFBuscarNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jBLimpiar))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 579, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 1;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.weightx = 1.0;
+        gridBagConstraints.weighty = 1.0;
+        jPanel2.add(jScrollPane2, gridBagConstraints);
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 380, 1760, 660));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.ipadx = 570;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(16, 2, 1, 2);
+        jPanel1.add(jPanel2, gridBagConstraints);
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
+        java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
+        jPanel3Layout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel3.setLayout(jPanel3Layout);
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setText("ID:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel1, gridBagConstraints);
+
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setText("Nombre:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel2, gridBagConstraints);
+
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setText("Descripción:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel3, gridBagConstraints);
+
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setText("Precio:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel4, gridBagConstraints);
+
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setText("Código de Barras:");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel5, gridBagConstraints);
+
+        JTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(JTFNombre, gridBagConstraints);
+
+        JTFPrecio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(JTFPrecio, gridBagConstraints);
+
+        JTFCodigoBarra.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(JTFCodigoBarra, gridBagConstraints);
+
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setText("$");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel6, gridBagConstraints);
+
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setText("Ex. 15.89");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 6;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLabel7, gridBagConstraints);
+
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jLID, gridBagConstraints);
 
         JTADescripcion.setColumns(20);
+        JTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTADescripcion.setRows(5);
         jScrollPane3.setViewportView(JTADescripcion);
 
-        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 110, 290, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jScrollPane3, gridBagConstraints);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridheight = 5;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel1.add(jPanel3, gridBagConstraints);
 
         jScrollPane1.setViewportView(jPanel1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 768, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+        add(jScrollPane1, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -605,6 +778,7 @@ public class ProductoView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

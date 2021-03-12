@@ -222,9 +222,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
-        gridBagConstraints.weightx = 0.1;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel19, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -234,7 +234,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
-        gridBagConstraints.weightx = 2.0;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLID, gridBagConstraints);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -242,8 +242,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel13, gridBagConstraints);
 
         jTFCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -255,8 +256,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFCedula, gridBagConstraints);
 
         jLabel12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -264,8 +266,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel12, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -277,8 +280,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFNombre, gridBagConstraints);
 
         jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -286,8 +290,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel18, gridBagConstraints);
 
         jTFApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -299,8 +304,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFApellido, gridBagConstraints);
 
         jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -308,8 +314,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel16, gridBagConstraints);
 
         jTFEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -321,8 +328,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFEmail, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -330,16 +338,18 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel8, gridBagConstraints);
 
         jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFTele, gridBagConstraints);
 
         jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -347,8 +357,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel17, gridBagConstraints);
 
         rSDCFechaNacimiento.setBackground(java.awt.SystemColor.control);
@@ -361,8 +372,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 12;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(rSDCFechaNacimiento, gridBagConstraints);
 
         jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -370,8 +382,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel15, gridBagConstraints);
 
         JTADirecc.setColumns(20);
@@ -383,8 +396,9 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 14;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jScrollPane4, gridBagConstraints);
 
         jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -392,16 +406,18 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 16;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel14, gridBagConstraints);
 
         jCBTipoPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 16;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jCBTipoPersona, gridBagConstraints);
 
         jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -415,9 +431,10 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 18;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BELOW_BASELINE_TRAILING;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jBActualizar, gridBagConstraints);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 430, 350));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

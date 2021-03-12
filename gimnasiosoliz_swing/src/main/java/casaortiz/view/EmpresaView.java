@@ -231,7 +231,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -241,7 +241,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -251,18 +251,16 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel3, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 93;
-        gridBagConstraints.ipady = 14;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLID, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -270,9 +268,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 215;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jTFNombre, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
@@ -285,10 +282,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 201;
-        gridBagConstraints.ipady = 61;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -298,7 +293,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel5, gridBagConstraints);
 
         jCBCanton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -311,9 +306,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 189;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jCBCanton, gridBagConstraints);
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -323,7 +317,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel6, gridBagConstraints);
 
         jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -332,9 +326,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 1;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel7, gridBagConstraints);
 
         JTADireccMatriz.setColumns(20);
@@ -347,12 +340,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 201;
-        gridBagConstraints.ipady = 61;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jScrollPane3, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -362,7 +351,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jLabel8, gridBagConstraints);
 
         JTADireccSucur.setColumns(20);
@@ -375,12 +364,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 201;
-        gridBagConstraints.ipady = 61;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 1.0;
-        gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jScrollPane4, gridBagConstraints);
 
         jTFRUC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -388,9 +373,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 161;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jTFRUC, gridBagConstraints);
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -404,9 +388,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 70;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jBGuardar, gridBagConstraints);
 
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -420,9 +403,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 70;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jBEliminar, gridBagConstraints);
 
         jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -436,9 +418,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 15;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jBVaciarFormulario, gridBagConstraints);
 
         jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -451,9 +432,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 11;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jBEditar, gridBagConstraints);
 
         jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -466,9 +446,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 2;
-        gridBagConstraints.ipadx = 13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jBOk, gridBagConstraints);
 
         jBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -482,12 +461,11 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 81;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPanel3.add(jBListar, gridBagConstraints);
 
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 890, 260));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 890, -1));
 
         jScrollPane1.setViewportView(jPanel1);
 
