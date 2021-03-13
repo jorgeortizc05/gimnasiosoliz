@@ -56,7 +56,13 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
     }
     
     public SuscripcionViewJFrame(){
-        
+        initComponents();
+        perBuss = new PersonaBuss();
+        tsBuss = new TipoSuscripcionBuss();
+        parBuss = new ParametroBuss();
+        susBuss = new SuscripcionBuss();
+        loadTipoSuscripcion();
+        loadParametro();
     }
     
     public void guardar(){
@@ -108,7 +114,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jLImporteTotal.setText(importeTotal+"");
     }
     
-    public void buscarPersonaPorCedula(){
+    public void buscarPersonaPorCedula(String cedula){
         persona = perBuss.buscarPersonaPorCedula(jTFBusCedula.getText());
         if (persona.getId() == 0){
             JOptionPane.showMessageDialog(jLNombres, "No existe esta persona");
@@ -494,7 +500,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 420, 480));
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Historial Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jPanel3.setLayout(new java.awt.CardLayout());
 
         jTHistorialSuscripcion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -517,7 +523,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
             jTHistorialSuscripcion.getColumnModel().getColumn(0).setPreferredWidth(20);
         }
 
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(16, 30, 518, 440));
+        jPanel3.add(jScrollPane1, "card2");
 
         jPanel4.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 90, 550, 480));
 
@@ -528,7 +534,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
                 jBGuardarActionPerformed(evt);
             }
         });
-        jPanel4.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 80, -1));
+        jPanel4.add(jBGuardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 580, 90, -1));
 
         jBEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jBEliminar.setText("Eliminar Suscripción");
@@ -547,11 +553,16 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
     private void jBBuscarPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarPersonaActionPerformed
         // TODO add your handling code here:
         //persona = null; //quito la referencia, es decir libero la memoria
-        buscarPersonaPorCedula();
+        buscarPersonaPorCedula(jTFBusCedula.getText());
+        loadSuscripcionesPorPersona();
+        
     }//GEN-LAST:event_jBBuscarPersonaActionPerformed
 
     private void jCBTipoSuscripcionItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_jCBTipoSuscripcionItemStateChanged
         // TODO add your handling code here:
+        try {
+            
+        
         Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
         TipoSuscripcion item = (TipoSuscripcion) jCBTipoSuscripcion.getSelectedItem();
         jLPrecio.setText(String.valueOf(item.getPrecio()));
@@ -572,6 +583,8 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
             calendar.add(Calendar.DAY_OF_YEAR, item.getNumeroDias());//sumo los dias desde la fecha de hoy
             Date fechaHasta = calendar.getTime();
             rsDCFechaHasta.setDatoFecha(fechaHasta);
+        }
+        } catch (Exception e) {
         }
        
         

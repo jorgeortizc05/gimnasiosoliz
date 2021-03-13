@@ -31,7 +31,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
             Image img = new ImageIcon(string).getImage();
             
             //Me permite redimensionar la imagen para que se adapte al jLabel
-            ImageIcon ii = new ImageIcon(img.getScaledInstance(1100, 560, Image.SCALE_SMOOTH));
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(720, 576, Image.SCALE_SMOOTH));
 
             jLFoto.setIcon(ii);
             jLFoto.validate();
@@ -49,17 +49,29 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        java.awt.GridBagConstraints gridBagConstraints;
 
         jScroll = new javax.swing.JScrollPane();
         jLFoto = new javax.swing.JLabel();
         jBSiguiente = new javax.swing.JButton();
         jBAtras = new javax.swing.JButton();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0, 5, 0};
+        layout.rowHeights = new int[] {0, 5, 0};
+        setLayout(layout);
 
+        jScroll.setPreferredSize(new java.awt.Dimension(730, 586));
+
+        jLFoto.setPreferredSize(new java.awt.Dimension(720, 576));
         jScroll.setViewportView(jLFoto);
 
-        add(jScroll, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 11, 1220, 580));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        add(jScroll, gridBagConstraints);
 
         jBSiguiente.setText(">");
         jBSiguiente.addActionListener(new java.awt.event.ActionListener() {
@@ -67,7 +79,12 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
                 jBSiguienteActionPerformed(evt);
             }
         });
-        add(jBSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 600, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        add(jBSiguiente, gridBagConstraints);
 
         jBAtras.setText("<");
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -75,7 +92,12 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
                 jBAtrasActionPerformed(evt);
             }
         });
-        add(jBAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 600, -1, -1));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        add(jBAtras, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSiguienteActionPerformed

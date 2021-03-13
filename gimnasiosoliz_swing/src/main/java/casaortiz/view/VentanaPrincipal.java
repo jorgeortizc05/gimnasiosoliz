@@ -284,10 +284,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMISuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISuscripcionActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        sv = new SuscripcionView();
-        this.add(sv, BorderLayout.CENTER);
-        this.pack();
+        SuscripcionViewJFrame svjf = new SuscripcionViewJFrame();
+        svjf.setTitle("Suscripción");
+        svjf.setLocationRelativeTo(null);
+        svjf.setVisible(true);
     }//GEN-LAST:event_jMISuscripcionActionPerformed
 
     private void jMIVerificarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIVerificarSuscripcionActionPerformed
