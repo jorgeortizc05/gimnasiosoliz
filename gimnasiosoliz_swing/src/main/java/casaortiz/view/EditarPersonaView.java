@@ -10,6 +10,7 @@ import casaortiz.buss.TipoPersonaBuss;
 import casaortiz.model.Persona;
 import casaortiz.model.TipoPersona;
 import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamException;
 import com.github.sarxos.webcam.WebcamPanel;
 import java.awt.Color;
 import java.awt.Image;
@@ -94,7 +95,11 @@ public class EditarPersonaView extends javax.swing.JFrame {
     }
 
     public void apagarCamara(){
-        webcam.close();
+        try {
+            webcam.close();
+        } catch (WebcamException e) {
+            System.out.println("No esta encendida la camara: "+e.getMessage());
+        }
     }
     
     public void encenderCamara(){
@@ -146,7 +151,6 @@ public class EditarPersonaView extends javax.swing.JFrame {
 
         jBTomarFoto = new javax.swing.JButton();
         jBEncenderCam = new javax.swing.JButton();
-        jBApagarCam = new javax.swing.JButton();
         jLFoto = new javax.swing.JLabel();
         jPCamera = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
@@ -172,6 +176,11 @@ public class EditarPersonaView extends javax.swing.JFrame {
         jBActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jBTomarFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -181,7 +190,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBTomarFotoActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 340, -1, -1));
+        getContentPane().add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 110, -1));
 
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEncenderCam.setText("Encender Cámara");
@@ -190,16 +199,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBEncenderCamActionPerformed(evt);
             }
         });
-        getContentPane().add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 340, -1, -1));
-
-        jBApagarCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBApagarCam.setText("Apagar Cámara");
-        jBApagarCam.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBApagarCamActionPerformed(evt);
-            }
-        });
-        getContentPane().add(jBApagarCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, -1, -1));
+        getContentPane().add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
 
         jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLFoto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Foto"));
@@ -462,11 +462,6 @@ public class EditarPersonaView extends javax.swing.JFrame {
         encenderCamara();
     }//GEN-LAST:event_jBEncenderCamActionPerformed
 
-    private void jBApagarCamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBApagarCamActionPerformed
-        // TODO add your handling code here:
-        apagarCamara();
-    }//GEN-LAST:event_jBApagarCamActionPerformed
-
     private void jBActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBActualizarActionPerformed
         actualizar();
     }//GEN-LAST:event_jBActualizarActionPerformed
@@ -487,11 +482,15 @@ public class EditarPersonaView extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTFApellidoActionPerformed
 
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        apagarCamara();
+    }//GEN-LAST:event_formWindowClosing
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextArea JTADirecc;
     private javax.swing.JButton jBActualizar;
-    private javax.swing.JButton jBApagarCam;
     private javax.swing.JButton jBEncenderCam;
     private javax.swing.JButton jBTomarFoto;
     private javax.swing.JComboBox<TipoPersona> jCBTipoPersona;

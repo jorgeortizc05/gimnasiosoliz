@@ -10,6 +10,7 @@ import casaortiz.buss.TipoPersonaBuss;
 import casaortiz.model.Persona;
 import casaortiz.model.TipoPersona;
 import com.github.sarxos.webcam.Webcam;
+import com.github.sarxos.webcam.WebcamException;
 import com.github.sarxos.webcam.WebcamPanel;
 import java.awt.Color;
 import java.awt.Image;
@@ -91,7 +92,11 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
     }
     
     public void apagarCamara(){
-        webcam.close();
+        try {
+            webcam.close();
+        } catch (WebcamException e) {
+            System.out.println("No esta encendida la camara: "+e.getMessage());
+        }
     }
 
     public void guardar(){
@@ -298,6 +303,11 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         rSDCFechaNacimiento = new rojeru_san.componentes.RSDateChooser();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        addWindowListener(new java.awt.event.WindowAdapter() {
+            public void windowClosing(java.awt.event.WindowEvent evt) {
+                formWindowClosing(evt);
+            }
+        });
 
         jPDatos.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -366,7 +376,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
                 jBTomarFotoActionPerformed(evt);
             }
         });
-        jPDatos.add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 340, 120, -1));
+        jPDatos.add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 330, 120, -1));
 
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEncenderCam.setText("Encender Cámara");
@@ -375,7 +385,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
                 jBEncenderCamActionPerformed(evt);
             }
         });
-        jPDatos.add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, -1));
+        jPDatos.add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 330, -1, -1));
 
         jPCamera.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Cámara", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPCamera.setLayout(new java.awt.GridLayout(1, 0));
@@ -842,6 +852,11 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText()));
     }//GEN-LAST:event_jTFBusApellKeyReleased
+
+    private void formWindowClosing(java.awt.event.WindowEvent evt) {//GEN-FIRST:event_formWindowClosing
+        // TODO add your handling code here:
+        apagarCamara();
+    }//GEN-LAST:event_formWindowClosing
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

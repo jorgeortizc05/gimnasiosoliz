@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tarjetaGimnasioPersona" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8760a4d0-d106-4e4f-804a-36398242bfc0">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="gimnasiodb"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="pv_cedula" class="java.lang.String"/>
+	<parameter name="pv_nombres" class="java.lang.String"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT per.cedula,  per.nombre +' '+ per.apellido as nombres
+  FROM persona per
+  where per.cedula =  $P{pv_cedula}]]>
+	</queryString>
+	<background>
+		<band height="137" splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="172" splitType="Stretch">
+			<componentElement>
+				<reportElement x="113" y="129" width="199" height="30" uuid="1781cd0c-dfd2-49dd-ae75-2fc167dec197"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="3of9" drawText="false" checksumRequired="false">
+					<jr:codeExpression><![CDATA[$P{pv_cedula}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<image isLazy="true" evaluationTime="Report">
+				<reportElement key="" x="74" y="10" width="239" height="119" backcolor="#5C1C1B" uuid="2e17d0c6-1b4b-4ec1-a7de-e6b68eaa4fb2"/>
+				<box padding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<imageExpression><![CDATA["C:/casaortiz/gimnasiosoliz/gimnasiosoliz_swing/media/gimnasio/logo1.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="74" y="129" width="39" height="29" uuid="f67685a3-adea-48a8-8243-6586d571bff6"/>
+				<imageExpression><![CDATA["C:/casaortiz/gimnasiosoliz/gimnasiosoliz_swing/media/gimnasio/icons8-circuit.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="74" y="10" width="238" height="20" forecolor="#FFFFFF" backcolor="#030303" uuid="0a8e41de-3afc-4c54-b209-54288bfe0e13">
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<textElement textAlignment="Center">
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{pv_nombres}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

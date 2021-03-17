@@ -7,15 +7,28 @@ package casaortiz.view;
 
 import casaortiz.buss.PersonaBuss;
 import casaortiz.buss.SuscripcionBuss;
+import casaortiz.db.Conector;
 import casaortiz.model.Persona;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.sql.Connection;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
+import net.sf.jasperreports.engine.JRException;
+import net.sf.jasperreports.engine.JasperFillManager;
+import net.sf.jasperreports.engine.JasperPrint;
+import net.sf.jasperreports.engine.JasperReport;
+import net.sf.jasperreports.view.JasperViewer;
+import net.sf.jasperreports.engine.JasperExportManager;
+import net.sf.jasperreports.engine.JasperCompileManager;
 
 /**
  *
@@ -115,6 +128,31 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             jLMensajeAdvertencia.setForeground(Color.BLACK);
             jLDiasRestantes.setText(dias+"");
             jLDiasRestantes.setForeground(Color.BLACK);
+        }
+    }
+    
+    public void generarTarjetaGimnasio(Persona persona){
+        String ubicacionJrxml = "src/main/resources/tarjetaGimnasioPersona.jrxml";
+        try {
+            // TODO add your handling code here:
+            if(persona == null){
+                JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes cargar el cliente");
+            }else{
+                JasperReport reporte;
+
+                Map<String, Object> parametros = new HashMap<String, Object>();
+                parametros.put("pv_cedula", persona.getCedula());
+                parametros.put("pv_nombres", persona.getNombre()+" "+persona.getApellido());
+
+                reporte = JasperCompileManager.compileReport(ubicacionJrxml);
+                Conector conector = new Conector();
+                Connection connect = conector.getConexion();
+                JasperPrint jp = JasperFillManager.fillReport(reporte, parametros, connect);
+                JasperViewer.viewReport(jp, false);
+                conector.close(connect);
+            }
+        } catch (JRException ex) {
+            Logger.getLogger(VerificarSuscripcionView.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
@@ -352,6 +390,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jButton3.setText("Generar Tarjeta");
         jButton3.setPreferredSize(new java.awt.Dimension(350, 39));
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 4;
@@ -424,6 +467,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         }
     }//GEN-LAST:event_jBEditarPersonaActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        generarTarjetaGimnasio(persona);
+        
+    }//GEN-LAST:event_jButton3ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

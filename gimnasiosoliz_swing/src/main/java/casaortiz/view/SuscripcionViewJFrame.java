@@ -362,6 +362,9 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel9, gridBagConstraints);
+
+        rsDCFechaDesde.setFormatoFecha("dd/MM/yyyy");
+        rsDCFechaDesde.setFuente(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;

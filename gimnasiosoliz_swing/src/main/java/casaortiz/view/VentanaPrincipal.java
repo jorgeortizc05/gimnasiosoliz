@@ -58,11 +58,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu2 = new javax.swing.JMenu();
         jMIPersonas = new javax.swing.JMenuItem();
         jMITipoPersona = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMISuscripcion = new javax.swing.JMenuItem();
-        jMIFormaPago = new javax.swing.JMenuItem();
-        jMITipoComprobantes = new javax.swing.JMenuItem();
-        jMITipoSuscripcion = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         JMIProductos = new javax.swing.JMenuItem();
         jMICatalogo = new javax.swing.JMenuItem();
@@ -138,47 +133,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu3.setText("Caja");
-        jMenu3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-
-        jMISuscripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMISuscripcion.setText("Suscripcion");
-        jMISuscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMISuscripcionActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMISuscripcion);
-
-        jMIFormaPago.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMIFormaPago.setText("Formas de Pago");
-        jMIFormaPago.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMIFormaPagoActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMIFormaPago);
-
-        jMITipoComprobantes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMITipoComprobantes.setText("Tipo de Comprobantes");
-        jMITipoComprobantes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMITipoComprobantesActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMITipoComprobantes);
-
-        jMITipoSuscripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMITipoSuscripcion.setText("Tipo de Suscripción");
-        jMITipoSuscripcion.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMITipoSuscripcionActionPerformed(evt);
-            }
-        });
-        jMenu3.add(jMITipoSuscripcion);
-
-        jMenuBar1.add(jMenu3);
-
         jMenu5.setText("Inventarios");
         jMenu5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -242,22 +196,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         this.pack();
     }//GEN-LAST:event_jMIEmpresaActionPerformed
 
-    private void jMIFormaPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIFormaPagoActionPerformed
-        // TODO add your handling code here:
-        vaciarVentana();
-        fpv = new FormaPagoView();
-        this.add(fpv, BorderLayout.CENTER);
-        this.pack();
-    }//GEN-LAST:event_jMIFormaPagoActionPerformed
-
-    private void jMITipoComprobantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoComprobantesActionPerformed
-        // TODO add your handling code here:
-        vaciarVentana();
-        tcv = new TipoComprobanteView();
-        this.add(tcv, BorderLayout.CENTER);
-        this.pack();
-    }//GEN-LAST:event_jMITipoComprobantesActionPerformed
-
     private void jMITipoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoPersonaActionPerformed
         // TODO add your handling code here:
         vaciarVentana();
@@ -273,22 +211,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         perv.setLocationRelativeTo(null);
         perv.setVisible(true);
     }//GEN-LAST:event_jMIPersonasActionPerformed
-
-    private void jMITipoSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoSuscripcionActionPerformed
-        // TODO add your handling code here:
-        vaciarVentana();
-        tsv = new TipoSuscripcionView();
-        this.add(tsv, BorderLayout.CENTER);
-        this.pack();
-    }//GEN-LAST:event_jMITipoSuscripcionActionPerformed
-
-    private void jMISuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISuscripcionActionPerformed
-        // TODO add your handling code here:
-        SuscripcionViewJFrame svjf = new SuscripcionViewJFrame();
-        svjf.setTitle("Suscripción");
-        svjf.setLocationRelativeTo(null);
-        svjf.setVisible(true);
-    }//GEN-LAST:event_jMISuscripcionActionPerformed
 
     private void jMIVerificarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIVerificarSuscripcionActionPerformed
         // TODO add your handling code here:
@@ -384,16 +306,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMICantones;
     private javax.swing.JMenuItem jMICatalogo;
     private javax.swing.JMenuItem jMIEmpresa;
-    private javax.swing.JMenuItem jMIFormaPago;
     private javax.swing.JMenuItem jMIPersonas;
-    private javax.swing.JMenuItem jMISuscripcion;
-    private javax.swing.JMenuItem jMITipoComprobantes;
     private javax.swing.JMenuItem jMITipoPersona;
-    private javax.swing.JMenuItem jMITipoSuscripcion;
     private javax.swing.JMenuItem jMIVerificarSuscripcion;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
