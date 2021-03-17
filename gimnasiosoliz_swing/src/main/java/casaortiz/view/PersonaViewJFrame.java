@@ -93,7 +93,10 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
     
     public void apagarCamara(){
         try {
-            webcam.close();
+            if(webcam != null){
+                webcam.close();
+            }
+            
         } catch (WebcamException e) {
             System.out.println("No esta encendida la camara: "+e.getMessage());
         }

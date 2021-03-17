@@ -96,7 +96,10 @@ public class EditarPersonaView extends javax.swing.JFrame {
 
     public void apagarCamara(){
         try {
-            webcam.close();
+            if(webcam != null){
+                webcam.close();
+            }
+            
         } catch (WebcamException e) {
             System.out.println("No esta encendida la camara: "+e.getMessage());
         }
@@ -190,7 +193,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBTomarFotoActionPerformed(evt);
             }
         });
-        getContentPane().add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 330, 110, -1));
+        getContentPane().add(jBTomarFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 350, 110, -1));
 
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEncenderCam.setText("Encender Cámara");
@@ -199,14 +202,14 @@ public class EditarPersonaView extends javax.swing.JFrame {
                 jBEncenderCamActionPerformed(evt);
             }
         });
-        getContentPane().add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 330, -1, -1));
+        getContentPane().add(jBEncenderCam, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 350, -1, -1));
 
         jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLFoto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Foto"));
-        getContentPane().add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 30, 400, 300));
+        getContentPane().add(jLFoto, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 50, 400, 300));
 
         jPCamera.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Cámara", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
-        getContentPane().add(jPCamera, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 30, 400, 300));
+        getContentPane().add(jPCamera, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 50, 400, 300));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos del Cliente"));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
@@ -434,7 +437,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jBActualizar, gridBagConstraints);
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 440, 410));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 380, 410));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
