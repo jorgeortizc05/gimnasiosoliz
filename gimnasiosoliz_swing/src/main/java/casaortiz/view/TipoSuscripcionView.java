@@ -153,15 +153,16 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         JTFPrecio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jSNumeroDias = new javax.swing.JSpinner();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel8 = new javax.swing.JLabel();
         JPListaTipoSuscripciones = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaTipoSuscripciones = new javax.swing.JTable();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0};
+        layout.rowHeights = new int[] {0, 5, 0};
+        setLayout(layout);
 
-        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Tipo de Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         java.awt.GridBagLayout jPDatosLayout = new java.awt.GridBagLayout();
         jPDatosLayout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
@@ -370,18 +371,17 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jSNumeroDias, gridBagConstraints);
 
-        add(jPDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 60, 650, 260));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        add(jPDatos, gridBagConstraints);
 
-        jPanel2.setLayout(new java.awt.GridBagLayout());
-
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel8.setText("Tipo de Suscripciones");
-        jPanel2.add(jLabel8, new java.awt.GridBagConstraints());
-
-        add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 860, 40));
-
-        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista de Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
-        JPListaTipoSuscripciones.setLayout(new java.awt.GridLayout(1, 0));
+        JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Tipos de Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        JPListaTipoSuscripciones.setLayout(new java.awt.CardLayout());
 
         jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTListaTipoSuscripciones.setModel(new javax.swing.table.DefaultTableModel(
@@ -414,9 +414,15 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
             jTListaTipoSuscripciones.getColumnModel().getColumn(4).setPreferredWidth(400);
         }
 
-        JPListaTipoSuscripciones.add(jScrollPane2);
+        JPListaTipoSuscripciones.add(jScrollPane2, "card2");
 
-        add(JPListaTipoSuscripciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 320, 850, 420));
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 2;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        add(JPListaTipoSuscripciones, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -466,10 +472,8 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPDatos;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JSpinner jSNumeroDias;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;

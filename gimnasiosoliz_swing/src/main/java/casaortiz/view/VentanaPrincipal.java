@@ -17,10 +17,7 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author jorge
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form VentanaPrincipal
-     */
+    
     private ProductoView pv = new ProductoView();
     private CantonView cv = new CantonView();
     private EmpresaView ev = new EmpresaView();
