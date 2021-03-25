@@ -5,6 +5,13 @@
  */
 package casaortiz.view;
 
+import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
+import com.jtattoo.plaf.aero.AeroLookAndFeel;
+import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
+import com.jtattoo.plaf.bernstein.BernsteinLookAndFeel;
+import com.jtattoo.plaf.fast.FastLookAndFeel;
+import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
+import com.jtattoo.plaf.mint.MintLookAndFeel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.logging.Level;
@@ -274,20 +281,12 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             public void run() {
                 try {
                         // Set cross-platform Java L&F (also called "Metal")
-                    UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+                    UIManager.setLookAndFeel(new FastLookAndFeel());
                 } 
                 catch (UnsupportedLookAndFeelException e) {
                    // handle exception
                 }
-                catch (ClassNotFoundException e) {
-                   // handle exception
-                }
-                catch (InstantiationException e) {
-                   // handle exception
-                }
-                catch (IllegalAccessException e) {
-                   // handle exception
-                }
+                
                 VentanaPrincipal v = new VentanaPrincipal();
                 v.setSize(1366,768);
                 v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro                

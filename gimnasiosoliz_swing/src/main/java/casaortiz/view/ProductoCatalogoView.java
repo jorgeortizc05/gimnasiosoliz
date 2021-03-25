@@ -74,6 +74,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
         add(jScroll, gridBagConstraints);
 
         jBSiguiente.setText(">");
+        jBSiguiente.setPreferredSize(new java.awt.Dimension(80, 23));
         jBSiguiente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBSiguienteActionPerformed(evt);
@@ -87,6 +88,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
         add(jBSiguiente, gridBagConstraints);
 
         jBAtras.setText("<");
+        jBAtras.setPreferredSize(new java.awt.Dimension(80, 23));
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAtrasActionPerformed(evt);

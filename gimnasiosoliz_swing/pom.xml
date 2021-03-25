@@ -20,6 +20,13 @@
             <version>3.34.0</version>
         </dependency>
         
+        <!-- https://mvnrepository.com/artifact/com.jtattoo/JTattoo -->
+        <dependency>
+            <groupId>com.jtattoo</groupId>
+            <artifactId>JTattoo</artifactId>
+            <version>1.6.7</version>
+        </dependency>
+        
         <!--Libreria para usar la camara web -->
         <dependency>
             <groupId>com.github.sarxos</groupId>
