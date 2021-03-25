@@ -202,7 +202,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 13;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 155, 54, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 155, 43, 0);
         getContentPane().add(jBTomarFoto, gridBagConstraints);
 
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -216,7 +216,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(0, 0, 54, 0);
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 43, 0);
         getContentPane().add(jBEncenderCam, gridBagConstraints);
 
         jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
