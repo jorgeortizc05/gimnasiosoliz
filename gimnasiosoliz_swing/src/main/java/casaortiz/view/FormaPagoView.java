@@ -137,19 +137,17 @@ public class FormaPagoView extends javax.swing.JPanel {
         jTFNombre = new javax.swing.JTextField();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
-        jBVaciarFormulario = new javax.swing.JButton();
+        jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        jBListar = new javax.swing.JButton();
-        jBEliminar = new javax.swing.JButton();
         jBEditar = new javax.swing.JButton();
         jBOk = new javax.swing.JButton();
+        jBEliminar = new javax.swing.JButton();
+        jBListar = new javax.swing.JButton();
+        jBVaciarFormulario = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
-        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 5, 0};
-        jPanel1.setLayout(jPanel1Layout);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista Forma de Pagos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel2.setLayout(new java.awt.CardLayout());
@@ -182,8 +180,8 @@ public class FormaPagoView extends javax.swing.JPanel {
         jPanel2.add(jScrollPane3, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
@@ -191,8 +189,8 @@ public class FormaPagoView extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos de Forma de Pago", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
-        jPanel3Layout.columnWidths = new int[] {0, 5, 0, 5, 0};
-        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0};
+        jPanel3Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -201,7 +199,6 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.ABOVE_BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel1, gridBagConstraints);
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -211,7 +208,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.FIRST_LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel2, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -221,7 +218,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 4;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel3, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -230,7 +227,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLID, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -239,7 +236,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFNombre, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
@@ -250,23 +247,12 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBVaciarFormulario.setText("Vaciar Formulario");
-        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBVaciarFormularioActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel3.add(jBVaciarFormulario, gridBagConstraints);
+        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
@@ -275,42 +261,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBGuardarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel3.add(jBGuardar, gridBagConstraints);
-
-        jBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBListar.setText("Listar");
-        jBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBListarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel3.add(jBListar, gridBagConstraints);
-
-        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEliminar.setText("Eliminar");
-        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEliminarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel3.add(jBEliminar, gridBagConstraints);
+        jPanel4.add(jBGuardar);
 
         jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEditar.setText("Editar");
@@ -319,13 +270,7 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBEditarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel3.add(jBEditar, gridBagConstraints);
+        jPanel4.add(jBEditar);
 
         jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBOk.setText("Ok");
@@ -334,18 +279,46 @@ public class FormaPagoView extends javax.swing.JPanel {
                 jBOkActionPerformed(evt);
             }
         });
+        jPanel4.add(jBOk);
+
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setText("Eliminar");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBEliminar);
+
+        jBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBListar.setText("Listar");
+        jBListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBListarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBListar);
+
+        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setText("Vaciar Formulario");
+        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVaciarFormularioActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBVaciarFormulario);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.ipadx = 12;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
-        jPanel3.add(jBOk, gridBagConstraints);
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 6;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jPanel4, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jPanel3, gridBagConstraints);
@@ -403,6 +376,7 @@ public class FormaPagoView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

@@ -25,22 +25,32 @@ import javax.swing.UnsupportedLookAndFeelException;
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
     
-    private ProductoView pv = new ProductoView();
-    private CantonView cv = new CantonView();
-    private EmpresaView ev = new EmpresaView();
-    private FormaPagoView fpv = new FormaPagoView();
-    private TipoComprobanteView tcv = new TipoComprobanteView();
-    private TipoPersonaView tpv = new TipoPersonaView();
-    
-    private TipoSuscripcionView tsv = new TipoSuscripcionView();
-    private SuscripcionView sv = new SuscripcionView();
-    private VerificarSuscripcionView vsv = new VerificarSuscripcionView();
-    private ProductoCatalogoView pcv = new ProductoCatalogoView();
+    private ProductoView productoView = new ProductoView();
+    private CantonView cantonView = new CantonView();
+    private EmpresaView empresaView = new EmpresaView();
+    private FormaPagoView formaPagoView = new FormaPagoView();
+    private TipoComprobanteView tipoComprobanteView = new TipoComprobanteView();
+    private TipoPersonaView tipoPersonaView = new TipoPersonaView();
+    private TipoSuscripcionView tipoSuscripcionView = new TipoSuscripcionView();
+    private SuscripcionView suscripcionView = new SuscripcionView();
+    private VerificarSuscripcionView verificarSuscripcionView = new VerificarSuscripcionView();
+    private ProductoCatalogoView productoCatalogoView = new ProductoCatalogoView();
     public VentanaPrincipal() {
         initComponents();
-        this.setLayout(new FlowLayout());
+        /*this.setLayout(new FlowLayout());
         this.add(vsv, BorderLayout.CENTER);
-        this.pack();
+        this.pack();*/
+        JTPContenedor.add(productoView);
+        JTPContenedor.add(cantonView);
+        JTPContenedor.add(empresaView);
+        JTPContenedor.add(formaPagoView);
+        JTPContenedor.add(tipoComprobanteView);
+        JTPContenedor.add(tipoPersonaView);
+        JTPContenedor.add(tipoSuscripcionView);
+        JTPContenedor.add(suscripcionView);
+        JTPContenedor.add(verificarSuscripcionView);
+        JTPContenedor.add(productoCatalogoView);
+        
         
     }
 
@@ -53,6 +63,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JTPContenedor = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu4 = new javax.swing.JMenu();
         jMIVerificarSuscripcion = new javax.swing.JMenuItem();
@@ -72,6 +83,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(1280, 760));
+
+        JTPContenedor.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -165,11 +178,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 849, Short.MAX_VALUE)
+            .addComponent(JTPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 437, Short.MAX_VALUE)
+            .addComponent(JTPContenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
         );
 
         pack();
@@ -177,35 +190,22 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void JMIProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIProductosActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        pv = new ProductoView();
-        
-        this.add(pv, BorderLayout.CENTER);
-        this.pack();
+        JTPContenedor.setSelectedComponent(productoView);
     }//GEN-LAST:event_JMIProductosActionPerformed
 
     private void jMICantonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICantonesActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        cv = new CantonView();
-        this.add(cv, BorderLayout.CENTER);
-        this.pack();
+        JTPContenedor.setSelectedComponent(cantonView);
     }//GEN-LAST:event_jMICantonesActionPerformed
 
     private void jMIEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEmpresaActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        ev = new EmpresaView();
-        this.add(ev, BorderLayout.CENTER);
-        this.pack();
+        JTPContenedor.setSelectedComponent(empresaView);
     }//GEN-LAST:event_jMIEmpresaActionPerformed
 
     private void jMITipoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoPersonaActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        tpv = new TipoPersonaView();
-        this.add(tpv, BorderLayout.CENTER);
-        this.pack();
+        JTPContenedor.setSelectedComponent(tipoPersonaView);
     }//GEN-LAST:event_jMITipoPersonaActionPerformed
 
     private void jMIPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIPersonasActionPerformed
@@ -218,37 +218,15 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMIVerificarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIVerificarSuscripcionActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        vsv = new VerificarSuscripcionView();
-        this.add(vsv, BorderLayout.CENTER);
-        this.pack();
+       JTPContenedor.setSelectedComponent(verificarSuscripcionView);
     }//GEN-LAST:event_jMIVerificarSuscripcionActionPerformed
 
     private void jMICatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICatalogoActionPerformed
         // TODO add your handling code here:
-        vaciarVentana();
-        pcv = new ProductoCatalogoView();
-        this.add(pcv, BorderLayout.CENTER);
-        this.pack();
+       
+        JTPContenedor.setSelectedComponent(productoCatalogoView);
     }//GEN-LAST:event_jMICatalogoActionPerformed
 
-    public void vaciarVentana(){
-        
-        this.remove(pv);
-        this.remove(cv);
-        this.remove(ev);
-        this.remove(fpv);
-        this.remove(tcv);
-        this.remove(tpv);
-        this.remove(tsv);
-        this.remove(sv);
-        this.remove(vsv);
-        this.remove(pcv);
-        
-        
-        
-        
-    }
     /**
      * @param args the command line arguments
      */
@@ -299,6 +277,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem JMIProductos;
+    private javax.swing.JTabbedPane JTPContenedor;
     private javax.swing.JMenuItem jMICantones;
     private javax.swing.JMenuItem jMICatalogo;
     private javax.swing.JMenuItem jMIEmpresa;

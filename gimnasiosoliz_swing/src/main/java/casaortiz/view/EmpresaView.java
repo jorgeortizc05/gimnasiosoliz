@@ -182,23 +182,23 @@ public class EmpresaView extends javax.swing.JPanel {
         jScrollPane4 = new javax.swing.JScrollPane();
         JTADireccSucur = new javax.swing.JTextArea();
         jTFRUC = new javax.swing.JTextField();
+        jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        jBEliminar = new javax.swing.JButton();
-        jBVaciarFormulario = new javax.swing.JButton();
         jBEditar = new javax.swing.JButton();
         jBOk = new javax.swing.JButton();
+        jBEliminar = new javax.swing.JButton();
         jBListar = new javax.swing.JButton();
+        jBVaciarFormulario = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(1280, 768));
         setLayout(new java.awt.CardLayout());
 
-        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0};
-        jPanel1Layout.rowHeights = new int[] {0, 5, 0};
-        jPanel1.setLayout(jPanel1Layout);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Empresas\n"));
         jPanel2.setLayout(new java.awt.CardLayout());
+
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(600, 402));
 
         jTListaEmpresas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -216,13 +216,14 @@ public class EmpresaView extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        jTListaEmpresas.setPreferredSize(new java.awt.Dimension(450, 0));
         jScrollPane5.setViewportView(jTListaEmpresas);
 
         jPanel2.add(jScrollPane5, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
@@ -230,7 +231,7 @@ public class EmpresaView extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos de Empresas"));
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
-        jPanel3Layout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel3Layout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
@@ -385,6 +386,8 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFRUC, gridBagConstraints);
 
+        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
+
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -392,43 +395,7 @@ public class EmpresaView extends javax.swing.JPanel {
                 jBGuardarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBGuardar, gridBagConstraints);
-
-        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEliminar.setText("Eliminar");
-        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEliminarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBEliminar, gridBagConstraints);
-
-        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBVaciarFormulario.setText("Vaciar Formulario");
-        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBVaciarFormularioActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBVaciarFormulario, gridBagConstraints);
+        jPanel4.add(jBGuardar);
 
         jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEditar.setText("Editar");
@@ -437,12 +404,7 @@ public class EmpresaView extends javax.swing.JPanel {
                 jBEditarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBEditar, gridBagConstraints);
+        jPanel4.add(jBEditar);
 
         jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBOk.setText("OK");
@@ -451,12 +413,16 @@ public class EmpresaView extends javax.swing.JPanel {
                 jBOkActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBOk, gridBagConstraints);
+        jPanel4.add(jBOk);
+
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setText("Eliminar");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBEliminar);
 
         jBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBListar.setText("Listar");
@@ -465,18 +431,29 @@ public class EmpresaView extends javax.swing.JPanel {
                 jBListarActionPerformed(evt);
             }
         });
+        jPanel4.add(jBListar);
+
+        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setText("Vaciar Formulario");
+        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVaciarFormularioActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBVaciarFormulario);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 8;
+        gridBagConstraints.gridwidth = 7;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBListar, gridBagConstraints);
+        jPanel3.add(jPanel4, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jPanel3, gridBagConstraints);
@@ -545,6 +522,7 @@ public class EmpresaView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

@@ -132,20 +132,18 @@ public class CantonView extends javax.swing.JPanel {
         jLabel3 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
+        jLID = new javax.swing.JLabel();
+        jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
         JBEditar = new javax.swing.JButton();
         jBOk = new javax.swing.JButton();
         jBEliminar = new javax.swing.JButton();
         jBVaciarFormulario = new javax.swing.JButton();
-        jLID = new javax.swing.JLabel();
+        JBListar = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
-        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
-        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
-        jPanel1Layout.rowHeights = new int[] {0, 5, 0};
-        jPanel1.setLayout(jPanel1Layout);
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Cantones\n", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel2.setLayout(new java.awt.CardLayout());
@@ -161,19 +159,30 @@ public class CantonView extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
         jScrollPane3.setViewportView(jTListaCantones);
+        if (jTListaCantones.getColumnModel().getColumnCount() > 0) {
+            jTListaCantones.getColumnModel().getColumn(0).setPreferredWidth(10);
+            jTListaCantones.getColumnModel().getColumn(1).setPreferredWidth(100);
+            jTListaCantones.getColumnModel().getColumn(2).setPreferredWidth(200);
+        }
 
         jPanel2.add(jScrollPane3, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
@@ -181,8 +190,8 @@ public class CantonView extends javax.swing.JPanel {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos del Cantón", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
-        jPanel3Layout.columnWidths = new int[] {0, 5, 0, 5, 0};
-        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPanel3Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
@@ -238,92 +247,6 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBGuardar.setText("Guardar");
-        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBGuardarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBGuardar, gridBagConstraints);
-
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(JBListar, gridBagConstraints);
-
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_END;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(JBEditar, gridBagConstraints);
-
-        jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBOk.setText("Ok");
-        jBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBOkActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBOk, gridBagConstraints);
-
-        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEliminar.setText("Eliminar");
-        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEliminarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_END;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBEliminar, gridBagConstraints);
-
-        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBVaciarFormulario.setText("Vaciar Formulario");
-        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBVaciarFormularioActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.PAGE_END;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel3.add(jBVaciarFormulario, gridBagConstraints);
-
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -333,11 +256,73 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLID, gridBagConstraints);
 
+        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
+
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGuardarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBGuardar);
+
+        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEditar.setText("Editar");
+        JBEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBEditarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(JBEditar);
+
+        jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBOk.setText("Ok");
+        jBOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBOkActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBOk);
+
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setText("Eliminar");
+        jBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEliminarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBEliminar);
+
+        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setText("Vaciar Formulario");
+        jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBVaciarFormularioActionPerformed(evt);
+            }
+        });
+        jPanel4.add(jBVaciarFormulario);
+
+        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBListar.setText("Listar");
+        JBListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBListarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(JBListar);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 3;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPanel3.add(jPanel4, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jPanel3, gridBagConstraints);
@@ -395,6 +380,7 @@ public class CantonView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;

@@ -133,6 +133,8 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         jPDatos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLID = new javax.swing.JLabel();
@@ -141,31 +143,31 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jTFNombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
-        jBGuardar = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
-        JBEditar = new javax.swing.JButton();
-        JBOk = new javax.swing.JButton();
-        JBEliminar = new javax.swing.JButton();
-        JBVaciarFormulario = new javax.swing.JButton();
         jLabel5 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         JTFPrecio = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jSNumeroDias = new javax.swing.JSpinner();
+        jPanel2 = new javax.swing.JPanel();
+        jBGuardar = new javax.swing.JButton();
+        JBListar = new javax.swing.JButton();
+        JBEditar = new javax.swing.JButton();
+        JBOk = new javax.swing.JButton();
+        JBEliminar = new javax.swing.JButton();
+        JBVaciarFormulario = new javax.swing.JButton();
         JPListaTipoSuscripciones = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaTipoSuscripciones = new javax.swing.JTable();
 
-        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0};
-        layout.rowHeights = new int[] {0, 5, 0};
-        setLayout(layout);
+        setLayout(new java.awt.CardLayout());
+
+        jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos Tipo de Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         java.awt.GridBagLayout jPDatosLayout = new java.awt.GridBagLayout();
         jPDatosLayout.columnWidths = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
-        jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPDatos.setLayout(jPDatosLayout);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -228,94 +230,6 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jScrollPane1, gridBagConstraints);
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBGuardar.setText("Guardar");
-        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBGuardarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(jBGuardar, gridBagConstraints);
-
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBListar, gridBagConstraints);
-
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBEditar, gridBagConstraints);
-
-        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBOk.setText("Ok");
-        JBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBOkActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBOk, gridBagConstraints);
-
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEliminar.setText("Eliminar");
-        JBEliminar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEliminarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBEliminar, gridBagConstraints);
-
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBVaciarFormulario.setText("Vaciar Formulario");
-        JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBVaciarFormularioActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 8;
-        gridBagConstraints.gridy = 8;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBVaciarFormulario, gridBagConstraints);
-
         jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Precio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -371,16 +285,79 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jSNumeroDias, gridBagConstraints);
 
+        jPanel2.setLayout(new java.awt.GridLayout(2, 3));
+
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setText("Guardar");
+        jBGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBGuardarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jBGuardar);
+
+        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBListar.setText("Listar");
+        JBListar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBListarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBListar);
+
+        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEditar.setText("Editar");
+        JBEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBEditarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBEditar);
+
+        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBOk.setText("Ok");
+        JBOk.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBOkActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBOk);
+
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEliminar.setText("Eliminar");
+        JBEliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBEliminarActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBEliminar);
+
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBVaciarFormulario.setText("Vaciar Formulario");
+        JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBVaciarFormularioActionPerformed(evt);
+            }
+        });
+        jPanel2.add(JBVaciarFormulario);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 0;
+        gridBagConstraints.gridy = 10;
+        gridBagConstraints.gridwidth = 5;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        jPDatos.add(jPanel2, gridBagConstraints);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 200;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(jPDatos, gridBagConstraints);
+        jPanel1.add(jPDatos, gridBagConstraints);
 
         JPListaTipoSuscripciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Lista Tipos de Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
+        JPListaTipoSuscripciones.setPreferredSize(new java.awt.Dimension(600, 427));
         JPListaTipoSuscripciones.setLayout(new java.awt.CardLayout());
 
         jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
@@ -417,12 +394,16 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         JPListaTipoSuscripciones.add(jScrollPane2, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(JPListaTipoSuscripciones, gridBagConstraints);
+        jPanel1.add(JPListaTipoSuscripciones, gridBagConstraints);
+
+        jScrollPane3.setViewportView(jPanel1);
+
+        add(jScrollPane3, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -474,9 +455,12 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPDatos;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JSpinner jSNumeroDias;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTADescripcion;
     private javax.swing.JTextField jTFNombre;
     private javax.swing.JTable jTListaTipoSuscripciones;

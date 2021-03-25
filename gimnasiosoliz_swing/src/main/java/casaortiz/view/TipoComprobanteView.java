@@ -124,6 +124,8 @@ public class TipoComprobanteView extends javax.swing.JPanel {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jScrollPane3 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         jPDatos = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLID = new javax.swing.JLabel();
@@ -132,6 +134,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         jTFNombre = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
+        jPanel2 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
         JBListar = new javax.swing.JButton();
         JBEditar = new javax.swing.JButton();
@@ -142,15 +145,17 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaTipoComprobantes = new javax.swing.JTable();
 
-        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0};
-        layout.rowHeights = new int[] {0, 5, 0};
-        setLayout(layout);
+        setLayout(new java.awt.CardLayout());
+
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0};
+        jPanel1.setLayout(jPanel1Layout);
 
         jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos de Tipos de Comprobantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         java.awt.GridBagLayout jPDatosLayout = new java.awt.GridBagLayout();
         jPDatosLayout.columnWidths = new int[] {0, 5, 0, 5, 0};
-        jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
+        jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPDatos.setLayout(jPDatosLayout);
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -212,6 +217,8 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jScrollPane1, gridBagConstraints);
 
+        jPanel2.setLayout(new java.awt.GridLayout(2, 3));
+
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
@@ -219,13 +226,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
                 jBGuardarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(jBGuardar, gridBagConstraints);
+        jPanel2.add(jBGuardar);
 
         JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBListar.setText("Listar");
@@ -234,13 +235,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
                 JBListarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBListar, gridBagConstraints);
+        jPanel2.add(JBListar);
 
         JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEditar.setText("Editar");
@@ -249,12 +244,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
                 JBEditarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBEditar, gridBagConstraints);
+        jPanel2.add(JBEditar);
 
         JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBOk.setText("Ok");
@@ -263,12 +253,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
                 JBOkActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBOk, gridBagConstraints);
+        jPanel2.add(JBOk);
 
         JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
@@ -277,13 +262,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
                 JBEliminarActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 4;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTH;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBEliminar, gridBagConstraints);
+        jPanel2.add(JBEliminar);
 
         JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
@@ -292,21 +271,20 @@ public class TipoComprobanteView extends javax.swing.JPanel {
                 JBVaciarFormularioActionPerformed(evt);
             }
         });
+        jPanel2.add(JBVaciarFormulario);
+
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
+        gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTH;
+        gridBagConstraints.gridwidth = 3;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPDatos.add(JBVaciarFormulario, gridBagConstraints);
+        jPDatos.add(jPanel2, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(jPDatos, gridBagConstraints);
+        jPanel1.add(jPDatos, gridBagConstraints);
 
         JPListaTipoComprobantes.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista Tipos de Comprobantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoComprobantes.setLayout(new java.awt.CardLayout());
@@ -340,12 +318,14 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         JPListaTipoComprobantes.add(jScrollPane2, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(JPListaTipoComprobantes, gridBagConstraints);
+        jPanel1.add(JPListaTipoComprobantes, gridBagConstraints);
+
+        jScrollPane3.setViewportView(jPanel1);
+
+        add(jScrollPane3, "card2");
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGuardarActionPerformed
@@ -390,8 +370,11 @@ public class TipoComprobanteView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPDatos;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTADescripcion;
     private javax.swing.JTextField jTFNombre;
     private javax.swing.JTable jTListaTipoComprobantes;
