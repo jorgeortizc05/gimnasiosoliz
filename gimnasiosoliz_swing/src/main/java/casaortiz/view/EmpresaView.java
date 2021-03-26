@@ -161,7 +161,6 @@ public class EmpresaView extends javax.swing.JPanel {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
         jTListaEmpresas = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
@@ -193,16 +192,17 @@ public class EmpresaView extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1280, 768));
         setLayout(new java.awt.CardLayout());
 
-        jPanel1.setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
+        jPanel1Layout.columnWidths = new int[] {0, 5, 0};
+        jPanel1Layout.rowHeights = new int[] {0};
+        jPanel1.setLayout(jPanel1Layout);
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Empresas\n"));
-        jPanel2.setLayout(new java.awt.CardLayout());
-
-        jScrollPane5.setPreferredSize(new java.awt.Dimension(600, 402));
+        jScrollPane5.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Empresas"));
+        jScrollPane5.setPreferredSize(new java.awt.Dimension(600, 0));
 
         jTListaEmpresas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-
+                {null, null, null, null, null}
             },
             new String [] {
                 "ID", "RUC", "Nombre", "Descripción", "Dirección Matriz"
@@ -211,23 +211,27 @@ public class EmpresaView extends javax.swing.JPanel {
             Class[] types = new Class [] {
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
         });
-        jTListaEmpresas.setPreferredSize(new java.awt.Dimension(450, 0));
+        jTListaEmpresas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        jTListaEmpresas.setPreferredSize(new java.awt.Dimension(450, 450));
         jScrollPane5.setViewportView(jTListaEmpresas);
 
-        jPanel2.add(jScrollPane5, "card2");
-
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        jPanel1.add(jPanel2, gridBagConstraints);
+        jPanel1.add(jScrollPane5, gridBagConstraints);
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos de Empresas"));
         java.awt.GridBagLayout jPanel3Layout = new java.awt.GridBagLayout();
@@ -520,7 +524,6 @@ public class EmpresaView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;

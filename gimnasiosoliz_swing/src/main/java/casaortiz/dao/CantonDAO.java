@@ -19,6 +19,7 @@ import java.util.logging.Logger;
 /**
  *
  * @author jorge
+ * Mantenimiento de la tabla canton
  */
 public class CantonDAO {
     

@@ -17,10 +17,10 @@ import java.util.List;
 public class SuscripcionBuss {
     
     private SuscripcionDAO susDAO;
-    
-   public SuscripcionBuss(){
-       susDAO = new SuscripcionDAO();
-   }
+
+    public SuscripcionBuss(){
+        susDAO = new SuscripcionDAO();
+    }
     
     public boolean guardar(Suscripcion item){
         try {
@@ -30,7 +30,7 @@ public class SuscripcionBuss {
             return false;
         }
     }
-    
+
     public boolean actualizar(Suscripcion item){
         try {
             susDAO.actualizar(item);
@@ -39,7 +39,7 @@ public class SuscripcionBuss {
             return false;
         }
     }
-    
+
     public boolean eliminar(int id){
         try {
             susDAO.eliminar(id);
@@ -48,7 +48,7 @@ public class SuscripcionBuss {
             return false;
         }
     }
-    
+
     public Suscripcion getSuscripcion(int id){
         Suscripcion item = null;
         try {
@@ -58,7 +58,7 @@ public class SuscripcionBuss {
             return item;
         }
     }
-    
+
     public List<Suscripcion> getSuscripciones(){
         List<Suscripcion> items = null;
         try {
@@ -68,7 +68,7 @@ public class SuscripcionBuss {
             return items;
         }
     }
-    
+
     public List<Suscripcion> getHistorialSuscripcionesPersona(int idPersona){
         List<Suscripcion> items = null;
         try {
@@ -78,7 +78,7 @@ public class SuscripcionBuss {
             return items;
         }
     }
-    
+
     public Date getFechaMaximaPorPersona(int idPersona){
         Date fechaMaxima = null;
         try {

@@ -17,6 +17,7 @@ import java.util.List;
 /**
  *
  * @author jorge
+ * Mantenimiento de la tabla Forma Pago
  */
 public class FormaPagoDAO {
     

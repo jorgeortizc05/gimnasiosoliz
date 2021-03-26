@@ -112,23 +112,27 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     }
     
     public void verificarSuscripcion(String cedula){
-        buscarPersonaPorCedula(cedula);
-        jTFBusqCedula.setText("");
-        Date hoy = new Date();
-        Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
-        int dias = (int) ((fechaMaxima.getTime() - hoy.getTime())/86400000);
-        
-        if(dias < 0){
-            jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
-            jLMensajeAdvertencia.setForeground(Color.red);
-            jLDiasRestantes.setText(dias+"");
-            jLDiasRestantes.setForeground(Color.red);
-        }else{
-            jLMensajeAdvertencia.setText("BIENVENIDO "+persona.getNombre());
-            jLMensajeAdvertencia.setForeground(Color.BLACK);
-            jLDiasRestantes.setText(dias+"");
-            jLDiasRestantes.setForeground(Color.BLACK);
+        try {
+            buscarPersonaPorCedula(cedula);
+            jTFBusqCedula.setText("");
+            Date hoy = new Date();
+            Date fechaMaxima = susBuss.getFechaMaximaPorPersona(persona.getId());
+            int dias = (int) ((fechaMaxima.getTime() - hoy.getTime())/86400000);
+            if(dias < 0){
+                jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
+                jLMensajeAdvertencia.setForeground(Color.red);
+                jLDiasRestantes.setText(dias+"");
+                jLDiasRestantes.setForeground(Color.red);
+            }else{
+                jLMensajeAdvertencia.setText("BIENVENIDO "+persona.getNombre());
+                jLMensajeAdvertencia.setForeground(Color.BLACK);
+                jLDiasRestantes.setText(dias+"");
+                jLDiasRestantes.setForeground(Color.BLACK);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(jTFBusCedula, persona.getNombre()+" no dispone de suscripciones");
         }
+        
     }
     
     public void generarTarjetaGimnasio(Persona persona){

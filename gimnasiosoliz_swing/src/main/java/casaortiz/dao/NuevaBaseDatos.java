@@ -40,6 +40,28 @@ public class NuevaBaseDatos {
         }
     }
     
+    public boolean crearCategoria(){
+        Connection connect = null;
+        ResultSet result = null;
+        connect = conector.getConexion();
+        try {
+            connect = conector.getConexion();
+            Statement stmt = connect.createStatement();
+            stmt.execute("CREATE TABLE IF NOT EXISTS categoria (\n" +
+            "    id          INTEGER       CONSTRAINT pk_id_categoria PRIMARY KEY ON CONFLICT ROLLBACK AUTOINCREMENT\n" +
+            "                              CONSTRAINT id_unique UNIQUE ON CONFLICT ROLLBACK,\n" +
+            "    nombre      VARCHAR (100),\n" +
+            "    descripcion VARCHAR (300) \n" +
+            ");");
+            conector.close(connect);
+            return true;
+        } catch (SQLException ex) { 
+            System.err.println(ex.getMessage());
+            conector.close(connect);
+            return false;
+        }
+    }
+    
     public boolean crearTablaEmpresa(){
         Connection connect = null;
         ResultSet result = null;
@@ -128,13 +150,15 @@ public class NuevaBaseDatos {
             connect = conector.getConexion();
             Statement stmt = connect.createStatement();
             stmt.execute("CREATE TABLE IF NOT EXISTS producto (\n" +
-                "    id           INTEGER          PRIMARY KEY AUTOINCREMENT,\n" +
-                "    nombre       VARCHAR (50),\n" +
-                "    descripcion  VARCHAR (300),\n" +
-                "    precio       DOUBLE (1000, 2),\n" +
-                "    codigo_barra VARCHAR (30),\n" +
-                "    foto         VARCHAR (300) \n" +
-                ");");
+            "    id           INTEGER          PRIMARY KEY AUTOINCREMENT,\n" +
+            "    nombre       VARCHAR (50),\n" +
+            "    descripcion  VARCHAR (300),\n" +
+            "    precio       DOUBLE (1000, 2),\n" +
+            "    codigo_barra VARCHAR (30),\n" +
+            "    foto         VARCHAR (300),\n" +
+            "    id_categoria INTEGER          CONSTRAINT fk_id_categoria REFERENCES categoria (id) ON DELETE CASCADE\n" +
+            "                                                                                       ON UPDATE CASCADE\n" +
+            ");");
             conector.close(connect);
             return true;
         } catch (SQLException ex) { 

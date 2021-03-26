@@ -35,11 +35,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private SuscripcionView suscripcionView = new SuscripcionView();
     private VerificarSuscripcionView verificarSuscripcionView = new VerificarSuscripcionView();
     private ProductoCatalogoView productoCatalogoView = new ProductoCatalogoView();
+    private CategoriaView categoriaView = new CategoriaView();
     public VentanaPrincipal() {
         initComponents();
         /*this.setLayout(new FlowLayout());
         this.add(vsv, BorderLayout.CENTER);
         this.pack();*/
+        JTPContenedor.add(verificarSuscripcionView);
         JTPContenedor.add(productoView);
         JTPContenedor.add(cantonView);
         JTPContenedor.add(empresaView);
@@ -48,8 +50,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JTPContenedor.add(tipoPersonaView);
         JTPContenedor.add(tipoSuscripcionView);
         JTPContenedor.add(suscripcionView);
-        JTPContenedor.add(verificarSuscripcionView);
         JTPContenedor.add(productoCatalogoView);
+        JTPContenedor.add(categoriaView);
         
         
     }
@@ -76,6 +78,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         JMIProductos = new javax.swing.JMenuItem();
         jMICatalogo = new javax.swing.JMenuItem();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gimnasio Soliz");
@@ -170,6 +173,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(jMICatalogo);
 
+        jMenuItem1.setText("Categoría");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMenuItem1);
+
         jMenuBar1.add(jMenu5);
 
         setJMenuBar(jMenuBar1);
@@ -226,6 +237,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
        
         JTPContenedor.setSelectedComponent(productoCatalogoView);
     }//GEN-LAST:event_jMICatalogoActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        JTPContenedor.setSelectedComponent(categoriaView);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,5 +305,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
     // End of variables declaration//GEN-END:variables
 }

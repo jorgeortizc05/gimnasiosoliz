@@ -6,29 +6,26 @@
 package casaortiz.dao;
 
 import casaortiz.db.Conector;
-import casaortiz.model.TipoPersona;
-import java.sql.PreparedStatement;
+import casaortiz.model.Categoria;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
  * @author jorge
  */
-public class TipoPersonaDAO {
-    
+public class CategoriaDAO {
     private Conector conector = new Conector();
     
-    public boolean guardar(TipoPersona item){
+    public boolean guardar(Categoria item){
         Connection connect = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("insert into tipo_persona (nombre, descripcion) values (?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into categoria (nombre, descripcion) values (?,?)");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
             st.execute();
@@ -41,16 +38,16 @@ public class TipoPersonaDAO {
         }
     }
     
-    public TipoPersona getTipoPersona(int id){
+    public Categoria getCategoria(int id){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
-        TipoPersona item = null;
+        Categoria item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from tipo_persona c where c.id = "+id);
+            PreparedStatement st = connect.prepareStatement("select * from categoria c where c.id ="+id);
             result = st.executeQuery();
-            item = new TipoPersona();
+            item = new Categoria();
             item.setId(result.getInt("id"));
             item.setNombre(result.getString("nombre"));
             item.setDescripcion(result.getString("descripcion"));
@@ -63,13 +60,13 @@ public class TipoPersonaDAO {
         }
     }
     
-    public boolean actualizar(TipoPersona item){
+    public boolean actualizar(Categoria item){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("update tipo_persona set nombre = ?, descripcion = ? where id = ?");
+            PreparedStatement st = connect.prepareStatement("update categoria set nombre = ?, descripcion = ? where id = ?");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
             st.setInt(3, item.getId());
@@ -90,7 +87,7 @@ public class TipoPersonaDAO {
         try {
             System.out.println(id);
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("delete from tipo_persona where id = "+id);
+            PreparedStatement st = connect.prepareStatement("delete from categoria where id = "+id);
             st.executeUpdate();
             conector.close(connect);
             return true;            
@@ -101,17 +98,17 @@ public class TipoPersonaDAO {
         }
     }
     
-    public List<TipoPersona> getTipoPersonas(){
+    public List<Categoria> getCategorias(){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();
-        List<TipoPersona> items = null;
+        List<Categoria> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from tipo_persona");
+            PreparedStatement st = connect.prepareStatement("select * from categoria");
             result = st.executeQuery();
-            items = new ArrayList<TipoPersona>();
+            items = new ArrayList<Categoria>();
             while(result.next()){
-                TipoPersona item = new TipoPersona();
+                Categoria item = new Categoria();
                 item.setId(result.getInt("id"));
                 item.setNombre(result.getString("nombre"));
                 item.setDescripcion(result.getString("descripcion"));
@@ -124,5 +121,4 @@ public class TipoPersonaDAO {
             return items;
         }
     }
-    
 }
