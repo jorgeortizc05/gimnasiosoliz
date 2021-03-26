@@ -31,7 +31,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
             Image img = new ImageIcon(string).getImage();
             
             //Me permite redimensionar la imagen para que se adapte al jLabel
-            ImageIcon ii = new ImageIcon(img.getScaledInstance(720, 576, Image.SCALE_SMOOTH));
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(800, 640 , Image.SCALE_SMOOTH));
 
             jLFoto.setIcon(ii);
             jLFoto.validate();
@@ -61,9 +61,9 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
         layout.rowHeights = new int[] {0, 5, 0};
         setLayout(layout);
 
-        jScroll.setPreferredSize(new java.awt.Dimension(730, 586));
+        jScroll.setPreferredSize(new java.awt.Dimension(830, 630));
 
-        jLFoto.setPreferredSize(new java.awt.Dimension(720, 576));
+        jLFoto.setPreferredSize(new java.awt.Dimension(800, 640));
         jScroll.setViewportView(jLFoto);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

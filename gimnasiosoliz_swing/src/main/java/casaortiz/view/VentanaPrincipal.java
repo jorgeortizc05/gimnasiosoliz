@@ -234,7 +234,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void jMICatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICatalogoActionPerformed
         // TODO add your handling code here:
-       
         JTPContenedor.setSelectedComponent(productoCatalogoView);
     }//GEN-LAST:event_jMICatalogoActionPerformed
 
