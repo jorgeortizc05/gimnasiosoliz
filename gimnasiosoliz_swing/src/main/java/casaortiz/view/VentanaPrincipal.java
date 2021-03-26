@@ -16,6 +16,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JInternalFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -201,6 +202,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void JMIProductosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JMIProductosActionPerformed
         // TODO add your handling code here:
+        
+        productoView.newProducto();
         JTPContenedor.setSelectedComponent(productoView);
     }//GEN-LAST:event_JMIProductosActionPerformed
 

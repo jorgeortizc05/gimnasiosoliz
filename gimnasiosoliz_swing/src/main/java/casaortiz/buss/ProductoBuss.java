@@ -27,6 +27,16 @@ public class ProductoBuss {
         }   
     }
     
+    public Producto getProducto(int id){
+        Producto item = null;
+        try {
+            item = prodDAO.getProducto(id);
+            return item;
+        } catch (Exception e) {
+            return item;
+        }
+    }
+    
     public boolean actualizar(Producto item){
         try {
             prodDAO.actualizar(item);

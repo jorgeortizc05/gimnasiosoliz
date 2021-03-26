@@ -39,6 +39,7 @@ public class ProductoView extends javax.swing.JPanel {
     private File dest;
     public ProductoView() {
         initComponents();
+        jBOk.setEnabled(false);
         prodBuss = new ProductoBuss();
         catBuss = new CategoriaBuss();
         loadProductos();
@@ -53,6 +54,8 @@ public class ProductoView extends javax.swing.JPanel {
         producto.setPrecio(Double.parseDouble(JTFPrecio.getText()));
         producto.setCodigoBarra(JTFCodigoBarra.getText());
         producto.setFoto(dest.getName());
+        Categoria categoria = (Categoria) jCBCategoria.getSelectedItem();
+        producto.setIdCategoria(categoria.getId());
         boolean estadoGuardado = prodBuss.guardar(producto);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Producto guardado");
@@ -73,6 +76,8 @@ public class ProductoView extends javax.swing.JPanel {
         producto.setPrecio(Double.parseDouble(JTFPrecio.getText()));
         producto.setCodigoBarra(JTFCodigoBarra.getText());
         producto.setFoto(dest.getName());
+        Categoria categoria = (Categoria) jCBCategoria.getSelectedItem();
+        producto.setIdCategoria(categoria.getId());
         boolean estadoActualizacion = prodBuss.actualizar(producto);
         if(estadoActualizacion){
             JOptionPane.showMessageDialog(this, "Producto actualizado");
@@ -111,18 +116,17 @@ public class ProductoView extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
             int id = Integer.parseInt((String)jTProductos.getValueAt(fila, 0).toString());
-            String nombre = (String) jTProductos.getValueAt(fila, 1);
-            String descripcion = (String) jTProductos.getValueAt(fila, 2);
-            Double precio = Double.parseDouble((String) jTProductos.getValueAt(fila, 3).toString());
-            String codigoBarra = (String) jTProductos.getValueAt(fila, 4);
-            String foto = (String) jTProductos.getValueAt(fila, 5);
+            Producto producto = prodBuss.getProducto(id);
+            System.out.println(producto);
             jLID.setText(""+id);
-            JTFNombre.setText(nombre);
-            JTADescripcion.setText(descripcion);
-            JTFPrecio.setText(String.valueOf(precio));
-            JTFCodigoBarra.setText(codigoBarra);
-            dest = new File(System.getProperty("user.dir") + "/media/producto/" + foto);
-            loadImageGuardada(foto);
+            JTFNombre.setText(producto.getNombre());
+            JTADescripcion.setText(producto.getDescripcion());
+            JTFPrecio.setText(String.valueOf(producto.getPrecio()));
+            JTFCodigoBarra.setText(producto.getCodigoBarra());
+            Categoria categoria = catBuss.getCategoria(producto.getIdCategoria());
+            jCBCategoria.getModel().setSelectedItem(categoria);
+            dest = new File(System.getProperty("user.dir") + "/media/producto/" + producto.getFoto());
+            loadImageGuardada(producto.getFoto());
         }
     }
     
@@ -145,17 +149,7 @@ public class ProductoView extends javax.swing.JPanel {
         vaciarTabla();
         DefaultTableModel modelo = (DefaultTableModel) jTProductos.getModel();
         List<Producto> productos = prodBuss.getProductos();
-        Object rowData[] = new Object[6];
-        for(Producto p: productos){
-            rowData[0] = p.getId();
-            rowData[1] = p.getNombre();
-            rowData[2] = p.getDescripcion();
-            rowData[3] = p.getPrecio();
-            rowData[4] = p.getCodigoBarra();
-            rowData[5] = p.getFoto();
-            modelo.addRow(rowData);
-        }
-        jTProductos.setModel(modelo);
+        addDataTablaProducto(modelo, productos);
     }
     
     public void loadProductosPorNombre(String nombre){
@@ -163,17 +157,7 @@ public class ProductoView extends javax.swing.JPanel {
         try {
             DefaultTableModel modelo = (DefaultTableModel) jTProductos.getModel();
             List<Producto> productos = prodBuss.buscarProductosPorNombre(nombre);
-            Object rowData[] = new Object[6];
-            for(Producto p: productos){
-                rowData[0] = p.getId();
-                rowData[1] = p.getNombre();
-                rowData[2] = p.getDescripcion();
-                rowData[3] = p.getPrecio();
-                rowData[4] = p.getCodigoBarra();
-                rowData[5] = p.getFoto();
-                modelo.addRow(rowData);
-            }
-            jTProductos.setModel(modelo);
+            addDataTablaProducto(modelo, productos);
         } catch (Exception e) {
         }  
     }
@@ -183,7 +167,13 @@ public class ProductoView extends javax.swing.JPanel {
         try {
             DefaultTableModel modelo = (DefaultTableModel) jTProductos.getModel();
             List<Producto> productos = prodBuss.buscarProductosPorCodigoBarras(codigoBarra);
-            Object rowData[] = new Object[6];
+            addDataTablaProducto(modelo, productos);
+        } catch (Exception e) {
+        }  
+    }
+    
+    public void addDataTablaProducto(DefaultTableModel modelo, List<Producto> productos){
+        Object rowData[] = new Object[6];
             for(Producto p: productos){
                 rowData[0] = p.getId();
                 rowData[1] = p.getNombre();
@@ -191,17 +181,17 @@ public class ProductoView extends javax.swing.JPanel {
                 rowData[3] = p.getPrecio();
                 rowData[4] = p.getCodigoBarra();
                 rowData[5] = p.getFoto();
+                Categoria categoria = catBuss.getCategoria(p.getIdCategoria());
+                rowData[5] = categoria.getNombre();
                 modelo.addRow(rowData);
             }
             jTProductos.setModel(modelo);
-        } catch (Exception e) {
-        }  
     }
     
     public void loadCategorias(){
         List<Categoria> items = catBuss.getCategorias();
         for(Categoria tp: items){
-           jCBCategoría.addItem(tp);
+           jCBCategoria.addItem(tp);
         }
     }
     
@@ -231,7 +221,7 @@ public class ProductoView extends javax.swing.JPanel {
             Image img = new ImageIcon(string).getImage();
             
             //Me permite redimensionar la imagen para que se adapte al jLabel
-            ImageIcon ii = new ImageIcon(img.getScaledInstance(340, 300, Image.SCALE_SMOOTH));
+            ImageIcon ii = new ImageIcon(img.getScaledInstance(400, 300, Image.SCALE_SMOOTH));
 
             jLFoto.setIcon(ii);
             jLFoto.validate();
@@ -263,6 +253,38 @@ public class ProductoView extends javax.swing.JPanel {
     public void vaciarCamposBusqueda(){
         jTFBuscarCodigoBarras.setText("");
         jTFBuscarNombre.setText("");
+    }
+    
+    public void elegirImagenProducto(){
+        fc = new JFileChooser();
+        fc.setDialogTitle("Elegir foto o imagen de producto");
+        if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
+            file = fc.getSelectedFile();
+            try {
+                String nombreImg = file.getName();
+                System.out.println(nombreImg);
+                if (nombreImg.endsWith(".jpg")
+                        || nombreImg.endsWith(".png")
+                        || nombreImg.endsWith(".bmp")
+                        || nombreImg.endsWith(".jpeg")) {
+                    UUID uuid = UUID.randomUUID();
+                    String codigoImagen = uuid.toString();
+                    dest = new File(System.getProperty("user.dir") + "/media/producto/" + codigoImagen);
+                    //this.imagen= (dest.getName());
+                    loadImageSrc(file.getAbsolutePath());
+
+            }
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+                JOptionPane.showMessageDialog(null, "Error abriendo fichero");
+            }
+        }
+    }
+    
+    public void newProducto(){
+        jCBCategoria.removeAllItems();
+        loadCategorias();
     }
     
     @SuppressWarnings("unchecked")
@@ -302,7 +324,7 @@ public class ProductoView extends javax.swing.JPanel {
         jLID = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         JTADescripcion = new javax.swing.JTextArea();
-        jCBCategoría = new javax.swing.JComboBox<Categoria>();
+        jCBCategoria = new javax.swing.JComboBox<Categoria>();
         jLabel8 = new javax.swing.JLabel();
 
         setLayout(new java.awt.CardLayout());
@@ -442,7 +464,6 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel10, gridBagConstraints);
 
@@ -454,7 +475,6 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 10;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel11, gridBagConstraints);
 
@@ -467,7 +487,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 0.1;
@@ -486,7 +506,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.VERTICAL;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 0.1;
@@ -513,7 +533,7 @@ public class ProductoView extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "Producto", "Descripción", "Precio", "Cód. Barra", "Foto"
+                "ID", "Producto", "Descripción", "Precio", "Cód. Barra", "Categoría"
             }
         ) {
             Class[] types = new Class [] {
@@ -677,7 +697,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jCBCategoría, gridBagConstraints);
+        jPanel3.add(jCBCategoria, gridBagConstraints);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel8.setText("Categoría:");
@@ -721,7 +741,8 @@ public class ProductoView extends javax.swing.JPanel {
 
     private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
         // TODO add your handling code here:
-        jBGuardar.setVisible(false);
+        jBGuardar.setEnabled(false);
+        jBOk.setEnabled(true);
         seleccionarItemTabla();
     }//GEN-LAST:event_jBEditarActionPerformed
 
@@ -729,7 +750,8 @@ public class ProductoView extends javax.swing.JPanel {
         // TODO add your handling code here:
         try {       
             actualizar();
-            jBGuardar.setVisible(true);
+            jBGuardar.setEnabled(true);
+            jBOk.setEnabled(false);
         } catch (IOException ex) {
             Logger.getLogger(ProductoView.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -742,36 +764,15 @@ public class ProductoView extends javax.swing.JPanel {
 
     private void jBEligirImagenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEligirImagenActionPerformed
         // TODO add your handling code here:
-        fc = new JFileChooser();
-        fc.setDialogTitle("Elegir foto o imagen de producto");
-        if(fc.showOpenDialog(this) == JFileChooser.APPROVE_OPTION){
-            file = fc.getSelectedFile();
-            try {
-                String nombreImg = file.getName();
-                System.out.println(nombreImg);
-                if (nombreImg.endsWith(".jpg")
-                        || nombreImg.endsWith(".png")
-                        || nombreImg.endsWith(".bmp")
-                        || nombreImg.endsWith(".jpeg")) {
-                    UUID uuid = UUID.randomUUID();
-                    String codigoImagen = uuid.toString();
-                    dest = new File(System.getProperty("user.dir") + "/media/producto/" + codigoImagen);
-                    //this.imagen= (dest.getName());
-                    loadImageSrc(file.getAbsolutePath());
-
-            }
-
-            } catch (Exception ex) {
-                ex.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Error abriendo fichero");
-            }
-        }
+        elegirImagenProducto();
     }//GEN-LAST:event_jBEligirImagenActionPerformed
 
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
-        jBGuardar.setVisible(true);
+        jBGuardar.setEnabled(true);
+        jBEditar.setEnabled(true);
+        jBOk.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
 
     private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
@@ -810,7 +811,7 @@ public class ProductoView extends javax.swing.JPanel {
     private javax.swing.JButton jBListar;
     private javax.swing.JButton jBOk;
     private javax.swing.JButton jBVaciarFormulario;
-    private javax.swing.JComboBox<Categoria> jCBCategoría;
+    private javax.swing.JComboBox<Categoria> jCBCategoria;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;

@@ -27,6 +27,7 @@ public class EmpresaView extends javax.swing.JPanel {
     
     public EmpresaView() {
         initComponents();
+        jBOk.setEnabled(false);
         empBuss = new EmpresaBuss();
         canBuss = new CantonBuss();
         //loadEmpresas();
@@ -488,14 +489,16 @@ public class EmpresaView extends javax.swing.JPanel {
 
     private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
         // TODO add your handling code here:
-        jBGuardar.setVisible(false);
+        jBGuardar.setEnabled(false);
+        jBOk.setEnabled(true);
         seleccionarItemTabla();
     }//GEN-LAST:event_jBEditarActionPerformed
 
     private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
         // TODO add your handling code here:
         actualizar();
-        jBGuardar.setVisible(true);
+        jBGuardar.setEnabled(true);
+        jBOk.setEnabled(false);
     }//GEN-LAST:event_jBOkActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
@@ -506,7 +509,9 @@ public class EmpresaView extends javax.swing.JPanel {
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
-        jBGuardar.setVisible(true);
+        jBGuardar.setEnabled(true);
+        jBEditar.setEnabled(true);
+        jBOk.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
 
     private void jCBCantonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCBCantonActionPerformed

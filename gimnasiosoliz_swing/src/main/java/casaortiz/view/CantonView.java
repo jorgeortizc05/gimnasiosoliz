@@ -22,6 +22,7 @@ public class CantonView extends javax.swing.JPanel {
     private Canton canton;
     public CantonView() {
         initComponents();
+        jBOk.setEnabled(false);
         canBuss = new CantonBuss();
         loadCantones();
     }
@@ -135,7 +136,7 @@ public class CantonView extends javax.swing.JPanel {
         jLID = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        JBEditar = new javax.swing.JButton();
+        jBEditar = new javax.swing.JButton();
         jBOk = new javax.swing.JButton();
         jBEliminar = new javax.swing.JButton();
         jBVaciarFormulario = new javax.swing.JButton();
@@ -275,14 +276,14 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPanel4.add(jBGuardar);
 
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
+        jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEditar.setText("Editar");
+        jBEditar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
+                jBEditarActionPerformed(evt);
             }
         });
-        jPanel4.add(JBEditar);
+        jPanel4.add(jBEditar);
 
         jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBOk.setText("Ok");
@@ -354,16 +355,18 @@ public class CantonView extends javax.swing.JPanel {
         loadCantones();
     }//GEN-LAST:event_JBListarActionPerformed
 
-    private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
+    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
         // TODO add your handling code here:
-        jBGuardar.setVisible(false);
+        jBGuardar.setEnabled(false);
+        jBOk.setEnabled(true);
         seleccionarItemTabla();
-    }//GEN-LAST:event_JBEditarActionPerformed
+    }//GEN-LAST:event_jBEditarActionPerformed
 
     private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
         // TODO add your handling code here:
         actualizar();
-        jBGuardar.setVisible(true);
+        jBGuardar.setEnabled(true);
+        jBOk.setEnabled(false);
     }//GEN-LAST:event_jBOkActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
@@ -374,13 +377,15 @@ public class CantonView extends javax.swing.JPanel {
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
-        jBGuardar.setVisible(true);
+        jBGuardar.setEnabled(true);
+        jBEditar.setEnabled(true);
+        jBOk.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBEditar;
     private javax.swing.JButton JBListar;
+    private javax.swing.JButton jBEditar;
     private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBOk;

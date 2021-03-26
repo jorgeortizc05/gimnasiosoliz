@@ -17,6 +17,7 @@ public class Producto {
     private Double precio;
     private String codigoBarra;
     private String foto;
+    private int idCategoria;
 
     public int getId() {
         return id;
@@ -65,6 +66,16 @@ public class Producto {
     public void setFoto(String foto) {
         this.foto = foto;
     }
+
+    public int getIdCategoria() {
+        return idCategoria;
+    }
+
+    public void setIdCategoria(int idCategoria) {
+        this.idCategoria = idCategoria;
+    }
+    
+    
 
     @Override
     public String toString() {

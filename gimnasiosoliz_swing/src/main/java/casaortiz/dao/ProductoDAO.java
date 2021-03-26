@@ -28,12 +28,13 @@ public class ProductoDAO {
         Connection connect = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("insert into producto (nombre, descripcion, precio, codigo_barra, foto) values (?,?,?,?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into producto (nombre, descripcion, precio, codigo_barra, foto, id_categoria) values (?,?,?,?,?,?)");
             st.setString(1, producto.getNombre());
             st.setString(2, producto.getDescripcion());
             st.setDouble(3, producto.getPrecio());
             st.setString(4, producto.getCodigoBarra());
             st.setString(5, producto.getFoto());
+            st.setInt(6, producto.getIdCategoria());
             st.execute();
             conector.close(connect);
             return true;
@@ -51,8 +52,7 @@ public class ProductoDAO {
         Producto item = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("select * from producto p where p.id = ?");
-            st.setInt(0, id);
+            PreparedStatement st = connect.prepareStatement("select * from producto p where p.id = "+id);
             result = st.executeQuery();
             item = new Producto();
             item.setId(result.getInt("id"));
@@ -60,6 +60,8 @@ public class ProductoDAO {
             item.setDescripcion(result.getString("descripcion"));
             item.setPrecio(result.getDouble("precio"));
             item.setCodigoBarra(result.getString("codigo_barra"));
+            item.setIdCategoria(result.getInt("id_categoria"));
+            item.setFoto(result.getString("foto"));
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -75,13 +77,14 @@ public class ProductoDAO {
         connect = conector.getConexion();
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("update producto set nombre = ?, descripcion = ?, precio = ?, codigo_barra = ?, foto = ? where id = ?");
+            PreparedStatement st = connect.prepareStatement("update producto set nombre = ?, descripcion = ?, precio = ?, codigo_barra = ?, foto = ?, id_categoria = ? where id = ?");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
             st.setDouble(3, item.getPrecio());
             st.setString(4, item.getCodigoBarra());
             st.setString(5, item.getFoto());
-            st.setInt(6, item.getId());
+            st.setInt(6, item.getIdCategoria());
+            st.setInt(7, item.getId());
             st.execute();
             conector.close(connect);
             return true;            
@@ -127,6 +130,7 @@ public class ProductoDAO {
                 producto.setPrecio(result.getDouble("precio"));
                 producto.setCodigoBarra(result.getString("codigo_barra"));
                 producto.setFoto(result.getString("foto"));
+                producto.setIdCategoria(result.getInt("id_categoria"));
                 items.add(producto);
             }
             connect.close();
@@ -155,6 +159,7 @@ public class ProductoDAO {
                 producto.setPrecio(result.getDouble("precio"));
                 producto.setCodigoBarra(result.getString("codigo_barra"));
                 producto.setFoto(result.getString("foto"));
+                producto.setIdCategoria(result.getInt("id_categoria"));
                 items.add(producto);
             }
             connect.close();
@@ -183,6 +188,7 @@ public class ProductoDAO {
                 producto.setPrecio(result.getDouble("precio"));
                 producto.setCodigoBarra(result.getString("codigo_barra"));
                 producto.setFoto(result.getString("foto"));
+                producto.setIdCategoria(result.getInt("id_categoria"));
                 items.add(producto);
             }
             connect.close();
