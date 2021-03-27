@@ -21,7 +21,7 @@ public class CategoriaView extends javax.swing.JPanel {
     private Categoria categoria;
     public CategoriaView() {
         initComponents();
-        jBOk.setEnabled(false);
+        jBActualizar.setEnabled(false);
         catBuss = new CategoriaBuss();
         loadCategorias();
     }
@@ -134,11 +134,9 @@ public class CategoriaView extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        jBEditar = new javax.swing.JButton();
-        jBOk = new javax.swing.JButton();
+        jBActualizar = new javax.swing.JButton();
         jBEliminar = new javax.swing.JButton();
         jBVaciarFormulario = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
@@ -163,6 +161,11 @@ public class CategoriaView extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        jTListaCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTListaCategoriasMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTListaCategorias);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -182,6 +185,7 @@ public class CategoriaView extends javax.swing.JPanel {
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Descripción:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -190,7 +194,7 @@ public class CategoriaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel3, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -200,7 +204,7 @@ public class CategoriaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLID, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -210,6 +214,7 @@ public class CategoriaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFNombre, gridBagConstraints);
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel2.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -218,7 +223,8 @@ public class CategoriaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel2, gridBagConstraints);
 
-        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
+        jPanel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jPanel4.setLayout(new java.awt.GridLayout(1, 4));
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
@@ -229,23 +235,14 @@ public class CategoriaView extends javax.swing.JPanel {
         });
         jPanel4.add(jBGuardar);
 
-        jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEditar.setText("Editar");
-        jBEditar.addActionListener(new java.awt.event.ActionListener() {
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setText("Actualizar");
+        jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEditarActionPerformed(evt);
+                jBActualizarActionPerformed(evt);
             }
         });
-        jPanel4.add(jBEditar);
-
-        jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBOk.setText("Ok");
-        jBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBOkActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jBOk);
+        jPanel4.add(jBActualizar);
 
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEliminar.setText("Eliminar");
@@ -265,15 +262,6 @@ public class CategoriaView extends javax.swing.JPanel {
         });
         jPanel4.add(jBVaciarFormulario);
 
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(JBListar);
-
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 6;
@@ -282,6 +270,7 @@ public class CategoriaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jPanel4, gridBagConstraints);
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -318,19 +307,12 @@ public class CategoriaView extends javax.swing.JPanel {
         guardar();
     }//GEN-LAST:event_jBGuardarActionPerformed
 
-    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
-        // TODO add your handling code here:
-        jBGuardar.setEnabled(false);
-        jBOk.setEnabled(true);
-        seleccionarItemTabla();
-    }//GEN-LAST:event_jBEditarActionPerformed
-
-    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
+    private void jBActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBActualizarActionPerformed
         // TODO add your handling code here:
         actualizar();
         jBGuardar.setEnabled(true);
-        jBOk.setEnabled(false);
-    }//GEN-LAST:event_jBOkActionPerformed
+        jBActualizar.setEnabled(false);
+    }//GEN-LAST:event_jBActualizarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
         // TODO add your handling code here:
@@ -341,22 +323,21 @@ public class CategoriaView extends javax.swing.JPanel {
         // TODO add your handling code here:
         vaciarFormulario();
         jBGuardar.setEnabled(true);
-        jBEditar.setEnabled(true);
-        jBOk.setEnabled(false);
+        jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
 
-    private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
+    private void jTListaCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaCategoriasMouseClicked
         // TODO add your handling code here:
-        loadCategorias();
-    }//GEN-LAST:event_JBListarActionPerformed
+        jBGuardar.setEnabled(false);
+        jBActualizar.setEnabled(true);
+        seleccionarItemTabla();
+    }//GEN-LAST:event_jTListaCategoriasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBListar;
-    private javax.swing.JButton jBEditar;
+    private javax.swing.JButton jBActualizar;
     private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
-    private javax.swing.JButton jBOk;
     private javax.swing.JButton jBVaciarFormulario;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;

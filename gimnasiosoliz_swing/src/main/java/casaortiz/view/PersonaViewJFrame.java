@@ -301,10 +301,8 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         rSDCFechaNacimiento = new rojeru_san.componentes.RSDateChooser();
         jPanel2 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        JBEditar = new javax.swing.JButton();
-        JBOk = new javax.swing.JButton();
+        jBActualizar = new javax.swing.JButton();
         JBEliminar = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
         JBVaciarFormulario = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -329,7 +327,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jLFoto, gridBagConstraints);
 
         jBTomarFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -343,7 +341,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHEAST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jBTomarFoto, gridBagConstraints);
 
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -357,7 +355,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.SOUTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jBEncenderCam, gridBagConstraints);
 
         jPCamera.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Cámara", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
@@ -367,13 +365,13 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jPCamera, gridBagConstraints);
 
         JPListaPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaPersonas.setLayout(new java.awt.GridBagLayout());
 
-        jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTListaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -397,6 +395,11 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        jTListaPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTListaPersonasMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTListaPersonas);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -411,7 +414,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.weighty = 1.0;
         JPListaPersonas.add(jScrollPane2, gridBagConstraints);
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel13.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -422,7 +425,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jLabel13, gridBagConstraints);
 
-        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel14.setText("Apellido:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -433,7 +436,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jLabel14, gridBagConstraints);
 
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel15.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel15.setText("Cedula:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -444,7 +447,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jLabel15, gridBagConstraints);
 
-        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -459,7 +462,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jBLimpiar, gridBagConstraints);
 
-        jTFBusCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFBusCedula.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusCedulaKeyReleased(evt);
@@ -474,7 +477,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jTFBusCedula, gridBagConstraints);
 
-        jTFBusNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFBusNombre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusNombreKeyReleased(evt);
@@ -489,7 +492,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jTFBusNombre, gridBagConstraints);
 
-        jTFBusApell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFBusApell.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusApellKeyReleased(evt);
@@ -510,16 +513,17 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridwidth = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(JPListaPersonas, gridBagConstraints);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos del Cliente"));
+        jPanel1.setPreferredSize(new java.awt.Dimension(400, 370));
         java.awt.GridBagLayout jPanel1Layout = new java.awt.GridBagLayout();
         jPanel1Layout.columnWidths = new int[] {0, 5, 0};
         jPanel1Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel1.setLayout(jPanel1Layout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -529,7 +533,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel1, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLID.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -539,7 +543,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLID, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setText("Cédula:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -549,7 +553,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel3, gridBagConstraints);
 
-        jTFCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFCedula.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTFCedula.setPreferredSize(new java.awt.Dimension(100, 19));
         jTFCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -564,7 +568,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFCedula, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setText("Tipo Persona:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -574,7 +578,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel2, gridBagConstraints);
 
-        jCBTipoPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCBTipoPersona.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 16;
@@ -583,7 +587,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jCBTipoPersona, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel5.setText("Teléfono:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -593,7 +597,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel5, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel6.setText("Dirección:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -603,7 +607,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel6, gridBagConstraints);
 
-        jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFTele.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
@@ -613,7 +617,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         jPanel1.add(jTFTele, gridBagConstraints);
 
         JTADirecc.setColumns(20);
-        JTADirecc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        JTADirecc.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         JTADirecc.setLineWrap(true);
         JTADirecc.setRows(5);
         jScrollPane3.setViewportView(JTADirecc);
@@ -626,7 +630,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jScrollPane3, gridBagConstraints);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel9.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -636,7 +640,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel9, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
@@ -650,7 +654,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFNombre, gridBagConstraints);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel10.setText("Apellido:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -660,7 +664,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel10, gridBagConstraints);
 
-        jTFApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFApellido.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFApellidoActionPerformed(evt);
@@ -674,7 +678,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFApellido, gridBagConstraints);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel11.setText("Email:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -684,7 +688,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel11, gridBagConstraints);
 
-        jTFEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFEmail.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTFEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFEmailActionPerformed(evt);
@@ -698,7 +702,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFEmail, gridBagConstraints);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel7.setText("Fecha");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -728,13 +732,13 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.gridwidth = 3;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
+        gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jPanel1, gridBagConstraints);
 
-        jPanel2.setPreferredSize(new java.awt.Dimension(360, 48));
-        jPanel2.setLayout(new java.awt.GridLayout(2, 3));
+        jPanel2.setPreferredSize(new java.awt.Dimension(400, 30));
+        jPanel2.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -743,25 +747,16 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         });
         jPanel2.add(jBGuardar);
 
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setText("Actualizar");
+        jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
+                jBActualizarActionPerformed(evt);
             }
         });
-        jPanel2.add(JBEditar);
+        jPanel2.add(jBActualizar);
 
-        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBOk.setText("Ok");
-        JBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBOkActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBOk);
-
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -770,16 +765,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         });
         jPanel2.add(JBEliminar);
 
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
-            }
-        });
-        jPanel2.add(JBListar);
-
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -791,6 +777,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 2;
+        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jPanel2, gridBagConstraints);
 
         jScrollPane1.setViewportView(jPDatos);
@@ -812,23 +799,13 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jBGuardarActionPerformed
 
-    private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
-        // TODO add your handling code here:
-        loadPersonas();
-    }//GEN-LAST:event_JBListarActionPerformed
-
-    private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
-        jBGuardar.setVisible(false);
-        seleccionarItemTabla();
-    }//GEN-LAST:event_JBEditarActionPerformed
-
-    private void JBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBOkActionPerformed
+    private void jBActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBActualizarActionPerformed
         actualizar();
         jBGuardar.setVisible(true);
         if (webcam != null){
             webcam.close();
         }
-    }//GEN-LAST:event_JBOkActionPerformed
+    }//GEN-LAST:event_jBActualizarActionPerformed
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
         eliminar();
@@ -899,15 +876,19 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         apagarCamara();
     }//GEN-LAST:event_formWindowClosing
 
+    private void jTListaPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaPersonasMouseClicked
+        // TODO add your handling code here:
+        jBGuardar.setVisible(false);
+        seleccionarItemTabla();
+    }//GEN-LAST:event_jTListaPersonasMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBEditar;
     private javax.swing.JButton JBEliminar;
-    private javax.swing.JButton JBListar;
-    private javax.swing.JButton JBOk;
     private javax.swing.JButton JBVaciarFormulario;
     private javax.swing.JPanel JPListaPersonas;
     private javax.swing.JTextArea JTADirecc;
+    private javax.swing.JButton jBActualizar;
     private javax.swing.JButton jBEncenderCam;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBLimpiar;

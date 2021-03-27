@@ -253,7 +253,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel3Layout.rowHeights = new int[] {0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -275,7 +275,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFBusNombre, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setText("Apellido:");
         jLabel2.setPreferredSize(new java.awt.Dimension(50, 14));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -298,7 +298,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFBusApell, gridBagConstraints);
 
-        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +341,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setText("Cédula:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
@@ -389,7 +389,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLNombres.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        jLNombres.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11))); // NOI18N
         jLNombres.setPreferredSize(new java.awt.Dimension(700, 70));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -401,7 +401,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jLMensajeAdvertencia.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLMensajeAdvertencia.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLMensajeAdvertencia.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true), "Estado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 0, 12))); // NOI18N
+        jLMensajeAdvertencia.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Estado", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jLMensajeAdvertencia.setPreferredSize(new java.awt.Dimension(700, 70));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;

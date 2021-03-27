@@ -19,7 +19,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Control de Acceso"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="12" style="1"/>
+              <Font name="Segoe UI" size="11" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -40,7 +40,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Empresa"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="12" style="1"/>
+              <Font name="Segoe UI" size="11" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -72,7 +72,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clientes"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="12" style="1"/>
+              <Font name="Segoe UI" size="11" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -104,7 +104,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inventarios"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Arial" size="12" style="1"/>
+              <Font name="Segoe UI" size="11" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -133,6 +133,50 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMCaja">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Caja"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="11" style="1"/>
+            </Property>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMIFormaPago">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Forma de Pago"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMIFormaPagoActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMITipoComprobante">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Comprobantes"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMITipoComprobanteActionPerformed"/>
+              </Events>
+            </MenuItem>
+          </SubComponents>
+        </Menu>
+        <Menu class="javax.swing.JMenu" name="jMenu3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Suscripci&#xf3;n"/>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Segoe UI" size="11" style="1"/>
+            </Property>
+          </Properties>
+          <SubComponents>
+            <MenuItem class="javax.swing.JMenuItem" name="jMITipoSuscripcion">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Tipo de Suscripci&#xf3;n"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMITipoSuscripcionActionPerformed"/>
               </Events>
             </MenuItem>
           </SubComponents>

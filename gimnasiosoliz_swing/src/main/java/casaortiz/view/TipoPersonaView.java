@@ -130,9 +130,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         jTADescripcion = new javax.swing.JTextArea();
         jPanel1 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
-        JBEditar = new javax.swing.JButton();
-        JBOk = new javax.swing.JButton();
+        jBActualizar = new javax.swing.JButton();
         JBEliminar = new javax.swing.JButton();
         JBVaciarFormulario = new javax.swing.JButton();
         JPListaTipoPersonas = new javax.swing.JPanel();
@@ -147,7 +145,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPDatos.setLayout(jPDatosLayout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -156,7 +154,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel1, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -166,7 +164,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLID, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setText("Comprobante:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -175,7 +173,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel4.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -184,7 +182,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel4, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -194,7 +192,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         jPDatos.add(jTFNombre, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
@@ -207,9 +205,9 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jScrollPane1, gridBagConstraints);
 
-        jPanel1.setLayout(new java.awt.GridLayout(2, 3));
+        jPanel1.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -218,34 +216,16 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(jBGuardar);
 
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setText("Actualizar");
+        jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
+                jBActualizarActionPerformed(evt);
             }
         });
-        jPanel1.add(JBListar);
+        jPanel1.add(jBActualizar);
 
-        JBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBEditar.setText("Editar");
-        JBEditar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBEditarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(JBEditar);
-
-        JBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBOk.setText("Ok");
-        JBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBOkActionPerformed(evt);
-            }
-        });
-        jPanel1.add(JBOk);
-
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -254,7 +234,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(JBEliminar);
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -283,7 +263,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         JPListaTipoPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista Tipo de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoPersonas.setLayout(new java.awt.CardLayout());
 
-        jTListaTipoPersonas.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTListaTipoPersonas.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTListaTipoPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -307,6 +287,11 @@ public class TipoPersonaView extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTListaTipoPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTListaTipoPersonasMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTListaTipoPersonas);
 
         JPListaTipoPersonas.add(jScrollPane2, "card2");
@@ -326,20 +311,10 @@ public class TipoPersonaView extends javax.swing.JPanel {
         guardar();
     }//GEN-LAST:event_jBGuardarActionPerformed
 
-    private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
-        // TODO add your handling code here:
-        loadTipoPersonas();
-    }//GEN-LAST:event_JBListarActionPerformed
-
-    private void JBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEditarActionPerformed
-        jBGuardar.setVisible(false);
-        seleccionarItemTabla();
-    }//GEN-LAST:event_JBEditarActionPerformed
-
-    private void JBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBOkActionPerformed
+    private void jBActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBActualizarActionPerformed
         actualizar();
-        jBGuardar.setVisible(true);
-    }//GEN-LAST:event_JBOkActionPerformed
+        jBGuardar.setEnabled(true);
+    }//GEN-LAST:event_jBActualizarActionPerformed
 
     private void JBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBEliminarActionPerformed
         eliminar();
@@ -347,17 +322,21 @@ public class TipoPersonaView extends javax.swing.JPanel {
 
     private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
         vaciarFormulario();
-        jBGuardar.setVisible(true);
+        jBGuardar.setEnabled(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
+
+    private void jTListaTipoPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaTipoPersonasMouseClicked
+        // TODO add your handling code here:
+        jBGuardar.setEnabled(false);
+        seleccionarItemTabla();
+    }//GEN-LAST:event_jTListaTipoPersonasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBEditar;
     private javax.swing.JButton JBEliminar;
-    private javax.swing.JButton JBListar;
-    private javax.swing.JButton JBOk;
     private javax.swing.JButton JBVaciarFormulario;
     private javax.swing.JPanel JPListaTipoPersonas;
+    private javax.swing.JButton jBActualizar;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;

@@ -22,7 +22,7 @@ public class FormaPagoView extends javax.swing.JPanel {
     
     public FormaPagoView() {
         initComponents();
-        jBOk.setEnabled(false);
+        jBActualizar.setEnabled(false);
         fpBuss = new FormaPagoBuss();
         loadFormaPagos();
     }
@@ -140,10 +140,8 @@ public class FormaPagoView extends javax.swing.JPanel {
         jTADescripcion = new javax.swing.JTextArea();
         jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        jBEditar = new javax.swing.JButton();
-        jBOk = new javax.swing.JButton();
+        jBActualizar = new javax.swing.JButton();
         jBEliminar = new javax.swing.JButton();
-        jBListar = new javax.swing.JButton();
         jBVaciarFormulario = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
@@ -174,6 +172,11 @@ public class FormaPagoView extends javax.swing.JPanel {
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
+            }
+        });
+        jTListaFormaPagos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTListaFormaPagosMouseClicked(evt);
             }
         });
         jScrollPane3.setViewportView(jTListaFormaPagos);
@@ -257,7 +260,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
+        jPanel4.setLayout(new java.awt.GridLayout(1, 4));
 
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
@@ -268,23 +271,14 @@ public class FormaPagoView extends javax.swing.JPanel {
         });
         jPanel4.add(jBGuardar);
 
-        jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEditar.setText("Editar");
-        jBEditar.addActionListener(new java.awt.event.ActionListener() {
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setText("Actualizar");
+        jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEditarActionPerformed(evt);
+                jBActualizarActionPerformed(evt);
             }
         });
-        jPanel4.add(jBEditar);
-
-        jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBOk.setText("Ok");
-        jBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBOkActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jBOk);
+        jPanel4.add(jBActualizar);
 
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEliminar.setText("Eliminar");
@@ -294,15 +288,6 @@ public class FormaPagoView extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jBEliminar);
-
-        jBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBListar.setText("Listar");
-        jBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBListarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jBListar);
 
         jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBVaciarFormulario.setText("Vaciar Formulario");
@@ -340,24 +325,12 @@ public class FormaPagoView extends javax.swing.JPanel {
         guardar();
     }//GEN-LAST:event_jBGuardarActionPerformed
 
-    private void jBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBListarActionPerformed
-        // TODO add your handling code here:
-        loadFormaPagos();
-    }//GEN-LAST:event_jBListarActionPerformed
-
-    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
-        // TODO add your handling code here:
-        jBGuardar.setEnabled(false);
-        jBOk.setEnabled(true);
-        seleccionarItemTabla();
-    }//GEN-LAST:event_jBEditarActionPerformed
-
-    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
+    private void jBActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBActualizarActionPerformed
         // TODO add your handling code here:
         actualizar();
         jBGuardar.setEnabled(true);
-        jBOk.setEnabled(false);
-    }//GEN-LAST:event_jBOkActionPerformed
+        jBActualizar.setEnabled(false);
+    }//GEN-LAST:event_jBActualizarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
         // TODO add your handling code here:
@@ -368,17 +341,21 @@ public class FormaPagoView extends javax.swing.JPanel {
         // TODO add your handling code here:
         vaciarFormulario();
         jBGuardar.setEnabled(true);
-        jBEditar.setEnabled(true);
-        jBOk.setEnabled(false);
+        jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
+
+    private void jTListaFormaPagosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaFormaPagosMouseClicked
+        // TODO add your handling code here:
+        jBGuardar.setEnabled(false);
+        jBActualizar.setEnabled(true);
+        seleccionarItemTabla();
+    }//GEN-LAST:event_jTListaFormaPagosMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jBEditar;
+    private javax.swing.JButton jBActualizar;
     private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
-    private javax.swing.JButton jBListar;
-    private javax.swing.JButton jBOk;
     private javax.swing.JButton jBVaciarFormulario;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;

@@ -114,12 +114,14 @@ public class SuscripcionView extends javax.swing.JPanel {
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos de la Persona", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel2.setText("Cedula:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 60, 20));
+
+        jTFBusCedula.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jPanel1.add(jTFBusCedula, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 130, -1));
 
-        jBBuscarPersona.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBBuscarPersona.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jBBuscarPersona.setText("Buscar");
         jBBuscarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,13 +130,17 @@ public class SuscripcionView extends javax.swing.JPanel {
         });
         jPanel1.add(jBBuscarPersona, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 30, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel1.setText("Nombres:");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 30, -1, -1));
+
+        jLNombres.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jPanel1.add(jLNombres, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 30, 200, 20));
+
+        jLDiasDisponibles.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jPanel1.add(jLDiasDisponibles, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 30, 170, 20));
 
-        jLabel13.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jLabel13.setText("Días Disponibles:");
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, -1, -1));
 
@@ -156,6 +162,7 @@ public class SuscripcionView extends javax.swing.JPanel {
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, 89, -1));
 
         jLNoRecibo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLNoRecibo.setPreferredSize(new java.awt.Dimension(100, 20));
         jPanel2.add(jLNoRecibo, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 30, 200, 20));
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N

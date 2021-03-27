@@ -22,8 +22,8 @@ public class CantonView extends javax.swing.JPanel {
     private Canton canton;
     public CantonView() {
         initComponents();
-        jBOk.setEnabled(false);
         canBuss = new CantonBuss();
+        jBActualizar.setEnabled(false);
         loadCantones();
     }
 
@@ -136,11 +136,9 @@ public class CantonView extends javax.swing.JPanel {
         jLID = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
-        jBEditar = new javax.swing.JButton();
-        jBOk = new javax.swing.JButton();
+        jBActualizar = new javax.swing.JButton();
         jBEliminar = new javax.swing.JButton();
         jBVaciarFormulario = new javax.swing.JButton();
-        JBListar = new javax.swing.JButton();
 
         setLayout(new java.awt.CardLayout());
 
@@ -172,6 +170,11 @@ public class CantonView extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
+        jTListaCantones.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTListaCantonesMouseClicked(evt);
+            }
+        });
         jScrollPane3.setViewportView(jTListaCantones);
         if (jTListaCantones.getColumnModel().getColumnCount() > 0) {
             jTListaCantones.getColumnModel().getColumn(0).setPreferredWidth(10);
@@ -198,7 +201,7 @@ public class CantonView extends javax.swing.JPanel {
         jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -208,7 +211,7 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFNombre, gridBagConstraints);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -218,7 +221,7 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel2.setText("Cantón:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -228,7 +231,7 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel2, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLabel3.setText("Descripción:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -239,6 +242,7 @@ public class CantonView extends javax.swing.JPanel {
         jPanel3.add(jLabel3, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane2.setViewportView(jTADescripcion);
@@ -254,7 +258,7 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jLID.setPreferredSize(new java.awt.Dimension(400, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -265,9 +269,9 @@ public class CantonView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLID, gridBagConstraints);
 
-        jPanel4.setLayout(new java.awt.GridLayout(2, 3));
+        jPanel4.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -276,25 +280,16 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPanel4.add(jBGuardar);
 
-        jBEditar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBEditar.setText("Editar");
-        jBEditar.addActionListener(new java.awt.event.ActionListener() {
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setText("Actualizar");
+        jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBEditarActionPerformed(evt);
+                jBActualizarActionPerformed(evt);
             }
         });
-        jPanel4.add(jBEditar);
+        jPanel4.add(jBActualizar);
 
-        jBOk.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBOk.setText("Ok");
-        jBOk.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBOkActionPerformed(evt);
-            }
-        });
-        jPanel4.add(jBOk);
-
-        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -303,7 +298,7 @@ public class CantonView extends javax.swing.JPanel {
         });
         jPanel4.add(jBEliminar);
 
-        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -311,15 +306,6 @@ public class CantonView extends javax.swing.JPanel {
             }
         });
         jPanel4.add(jBVaciarFormulario);
-
-        JBListar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        JBListar.setText("Listar");
-        JBListar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JBListarActionPerformed(evt);
-            }
-        });
-        jPanel4.add(JBListar);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -350,24 +336,12 @@ public class CantonView extends javax.swing.JPanel {
         guardar();
     }//GEN-LAST:event_jBGuardarActionPerformed
 
-    private void JBListarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBListarActionPerformed
-        // TODO add your handling code here:
-        loadCantones();
-    }//GEN-LAST:event_JBListarActionPerformed
-
-    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
-        // TODO add your handling code here:
-        jBGuardar.setEnabled(false);
-        jBOk.setEnabled(true);
-        seleccionarItemTabla();
-    }//GEN-LAST:event_jBEditarActionPerformed
-
-    private void jBOkActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBOkActionPerformed
+    private void jBActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBActualizarActionPerformed
         // TODO add your handling code here:
         actualizar();
         jBGuardar.setEnabled(true);
-        jBOk.setEnabled(false);
-    }//GEN-LAST:event_jBOkActionPerformed
+        jBActualizar.setEnabled(false);
+    }//GEN-LAST:event_jBActualizarActionPerformed
 
     private void jBEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEliminarActionPerformed
         // TODO add your handling code here:
@@ -378,17 +352,29 @@ public class CantonView extends javax.swing.JPanel {
         // TODO add your handling code here:
         vaciarFormulario();
         jBGuardar.setEnabled(true);
-        jBEditar.setEnabled(true);
-        jBOk.setEnabled(false);
+        jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
+
+    private void jTListaCantonesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaCantonesMouseClicked
+        // TODO add your handling code here:
+        int fila = jTListaCantones.getSelectedRow();
+        if(fila == -1){
+            
+        }else{
+            jBActualizar.setEnabled(true);
+            int id = Integer.parseInt((String)jTListaCantones.getValueAt(fila, 0).toString());
+            Canton item = canBuss.getCanton(id);
+            jLID.setText(""+item.getId());
+            jTFNombre.setText(item.getNombre());
+            jTADescripcion.setText(item.getDescripcion());
+        }
+    }//GEN-LAST:event_jTListaCantonesMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton JBListar;
-    private javax.swing.JButton jBEditar;
+    private javax.swing.JButton jBActualizar;
     private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
-    private javax.swing.JButton jBOk;
     private javax.swing.JButton jBVaciarFormulario;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;
