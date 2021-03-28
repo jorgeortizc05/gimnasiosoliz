@@ -20,8 +20,8 @@ public class Suscripcion {
     private Double descuento;
     private Double importeTotal;
     private String observaciones;
-    private int idPersona;
-    private int idTipoSuscripcion;
+    private int personaId;
+    private int tipoSuscripcionId;
 
     public int getId() {
         return id;
@@ -87,25 +87,25 @@ public class Suscripcion {
         this.observaciones = observaciones;
     }
 
-    public int getIdPersona() {
-        return idPersona;
+    public int getPersonaId() {
+        return personaId;
     }
 
-    public void setIdPersona(int idPersona) {
-        this.idPersona = idPersona;
+    public void setPersonaId(int personaId) {
+        this.personaId = personaId;
     }
 
-    public int getIdTipoSuscripcion() {
-        return idTipoSuscripcion;
+    public int getTipoSuscripcionId() {
+        return tipoSuscripcionId;
     }
 
-    public void setIdTipoSuscripcion(int idTipoSuscripcion) {
-        this.idTipoSuscripcion = idTipoSuscripcion;
+    public void setTipoSuscripcionId(int tipoSuscripcionId) {
+        this.tipoSuscripcionId = tipoSuscripcionId;
     }
 
     @Override
     public String toString() {
-        return "Suscripcion{" + "id=" + id + ", numeroRecibo=" + numeroRecibo + ", fechaDesde=" + fechaDesde + ", fechaHasta=" + fechaHasta + ", precio=" + precio + ", descuento=" + descuento + ", importeTotal=" + importeTotal + ", observaciones=" + observaciones + ", idPersona=" + idPersona + ", idTipoSuscripcion=" + idTipoSuscripcion + '}';
+        return "Suscripcion{" + "id=" + id + ", numeroRecibo=" + numeroRecibo + ", fechaDesde=" + fechaDesde + ", fechaHasta=" + fechaHasta + ", precio=" + precio + ", descuento=" + descuento + ", importeTotal=" + importeTotal + ", observaciones=" + observaciones + ", idPersona=" + personaId + ", idTipoSuscripcion=" + tipoSuscripcionId + '}';
     }
     
 }

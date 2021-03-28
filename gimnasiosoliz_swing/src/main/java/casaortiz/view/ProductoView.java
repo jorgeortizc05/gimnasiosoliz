@@ -55,7 +55,7 @@ public class ProductoView extends javax.swing.JPanel {
         producto.setCodigoBarra(JTFCodigoBarra.getText());
         producto.setFoto(dest.getName());
         Categoria categoria = (Categoria) jCBCategoria.getSelectedItem();
-        producto.setIdCategoria(categoria.getId());
+        producto.setCategoriaId(categoria.getId());
         boolean estadoGuardado = prodBuss.guardar(producto);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Producto guardado");
@@ -77,7 +77,7 @@ public class ProductoView extends javax.swing.JPanel {
         producto.setCodigoBarra(JTFCodigoBarra.getText());
         producto.setFoto(dest.getName());
         Categoria categoria = (Categoria) jCBCategoria.getSelectedItem();
-        producto.setIdCategoria(categoria.getId());
+        producto.setCategoriaId(categoria.getId());
         boolean estadoActualizacion = prodBuss.actualizar(producto);
         if(estadoActualizacion){
             JOptionPane.showMessageDialog(this, "Producto actualizado");
@@ -123,7 +123,7 @@ public class ProductoView extends javax.swing.JPanel {
             JTADescripcion.setText(producto.getDescripcion());
             JTFPrecio.setText(String.valueOf(producto.getPrecio()));
             JTFCodigoBarra.setText(producto.getCodigoBarra());
-            Categoria categoria = catBuss.getCategoria(producto.getIdCategoria());
+            Categoria categoria = catBuss.getCategoria(producto.getCategoriaId());
             jCBCategoria.getModel().setSelectedItem(categoria);
             dest = new File(System.getProperty("user.dir") + "/media/producto/" + producto.getFoto());
             loadImageGuardada(producto.getFoto());
@@ -181,7 +181,7 @@ public class ProductoView extends javax.swing.JPanel {
                 rowData[3] = p.getPrecio();
                 rowData[4] = p.getCodigoBarra();
                 rowData[5] = p.getFoto();
-                Categoria categoria = catBuss.getCategoria(p.getIdCategoria());
+                Categoria categoria = catBuss.getCategoria(p.getCategoriaId());
                 rowData[5] = categoria.getNombre();
                 modelo.addRow(rowData);
             }
@@ -720,6 +720,8 @@ public class ProductoView extends javax.swing.JPanel {
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
+        loadProductos();
+        loadCategorias();
         jBGuardar.setEnabled(true);
         jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed

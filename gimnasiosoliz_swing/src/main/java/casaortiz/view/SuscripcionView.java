@@ -41,8 +41,12 @@ public class SuscripcionView extends javax.swing.JPanel {
     }
     
     private void calcularImporteTotal(){
-        double importeTotal = Double.parseDouble(jLPrecio.getText()) - Double.parseDouble(jTFDescuento.getText());
-        jLImporteTotal.setText(importeTotal+"");
+        try {
+            double importeTotal = Double.parseDouble(jLPrecio.getText()) - Double.parseDouble(jTFDescuento.getText());
+            jLImporteTotal.setText(importeTotal+"");
+        } catch (Exception e) {
+        }
+        
     }
     
     public void buscarPersonaPorCedula(){

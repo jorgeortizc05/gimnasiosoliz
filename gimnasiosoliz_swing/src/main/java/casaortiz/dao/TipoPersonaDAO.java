@@ -50,10 +50,12 @@ public class TipoPersonaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from tipo_persona c where c.id = "+id);
             result = st.executeQuery();
-            item = new TipoPersona();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setDescripcion(result.getString("descripcion"));
+            if(result.next()){
+                item = new TipoPersona();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setDescripcion(result.getString("descripcion"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 

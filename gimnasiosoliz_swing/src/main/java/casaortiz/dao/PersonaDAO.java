@@ -28,7 +28,7 @@ public class PersonaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("insert into persona "
                     + "(nombre, apellido, cedula, direccion, email, "
-                    + "fecha_nacimiento, telefono, activo, foto, id_tipo_persona) "
+                    + "fecha_nacimiento, telefono, activo, foto, tipo_persona_id) "
                     + "values (?,?,?,?,?,?,?,?,?,?)");
             st.setString(1, item.getNombre());
             st.setString(2, item.getApellido());
@@ -39,7 +39,7 @@ public class PersonaDAO {
             st.setString(7, item.getTelefono());
             st.setString(8, item.getActivo());
             st.setString(9, item.getFoto());
-            st.setInt(10, item.getIdTipoPersona());
+            st.setInt(10, item.getTipoPersonaId());
             st.execute();
             conector.close(connect);
             return true;
@@ -59,18 +59,20 @@ public class PersonaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from persona p where p.id ="+id);
             result = st.executeQuery();
-            item = new Persona();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setApellido(result.getString("apellido"));
-            item.setCedula(result.getString("cedula"));
-            item.setDireccion(result.getString("direccion"));
-            item.setEmail(result.getString("email"));
-            item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
-            item.setTelefono(result.getString("telefono"));
-            item.setActivo(result.getString("activo"));
-            item.setFoto(result.getString("foto"));
-            item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+            if(result.next()){
+                item = new Persona();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setApellido(result.getString("apellido"));
+                item.setCedula(result.getString("cedula"));
+                item.setDireccion(result.getString("direccion"));
+                item.setEmail(result.getString("email"));
+                item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
+                item.setTelefono(result.getString("telefono"));
+                item.setActivo(result.getString("activo"));
+                item.setFoto(result.getString("foto"));
+                item.setTipoPersonaId(result.getInt("tipo_persona_id"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -89,7 +91,7 @@ public class PersonaDAO {
             PreparedStatement st = connect.prepareStatement("update persona set "
                     + "nombre = ?, apellido = ?, cedula = ?, direccion = ?, "
                     + "email = ?, fecha_nacimiento = ?, telefono = ?, activo = ?, foto = ?, "
-                    + "id_tipo_persona = ? where id = ?");
+                    + "tipo_persona_id = ? where id = ?");
             st.setString(1, item.getNombre());
             st.setString(2, item.getApellido());
             st.setString(3, item.getCedula());
@@ -99,7 +101,7 @@ public class PersonaDAO {
             st.setString(7, item.getTelefono());
             st.setString(8, item.getActivo());
             st.setString(9, item.getFoto());
-            st.setInt(10, item.getIdTipoPersona());
+            st.setInt(10, item.getTipoPersonaId());
             st.setInt(11, item.getId());
             st.execute();
             conector.close(connect);
@@ -150,7 +152,7 @@ public class PersonaDAO {
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
                 item.setFoto(result.getString("foto"));
-                item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+                item.setTipoPersonaId(result.getInt("tipo_persona_id"));
                 items.add(item);
                 
             }
@@ -183,7 +185,7 @@ public class PersonaDAO {
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
                 item.setFoto(result.getString("foto"));
-                item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+                item.setTipoPersonaId(result.getInt("tipo_persona_id"));
                 items.add(item);
                 
             }
@@ -216,7 +218,7 @@ public class PersonaDAO {
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
                 item.setFoto(result.getString("foto"));
-                item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+                item.setTipoPersonaId(result.getInt("tipo_persona_id"));
                 items.add(item);
                 
             }
@@ -237,18 +239,20 @@ public class PersonaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from persona p where p.cedula like '"+cedula+"' order by p.id desc");
             result = st.executeQuery();
-            item = new Persona();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setApellido(result.getString("apellido"));
-            item.setCedula(result.getString("cedula"));
-            item.setDireccion(result.getString("direccion"));
-            item.setEmail(result.getString("email"));
-            item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
-            item.setTelefono(result.getString("telefono"));
-            item.setActivo(result.getString("activo"));
-            item.setFoto(result.getString("foto"));
-            item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+            if(result.next()){
+                item = new Persona();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setApellido(result.getString("apellido"));
+                item.setCedula(result.getString("cedula"));
+                item.setDireccion(result.getString("direccion"));
+                item.setEmail(result.getString("email"));
+                item.setFechaNacimiento(result.getDate("fecha_nacimiento"));
+                item.setTelefono(result.getString("telefono"));
+                item.setActivo(result.getString("activo"));
+                item.setFoto(result.getString("foto"));
+                item.setTipoPersonaId(result.getInt("tipo_persona_id"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -279,7 +283,7 @@ public class PersonaDAO {
                 item.setTelefono(result.getString("telefono"));
                 item.setActivo(result.getString("activo"));
                 item.setFoto(result.getString("foto"));
-                item.setIdTipoPersona(result.getInt("id_tipo_persona"));
+                item.setTipoPersonaId(result.getInt("tipo_persona_id"));
                 items.add(item);
                 
             }

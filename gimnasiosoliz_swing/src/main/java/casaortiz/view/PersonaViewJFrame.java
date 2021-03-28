@@ -114,7 +114,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         persona.setActivo("A");
         persona.setFoto(jTFCedula.getText()+".png");
         TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
-        persona.setIdTipoPersona(item.getId());
+        persona.setTipoPersonaId(item.getId());
         boolean estadoGuardado = perBuss.guardar(persona);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Persona guardado");
@@ -139,7 +139,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
         persona.setActivo("A");
         persona.setFoto(jTFCedula.getText()+".png");
         TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
-        persona.setIdTipoPersona(item.getId());
+        persona.setTipoPersonaId(item.getId());
         boolean estadoGuardado = perBuss.actualizar(persona);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Persona actualizada");
@@ -185,7 +185,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
             jTFEmail.setText(item.getEmail());
             rSDCFechaNacimiento.setDatoFecha(item.getFechaNacimiento());
             jTFTele.setText(item.getTelefono());
-            TipoPersona itemTipoPersona = tpBuss.getTipoPersona(item.getIdTipoPersona());
+            TipoPersona itemTipoPersona = tpBuss.getTipoPersona(item.getTipoPersonaId());
             jCBTipoPersona.getModel().setSelectedItem(itemTipoPersona);
             loadImageGuardada(item.getFoto());
             
@@ -813,6 +813,7 @@ public class PersonaViewJFrame extends javax.swing.JFrame {
 
     private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
         vaciarFormulario();
+        loadPersonas();
         jBGuardar.setVisible(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
 

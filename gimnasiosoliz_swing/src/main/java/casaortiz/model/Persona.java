@@ -22,7 +22,7 @@ public class Persona {
     private String telefono;
     private String activo;
     private String foto;
-    private int idTipoPersona;
+    private int tipoPersonaId;
 
     public int getId() {
         return id;
@@ -96,8 +96,8 @@ public class Persona {
         this.activo = activo;
     }
 
-    public int getIdTipoPersona() {
-        return idTipoPersona;
+    public int getTipoPersonaId() {
+        return tipoPersonaId;
     }
 
     public String getFoto() {
@@ -108,8 +108,8 @@ public class Persona {
         this.foto = foto;
     }
     
-    public void setIdTipoPersona(int idTipoPersona) {
-        this.idTipoPersona = idTipoPersona;
+    public void setTipoPersonaId(int tipoPersonaId) {
+        this.tipoPersonaId = tipoPersonaId;
     }
 
     @Override
@@ -118,7 +118,7 @@ public class Persona {
                 + apellido + ", cedula=" + cedula + ", direccion=" + direccion 
                 + ", email=" + email + ", fechaNacimiento=" + fechaNacimiento 
                 + ", telefono=" + telefono + ", activo=" + activo + ", idTipoPersona=" 
-                + idTipoPersona + '}';
+                + tipoPersonaId + '}';
     }
         
 }

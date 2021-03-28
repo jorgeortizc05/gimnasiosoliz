@@ -322,6 +322,7 @@ public class CategoriaView extends javax.swing.JPanel {
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
+        loadCategorias();
         jBGuardar.setEnabled(true);
         jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed

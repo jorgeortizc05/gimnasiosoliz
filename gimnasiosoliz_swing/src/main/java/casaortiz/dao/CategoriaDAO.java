@@ -47,10 +47,12 @@ public class CategoriaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from categoria c where c.id ="+id);
             result = st.executeQuery();
-            item = new Categoria();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setDescripcion(result.getString("descripcion"));
+            if(result.next()){
+                item = new Categoria();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setDescripcion(result.getString("descripcion"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 

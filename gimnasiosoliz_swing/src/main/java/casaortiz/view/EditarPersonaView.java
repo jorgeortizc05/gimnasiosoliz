@@ -59,7 +59,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         jTFEmail.setText(persona.getEmail());
         rSDCFechaNacimiento.setDatoFecha(persona.getFechaNacimiento());
         jTFTele.setText(persona.getTelefono());
-        TipoPersona itemTipoPersona = tpBuss.getTipoPersona(persona.getIdTipoPersona());
+        TipoPersona itemTipoPersona = tpBuss.getTipoPersona(persona.getTipoPersonaId());
         jCBTipoPersona.getModel().setSelectedItem(itemTipoPersona);
         loadImageGuardada(persona.getFoto());
     }
@@ -85,7 +85,7 @@ public class EditarPersonaView extends javax.swing.JFrame {
         persona.setActivo("A");
         persona.setFoto(jTFCedula.getText()+".png");
         TipoPersona item = (TipoPersona) jCBTipoPersona.getSelectedItem();
-        persona.setIdTipoPersona(item.getId());
+        persona.setTipoPersonaId(item.getId());
         boolean estadoGuardado = perBuss.actualizar(persona);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Persona actualizada");

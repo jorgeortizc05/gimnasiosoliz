@@ -58,7 +58,7 @@ public class TipoSuscripcionBuss {
     public List<TipoSuscripcion> getTipoSuscripciones(){
         List<TipoSuscripcion> items = null;
         try {
-            items = tsDAO.getCantones();
+            items = tsDAO.geTipoSuscripciones();
             return items;
         } catch (Exception e) {
             return items;

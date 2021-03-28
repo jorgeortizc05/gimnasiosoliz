@@ -44,7 +44,7 @@ public class EmpresaView extends javax.swing.JPanel {
         empresa.setDireccionSucursal(JTADireccSucur.getText());
         //recupero id del canton
         Canton item = (Canton) jCBCanton.getSelectedItem();
-        empresa.setIdCanton(item.getId());
+        empresa.setCantonID(item.getId());
         boolean estadoGuardado = empBuss.guardar(empresa);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Empresa guardado");
@@ -66,7 +66,7 @@ public class EmpresaView extends javax.swing.JPanel {
         //recupero id del canton
         Canton item = (Canton) jCBCanton.getSelectedItem();
         System.out.println(empresa);
-        empresa.setIdCanton(item.getId());
+        empresa.setCantonID(item.getId());
         boolean estadoActualizacion = empBuss.actualizar(empresa);
         if(estadoActualizacion){
             JOptionPane.showMessageDialog(this, "Empresa actualizado");
@@ -112,7 +112,7 @@ public class EmpresaView extends javax.swing.JPanel {
             JTADireccMatriz.setText(item.getDireccionMatriz());
             JTADireccSucur.setText(item.getDireccionSucursal());
             //Cargo mi canton al combobox
-            Canton itemCanton = canBuss.getCanton(item.getIdCanton());
+            Canton itemCanton = canBuss.getCanton(item.getCantonID());
             System.out.println(itemCanton);
             jCBCanton.getModel().setSelectedItem(itemCanton);
         }
@@ -485,6 +485,8 @@ public class EmpresaView extends javax.swing.JPanel {
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
+        loadEmpresas();
+        loadCantones();
         jBGuardar.setEnabled(true);
         jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed

@@ -328,6 +328,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
+        jTListaPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTListaPersonasMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTListaPersonas);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -518,12 +523,12 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
     private void jTFBusNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusNombreKeyReleased
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText()));
+        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText().toUpperCase()));
     }//GEN-LAST:event_jTFBusNombreKeyReleased
 
     private void jTFBusApellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusApellKeyReleased
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText()));
+        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText().toUpperCase()));
     }//GEN-LAST:event_jTFBusApellKeyReleased
 
     private void jTFBusCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusCedulaKeyReleased
@@ -564,6 +569,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         generarTarjetaGimnasio(persona);
         
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jTListaPersonasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaPersonasMouseClicked
+        // TODO add your handling code here:
+        seleccionarItemTabla();
+    }//GEN-LAST:event_jTListaPersonasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

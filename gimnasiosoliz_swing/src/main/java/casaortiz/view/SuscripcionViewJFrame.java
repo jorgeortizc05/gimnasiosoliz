@@ -74,9 +74,9 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         suscripcion.setDescuento(Double.parseDouble(jTFDescuento.getText()));
         suscripcion.setImporteTotal(Double.parseDouble(jLImporteTotal.getText()));
         suscripcion.setObservaciones(jTAObservaciones.getText());
-        suscripcion.setIdPersona(persona.getId());
+        suscripcion.setPersonaId(persona.getId());
         tipoSuscripcion = (TipoSuscripcion) jCBTipoSuscripcion.getSelectedItem();
-        suscripcion.setIdTipoSuscripcion(tipoSuscripcion.getId());
+        suscripcion.setTipoSuscripcionId(tipoSuscripcion.getId());
         boolean estadoGuardado = susBuss.guardar(suscripcion);
         //Actualizo el numero de recibo
         if(estadoGuardado){
@@ -110,8 +110,12 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
     }
     
     private void calcularImporteTotal(){
-        double importeTotal = Double.parseDouble(jLPrecio.getText()) - Double.parseDouble(jTFDescuento.getText());
-        jLImporteTotal.setText(importeTotal+"");
+        try {
+            double importeTotal = Double.parseDouble(jLPrecio.getText()) - Double.parseDouble(jTFDescuento.getText());
+            jLImporteTotal.setText(importeTotal+"");
+        } catch (Exception e) {
+        }
+        
     }
     
     public void buscarPersonaPorCedula(String cedula){
@@ -126,19 +130,23 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
     
     
     public void loadSuscripcionesPorPersona(){
-        vaciarTabla();
-        DefaultTableModel modelo = (DefaultTableModel) jTHistorialSuscripcion.getModel();
-        List<Suscripcion> items = susBuss.getHistorialSuscripcionesPersona(persona.getId());
-        Object rowData[] = new Object[4];
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        for(Suscripcion s: items){
-            rowData[0] = s.getId();
-            rowData[1] = sdf.format(s.getFechaDesde());
-            rowData[2] = sdf.format(s.getFechaHasta());
-            rowData[3] = s.getImporteTotal();
-            modelo.addRow(rowData);
+        
+        try {
+           vaciarTabla();
+            DefaultTableModel modelo = (DefaultTableModel) jTHistorialSuscripcion.getModel();
+            List<Suscripcion> items = susBuss.getHistorialSuscripcionesPersona(persona.getId());
+            Object rowData[] = new Object[4];
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+            for(Suscripcion s: items){
+                rowData[0] = s.getId();
+                rowData[1] = sdf.format(s.getFechaDesde());
+                rowData[2] = sdf.format(s.getFechaHasta());
+                rowData[3] = s.getImporteTotal();
+                modelo.addRow(rowData);
+            }
+            jTHistorialSuscripcion.setModel(modelo); 
+        } catch (Exception e) {
         }
-        jTHistorialSuscripcion.setModel(modelo);
     }
     
     public void vaciarTabla(){

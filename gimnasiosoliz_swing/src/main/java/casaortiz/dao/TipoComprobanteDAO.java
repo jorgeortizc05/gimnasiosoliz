@@ -50,10 +50,12 @@ public class TipoComprobanteDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from tipo_comprobante c where c.id = "+id);
             result = st.executeQuery();
-            item = new TipoComprobante();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setDescripcion(result.getString("descripcion"));
+            if(result.next()){
+                item = new TipoComprobante();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setDescripcion(result.getString("descripcion"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 

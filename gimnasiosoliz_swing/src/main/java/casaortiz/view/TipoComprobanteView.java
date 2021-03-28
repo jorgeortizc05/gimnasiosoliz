@@ -340,6 +340,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
 
     private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
         vaciarFormulario();
+        loadTipoComprobantes();
         jBGuardar.setVisible(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
 

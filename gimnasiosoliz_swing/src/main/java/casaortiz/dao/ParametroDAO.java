@@ -34,9 +34,11 @@ public class ParametroDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from parametro c where c.id ="+id);
             result = st.executeQuery();
-            item = new Parametro();
-            item.setId(result.getInt("id"));
-            item.setNumero_recibo(result.getInt("numero_recibo"));
+            if(result.next()){
+                item = new Parametro();
+                item.setId(result.getInt("id"));
+                item.setNumero_recibo(result.getInt("numero_recibo"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 

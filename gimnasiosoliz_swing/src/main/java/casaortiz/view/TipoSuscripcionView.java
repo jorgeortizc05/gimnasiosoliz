@@ -416,6 +416,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
     private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
         vaciarFormulario();
+        loadTipoSuscripciones();
         jBGuardar.setVisible(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
 

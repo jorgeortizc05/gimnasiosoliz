@@ -29,7 +29,7 @@ public class SuscripcionDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("INSERT INTO suscripcion "
                     + "(numero_recibo,fecha_desde,fecha_hasta,precio,descuento,"
-                    + "importe_total,observaciones,id_persona,id_tipo_suscripcion)"
+                    + "importe_total,observaciones,persona_id,tipo_suscripcion_id)"
                     + "VALUES (?,?,?,?,?,?,?,?,?);");
             st.setString(1, item.getNumeroRecibo());
             st.setDate(2, new java.sql.Date(item.getFechaDesde().getTime()));
@@ -38,8 +38,8 @@ public class SuscripcionDAO {
             st.setDouble(5, item.getDescuento());
             st.setDouble(6, item.getImporteTotal());
             st.setString(7, item.getObservaciones());
-            st.setInt(8, item.getIdPersona());
-            st.setInt(9, item.getIdTipoSuscripcion());
+            st.setInt(8, item.getPersonaId());
+            st.setInt(9, item.getTipoSuscripcionId());
             st.execute();
             conector.close(connect);
             return true;
@@ -59,17 +59,19 @@ public class SuscripcionDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from suscripcion c where c.id ="+id);
             result = st.executeQuery();
-            item = new Suscripcion();
-            item.setId(result.getInt("id"));
-            item.setNumeroRecibo(result.getString("numero_recibo"));
-            item.setFechaDesde(result.getDate("fecha_desde"));
-            item.setFechaHasta(result.getDate("fecha_hasta"));
-            item.setPrecio(result.getDouble("precio"));
-            item.setDescuento(result.getDouble("descuento"));
-            item.setImporteTotal(result.getDouble("importe_total"));
-            item.setObservaciones(result.getString("observaciones"));
-            item.setIdPersona(result.getInt("id_persona"));
-            item.setIdTipoSuscripcion(result.getInt("id_tipo_suscripcion"));
+            if(result.next()){
+                item = new Suscripcion();
+                item.setId(result.getInt("id"));
+                item.setNumeroRecibo(result.getString("numero_recibo"));
+                item.setFechaDesde(result.getDate("fecha_desde"));
+                item.setFechaHasta(result.getDate("fecha_hasta"));
+                item.setPrecio(result.getDouble("precio"));
+                item.setDescuento(result.getDouble("descuento"));
+                item.setImporteTotal(result.getDouble("importe_total"));
+                item.setObservaciones(result.getString("observaciones"));
+                item.setPersonaId(result.getInt("persona_id"));
+                item.setTipoSuscripcionId(result.getInt("tipo_suscripcion_id"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -94,8 +96,8 @@ public class SuscripcionDAO {
                     "       descuento = ?,\n" +
                     "       importe_total = ?,\n" +
                     "       observaciones = ?,\n" +
-                    "       id_persona = ?,\n" +
-                    "       id_tipo_suscripcion = ?\n" +
+                    "       persona_id = ?,\n" +
+                    "       tipo_suscripcion_id = ?\n" +
                     " WHERE id = 'id'");
             st.setString(1, item.getNumeroRecibo());
             st.setDate(2, new java.sql.Date(item.getFechaDesde().getTime()));
@@ -104,8 +106,8 @@ public class SuscripcionDAO {
             st.setDouble(5, item.getDescuento());
             st.setDouble(6, item.getImporteTotal());
             st.setString(7, item.getObservaciones());
-            st.setInt(8, item.getIdPersona());
-            st.setInt(9, item.getIdTipoSuscripcion());
+            st.setInt(8, item.getPersonaId());
+            st.setInt(9, item.getTipoSuscripcionId());
             st.setInt(10, item.getId());
             st.execute();
             conector.close(connect);
@@ -154,8 +156,8 @@ public class SuscripcionDAO {
                 item.setDescuento(result.getDouble("descuento"));
                 item.setImporteTotal(result.getDouble("importe_total"));
                 item.setObservaciones(result.getString("observaciones"));
-                item.setIdPersona(result.getInt("id_persona"));
-                item.setIdTipoSuscripcion(result.getInt("id_tipo_suscripcion"));
+                item.setPersonaId(result.getInt("persona_id"));
+                item.setTipoSuscripcionId(result.getInt("tipo_suscripcion_id"));
                 items.add(item);
             }
             connect.close();
@@ -172,7 +174,7 @@ public class SuscripcionDAO {
         connect = conector.getConexion();
         List<Suscripcion> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from suscripcion s where s.id_persona = "+idPersona+" order by s.fecha_hasta desc");
+            PreparedStatement st = connect.prepareStatement("select * from suscripcion s where s.persona_id = "+idPersona+" order by s.fecha_hasta desc");
             result = st.executeQuery();
             items = new ArrayList<Suscripcion>();
             while(result.next()){
@@ -185,8 +187,8 @@ public class SuscripcionDAO {
                 item.setDescuento(result.getDouble("descuento"));
                 item.setImporteTotal(result.getDouble("importe_total"));
                 item.setObservaciones(result.getString("observaciones"));
-                item.setIdPersona(result.getInt("id_persona"));
-                item.setIdTipoSuscripcion(result.getInt("id_tipo_suscripcion"));
+                item.setPersonaId(result.getInt("persona_id"));
+                item.setTipoSuscripcionId(result.getInt("tipo_suscripcion_id"));
                 items.add(item);
             }
             connect.close();
@@ -205,10 +207,11 @@ public class SuscripcionDAO {
         try{
             PreparedStatement st = connect.prepareStatement("select max(s.fecha_hasta) as fecha_maxima\n" +
                             "from suscripcion s\n" +
-                            "where s.id_persona = "+idPersona);
+                            "where s.persona_id = "+idPersona);
             result = st.executeQuery();
-            
-            fechaMaxima = result.getDate("fecha_maxima");
+            if(result.next()){
+                fechaMaxima = result.getDate("fecha_maxima");
+            }
             connect.close();
             return fechaMaxima;
         }catch(SQLException ex){

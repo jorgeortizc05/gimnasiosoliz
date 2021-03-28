@@ -50,12 +50,14 @@ public class TipoSuscripcionDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from tipo_suscripcion ts where ts.id ="+id);
             result = st.executeQuery();
-            item = new TipoSuscripcion();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setNumeroDias(result.getInt("numero_dias"));
-            item.setPrecio(result.getDouble("precio"));
-            item.setDescripcion(result.getString("descripcion"));
+            if(result.next()){
+                item = new TipoSuscripcion();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setNumeroDias(result.getInt("numero_dias"));
+                item.setPrecio(result.getDouble("precio"));
+                item.setDescripcion(result.getString("descripcion"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -105,7 +107,7 @@ public class TipoSuscripcionDAO {
         }
     }
     
-    public List<TipoSuscripcion> getCantones(){
+    public List<TipoSuscripcion> geTipoSuscripciones(){
         Connection connect = null;
         ResultSet result = null;
         connect = conector.getConexion();

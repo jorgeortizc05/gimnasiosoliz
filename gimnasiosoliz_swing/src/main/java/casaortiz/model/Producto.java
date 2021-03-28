@@ -17,7 +17,7 @@ public class Producto {
     private Double precio;
     private String codigoBarra;
     private String foto;
-    private int idCategoria;
+    private int categoriaId;
 
     public int getId() {
         return id;
@@ -67,12 +67,12 @@ public class Producto {
         this.foto = foto;
     }
 
-    public int getIdCategoria() {
-        return idCategoria;
+    public int getCategoriaId() {
+        return categoriaId;
     }
 
-    public void setIdCategoria(int idCategoria) {
-        this.idCategoria = idCategoria;
+    public void setCategoriaId(int categoriaId) {
+        this.categoriaId = categoriaId;
     }
     
     

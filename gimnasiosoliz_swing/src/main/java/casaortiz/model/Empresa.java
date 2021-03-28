@@ -17,7 +17,7 @@ public class Empresa {
     private String RUC;
     private String direccionMatriz;
     private String direccionSucursal;
-    private int idCanton;
+    private int cantonID;
 
     public int getId() {
         return id;
@@ -69,17 +69,17 @@ public class Empresa {
 
     
 
-    public int getIdCanton() {
-        return idCanton;
+    public int getCantonID() {
+        return cantonID;
     }
 
-    public void setIdCanton(int idCanton) {
-        this.idCanton = idCanton;
+    public void setCantonID(int cantonID) {
+        this.cantonID = cantonID;
     }
 
     @Override
     public String toString() {
-        return "Empresa{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", RUC=" + RUC + ", direccionMatriz=" + direccionMatriz + ", direccionSucursal=" + direccionSucursal + ", idCanton=" + idCanton + '}';
+        return "Empresa{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", RUC=" + RUC + ", direccionMatriz=" + direccionMatriz + ", direccionSucursal=" + direccionSucursal + ", idCanton=" + cantonID + '}';
     }
 
     

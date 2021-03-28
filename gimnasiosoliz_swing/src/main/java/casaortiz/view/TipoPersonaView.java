@@ -322,6 +322,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
 
     private void JBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBVaciarFormularioActionPerformed
         vaciarFormulario();
+        loadTipoPersonas();
         jBGuardar.setEnabled(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
 

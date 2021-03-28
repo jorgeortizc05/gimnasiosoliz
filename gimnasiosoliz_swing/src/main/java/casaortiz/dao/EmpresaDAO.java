@@ -29,13 +29,13 @@ public class EmpresaDAO {
         Connection connect = null;
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("insert into empresa (nombre, descripcion, RUC, direccion_matriz, direccion_sucursal, id_canton) values (?,?,?,?,?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into empresa (nombre, descripcion, RUC, direccion_matriz, direccion_sucursal, canton_id) values (?,?,?,?,?,?)");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
             st.setString(3, item.getRUC());
             st.setString(4, item.getDireccionMatriz());
             st.setString(5, item.getDireccionSucursal());
-            st.setInt(6, item.getIdCanton());
+            st.setInt(6, item.getCantonID());
             st.execute();
             conector.close(connect);
             return true;
@@ -55,14 +55,16 @@ public class EmpresaDAO {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from empresa e where e.id = "+id);
             result = st.executeQuery();
-            item = new Empresa();
-            item.setId(result.getInt("id"));
-            item.setNombre(result.getString("nombre"));
-            item.setDescripcion(result.getString("descripcion"));
-            item.setRUC(result.getString("RUC"));
-            item.setDireccionMatriz(result.getString("direccion_matriz"));
-            item.setDireccionSucursal(result.getString("direccion_sucursal"));
-            item.setIdCanton(result.getInt("id_canton"));
+            if(result.next()){
+                item = new Empresa();
+                item.setId(result.getInt("id"));
+                item.setNombre(result.getString("nombre"));
+                item.setDescripcion(result.getString("descripcion"));
+                item.setRUC(result.getString("RUC"));
+                item.setDireccionMatriz(result.getString("direccion_matriz"));
+                item.setDireccionSucursal(result.getString("direccion_sucursal"));
+                item.setCantonID(result.getInt("canton_id"));
+            }
             conector.close(connect);
             return item;
         } catch (SQLException ex) { 
@@ -78,13 +80,13 @@ public class EmpresaDAO {
         connect = conector.getConexion();
         try {
             connect = conector.getConexion();
-            PreparedStatement st = connect.prepareStatement("update empresa set nombre = ?, descripcion = ?, RUC = ?, direccion_matriz = ?, direccion_sucursal = ?, id_canton = ? where id = ?");
+            PreparedStatement st = connect.prepareStatement("update empresa set nombre = ?, descripcion = ?, RUC = ?, direccion_matriz = ?, direccion_sucursal = ?, canton_id = ? where id = ?");
             st.setString(1, item.getNombre());
             st.setString(2, item.getDescripcion());
             st.setString(3, item.getRUC());
             st.setString(4, item.getDireccionMatriz());
             st.setString(5, item.getDireccionSucursal());
-            st.setInt(6, item.getIdCanton());
+            st.setInt(6, item.getCantonID());
             st.setInt(7, item.getId());
             st.execute();
             conector.close(connect);
@@ -131,7 +133,7 @@ public class EmpresaDAO {
                 item.setRUC(result.getString("RUC"));
                 item.setDireccionMatriz(result.getString("direccion_matriz"));
                 item.setDireccionSucursal(result.getString("direccion_sucursal"));
-                item.setIdCanton(result.getInt("id_canton"));
+                item.setCantonID(result.getInt("canton_id"));
                 items.add(item);
             }
             connect.close();
