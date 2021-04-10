@@ -68,6 +68,8 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
     public void guardar(){
         suscripcion = new Suscripcion();
         suscripcion.setNumeroRecibo(jLNoRecibo.getText());
+        System.out.println(new Date());
+        suscripcion.setFechaSuscripcion(new Date());
         suscripcion.setFechaDesde(rsDCFechaDesde.getDatoFecha());
         suscripcion.setFechaHasta(rsDCFechaHasta.getDatoFecha());
         suscripcion.setPrecio(Double.parseDouble(jLPrecio.getText()));

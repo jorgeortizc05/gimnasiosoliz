@@ -14,6 +14,7 @@ import java.util.Date;
 public class Suscripcion {
     private int id;
     private String numeroRecibo;
+    private Date fechaSuscripcion;
     private Date fechaDesde;
     private Date fechaHasta;
     private Double precio;
@@ -33,6 +34,14 @@ public class Suscripcion {
 
     public String getNumeroRecibo() {
         return numeroRecibo;
+    }
+
+    public Date getFechaSuscripcion() {
+        return fechaSuscripcion;
+    }
+
+    public void setFechaSuscripcion(Date fechaSuscripcion) {
+        this.fechaSuscripcion = fechaSuscripcion;
     }
 
     public void setNumeroRecibo(String numeroRecibo) {
@@ -105,7 +114,8 @@ public class Suscripcion {
 
     @Override
     public String toString() {
-        return "Suscripcion{" + "id=" + id + ", numeroRecibo=" + numeroRecibo + ", fechaDesde=" + fechaDesde + ", fechaHasta=" + fechaHasta + ", precio=" + precio + ", descuento=" + descuento + ", importeTotal=" + importeTotal + ", observaciones=" + observaciones + ", idPersona=" + personaId + ", idTipoSuscripcion=" + tipoSuscripcionId + '}';
+        return "Suscripcion{" + "id=" + id + ", numeroRecibo=" + numeroRecibo + ", fechaSuscripcion=" + fechaSuscripcion + ", fechaDesde=" + fechaDesde + ", fechaHasta=" + fechaHasta + ", precio=" + precio + ", descuento=" + descuento + ", importeTotal=" + importeTotal + ", observaciones=" + observaciones + ", personaId=" + personaId + ", tipoSuscripcionId=" + tipoSuscripcionId + '}';
     }
+
     
 }

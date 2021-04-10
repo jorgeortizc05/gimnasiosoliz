@@ -28,18 +28,19 @@ public class SuscripcionDAO {
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("INSERT INTO suscripcion "
-                    + "(numero_recibo,fecha_desde,fecha_hasta,precio,descuento,"
+                    + "(numero_recibo, fecha_suscripcion, fecha_desde,fecha_hasta,precio,descuento,"
                     + "importe_total,observaciones,persona_id,tipo_suscripcion_id)"
-                    + "VALUES (?,?,?,?,?,?,?,?,?);");
+                    + "VALUES (?,?,?,?,?,?,?,?,?,?);");
             st.setString(1, item.getNumeroRecibo());
-            st.setDate(2, new java.sql.Date(item.getFechaDesde().getTime()));
-            st.setDate(3, new java.sql.Date(item.getFechaHasta().getTime()));
-            st.setDouble(4, item.getPrecio());
-            st.setDouble(5, item.getDescuento());
-            st.setDouble(6, item.getImporteTotal());
-            st.setString(7, item.getObservaciones());
-            st.setInt(8, item.getPersonaId());
-            st.setInt(9, item.getTipoSuscripcionId());
+            st.setDate(2, new java.sql.Date(item.getFechaSuscripcion().getTime()));
+            st.setDate(3, new java.sql.Date(item.getFechaDesde().getTime()));
+            st.setDate(4, new java.sql.Date(item.getFechaHasta().getTime()));
+            st.setDouble(5, item.getPrecio());
+            st.setDouble(6, item.getDescuento());
+            st.setDouble(7, item.getImporteTotal());
+            st.setString(8, item.getObservaciones());
+            st.setInt(9, item.getPersonaId());
+            st.setInt(10, item.getTipoSuscripcionId());
             st.execute();
             conector.close(connect);
             return true;
@@ -63,6 +64,7 @@ public class SuscripcionDAO {
                 item = new Suscripcion();
                 item.setId(result.getInt("id"));
                 item.setNumeroRecibo(result.getString("numero_recibo"));
+                item.setFechaSuscripcion(result.getDate("fecha_suscripcion"));
                 item.setFechaDesde(result.getDate("fecha_desde"));
                 item.setFechaHasta(result.getDate("fecha_hasta"));
                 item.setPrecio(result.getDouble("precio"));
@@ -90,6 +92,7 @@ public class SuscripcionDAO {
             PreparedStatement st = connect.prepareStatement("UPDATE suscripcion\n" +
                     "   SET id = 'id',\n" +
                     "       numero_recibo = ?,\n" +
+                    "       fecha_suscripcion = ?,\n" +
                     "       fecha_desde = ?,\n" +
                     "       fecha_hasta = ?,\n" +
                     "       precio = ?,\n" +
@@ -100,15 +103,16 @@ public class SuscripcionDAO {
                     "       tipo_suscripcion_id = ?\n" +
                     " WHERE id = 'id'");
             st.setString(1, item.getNumeroRecibo());
-            st.setDate(2, new java.sql.Date(item.getFechaDesde().getTime()));
-            st.setDate(3, new java.sql.Date(item.getFechaHasta().getTime()));
-            st.setDouble(4, item.getPrecio());
-            st.setDouble(5, item.getDescuento());
-            st.setDouble(6, item.getImporteTotal());
-            st.setString(7, item.getObservaciones());
-            st.setInt(8, item.getPersonaId());
-            st.setInt(9, item.getTipoSuscripcionId());
-            st.setInt(10, item.getId());
+            st.setDate(2, new java.sql.Date(item.getFechaSuscripcion().getTime()));
+            st.setDate(3, new java.sql.Date(item.getFechaDesde().getTime()));
+            st.setDate(4, new java.sql.Date(item.getFechaHasta().getTime()));
+            st.setDouble(5, item.getPrecio());
+            st.setDouble(6, item.getDescuento());
+            st.setDouble(7, item.getImporteTotal());
+            st.setString(8, item.getObservaciones());
+            st.setInt(9, item.getPersonaId());
+            st.setInt(10, item.getTipoSuscripcionId());
+            st.setInt(11, item.getId());
             st.execute();
             conector.close(connect);
             return true;            
@@ -150,6 +154,7 @@ public class SuscripcionDAO {
                 Suscripcion item = new Suscripcion();
                 item.setId(result.getInt("id"));
                 item.setNumeroRecibo(result.getString("numero_recibo"));
+                item.setFechaSuscripcion(result.getDate("fecha_suscripcion"));
                 item.setFechaDesde(result.getDate("fecha_desde"));
                 item.setFechaHasta(result.getDate("fecha_hasta"));
                 item.setPrecio(result.getDouble("precio"));
@@ -181,6 +186,7 @@ public class SuscripcionDAO {
                 Suscripcion item = new Suscripcion();
                 item.setId(result.getInt("id"));
                 item.setNumeroRecibo(result.getString("numero_recibo"));
+                item.setFechaSuscripcion(result.getDate("fecha_suscripcion"));
                 item.setFechaDesde(result.getDate("fecha_desde"));
                 item.setFechaHasta(result.getDate("fecha_hasta"));
                 item.setPrecio(result.getDouble("precio"));
