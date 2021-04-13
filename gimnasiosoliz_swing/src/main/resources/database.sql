@@ -132,13 +132,13 @@
 	-------Persona---------
 	INSERT INTO public.persona
 	(nombre, apellido, cedula, direccion, email, fecha_nacimiento, telefono, activo, foto, tipo_persona_id)
-	VALUES('JORGE', 'ORTIZ', '0105182703', 'Paute', 'jorgeortizc05@gmail.com', '05/14/1992', '0983457699', 'A', '0105182703.png', 1);
+	VALUES('JORGE', 'ORTIZ', '0105182703', 'Paute', 'jorgeortizc05@gmail.com', TO_DATE('14/05/1992', 'DD/MM/YYYY'), '0983457699', 'A', '0105182703.png', 1);
 	INSERT INTO public.persona
 	(nombre, apellido, cedula, direccion, email, fecha_nacimiento, telefono, activo, foto, tipo_persona_id)
-	VALUES('ANDREA', 'TAQUEZ', '2101047237', 'Paute', 'andreamery05@gmail.com', '01/21/1995', '0996186835', 'A', '2101047237.png', 1);
+	VALUES('ANDREA', 'TAQUEZ', '2101047237', 'Paute', 'andreamery05@gmail.com', TO_DATE('21/01/1995', 'DD/MM/YYYY'), '0996186835', 'A', '2101047237.png', 1);
 	INSERT INTO public.persona
 	(nombre, apellido, cedula, direccion, email, fecha_nacimiento, telefono, activo, foto, tipo_persona_id)
-	VALUES('DIANA', 'PERALTA', '0106148729', 'Paute', 'patyperalta06@gmail.com', '08/06/1997', '0996186835', 'A', '0106148729.png', 1);
+	VALUES('DIANA', 'PERALTA', '0106148729', 'Paute', 'patyperalta06@gmail.com', TO_DATE('06/08/1997', 'DD/MM/YYYY'), '0996186835', 'A', '0106148729.png', 1);
 
 
 	------Tipo Comprobante
