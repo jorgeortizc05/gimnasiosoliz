@@ -137,7 +137,10 @@ public class TipoPersonaView extends javax.swing.JPanel {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaTipoPersonas = new javax.swing.JTable();
 
-        setLayout(new java.awt.GridBagLayout());
+        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
+        layout.columnWidths = new int[] {0, 5, 0};
+        layout.rowHeights = new int[] {0};
+        setLayout(layout);
 
         jPDatos.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos Tipo de Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         java.awt.GridBagLayout jPDatosLayout = new java.awt.GridBagLayout();
@@ -145,7 +148,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPDatos.setLayout(jPDatosLayout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -154,7 +157,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel1, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -164,7 +167,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLID, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Comprobante:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -173,7 +176,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -182,7 +185,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel4, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -192,7 +195,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         jPDatos.add(jTFNombre, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
@@ -207,7 +210,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -216,7 +219,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(jBGuardar);
 
-        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -225,7 +228,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(jBActualizar);
 
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -234,7 +237,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(JBEliminar);
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -263,7 +266,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         JPListaTipoPersonas.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista Tipo de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoPersonas.setLayout(new java.awt.CardLayout());
 
-        jTListaTipoPersonas.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTListaTipoPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaTipoPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -297,7 +300,7 @@ public class TipoPersonaView extends javax.swing.JPanel {
         JPListaTipoPersonas.add(jScrollPane2, "card2");
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;

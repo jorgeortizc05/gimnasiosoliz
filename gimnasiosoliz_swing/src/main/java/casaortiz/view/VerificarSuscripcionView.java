@@ -253,7 +253,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel3Layout.rowHeights = new int[] {0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -262,6 +262,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel1, gridBagConstraints);
 
+        jTFBusNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusNombre.setPreferredSize(new java.awt.Dimension(200, 20));
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -275,7 +276,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFBusNombre, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Apellido:");
         jLabel2.setPreferredSize(new java.awt.Dimension(50, 14));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -285,6 +286,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel2, gridBagConstraints);
 
+        jTFBusApell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusApell.setPreferredSize(new java.awt.Dimension(200, 20));
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -298,7 +300,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jTFBusApell, gridBagConstraints);
 
-        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -312,6 +314,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jBLimpiar, gridBagConstraints);
 
+        jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -346,7 +349,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Cédula:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
@@ -355,6 +358,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel4, gridBagConstraints);
 
+        jTFBusCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFBusCedula.setPreferredSize(new java.awt.Dimension(200, 20));
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {

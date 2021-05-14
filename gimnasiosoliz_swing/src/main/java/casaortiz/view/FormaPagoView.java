@@ -151,6 +151,7 @@ public class FormaPagoView extends javax.swing.JPanel {
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista Forma de Pagos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel2.setLayout(new java.awt.CardLayout());
 
+        jTListaFormaPagos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaFormaPagos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

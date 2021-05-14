@@ -7,8 +7,10 @@ package casaortiz.view;
 
 import casaortiz.buss.CategoriaBuss;
 import casaortiz.buss.ProductoBuss;
+import casaortiz.buss.SubCategoriaBuss;
 import casaortiz.model.Categoria;
 import casaortiz.model.Producto;
+import casaortiz.model.SubCategoria;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
@@ -33,7 +35,7 @@ public class ProductoView extends javax.swing.JPanel {
 
     private Producto producto;
     private ProductoBuss prodBuss;
-    private CategoriaBuss catBuss;
+    private SubCategoriaBuss subCategBuss;
     private JFileChooser fc;
     private File file;
     private File dest;
@@ -41,9 +43,9 @@ public class ProductoView extends javax.swing.JPanel {
         initComponents();
         jBActualizar.setEnabled(false);
         prodBuss = new ProductoBuss();
-        catBuss = new CategoriaBuss();
+        subCategBuss = new SubCategoriaBuss();
         loadProductos();
-        loadCategorias();
+        loadSubCategorias();
     }
 
     public void guardar() throws IOException{
@@ -54,8 +56,8 @@ public class ProductoView extends javax.swing.JPanel {
         producto.setPrecio(Double.parseDouble(JTFPrecio.getText()));
         producto.setCodigoBarra(JTFCodigoBarra.getText());
         producto.setFoto(dest.getName());
-        Categoria categoria = (Categoria) jCBCategoria.getSelectedItem();
-        producto.setCategoriaId(categoria.getId());
+        SubCategoria subCategoria = (SubCategoria) jCBSubCategoria.getSelectedItem();
+        producto.setSubCategoriaId(subCategoria.getId());
         boolean estadoGuardado = prodBuss.guardar(producto);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Producto guardado");
@@ -76,8 +78,8 @@ public class ProductoView extends javax.swing.JPanel {
         producto.setPrecio(Double.parseDouble(JTFPrecio.getText()));
         producto.setCodigoBarra(JTFCodigoBarra.getText());
         producto.setFoto(dest.getName());
-        Categoria categoria = (Categoria) jCBCategoria.getSelectedItem();
-        producto.setCategoriaId(categoria.getId());
+        SubCategoria subCategoria = (SubCategoria) jCBSubCategoria.getSelectedItem();
+        producto.setSubCategoriaId(subCategoria.getId());
         boolean estadoActualizacion = prodBuss.actualizar(producto);
         if(estadoActualizacion){
             JOptionPane.showMessageDialog(this, "Producto actualizado");
@@ -123,8 +125,8 @@ public class ProductoView extends javax.swing.JPanel {
             JTADescripcion.setText(producto.getDescripcion());
             JTFPrecio.setText(String.valueOf(producto.getPrecio()));
             JTFCodigoBarra.setText(producto.getCodigoBarra());
-            Categoria categoria = catBuss.getCategoria(producto.getCategoriaId());
-            jCBCategoria.getModel().setSelectedItem(categoria);
+            SubCategoria subCategoria = subCategBuss.getSubCategoria(producto.getSubCategoriaId());
+            jCBSubCategoria.getModel().setSelectedItem(subCategoria);
             dest = new File(System.getProperty("user.dir") + "/media/producto/" + producto.getFoto());
             loadImageGuardada(producto.getFoto());
         }
@@ -181,17 +183,17 @@ public class ProductoView extends javax.swing.JPanel {
                 rowData[3] = p.getPrecio();
                 rowData[4] = p.getCodigoBarra();
                 rowData[5] = p.getFoto();
-                Categoria categoria = catBuss.getCategoria(p.getCategoriaId());
-                rowData[5] = categoria.getNombre();
+                SubCategoria subCategoria = subCategBuss.getSubCategoria(p.getSubCategoriaId());
+                rowData[5] = subCategoria.getNombre();
                 modelo.addRow(rowData);
             }
             jTProductos.setModel(modelo);
     }
     
-    public void loadCategorias(){
-        List<Categoria> items = catBuss.getCategorias();
-        for(Categoria tp: items){
-           jCBCategoria.addItem(tp);
+    public void loadSubCategorias(){
+        List<SubCategoria> items = subCategBuss.getSubCategorias();
+        for(SubCategoria tp: items){
+           jCBSubCategoria.addItem(tp);
         }
     }
     
@@ -283,8 +285,8 @@ public class ProductoView extends javax.swing.JPanel {
     }
     
     public void newProducto(){
-        jCBCategoria.removeAllItems();
-        loadCategorias();
+        jCBSubCategoria.removeAllItems();
+        loadSubCategorias();
     }
     
     @SuppressWarnings("unchecked")
@@ -318,7 +320,7 @@ public class ProductoView extends javax.swing.JPanel {
         jLID = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         JTADescripcion = new javax.swing.JTextArea();
-        jCBCategoria = new javax.swing.JComboBox<Categoria>();
+        jCBSubCategoria = new javax.swing.JComboBox<SubCategoria>();
         jLabel8 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
@@ -436,6 +438,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jBLimpiar, gridBagConstraints);
 
+        jTProductos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTProductos.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -485,7 +488,7 @@ public class ProductoView extends javax.swing.JPanel {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Datos de Productos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel3.setLayout(new java.awt.GridBagLayout());
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -495,7 +498,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -505,7 +508,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel2, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Descripción:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -515,7 +518,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Precio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -525,7 +528,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel4, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Código de Barras:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -564,7 +567,7 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(JTFCodigoBarra, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("$");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -608,13 +611,14 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane3, gridBagConstraints);
 
+        jCBSubCategoria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        jPanel3.add(jCBCategoria, gridBagConstraints);
+        jPanel3.add(jCBSubCategoria, gridBagConstraints);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Categoría:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -721,7 +725,7 @@ public class ProductoView extends javax.swing.JPanel {
         // TODO add your handling code here:
         vaciarFormulario();
         loadProductos();
-        loadCategorias();
+        loadSubCategorias();
         jBGuardar.setEnabled(true);
         jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
@@ -767,7 +771,7 @@ public class ProductoView extends javax.swing.JPanel {
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBLimpiar;
     private javax.swing.JButton jBVaciarFormulario;
-    private javax.swing.JComboBox<Categoria> jCBCategoria;
+    private javax.swing.JComboBox<SubCategoria> jCBSubCategoria;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLID;
     private javax.swing.JLabel jLabel1;

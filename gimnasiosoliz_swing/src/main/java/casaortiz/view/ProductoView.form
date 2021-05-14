@@ -177,6 +177,9 @@
                   <SubComponents>
                     <Component class="javax.swing.JTable" name="jTProductos">
                       <Properties>
+                        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                          <Font name="Arial" size="12" style="0"/>
+                        </Property>
                         <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                           <Table columnCount="6" rowCount="0">
                             <Column editable="true" title="ID" type="java.lang.Integer"/>
@@ -1017,7 +1020,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel1">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="ID:"/>
                   </Properties>
@@ -1030,7 +1033,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Nombre:"/>
                   </Properties>
@@ -1043,7 +1046,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Descripci&#xf3;n:"/>
                   </Properties>
@@ -1056,7 +1059,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Precio:"/>
                   </Properties>
@@ -1069,7 +1072,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel5">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="C&#xf3;digo de Barras:"/>
                   </Properties>
@@ -1122,7 +1125,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel6">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="$"/>
                   </Properties>
@@ -1183,15 +1186,18 @@
                     </Component>
                   </SubComponents>
                 </Container>
-                <Component class="javax.swing.JComboBox" name="jCBCategoria">
+                <Component class="javax.swing.JComboBox" name="jCBSubCategoria">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Arial" size="12" style="1"/>
+                    </Property>
                     <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                       <StringArray count="0"/>
                     </Property>
                   </Properties>
                   <AuxValues>
-                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;Categoria&gt;()"/>
-                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;Categoria&gt;"/>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JComboBox&lt;SubCategoria&gt;()"/>
+                    <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;SubCategoria&gt;"/>
                   </AuxValues>
                   <Constraints>
                     <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
@@ -1202,7 +1208,7 @@
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Arial" size="11" style="1"/>
+                      <Font name="Arial" size="12" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Categor&#xed;a:"/>
                   </Properties>

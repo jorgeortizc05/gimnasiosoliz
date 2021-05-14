@@ -97,7 +97,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JTPContenedor.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
 
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
-        jMenuBar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jMenuBar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 28));
 
         jMenu4.setText("Control de Acceso");
@@ -172,6 +172,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(JMIProductos);
 
+        jMICatalogo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICatalogo.setText("Catalogo");
         jMICatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -180,6 +181,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(jMICatalogo);
 
+        jMenuItem1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMenuItem1.setText("Categoría");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -193,6 +195,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMCaja.setText("Caja");
         jMCaja.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
 
+        jMIFormaPago.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMIFormaPago.setText("Forma de Pago");
         jMIFormaPago.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,6 +204,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMCaja.add(jMIFormaPago);
 
+        jMITipoComprobante.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMITipoComprobante.setText("Tipo de Comprobantes");
         jMITipoComprobante.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,6 +218,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu3.setText("Suscripción");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
 
+        jMITipoSuscripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMITipoSuscripcion.setText("Tipo de Suscripción");
         jMITipoSuscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

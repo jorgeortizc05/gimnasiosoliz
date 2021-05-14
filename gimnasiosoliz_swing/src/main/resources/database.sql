@@ -5,6 +5,7 @@
 	drop table if exists tipo_suscripcion cascade;
 	drop table if exists suscripcion cascade;
 	drop table if exists categoria cascade;
+        drop table if exists subcategoria cascade;
 	drop table if exists canton cascade;
 	drop table if exists forma_pago cascade;
 	drop table if exists producto cascade;
@@ -82,6 +83,15 @@
 		primary key (id)
 	);
 
+	create table subcategoria (
+		id serial not null,
+		nombre varchar(50),
+		descripcion varchar(300),
+		categoria_id int not null,
+		primary key (id),
+		        foreign key (categoria_id) references categoria (id)
+	);
+
 	create table canton (
 		id serial not null,
 		nombre varchar(50),
@@ -103,9 +113,9 @@
 		precio numeric(1000,2),
 		codigo_barra varchar(30),
 		foto varchar(300),
-		categoria_id int not null,
+		subcategoria_id int not null,
 		primary key(id),
-		foreign key (categoria_id) references categoria (id)
+		foreign key (subcategoria_id) references subcategoria (id)
 	);
 
 	create table empresa(
@@ -144,10 +154,10 @@
 	------Tipo Comprobante
 	INSERT INTO public.tipo_comprobante(nombre, descripcion)VALUES('Factura', 'Se incluye el IVA del 12%');
 	----Tipo Suscripcion---------
-	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci髇 de 1 d韆', 0, 1.5, 'Valido por un d韆');
-	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci髇 de 1 semana', 7, 7, 'Valido por 7 d韆s');
-	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci髇 de 2 semanas', 15, 15, 'Valido por 15 d韆s');
-	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci髇 de 1 mes', 30, 25, 'Valido por un mes');
+	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci贸n de 1 d铆a', 0, 1.5, 'Valido por un d铆a');
+	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci贸n de 1 semana', 7, 7, 'Valido por 7 d铆as');
+	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci贸n de 2 semanas', 15, 15, 'Valido por 15 d铆as');
+	INSERT INTO public.tipo_suscripcion(nombre, numero_dias, precio, descripcion)VALUES('Suscripci贸n de 1 mes', 30, 25, 'Valido por un mes');
 	-------Suscripcion--------
 	/*INSERT INTO public.suscripcion
 	(numero_recibo, fecha_desde, fecha_hasta, precio, descuento, importe_total, observaciones, persona_id, tipo_suscripcion_id)
@@ -156,6 +166,10 @@
 	INSERT INTO public.categoria(nombre, descripcion)VALUES('smartphones', 'solo telefonos');
 	INSERT INTO public.categoria(nombre, descripcion)VALUES('monitores', 'monitor a usar');
 	INSERT INTO public.categoria(nombre, descripcion)VALUES('laptops', 'Portatiles para trabajo');
+
+    INSERT INTO public.subcategoria(nombre, descripcion, categoria_id)VALUES('smartphones', 'solo telefonos', 1);
+	INSERT INTO public.subcategoria(nombre, descripcion, categoria_id)VALUES('monitores', 'monitor a usar', 2);
+	INSERT INTO public.subcategoria(nombre, descripcion, categoria_id)VALUES('laptops', 'Portatiles para trabajo', 3);
 
 	----Canton---------
 	INSERT INTO public.canton(nombre, descripcion)VALUES('Paute', 'Lugar de establecimiento principal');
@@ -168,8 +182,8 @@
 	VALUES('111111111111', 'Gimnasio Soliz', 'Comida rapida y gimnasio', 'Paute', 'Paute', 1);
 
 	-------Producto------
-	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, categoria_id)VALUES('Xiaomi Poco X3', 'Pantalla de 120hz, 5130 mha, carga rapida de 33w', 285, '11111', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3', 1);
-	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto,  categoria_id)VALUES('Huawei y7', 'Camara de 16 mpx, 3 de RAM y 32 de ROM', 190, '11112', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3',1);
-	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, categoria_id)VALUES('LG 21 Pulgadas', 'Resolucion 1440x900 px', 120, '11113', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3',2);
-	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, categoria_id)VALUES('LG 29 pulgadas', 'Resolucion de 2560x1080',260, '11114', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3', 2);
-	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, categoria_id)VALUES('DELL Gaming g5', 'Dispone de nvidia gtx 1050',1550, '11115', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3', 3);
+	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, subcategoria_id)VALUES('Xiaomi Poco X3', 'Pantalla de 120hz, 5130 mha, carga rapida de 33w', 285, '11111', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3', 1);
+	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, subcategoria_id)VALUES('Huawei y7', 'Camara de 16 mpx, 3 de RAM y 32 de ROM', 190, '11112', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3',1);
+	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, subcategoria_id)VALUES('LG 21 Pulgadas', 'Resolucion 1440x900 px', 120, '11113', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3',2);
+	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, subcategoria_id)VALUES('LG 29 pulgadas', 'Resolucion de 2560x1080',260, '11114', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3', 2);
+	INSERT INTO public.producto(nombre, descripcion, precio, codigo_barra, foto, subcategoria_id)VALUES('DELL Gaming g5', 'Dispone de nvidia gtx 1050',1550, '11115', 'ce63dfea-586e-4e32-a089-2b7ee1cd43b3', 3);

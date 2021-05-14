@@ -202,6 +202,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jScrollPane5.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Empresas"));
         jScrollPane5.setPreferredSize(new java.awt.Dimension(600, 0));
 
+        jTListaEmpresas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaEmpresas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
@@ -248,7 +249,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jPanel3Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel3.setLayout(jPanel3Layout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -258,7 +259,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel1, gridBagConstraints);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Empresa:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -268,7 +269,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel2, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -278,7 +279,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel3, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -288,7 +289,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLID, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFNombre.setPreferredSize(new java.awt.Dimension(280, 30));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -312,7 +313,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Cantón");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -336,7 +337,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jCBCanton, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("RUC:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -346,7 +347,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jLabel6, gridBagConstraints);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Dirección Matriz:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -370,7 +371,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane3, gridBagConstraints);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Dirección Sucursal:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -394,7 +395,7 @@ public class EmpresaView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane4, gridBagConstraints);
 
-        jTFRUC.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFRUC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;
@@ -406,7 +407,7 @@ public class EmpresaView extends javax.swing.JPanel {
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -415,7 +416,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPanel4.add(jBGuardar);
 
-        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -424,7 +425,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPanel4.add(jBActualizar);
 
-        jBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -433,7 +434,7 @@ public class EmpresaView extends javax.swing.JPanel {
         });
         jPanel4.add(jBEliminar);
 
-        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

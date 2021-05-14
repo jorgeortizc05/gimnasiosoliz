@@ -17,7 +17,7 @@ public class Producto {
     private Double precio;
     private String codigoBarra;
     private String foto;
-    private int categoriaId;
+    private int subCategoriaId;
 
     public int getId() {
         return id;
@@ -67,19 +67,18 @@ public class Producto {
         this.foto = foto;
     }
 
-    public int getCategoriaId() {
-        return categoriaId;
+    public int getSubCategoriaId() {
+        return subCategoriaId;
     }
 
-    public void setCategoriaId(int categoriaId) {
-        this.categoriaId = categoriaId;
+    public void setSubCategoriaId(int subCategoriaId) {
+        this.subCategoriaId = subCategoriaId;
     }
-    
-    
 
     @Override
     public String toString() {
-        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", codigo_barras=" + codigoBarra + ", foto=" + foto + '}';
+        return "Producto{" + "id=" + id + ", nombre=" + nombre + ", descripcion=" + descripcion + ", precio=" + precio + ", codigoBarra=" + codigoBarra + ", foto=" + foto + ", subCategoriaId=" + subCategoriaId + '}';
     }
+
     
 }

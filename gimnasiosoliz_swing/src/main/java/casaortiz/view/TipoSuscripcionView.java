@@ -171,7 +171,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPDatos.setLayout(jPDatosLayout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -180,7 +180,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel1, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLID.setPreferredSize(new java.awt.Dimension(0, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -191,7 +191,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLID, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Tipo Suscripción:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -200,7 +200,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -209,7 +209,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel4, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFNombre.setPreferredSize(new java.awt.Dimension(300, 21));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -220,7 +220,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jPDatos.add(jTFNombre, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
@@ -233,7 +233,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jScrollPane1, gridBagConstraints);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("Precio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -242,7 +242,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel5, gridBagConstraints);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Ex: 15.89");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -250,7 +250,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel9, gridBagConstraints);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("$");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -259,7 +259,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel10, gridBagConstraints);
 
-        JTFPrecio.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        JTFPrecio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
         JTFPrecio.setPreferredSize(new java.awt.Dimension(120, 21));
@@ -270,7 +270,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(JTFPrecio, gridBagConstraints);
 
-        jLabel6.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel6.setText("No. de Días:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -279,7 +279,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel6, gridBagConstraints);
 
-        jSNumeroDias.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jSNumeroDias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 4;
@@ -290,7 +290,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -299,7 +299,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         });
         jPanel2.add(jBGuardar);
 
-        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -308,7 +308,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         });
         jPanel2.add(jBActualizar);
 
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -317,7 +317,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         });
         jPanel2.add(JBEliminar);
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -347,7 +347,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         JPListaTipoSuscripciones.setPreferredSize(new java.awt.Dimension(600, 427));
         JPListaTipoSuscripciones.setLayout(new java.awt.CardLayout());
 
-        jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTListaTipoSuscripciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaTipoSuscripciones.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

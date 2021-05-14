@@ -234,7 +234,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jPanel1Layout.rowHeights = new int[] {0};
         jPanel1.setLayout(jPanel1Layout);
 
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("Cedula:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -255,7 +255,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFBusCedula, gridBagConstraints);
 
-        jBBuscarPersona.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBBuscarPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBBuscarPersona.setText("Buscar");
         jBBuscarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -270,7 +270,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jBBuscarPersona, gridBagConstraints);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("Nombres:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
@@ -300,7 +300,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLDiasDisponibles, gridBagConstraints);
 
-        jLabel13.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel13.setText("Días Disponibles:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 10;
@@ -328,7 +328,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jPanel2Layout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0, 5, 0};
         jPanel2.setLayout(jPanel2Layout);
 
-        jLabel5.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel5.setText("No. Recibo:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -338,7 +338,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel5, gridBagConstraints);
 
-        jLNoRecibo.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLNoRecibo.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLNoRecibo.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
@@ -348,7 +348,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLNoRecibo, gridBagConstraints);
 
-        jLabel7.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel7.setText("Tipo Suscripción:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -358,7 +358,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel7, gridBagConstraints);
 
-        jCBTipoSuscripcion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jCBTipoSuscripcion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jCBTipoSuscripcion.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jCBTipoSuscripcionItemStateChanged(evt);
@@ -372,7 +372,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jCBTipoSuscripcion, gridBagConstraints);
 
-        jLabel8.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel8.setText("Fecha Desde:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -382,7 +382,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel8, gridBagConstraints);
 
-        jLabel9.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel9.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel9.setText("Fecha Hasta:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -409,7 +409,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(rsDCFechaHasta, gridBagConstraints);
 
-        jLabel10.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel10.setText("Importe Total:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -419,7 +419,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel10, gridBagConstraints);
 
-        jLabel11.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel11.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel11.setText("Descuento:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -429,7 +429,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel11, gridBagConstraints);
 
-        jTFDescuento.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFDescuento.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFDescuento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTFDescuento.setText("0.0");
         jTFDescuento.setInputVerifier(new VerificarSoloNumeros());
@@ -447,7 +447,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jTFDescuento, gridBagConstraints);
 
-        jLabel12.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel12.setText("Observaciones:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -458,7 +458,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jPanel2.add(jLabel12, gridBagConstraints);
 
         jTAObservaciones.setColumns(20);
-        jTAObservaciones.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTAObservaciones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTAObservaciones.setLineWrap(true);
         jTAObservaciones.setRows(5);
         jScrollPane2.setViewportView(jTAObservaciones);
@@ -471,7 +471,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jScrollPane2, gridBagConstraints);
 
-        jLabel14.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel14.setText("Precio:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -481,7 +481,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel14, gridBagConstraints);
 
-        jLImporteTotal.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLImporteTotal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLImporteTotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLImporteTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jLImporteTotal.setPreferredSize(new java.awt.Dimension(100, 19));
@@ -493,7 +493,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLImporteTotal, gridBagConstraints);
 
-        jLabel16.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel16.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel16.setText("$");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -503,7 +503,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel16, gridBagConstraints);
 
-        jLabel17.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel17.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel17.setText("$");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -513,7 +513,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel17, gridBagConstraints);
 
-        jLabel18.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel18.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel18.setText("$");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -523,7 +523,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel18, gridBagConstraints);
 
-        jLPrecio.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jLPrecio.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLPrecio.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLPrecio.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -546,6 +546,7 @@ public class SuscripcionViewJFrame extends javax.swing.JFrame {
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Historial Suscripciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         jPanel3.setLayout(new java.awt.CardLayout());
 
+        jTHistorialSuscripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTHistorialSuscripcion.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 

@@ -156,7 +156,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         jPDatosLayout.rowHeights = new int[] {0, 5, 0, 5, 0, 5, 0};
         jPDatos.setLayout(jPDatosLayout);
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel1.setText("ID:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -165,7 +165,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel1, gridBagConstraints);
 
-        jLID.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLID.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
@@ -176,7 +176,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLID, gridBagConstraints);
 
-        jLabel3.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Comprobante:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -185,7 +185,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel3, gridBagConstraints);
 
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Descripcion:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -194,7 +194,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPDatos.add(jLabel4, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -204,7 +204,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         jPDatos.add(jTFNombre, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
-        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
         jScrollPane1.setViewportView(jTADescripcion);
@@ -219,7 +219,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
 
         jPanel2.setLayout(new java.awt.GridLayout(1, 4));
 
-        jBGuardar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,7 +228,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         });
         jPanel2.add(jBGuardar);
 
-        jBActualizar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +237,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         });
         jPanel2.add(jBActualizar);
 
-        JBEliminar.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -246,7 +246,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         });
         jPanel2.add(JBEliminar);
 
-        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -277,7 +277,7 @@ public class TipoComprobanteView extends javax.swing.JPanel {
         JPListaTipoComprobantes.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista Tipos de Comprobantes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 14))); // NOI18N
         JPListaTipoComprobantes.setLayout(new java.awt.CardLayout());
 
-        jTListaTipoComprobantes.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jTListaTipoComprobantes.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTListaTipoComprobantes.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
