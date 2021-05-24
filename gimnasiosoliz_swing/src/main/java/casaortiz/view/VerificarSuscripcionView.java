@@ -20,6 +20,7 @@ import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
+import javax.swing.JDialog;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import net.sf.jasperreports.engine.JRException;
@@ -40,8 +41,10 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     
     private SuscripcionBuss susBuss;
     private boolean hayPersona = false;
-    public VerificarSuscripcionView() {
+    VentanaPrincipal vp;
+    public VerificarSuscripcionView(VentanaPrincipal vp) {
         initComponents();
+        this.vp = vp;
         perBuss = new PersonaBuss();
         susBuss = new SuscripcionBuss();
     }
@@ -143,6 +146,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     
     public void generarTarjetaGimnasio(Persona persona){
         String ubicacionJrxml = "src/main/resources/tarjetaGimnasioPersona.jrxml";
+        Conector conector = new Conector();
+        Connection connect = conector.getConexion();
         try {
             // TODO add your handling code here:
             if(persona == null){
@@ -155,14 +160,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 parametros.put("pv_nombres", persona.getNombre()+" "+persona.getApellido());
 
                 reporte = JasperCompileManager.compileReport(ubicacionJrxml);
-                Conector conector = new Conector();
-                Connection connect = conector.getConexion();
                 JasperPrint jp = JasperFillManager.fillReport(reporte, parametros, connect);
                 JasperViewer.viewReport(jp, false);
                 conector.close(connect);
             }
         } catch (JRException ex) {
             Logger.getLogger(VerificarSuscripcionView.class.getName()).log(Level.SEVERE, null, ex);
+            conector.close(connect);
         }
     }
     
@@ -235,6 +239,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel1.add(jTFBusqCedula);
 
+        jBBuscar.setBackground(new java.awt.Color(220, 20, 60));
         jBBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBBuscar.setText("Buscar");
         jBBuscar.addActionListener(new java.awt.event.ActionListener() {
@@ -311,9 +316,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jPanel8.add(jPanel9, java.awt.BorderLayout.CENTER);
 
-        jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jBEditarPersona.setBackground(new java.awt.Color(220, 20, 60));
+        jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jBEditarPersona.setForeground(java.awt.Color.white);
         jBEditarPersona.setText("Editar");
-        jBEditarPersona.setPreferredSize(new java.awt.Dimension(350, 39));
+        jBEditarPersona.setPreferredSize(new java.awt.Dimension(280, 39));
         jBEditarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBEditarPersonaActionPerformed(evt);
@@ -321,9 +328,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel10.add(jBEditarPersona);
 
-        jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jBAgregarSuscripcion.setBackground(new java.awt.Color(220, 20, 60));
+        jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jBAgregarSuscripcion.setForeground(java.awt.Color.white);
         jBAgregarSuscripcion.setText("Agregar Suscripción");
-        jBAgregarSuscripcion.setPreferredSize(new java.awt.Dimension(350, 39));
+        jBAgregarSuscripcion.setPreferredSize(new java.awt.Dimension(280, 39));
         jBAgregarSuscripcion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jBAgregarSuscripcionActionPerformed(evt);
@@ -331,9 +340,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel10.add(jBAgregarSuscripcion);
 
-        jButton3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jButton3.setBackground(new java.awt.Color(220, 20, 60));
+        jButton3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jButton3.setForeground(java.awt.Color.white);
         jButton3.setText("Generar Tarjeta");
-        jButton3.setPreferredSize(new java.awt.Dimension(350, 39));
+        jButton3.setPreferredSize(new java.awt.Dimension(280, 39));
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton3ActionPerformed(evt);
@@ -392,6 +403,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel5.add(jTFBusCedula);
 
+        jBLimpiar.setBackground(new java.awt.Color(220, 20, 60));
         jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -432,9 +444,9 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(0, 203, Short.MAX_VALUE)
+                .addGap(0, 141, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 202, Short.MAX_VALUE))
+                .addGap(0, 141, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -513,9 +525,12 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         if(persona == null){
             JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes cargar el cliente");
         }else{
-            SuscripcionViewJFrame vsv = new SuscripcionViewJFrame(persona);
+            /*SuscripcionViewJFrame vsv = new SuscripcionViewJFrame(persona);
             vsv.setLocationRelativeTo(null);
             vsv.setVisible(true);
+            this.setVisible(false);*/
+            SuscripcionViewJDialog jd = new SuscripcionViewJDialog(vp, true, persona);
+            jd.setVisible(true);
         }
     }//GEN-LAST:event_jBAgregarSuscripcionActionPerformed
 
