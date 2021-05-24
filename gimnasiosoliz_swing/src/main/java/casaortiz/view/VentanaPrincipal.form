@@ -4,6 +4,9 @@
   <NonVisualComponents>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <Properties>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="c0" green="c0" id="lightGray" palette="1" red="c0" type="palette"/>
+        </Property>
         <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
           <Color id="Default Cursor"/>
         </Property>
@@ -19,7 +22,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Control de Acceso"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="11" style="1"/>
+              <Font name="Arial" size="12" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -40,7 +43,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Empresa"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="11" style="1"/>
+              <Font name="Arial" size="12" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -72,7 +75,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Clientes"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="11" style="1"/>
+              <Font name="Arial" size="12" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -104,7 +107,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Inventarios"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="11" style="1"/>
+              <Font name="Arial" size="12" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -147,7 +150,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Caja"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="11" style="1"/>
+              <Font name="Arial" size="12" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -179,7 +182,7 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Suscripci&#xf3;n"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Segoe UI" size="11" style="1"/>
+              <Font name="Arial" size="12" style="1"/>
             </Property>
           </Properties>
           <SubComponents>
