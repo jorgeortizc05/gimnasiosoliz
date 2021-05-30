@@ -2,7 +2,7 @@
 <!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
 <jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tarjetaGimnasioPersona" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="8760a4d0-d106-4e4f-804a-36398242bfc0">
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="gimnasiodb"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
@@ -15,9 +15,10 @@
 	<parameter name="pv_cedula" class="java.lang.String"/>
 	<parameter name="pv_nombres" class="java.lang.String"/>
 	<queryString language="SQL">
-		<![CDATA[SELECT per.cedula,  per.nombre +' '+ per.apellido as nombres
-  FROM persona per
-  where per.cedula =  $P{pv_cedula}]]>
+		<![CDATA[select *
+from persona p
+where p.id = 1
+limit 1]]>
 	</queryString>
 	<background>
 		<band height="137" splitType="Stretch"/>
@@ -38,11 +39,11 @@
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<imageExpression><![CDATA["media/gimnasio/logo1.png"]]></imageExpression>
+				<imageExpression><![CDATA["C:/casaortiz/gimnasiosoliz/gimnasiosoliz_swing/media/gimnasio/logo1.png"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="74" y="129" width="39" height="29" uuid="f67685a3-adea-48a8-8243-6586d571bff6"/>
-				<imageExpression><![CDATA["media/gimnasio/icons8-circuit.png"]]></imageExpression>
+				<imageExpression><![CDATA["C:/casaortiz/gimnasiosoliz/gimnasiosoliz_swing/media/gimnasio/icons8-circuit.png"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement x="74" y="10" width="238" height="20" forecolor="#FFFFFF" backcolor="#030303" uuid="0a8e41de-3afc-4c54-b209-54288bfe0e13">

@@ -147,14 +147,14 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     public void generarTarjetaGimnasio(Persona persona){
         String ubicacionJrxml = "src/main/resources/tarjetaGimnasioPersona.jrxml";
         Conector conector = new Conector();
-        Connection connect = conector.getConexion();
+        Connection connect = null;
         try {
             // TODO add your handling code here:
             if(persona == null){
                 JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes cargar el cliente");
             }else{
                 JasperReport reporte;
-
+                connect = conector.getConexion();
                 Map<String, Object> parametros = new HashMap<String, Object>();
                 parametros.put("pv_cedula", persona.getCedula());
                 parametros.put("pv_nombres", persona.getNombre()+" "+persona.getApellido());
