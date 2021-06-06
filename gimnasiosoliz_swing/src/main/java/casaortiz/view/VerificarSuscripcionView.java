@@ -200,7 +200,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jBBuscar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPEstadoSuscripcion = new javax.swing.JPanel();
-        jPanel7 = new javax.swing.JPanel();
+        jPFoto = new javax.swing.JPanel();
         jLFoto = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
         jPanel9 = new javax.swing.JPanel();
@@ -257,11 +257,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.Y_AXIS));
 
         jPEstadoSuscripcion.setBackground(new java.awt.Color(24, 23, 23));
-        jPEstadoSuscripcion.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Estado de Suscripción", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPEstadoSuscripcion.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Estado de Suscripción", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPEstadoSuscripcion.setLayout(new javax.swing.BoxLayout(jPEstadoSuscripcion, javax.swing.BoxLayout.LINE_AXIS));
 
-        jPanel7.setPreferredSize(new java.awt.Dimension(400, 300));
-        jPanel7.setLayout(new javax.swing.BoxLayout(jPanel7, javax.swing.BoxLayout.LINE_AXIS));
+        jPFoto.setPreferredSize(new java.awt.Dimension(400, 300));
+        jPFoto.setLayout(new javax.swing.BoxLayout(jPFoto, javax.swing.BoxLayout.LINE_AXIS));
 
         jLFoto.setBackground(new java.awt.Color(24, 23, 23));
         jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -270,9 +270,9 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jLFoto.setMaximumSize(new java.awt.Dimension(400, 300));
         jLFoto.setMinimumSize(new java.awt.Dimension(400, 300));
         jLFoto.setPreferredSize(new java.awt.Dimension(400, 300));
-        jPanel7.add(jLFoto);
+        jPFoto.add(jLFoto);
 
-        jPEstadoSuscripcion.add(jPanel7);
+        jPEstadoSuscripcion.add(jPFoto);
 
         jPanel8.setLayout(new java.awt.BorderLayout());
 
@@ -371,7 +371,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel2.add(jPEstadoSuscripcion);
 
         jPListaClientes.setBackground(new java.awt.Color(24, 23, 23));
-        jPListaClientes.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
+        jPListaClientes.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPListaClientes.setForeground(new java.awt.Color(255, 255, 255));
         jPListaClientes.setLayout(new java.awt.BorderLayout());
 
@@ -585,13 +585,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPEstadoSuscripcion;
+    private javax.swing.JPanel jPFoto;
     private javax.swing.JPanel jPListaClientes;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
