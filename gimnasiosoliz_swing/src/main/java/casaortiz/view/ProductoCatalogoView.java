@@ -49,43 +49,26 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
-        java.awt.GridBagConstraints gridBagConstraints;
 
+        jPanel1 = new javax.swing.JPanel();
         jScroll = new javax.swing.JScrollPane();
         jLFoto = new javax.swing.JLabel();
-        jBSiguiente = new javax.swing.JButton();
+        jPanel2 = new javax.swing.JPanel();
         jBAtras = new javax.swing.JButton();
+        jBSiguiente = new javax.swing.JButton();
 
-        java.awt.GridBagLayout layout = new java.awt.GridBagLayout();
-        layout.columnWidths = new int[] {0, 5, 0};
-        layout.rowHeights = new int[] {0, 5, 0};
-        setLayout(layout);
+        setLayout(new java.awt.BorderLayout());
+
+        jPanel1.setLayout(new java.awt.CardLayout());
 
         jScroll.setPreferredSize(new java.awt.Dimension(830, 630));
 
         jLFoto.setPreferredSize(new java.awt.Dimension(800, 640));
         jScroll.setViewportView(jLFoto);
 
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.gridwidth = 3;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(jScroll, gridBagConstraints);
+        jPanel1.add(jScroll, "card2");
 
-        jBSiguiente.setText(">");
-        jBSiguiente.setPreferredSize(new java.awt.Dimension(80, 23));
-        jBSiguiente.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBSiguienteActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.WEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(jBSiguiente, gridBagConstraints);
+        add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jBAtras.setText("<");
         jBAtras.setPreferredSize(new java.awt.Dimension(80, 23));
@@ -94,12 +77,18 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
                 jBAtrasActionPerformed(evt);
             }
         });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.EAST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        add(jBAtras, gridBagConstraints);
+        jPanel2.add(jBAtras);
+
+        jBSiguiente.setText(">");
+        jBSiguiente.setPreferredSize(new java.awt.Dimension(80, 23));
+        jBSiguiente.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSiguienteActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jBSiguiente);
+
+        add(jPanel2, java.awt.BorderLayout.PAGE_END);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBSiguienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSiguienteActionPerformed
@@ -117,6 +106,8 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
     private javax.swing.JButton jBAtras;
     private javax.swing.JButton jBSiguiente;
     private javax.swing.JLabel jLFoto;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScroll;
     // End of variables declaration//GEN-END:variables
 }

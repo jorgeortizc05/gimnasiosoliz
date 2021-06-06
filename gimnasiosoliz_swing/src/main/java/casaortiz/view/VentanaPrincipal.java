@@ -16,6 +16,7 @@ import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JInternalFrame;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -67,8 +68,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         JTPContenedor = new javax.swing.JTabbedPane();
         jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu6 = new javax.swing.JMenu();
         jMenu4 = new javax.swing.JMenu();
         jMIVerificarSuscripcion = new javax.swing.JMenuItem();
         jMenu1 = new javax.swing.JMenu();
@@ -93,15 +96,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         setLocation(new java.awt.Point(0, 0));
         setMinimumSize(new java.awt.Dimension(1280, 760));
+        getContentPane().setLayout(new java.awt.CardLayout());
+
+        jPanel1.setLayout(new java.awt.CardLayout());
 
         JTPContenedor.setBackground(new java.awt.Color(139, 0, 0));
         JTPContenedor.setTabPlacement(javax.swing.JTabbedPane.BOTTOM);
+        jPanel1.add(JTPContenedor, "card2");
+
+        getContentPane().add(jPanel1, "card2");
 
         jMenuBar1.setBackground(new java.awt.Color(194, 60, 61));
         jMenuBar1.setForeground(new java.awt.Color(102, 102, 102));
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 28));
+        jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 60));
+
+        jMenu6.setIcon(new javax.swing.ImageIcon("C:\\casaortiz\\gimnasiosoliz\\gimnasiosoliz_swing\\media\\gimnasio\\logo_mini50.png")); // NOI18N
+        jMenu6.setMaximumSize(new java.awt.Dimension(80, 60));
+        jMenu6.setPreferredSize(new java.awt.Dimension(80, 50));
+        jMenuBar1.add(jMenu6);
 
         jMenu4.setForeground(new java.awt.Color(102, 102, 102));
         jMenu4.setText("Control de Acceso");
@@ -240,17 +254,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar1);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JTPContenedor, javax.swing.GroupLayout.DEFAULT_SIZE, 1280, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JTPContenedor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 732, Short.MAX_VALUE)
-        );
-
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
@@ -353,8 +356,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }
                 
                 VentanaPrincipal v = new VentanaPrincipal();
+                ImageIcon img = new ImageIcon("media/gimnasio/logo_mini.png");
                 v.setSize(1366,768);
-                v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro                
+                v.setIconImage(img.getImage());
+                v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro            
                 v.setVisible(true);
                 
                 
@@ -380,7 +385,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
