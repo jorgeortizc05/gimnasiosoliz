@@ -559,6 +559,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             vsv.setVisible(true);
             this.setVisible(false);*/
             SuscripcionViewJDialog jd = new SuscripcionViewJDialog(vp, true, persona);
+            jd.setLocationRelativeTo(null);
             jd.setVisible(true);
         }
     }//GEN-LAST:event_jBAgregarSuscripcionActionPerformed
