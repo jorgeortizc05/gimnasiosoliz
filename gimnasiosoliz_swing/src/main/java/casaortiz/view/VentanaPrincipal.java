@@ -113,7 +113,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 60));
 
         jMenu6.setIcon(new javax.swing.ImageIcon("C:\\casaortiz\\gimnasiosoliz\\gimnasiosoliz_swing\\media\\gimnasio\\logo_mini50.png")); // NOI18N
-        jMenu6.setMaximumSize(new java.awt.Dimension(80, 60));
+        jMenu6.setMaximumSize(new java.awt.Dimension(80, 160));
         jMenu6.setPreferredSize(new java.awt.Dimension(80, 50));
         jMenuBar1.add(jMenu6);
 
@@ -347,13 +347,13 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                try {
+                /*try {
                         // Set cross-platform Java L&F (also called "Metal")
                     UIManager.setLookAndFeel(new FastLookAndFeel());
                 } 
                 catch (UnsupportedLookAndFeelException e) {
                    // handle exception
-                }
+                }*/
                 
                 VentanaPrincipal v = new VentanaPrincipal();
                 ImageIcon img = new ImageIcon("media/gimnasio/logo_mini.png");
@@ -361,8 +361,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 v.setIconImage(img.getImage());
                 v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro            
                 v.setVisible(true);
-                
-                
             }
         });
     }

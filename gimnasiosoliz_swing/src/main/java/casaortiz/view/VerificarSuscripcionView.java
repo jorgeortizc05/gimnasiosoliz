@@ -130,9 +130,9 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jLDiasRestantes.setForeground(Color.red);
             }else{
                 jLMensajeAdvertencia.setText("BIENVENIDO "+persona.getNombre());
-                jLMensajeAdvertencia.setForeground(Color.WHITE);
+                jLMensajeAdvertencia.setForeground(Color.BLACK);
                 jLDiasRestantes.setText(dias+"");
-                jLDiasRestantes.setForeground(Color.YELLOW );
+                jLDiasRestantes.setForeground(Color.BLACK);
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(jTFBusCedula, persona.getNombre()+" no dispone de suscripciones");
@@ -227,11 +227,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         setLayout(new java.awt.BorderLayout());
 
+        jPanel1.setBackground(java.awt.Color.white);
+        jPanel1.setPreferredSize(new java.awt.Dimension(373, 60));
+        jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
-        jTFBusqCedula.setBackground(new java.awt.Color(102, 102, 102));
         jTFBusqCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusqCedula.setForeground(new java.awt.Color(255, 255, 255));
+        jTFBusqCedula.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Código Barras"));
         jTFBusqCedula.setMinimumSize(new java.awt.Dimension(300, 20));
         jTFBusqCedula.setPreferredSize(new java.awt.Dimension(300, 19));
         jTFBusqCedula.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -254,9 +256,10 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
+        jPanel2.setBackground(java.awt.Color.white);
         jPanel2.setLayout(new javax.swing.BoxLayout(jPanel2, javax.swing.BoxLayout.Y_AXIS));
 
-        jPEstadoSuscripcion.setBackground(new java.awt.Color(24, 23, 23));
+        jPEstadoSuscripcion.setBackground(java.awt.Color.white);
         jPEstadoSuscripcion.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Estado de Suscripción", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPEstadoSuscripcion.setLayout(new javax.swing.BoxLayout(jPEstadoSuscripcion, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -274,13 +277,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jPEstadoSuscripcion.add(jPFoto);
 
+        jPanel8.setBackground(java.awt.Color.white);
         jPanel8.setLayout(new java.awt.BorderLayout());
 
-        jPanel9.setBackground(new java.awt.Color(24, 23, 23));
+        jPanel9.setBackground(java.awt.Color.white);
         jPanel9.setLayout(new java.awt.GridBagLayout());
 
         jLNombres.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLNombres.setForeground(new java.awt.Color(255, 255, 255));
         jLNombres.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLNombres.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Cliente", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 11), new java.awt.Color(255, 255, 255))); // NOI18N
         jLNombres.setPreferredSize(new java.awt.Dimension(700, 70));
@@ -304,7 +307,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel9.add(jLMensajeAdvertencia, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Días Restantes:");
         jLabel3.setPreferredSize(new java.awt.Dimension(350, 29));
@@ -326,7 +328,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jPanel8.add(jPanel9, java.awt.BorderLayout.CENTER);
 
-        jPanel10.setBackground(new java.awt.Color(24, 23, 23));
+        jPanel10.setBackground(java.awt.Color.white);
 
         jBEditarPersona.setBackground(new java.awt.Color(194, 60, 61));
         jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
@@ -370,22 +372,20 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jPanel2.add(jPEstadoSuscripcion);
 
-        jPListaClientes.setBackground(new java.awt.Color(24, 23, 23));
+        jPListaClientes.setBackground(java.awt.Color.white);
         jPListaClientes.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true), "Lista de Clientes", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         jPListaClientes.setForeground(new java.awt.Color(255, 255, 255));
         jPListaClientes.setLayout(new java.awt.BorderLayout());
 
-        jPanel5.setBackground(new java.awt.Color(24, 23, 23));
+        jPanel5.setBackground(java.awt.Color.white);
         jPanel5.setLayout(new javax.swing.BoxLayout(jPanel5, javax.swing.BoxLayout.LINE_AXIS));
 
+        jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Nombre:");
         jPanel5.add(jLabel1);
 
-        jTFBusNombre.setBackground(new java.awt.Color(102, 102, 102));
         jTFBusNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusNombre.setForeground(new java.awt.Color(255, 255, 255));
         jTFBusNombre.setPreferredSize(new java.awt.Dimension(200, 20));
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -394,15 +394,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel5.add(jTFBusNombre);
 
+        jLabel2.setBackground(java.awt.Color.white);
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Apellido:");
         jLabel2.setPreferredSize(new java.awt.Dimension(50, 14));
         jPanel5.add(jLabel2);
 
-        jTFBusApell.setBackground(new java.awt.Color(102, 102, 102));
         jTFBusApell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusApell.setForeground(new java.awt.Color(255, 255, 255));
         jTFBusApell.setPreferredSize(new java.awt.Dimension(200, 20));
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -411,14 +409,12 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel5.add(jTFBusApell);
 
+        jLabel4.setBackground(java.awt.Color.white);
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
         jLabel4.setText("Cédula:");
         jPanel5.add(jLabel4);
 
-        jTFBusCedula.setBackground(new java.awt.Color(102, 102, 102));
         jTFBusCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusCedula.setForeground(new java.awt.Color(255, 255, 255));
         jTFBusCedula.setPreferredSize(new java.awt.Dimension(200, 20));
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -440,7 +436,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jPListaClientes.add(jPanel5, java.awt.BorderLayout.PAGE_START);
 
-        jPanel6.setBackground(new java.awt.Color(24, 23, 23));
+        jPanel6.setBackground(java.awt.Color.white);
 
         jTListaPersonas.setBackground(new java.awt.Color(24, 23, 23));
         jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
