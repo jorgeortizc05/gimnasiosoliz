@@ -170,7 +170,7 @@ public class PersonaDAO {
         connect = conector.getConexion();
         List<Persona> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from persona p where p.nombre like '%"+nombre+"%' order by p.id desc");
+            PreparedStatement st = connect.prepareStatement("select * from persona p where p.nombre || ' '||p.apellido ||' '||p.cedula like '%"+nombre+"%' order by p.id desc");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
             while(result.next()){

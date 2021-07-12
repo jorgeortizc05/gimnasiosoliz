@@ -68,9 +68,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     }
     
     public void vaciarCamposBusqueda(){
-        jTFBusNombre.setText("");
-        jTFBusApell.setText("");
-        jTFBusCedula.setText("");
+        jTFBusqueda.setText("");
     }
     
     public void loadPersonas(){
@@ -135,7 +133,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jLDiasRestantes.setForeground(Color.BLACK);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(jTFBusCedula, persona.getNombre()+" no dispone de suscripciones");
+            JOptionPane.showMessageDialog(jTFBusqueda, persona.getNombre()+" no dispone de suscripciones");
             jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
             jLMensajeAdvertencia.setForeground(Color.red);
             jLDiasRestantes.setText(0+"");
@@ -215,11 +213,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPListaClientes = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTFBusNombre = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jTFBusApell = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jTFBusCedula = new javax.swing.JTextField();
+        jTFBusqueda = new javax.swing.JTextField();
         jBLimpiar = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -228,7 +222,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         setLayout(new java.awt.BorderLayout());
 
         jPanel1.setBackground(java.awt.Color.white);
-        jPanel1.setPreferredSize(new java.awt.Dimension(373, 60));
+        jPanel1.setPreferredSize(new java.awt.Dimension(373, 40));
         jPanel1.setRequestFocusEnabled(false);
         jPanel1.setLayout(new javax.swing.BoxLayout(jPanel1, javax.swing.BoxLayout.LINE_AXIS));
 
@@ -382,46 +376,17 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("Nombre:");
+        jLabel1.setText("Busqueda");
         jPanel5.add(jLabel1);
 
-        jTFBusNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusNombre.setPreferredSize(new java.awt.Dimension(200, 20));
-        jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTFBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFBusqueda.setPreferredSize(new java.awt.Dimension(200, 20));
+        jTFBusqueda.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBusNombreKeyReleased(evt);
+                jTFBusquedaKeyReleased(evt);
             }
         });
-        jPanel5.add(jTFBusNombre);
-
-        jLabel2.setBackground(java.awt.Color.white);
-        jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel2.setText("Apellido:");
-        jLabel2.setPreferredSize(new java.awt.Dimension(50, 14));
-        jPanel5.add(jLabel2);
-
-        jTFBusApell.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusApell.setPreferredSize(new java.awt.Dimension(200, 20));
-        jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBusApellKeyReleased(evt);
-            }
-        });
-        jPanel5.add(jTFBusApell);
-
-        jLabel4.setBackground(java.awt.Color.white);
-        jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel4.setText("Cédula:");
-        jPanel5.add(jLabel4);
-
-        jTFBusCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFBusCedula.setPreferredSize(new java.awt.Dimension(200, 20));
-        jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBusCedulaKeyReleased(evt);
-            }
-        });
-        jPanel5.add(jTFBusCedula);
+        jPanel5.add(jTFBusqueda);
 
         jBLimpiar.setBackground(new java.awt.Color(194, 60, 61));
         jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
@@ -489,17 +454,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFBusqCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusqCedulaKeyPressed
-        // TODO add your handling code here:
-        try {
-            if(evt.getKeyCode() == KeyEvent.VK_ENTER){
-                verificarSuscripcion(jTFBusqCedula.getText());
-                if(!hayPersona){
-                    jTFBusCedula.setText("");
-                }
-            }
-        } catch (Exception e) {
-
-        }
+        
     }//GEN-LAST:event_jTFBusqCedulaKeyPressed
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
@@ -507,20 +462,10 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         seleccionarItemTabla();
     }//GEN-LAST:event_jBBuscarActionPerformed
 
-    private void jTFBusNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusNombreKeyReleased
+    private void jTFBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusquedaKeyReleased
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText().toUpperCase()));
-    }//GEN-LAST:event_jTFBusNombreKeyReleased
-
-    private void jTFBusApellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusApellKeyReleased
-        // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText().toUpperCase()));
-    }//GEN-LAST:event_jTFBusApellKeyReleased
-
-    private void jTFBusCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusCedulaKeyReleased
-        // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorCedula(jTFBusCedula.getText()));
-    }//GEN-LAST:event_jTFBusCedulaKeyReleased
+        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusqueda.getText().toUpperCase()));
+    }//GEN-LAST:event_jTFBusquedaKeyReleased
 
     private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
         // TODO add your handling code here:
@@ -577,9 +522,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JLabel jLMensajeAdvertencia;
     private javax.swing.JLabel jLNombres;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPEstadoSuscripcion;
     private javax.swing.JPanel jPFoto;
     private javax.swing.JPanel jPListaClientes;
@@ -591,10 +534,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextField jTFBusApell;
-    private javax.swing.JTextField jTFBusCedula;
-    private javax.swing.JTextField jTFBusNombre;
     private javax.swing.JTextField jTFBusqCedula;
+    private javax.swing.JTextField jTFBusqueda;
     private javax.swing.JTable jTListaPersonas;
     // End of variables declaration//GEN-END:variables
 }
