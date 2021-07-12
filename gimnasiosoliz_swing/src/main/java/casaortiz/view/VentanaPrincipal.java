@@ -282,11 +282,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMITipoPersonaActionPerformed
 
     private void jMIPersonasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIPersonasActionPerformed
-        // TODO add your handling code here:
-        
-        PersonaViewJFrame perv = new PersonaViewJFrame();
-        perv.setLocationRelativeTo(null);
-        perv.setVisible(true);
+               
+        PersonaViewJDialog jd = new PersonaViewJDialog(this, true);
+        jd.setLocationRelativeTo(null);
+        jd.setVisible(true);
     }//GEN-LAST:event_jMIPersonasActionPerformed
 
     private void jMIVerificarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIVerificarSuscripcionActionPerformed

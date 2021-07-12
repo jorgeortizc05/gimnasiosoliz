@@ -483,9 +483,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         if(persona == null){
             JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes cargar el cliente");
         }else{
-            EditarPersonaView epv = new EditarPersonaView(persona);
-            epv.setLocationRelativeTo(null);
-            epv.setVisible(true);
+            ;
+            
+            EditarPersonaViewJDialog jd = new EditarPersonaViewJDialog(vp, true, persona);
+            jd.setLocationRelativeTo(null);
+            jd.setVisible(true);
 
         }
     }//GEN-LAST:event_jBEditarPersonaActionPerformed
