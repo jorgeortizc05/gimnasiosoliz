@@ -428,6 +428,11 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jTListaPersonasMouseClicked(evt);
             }
         });
+        jTListaPersonas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTListaPersonasKeyReleased(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTListaPersonas);
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
@@ -512,6 +517,13 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         generarTarjetaGimnasio(persona);
 
     }//GEN-LAST:event_jBGenerarTarjetaActionPerformed
+
+    private void jTListaPersonasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTListaPersonasKeyReleased
+        // TODO add your handling code here:
+        if(evt.getKeyCode()==KeyEvent.VK_UP || evt.getKeyCode() == KeyEvent.VK_DOWN){
+            seleccionarItemTabla();
+        }
+    }//GEN-LAST:event_jTListaPersonasKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
