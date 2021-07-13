@@ -9,10 +9,12 @@ import casaortiz.dao.NuevaBaseDatos;
 import casaortiz.dao.ProductoDAO;
 import casaortiz.db.Conector;
 import casaortiz.model.Producto;
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.util.Date;
 import java.util.List;
+import javax.annotation.Resources;
 
 /**
  *
@@ -20,18 +22,8 @@ import java.util.List;
  */
 public class main {
     
-    /**public static void main(String args[]){
-        NuevaBaseDatos ndb = new NuevaBaseDatos();
-        ndb.crearTablaProducto();
-        ndb.crearTablaFormaPago();
-        ndb.crearTablaCanton();
-        ndb.crearTablaEmpresa();
-        ndb.crearTablaTipoComprobante();
-        ndb.crearTablaTipoPersona();
-        ndb.crearTablaPersona();
-        ndb.crearTablaTipoSuscripción();
-        ndb.crearTablaSuscripcion();
-        ndb.crearCategoria();
-        System.out.println(new Date());
-    }*/
+    public static void main(String args[]){
+        //String recursos = getClass().getResource("persona/0105182703.png")
+                
+    }
 }

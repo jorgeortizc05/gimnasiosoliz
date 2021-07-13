@@ -12,6 +12,7 @@ import casaortiz.model.Persona;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.sql.Connection;
 import java.util.Date;
 import java.util.HashMap;
@@ -89,7 +90,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     private void loadImageGuardada(String name) {
 
         try {
-            String string = System.getProperty("user.dir") + "/media/persona/" +name;
+            String string = System.getProperty("user.dir")+File.separator+"src"+File.separator+"main"+File.separator+"resources" +File.separator+"media"+File.separator+"persona" + File.separator+name;
             
             Image img = new ImageIcon(string).getImage();
             
@@ -143,7 +144,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     }
     
     public void generarTarjetaGimnasio(Persona persona){
-        String ubicacionJrxml = "src/main/resources/tarjetaGimnasioPersona.jrxml";
+        String ubicacionJrxml = System.getProperty("user.dir")+File.separator+File.separator+"src"+File.separator+"main"+File.separator+"resources" +File.separator+"tarjetaGimnasioPersona.jrxml";
         Conector conector = new Conector();
         Connection connect = null;
         try {

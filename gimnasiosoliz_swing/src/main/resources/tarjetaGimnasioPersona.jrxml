@@ -39,11 +39,11 @@ limit 1]]>
 					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 				</box>
-				<imageExpression><![CDATA["media/gimnasio/logo1.png"]]></imageExpression>
+				<imageExpression><![CDATA["src/main/resources/media/gimnasio/logo1.png"]]></imageExpression>
 			</image>
 			<image>
 				<reportElement x="74" y="129" width="39" height="29" uuid="f67685a3-adea-48a8-8243-6586d571bff6"/>
-				<imageExpression><![CDATA["media/gimnasio/icons8-circuit.png"]]></imageExpression>
+				<imageExpression><![CDATA["src/main/resources/media/gimnasio/icons8-circuit.png"]]></imageExpression>
 			</image>
 			<textField>
 				<reportElement x="74" y="10" width="238" height="20" forecolor="#FFFFFF" backcolor="#030303" uuid="0a8e41de-3afc-4c54-b209-54288bfe0e13">

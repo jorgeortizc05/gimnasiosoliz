@@ -350,7 +350,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
                 }*/
                 
                 VentanaPrincipal v = new VentanaPrincipal();
-                ImageIcon img = new ImageIcon("media/gimnasio/logo_mini.png");
+                ImageIcon img = new ImageIcon("src/main/resources/media/gimnasio/logo_mini.png");
                 v.setSize(1366,768);
                 v.setIconImage(img.getImage());
                 v.setLocationRelativeTo(null); //para que aparezca la ventana en el centro            
