@@ -209,7 +209,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel10 = new javax.swing.JPanel();
         jBEditarPersona = new javax.swing.JButton();
         jBAgregarSuscripcion = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        jBGenerarTarjeta = new javax.swing.JButton();
         jPListaClientes = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -348,17 +348,17 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         });
         jPanel10.add(jBAgregarSuscripcion);
 
-        jButton3.setBackground(new java.awt.Color(194, 60, 61));
-        jButton3.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
-        jButton3.setForeground(java.awt.Color.white);
-        jButton3.setText("Generar Tarjeta");
-        jButton3.setPreferredSize(new java.awt.Dimension(280, 39));
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jBGenerarTarjeta.setBackground(new java.awt.Color(194, 60, 61));
+        jBGenerarTarjeta.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jBGenerarTarjeta.setForeground(java.awt.Color.white);
+        jBGenerarTarjeta.setText("Generar Tarjeta");
+        jBGenerarTarjeta.setPreferredSize(new java.awt.Dimension(280, 39));
+        jBGenerarTarjeta.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jBGenerarTarjetaActionPerformed(evt);
             }
         });
-        jPanel10.add(jButton3);
+        jPanel10.add(jBGenerarTarjeta);
 
         jPanel8.add(jPanel10, java.awt.BorderLayout.PAGE_END);
 
@@ -433,17 +433,14 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(0, 141, Short.MAX_VALUE)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1110, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 141, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1392, Short.MAX_VALUE)
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel6Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 463, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 481, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPListaClientes.add(jPanel6, java.awt.BorderLayout.CENTER);
@@ -454,7 +451,10 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jTFBusqCedulaKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusqCedulaKeyPressed
-        
+        if(evt.getKeyCode()==KeyEvent.VK_ENTER){
+            verificarSuscripcion(jTFBusqCedula.getText());
+           
+        }        
     }//GEN-LAST:event_jTFBusqCedulaKeyPressed
 
     private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
@@ -507,18 +507,18 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_jBAgregarSuscripcionActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jBGenerarTarjetaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBGenerarTarjetaActionPerformed
         generarTarjetaGimnasio(persona);
 
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jBGenerarTarjetaActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregarSuscripcion;
     private javax.swing.JButton jBBuscar;
     private javax.swing.JButton jBEditarPersona;
+    private javax.swing.JButton jBGenerarTarjeta;
     private javax.swing.JButton jBLimpiar;
-    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLDiasRestantes;
     private javax.swing.JLabel jLFoto;
     private javax.swing.JLabel jLMensajeAdvertencia;
