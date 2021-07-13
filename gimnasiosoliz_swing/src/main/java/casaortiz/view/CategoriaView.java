@@ -152,7 +152,7 @@ public class CategoriaView extends javax.swing.JPanel {
         jLabel1.setText("Formulario Categoría");
         add(jLabel1, java.awt.BorderLayout.PAGE_START);
 
-        jPanel3.setLayout(new java.awt.GridLayout());
+        jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Ingresar Categoría", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel4.setPreferredSize(new java.awt.Dimension(400, 100));
@@ -160,10 +160,7 @@ public class CategoriaView extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.BorderLayout());
 
-        java.awt.GridBagLayout jPanel7Layout = new java.awt.GridBagLayout();
-        new java.awt.GridBagLayout().columnWidths = new int[] {0, 5, 0};
-        new java.awt.GridBagLayout().rowHeights = new int[] {0, 5, 0, 5, 0};
-        jPanel7.setLayout(jPanel7Layout);
+        jPanel7.setLayout(new java.awt.GridBagLayout());
 
         jLabel2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel2.setText("ID:");
@@ -196,7 +193,7 @@ public class CategoriaView extends javax.swing.JPanel {
         jPanel7.add(jLabel3, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFNombre.setPreferredSize(new java.awt.Dimension(300, 20));
+        jTFNombre.setPreferredSize(new java.awt.Dimension(300, 29));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -216,9 +213,9 @@ public class CategoriaView extends javax.swing.JPanel {
         jPanel7.add(jLabel4, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
+        jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
-        jTADescripcion.setPreferredSize(new java.awt.Dimension(300, 50));
         jScrollPane3.setViewportView(jTADescripcion);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

@@ -5,13 +5,6 @@
  */
 package casaortiz.view;
 
-import com.jtattoo.plaf.acryl.AcrylLookAndFeel;
-import com.jtattoo.plaf.aero.AeroLookAndFeel;
-import com.jtattoo.plaf.aluminium.AluminiumLookAndFeel;
-import com.jtattoo.plaf.bernstein.BernsteinLookAndFeel;
-import com.jtattoo.plaf.fast.FastLookAndFeel;
-import com.jtattoo.plaf.mcwin.McWinLookAndFeel;
-import com.jtattoo.plaf.mint.MintLookAndFeel;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.util.logging.Level;
@@ -34,7 +27,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private TipoComprobanteView tipoComprobanteView = new TipoComprobanteView();
     private TipoPersonaView tipoPersonaView = new TipoPersonaView();
     private TipoSuscripcionView tipoSuscripcionView = new TipoSuscripcionView();
-    private SuscripcionView suscripcionView = new SuscripcionView();
+    //private SuscripcionView suscripcionView = new SuscripcionView();
     private VerificarSuscripcionView verificarSuscripcionView = new VerificarSuscripcionView(this);
     private ProductoCatalogoView productoCatalogoView = new ProductoCatalogoView();
     private CategoriaView categoriaView = new CategoriaView();
@@ -51,7 +44,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JTPContenedor.add(tipoComprobanteView);
         JTPContenedor.add(tipoPersonaView);
         JTPContenedor.add(tipoSuscripcionView);
-        JTPContenedor.add(suscripcionView);
+        //JTPContenedor.add(suscripcionView);
         JTPContenedor.add(productoCatalogoView);
         JTPContenedor.add(categoriaView);
         JTPContenedor.add(formaPagoView);

@@ -270,6 +270,8 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel1, gridBagConstraints);
+
+        jLNombres.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 8;
         gridBagConstraints.gridy = 0;
@@ -280,6 +282,8 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.weightx = 0.1;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLNombres, gridBagConstraints);
+
+        jLDiasDisponibles.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 12;
         gridBagConstraints.gridy = 0;
@@ -346,6 +350,7 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         jPanel2.add(jLabel7, gridBagConstraints);
 
         jCBTipoSuscripcion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCBTipoSuscripcion.setMinimumSize(new java.awt.Dimension(33, 29));
         jCBTipoSuscripcion.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 jCBTipoSuscripcionItemStateChanged(evt);
@@ -420,7 +425,7 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         jTFDescuento.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         jTFDescuento.setText("0.0");
         jTFDescuento.setInputVerifier(new VerificarSoloNumeros());
-        jTFDescuento.setPreferredSize(new java.awt.Dimension(100, 19));
+        jTFDescuento.setPreferredSize(new java.awt.Dimension(100, 29));
         jTFDescuento.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFDescuentoKeyReleased(evt);
@@ -471,7 +476,7 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         jLImporteTotal.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLImporteTotal.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         jLImporteTotal.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jLImporteTotal.setPreferredSize(new java.awt.Dimension(100, 19));
+        jLImporteTotal.setPreferredSize(new java.awt.Dimension(100, 29));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 12;
@@ -563,7 +568,7 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel4.add(jPanel3, gridBagConstraints);
 
-        jBGuardar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -579,7 +584,7 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel4.add(jBGuardar, gridBagConstraints);
 
-        jBEliminar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jBEliminar.setText("Eliminar Suscripción");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

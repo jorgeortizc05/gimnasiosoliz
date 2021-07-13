@@ -357,7 +357,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
 
         jPCamera.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Cámara", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPCamera.setPreferredSize(new java.awt.Dimension(400, 300));
-        jPCamera.setLayout(new java.awt.GridLayout());
+        jPCamera.setLayout(new java.awt.GridLayout(1, 0));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -459,7 +459,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jBLimpiar, gridBagConstraints);
 
-        jTFBusCedula.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jTFBusCedula.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusCedulaKeyReleased(evt);
@@ -474,7 +474,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jTFBusCedula, gridBagConstraints);
 
-        jTFBusNombre.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jTFBusNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusNombreKeyReleased(evt);
@@ -489,7 +489,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jTFBusNombre, gridBagConstraints);
 
-        jTFBusApell.setFont(new java.awt.Font("Arial", 1, 11)); // NOI18N
+        jTFBusApell.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusApellKeyReleased(evt);
@@ -547,7 +547,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel3, gridBagConstraints);
 
-        jTFCedula.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFCedula.setPreferredSize(new java.awt.Dimension(100, 26));
         jTFCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -601,7 +601,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel6, gridBagConstraints);
 
-        jTFTele.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
@@ -611,7 +611,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jTFTele, gridBagConstraints);
 
         JTADirecc.setColumns(20);
-        JTADirecc.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        JTADirecc.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTADirecc.setLineWrap(true);
         JTADirecc.setRows(5);
         jScrollPane3.setViewportView(JTADirecc);
@@ -634,7 +634,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel9, gridBagConstraints);
 
-        jTFNombre.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
@@ -658,7 +658,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel10, gridBagConstraints);
 
-        jTFApellido.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFApellidoActionPerformed(evt);
@@ -682,7 +682,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel11, gridBagConstraints);
 
-        jTFEmail.setFont(new java.awt.Font("Arial", 0, 11)); // NOI18N
+        jTFEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFEmailActionPerformed(evt);
@@ -872,47 +872,6 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jBGuardar.setVisible(true);
     }//GEN-LAST:event_JBVaciarFormularioActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PersonaViewJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PersonaViewJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PersonaViewJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PersonaViewJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the dialog */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                PersonaViewJDialog dialog = new PersonaViewJDialog(new javax.swing.JFrame(), true);
-                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
-                    @Override
-                    public void windowClosing(java.awt.event.WindowEvent e) {
-                        System.exit(0);
-                    }
-                });
-                dialog.setVisible(true);
-            }
-        });
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton JBEliminar;

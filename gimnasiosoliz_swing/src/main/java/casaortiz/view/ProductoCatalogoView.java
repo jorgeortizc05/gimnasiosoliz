@@ -70,6 +70,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
 
         add(jPanel1, java.awt.BorderLayout.CENTER);
 
+        jBAtras.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jBAtras.setText("<");
         jBAtras.setPreferredSize(new java.awt.Dimension(80, 23));
         jBAtras.addActionListener(new java.awt.event.ActionListener() {
@@ -79,6 +80,7 @@ public class ProductoCatalogoView extends javax.swing.JPanel {
         });
         jPanel2.add(jBAtras);
 
+        jBSiguiente.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jBSiguiente.setText(">");
         jBSiguiente.setPreferredSize(new java.awt.Dimension(80, 23));
         jBSiguiente.addActionListener(new java.awt.event.ActionListener() {

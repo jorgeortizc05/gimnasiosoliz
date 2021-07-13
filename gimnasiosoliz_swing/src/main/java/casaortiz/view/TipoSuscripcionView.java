@@ -210,7 +210,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         jPDatos.add(jLabel4, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFNombre.setPreferredSize(new java.awt.Dimension(300, 21));
+        jTFNombre.setPreferredSize(new java.awt.Dimension(300, 29));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 2;
@@ -262,7 +262,7 @@ public class TipoSuscripcionView extends javax.swing.JPanel {
         JTFPrecio.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JTFPrecio.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
         JTFPrecio.setInputVerifier(new VerificarSoloNumeros());
-        JTFPrecio.setPreferredSize(new java.awt.Dimension(120, 21));
+        JTFPrecio.setPreferredSize(new java.awt.Dimension(120, 29));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 6;
