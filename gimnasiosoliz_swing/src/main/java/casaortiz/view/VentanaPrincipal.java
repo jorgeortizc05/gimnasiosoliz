@@ -104,7 +104,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 60));
 
-        jMenu6.setIcon(new javax.swing.ImageIcon("C:\\casaortiz\\gimnasiosoliz\\gimnasiosoliz_swing\\media\\gimnasio\\logo_mini50.png")); // NOI18N
+        jMenu6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/logo_mini50.png"))); // NOI18N
         jMenu6.setMaximumSize(new java.awt.Dimension(80, 160));
         jMenu6.setPreferredSize(new java.awt.Dimension(80, 50));
         jMenuBar1.add(jMenu6);
@@ -173,7 +173,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu5.setBackground(new java.awt.Color(255, 255, 255));
-        jMenu5.setForeground(java.awt.Color.darkGray);
         jMenu5.setText("Inventarios");
         jMenu5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -207,7 +206,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMCaja.setBackground(new java.awt.Color(255, 255, 255));
-        jMCaja.setForeground(java.awt.Color.darkGray);
         jMCaja.setText("Caja");
         jMCaja.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -232,7 +230,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMCaja);
 
         jMenu3.setBackground(new java.awt.Color(255, 255, 255));
-        jMenu3.setForeground(java.awt.Color.darkGray);
         jMenu3.setText("Suscripción");
         jMenu3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -267,6 +264,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMIEmpresaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEmpresaActionPerformed
         // TODO add your handling code here:
         JTPContenedor.setSelectedComponent(empresaView);
+        empresaView.loadCantones();
     }//GEN-LAST:event_jMIEmpresaActionPerformed
 
     private void jMITipoPersonaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMITipoPersonaActionPerformed

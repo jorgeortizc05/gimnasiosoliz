@@ -196,7 +196,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         jTFBusqCedula = new javax.swing.JTextField();
-        jBBuscar = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPEstadoSuscripcion = new javax.swing.JPanel();
         jPFoto = new javax.swing.JPanel();
@@ -237,17 +236,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             }
         });
         jPanel1.add(jTFBusqCedula);
-
-        jBBuscar.setBackground(new java.awt.Color(194, 60, 61));
-        jBBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBBuscar.setForeground(new java.awt.Color(255, 255, 255));
-        jBBuscar.setText("Buscar");
-        jBBuscar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBBuscarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jBBuscar);
 
         add(jPanel1, java.awt.BorderLayout.PAGE_START);
 
@@ -463,11 +451,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         }        
     }//GEN-LAST:event_jTFBusqCedulaKeyPressed
 
-    private void jBBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBBuscarActionPerformed
-        // TODO add your handling code here:
-        seleccionarItemTabla();
-    }//GEN-LAST:event_jBBuscarActionPerformed
-
     private void jTFBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusquedaKeyReleased
         // TODO add your handling code here:
         loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusqueda.getText().toUpperCase()));
@@ -528,7 +511,6 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBAgregarSuscripcion;
-    private javax.swing.JButton jBBuscar;
     private javax.swing.JButton jBEditarPersona;
     private javax.swing.JButton jBGenerarTarjeta;
     private javax.swing.JButton jBLimpiar;

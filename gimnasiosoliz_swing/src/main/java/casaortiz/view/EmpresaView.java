@@ -151,6 +151,7 @@ public class EmpresaView extends javax.swing.JPanel {
     }
     
     public void loadCantones(){
+        jCBCanton.removeAllItems();
         List<Canton> cantones = canBuss.getCantones();
         for(Canton c: cantones){
            jCBCanton.addItem(c);
