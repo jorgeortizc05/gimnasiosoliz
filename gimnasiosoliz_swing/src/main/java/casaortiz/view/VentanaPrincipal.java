@@ -31,6 +31,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private VerificarSuscripcionView verificarSuscripcionView = new VerificarSuscripcionView(this);
     private ProductoCatalogoView productoCatalogoView = new ProductoCatalogoView();
     private CategoriaView categoriaView = new CategoriaView();
+    private SubCategoriaView subCategoriaView = new SubCategoriaView();
     public VentanaPrincipal() {
         initComponents();
         /*this.setLayout(new FlowLayout());
@@ -48,6 +49,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JTPContenedor.add(productoCatalogoView);
         JTPContenedor.add(categoriaView);
         JTPContenedor.add(formaPagoView);
+        JTPContenedor.add(subCategoriaView);
         
         
     }
@@ -76,7 +78,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu5 = new javax.swing.JMenu();
         JMIProductos = new javax.swing.JMenuItem();
         jMICatalogo = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jMISubCategoría = new javax.swing.JMenuItem();
+        jMICategoria = new javax.swing.JMenuItem();
         jMCaja = new javax.swing.JMenu();
         jMIFormaPago = new javax.swing.JMenuItem();
         jMITipoComprobante = new javax.swing.JMenuItem();
@@ -186,7 +189,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu5.add(JMIProductos);
 
         jMICatalogo.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMICatalogo.setText("Catalogo");
+        jMICatalogo.setText("Catálogo");
         jMICatalogo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMICatalogoActionPerformed(evt);
@@ -194,14 +197,23 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         jMenu5.add(jMICatalogo);
 
-        jMenuItem1.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jMenuItem1.setText("Categoría");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        jMISubCategoría.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jMISubCategoría.setText("SubCategoría");
+        jMISubCategoría.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                jMISubCategoríaActionPerformed(evt);
             }
         });
-        jMenu5.add(jMenuItem1);
+        jMenu5.add(jMISubCategoría);
+
+        jMICategoria.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jMICategoria.setText("Categoría");
+        jMICategoria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMICategoriaActionPerformed(evt);
+            }
+        });
+        jMenu5.add(jMICategoria);
 
         jMenuBar1.add(jMenu5);
 
@@ -289,10 +301,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         JTPContenedor.setSelectedComponent(productoCatalogoView);
     }//GEN-LAST:event_jMICatalogoActionPerformed
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void jMICategoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICategoriaActionPerformed
         // TODO add your handling code here:
         JTPContenedor.setSelectedComponent(categoriaView);
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_jMICategoriaActionPerformed
 
     private void jMIFormaPagoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIFormaPagoActionPerformed
         // TODO add your handling code here:
@@ -308,6 +320,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         // TODO add your handling code here:
         JTPContenedor.setSelectedComponent(tipoComprobanteView);
     }//GEN-LAST:event_jMITipoComprobanteActionPerformed
+
+    private void jMISubCategoríaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMISubCategoríaActionPerformed
+        // TODO add your handling code here:
+        JTPContenedor.setSelectedComponent(subCategoriaView);
+    }//GEN-LAST:event_jMISubCategoríaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -339,13 +356,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                /*try {
+                try {
                         // Set cross-platform Java L&F (also called "Metal")
-                    UIManager.setLookAndFeel(new FastLookAndFeel());
+                    UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
                 } 
                 catch (UnsupportedLookAndFeelException e) {
                    // handle exception
-                }*/
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(VentanaPrincipal.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
                 VentanaPrincipal v = new VentanaPrincipal();
                 ImageIcon img = new ImageIcon("src/main/resources/media/gimnasio/logo_mini.png");
@@ -363,9 +386,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMCaja;
     private javax.swing.JMenuItem jMICantones;
     private javax.swing.JMenuItem jMICatalogo;
+    private javax.swing.JMenuItem jMICategoria;
     private javax.swing.JMenuItem jMIEmpresa;
     private javax.swing.JMenuItem jMIFormaPago;
     private javax.swing.JMenuItem jMIPersonas;
+    private javax.swing.JMenuItem jMISubCategoría;
     private javax.swing.JMenuItem jMITipoComprobante;
     private javax.swing.JMenuItem jMITipoPersona;
     private javax.swing.JMenuItem jMITipoSuscripcion;
@@ -377,7 +402,6 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

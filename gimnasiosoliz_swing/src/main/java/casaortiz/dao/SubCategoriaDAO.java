@@ -52,6 +52,7 @@ public class SubCategoriaDAO {
                 item.setId(result.getInt("id"));
                 item.setNombre(result.getString("nombre"));
                 item.setDescripcion(result.getString("descripcion"));
+                item.setCategoriaId(result.getInt("categoria_id"));
             }
             conector.close(connect);
             return item;
@@ -114,6 +115,7 @@ public class SubCategoriaDAO {
                 item.setId(result.getInt("id"));
                 item.setNombre(result.getString("nombre"));
                 item.setDescripcion(result.getString("descripcion"));
+                item.setCategoriaId(result.getInt("categoria_id"));
                 items.add(item);
             }
             connect.close();

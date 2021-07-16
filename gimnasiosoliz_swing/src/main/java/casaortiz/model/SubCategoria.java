@@ -14,6 +14,7 @@ public class SubCategoria {
     private int id;
     private String nombre;
     private String descripcion;
+    private int categoriaId;
 
     public int getId() {
         return id;
@@ -37,6 +38,14 @@ public class SubCategoria {
 
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
+    }
+
+    public int getCategoriaId() {
+        return categoriaId;
+    }
+
+    public void setCategoriaId(int categoriaId) {
+        this.categoriaId = categoriaId;
     }
 
     @Override

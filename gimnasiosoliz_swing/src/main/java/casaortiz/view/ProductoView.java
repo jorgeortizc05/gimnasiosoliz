@@ -191,6 +191,7 @@ public class ProductoView extends javax.swing.JPanel {
     }
     
     public void loadSubCategorias(){
+        jCBSubCategoria.removeAllItems();
         List<SubCategoria> items = subCategBuss.getSubCategorias();
         for(SubCategoria tp: items){
            jCBSubCategoria.addItem(tp);
@@ -617,6 +618,7 @@ public class ProductoView extends javax.swing.JPanel {
         jCBSubCategoria.setBackground(new java.awt.Color(194, 60, 61));
         jCBSubCategoria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jCBSubCategoria.setForeground(java.awt.Color.white);
+        jCBSubCategoria.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jCBSubCategoria.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;

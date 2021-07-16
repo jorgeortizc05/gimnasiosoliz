@@ -6,7 +6,9 @@
 package casaortiz.view;
 
 import casaortiz.buss.CategoriaBuss;
+import casaortiz.buss.SubCategoriaBuss;
 import casaortiz.model.Categoria;
+import casaortiz.model.SubCategoria;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -15,25 +17,28 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author jorge
  */
-public class CategoriaView extends javax.swing.JPanel {
+public class SubCategoriaView extends javax.swing.JPanel {
 
+    private SubCategoriaBuss subCatBuss;
+    private SubCategoria subCategoria;
     private CategoriaBuss catBuss;
-    private Categoria categoria;
-    public CategoriaView() {
+    public SubCategoriaView() {
         initComponents();
         jBActualizar.setEnabled(false);
+        subCatBuss = new SubCategoriaBuss();
         catBuss = new CategoriaBuss();
+        loadSubCategorias();
         loadCategorias();
     }
     
     public void guardar(){
-        categoria = new Categoria();
-        categoria.setNombre(jTFNombre.getText());
-        categoria.setDescripcion(jTADescripcion.getText());
-        boolean estadoGuardado = catBuss.guardar(categoria);
+        subCategoria = new SubCategoria();
+        subCategoria.setNombre(jTFNombre.getText());
+        subCategoria.setDescripcion(jTADescripcion.getText());
+        boolean estadoGuardado = subCatBuss.guardar(subCategoria);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Categoria guardado");
-            loadCategorias();
+            loadSubCategorias();
             vaciarFormulario();
         }else{
             JOptionPane.showMessageDialog(this, "Error al guardar la categoria");
@@ -41,14 +46,14 @@ public class CategoriaView extends javax.swing.JPanel {
     }
     
     public void actualizar(){
-        categoria = new Categoria();
-        categoria.setId(Integer.parseInt(jLID.getText()));
-        categoria.setNombre(jTFNombre.getText());
-        categoria.setDescripcion(jTADescripcion.getText());
-        boolean estadoGuardado = catBuss.actualizar(categoria);
+        subCategoria = new SubCategoria();
+        subCategoria.setId(Integer.parseInt(jLID.getText()));
+        subCategoria.setNombre(jTFNombre.getText());
+        subCategoria.setDescripcion(jTADescripcion.getText());
+        boolean estadoGuardado = subCatBuss.actualizar(subCategoria);
         if(estadoGuardado){
             JOptionPane.showMessageDialog(this, "Categoria actualizado");
-            loadCategorias();
+            loadSubCategorias();
             vaciarFormulario();
         }else{
             JOptionPane.showMessageDialog(this, "Error al actualizar la categoria");
@@ -56,18 +61,18 @@ public class CategoriaView extends javax.swing.JPanel {
     }
     
     public void eliminar(){
-        int fila = jTListaCategorias.getSelectedRow();
+        int fila = jTListaSubCategorias.getSelectedRow();
         if(fila == -1){
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
-            int id = Integer.parseInt((String)jTListaCategorias.getValueAt(fila, 0).toString());
-            String nombre = (String)jTListaCategorias.getValueAt(fila, 1);        
+            int id = Integer.parseInt((String)jTListaSubCategorias.getValueAt(fila, 0).toString());
+            String nombre = (String)jTListaSubCategorias.getValueAt(fila, 1);        
             int estadoEliminacionDialog = JOptionPane.showConfirmDialog(this, "Seguro que desea eliminar "+nombre+"?","Confirmar", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
             if(estadoEliminacionDialog == 0){
-                boolean estadoEliminacion = catBuss.eliminar(id);
+                boolean estadoEliminacion = subCatBuss.eliminar(id);
                 if(estadoEliminacion){
                     JOptionPane.showMessageDialog(this, "Categoria eliminado");
-                    loadCategorias();
+                    loadSubCategorias();
                 }else{
                     JOptionPane.showMessageDialog(this, "Error al eliminar la categoria");
                 }
@@ -76,15 +81,17 @@ public class CategoriaView extends javax.swing.JPanel {
     }
     
     public void seleccionarItemTabla(){
-        int fila = jTListaCategorias.getSelectedRow();
+        int fila = jTListaSubCategorias.getSelectedRow();
         if(fila == -1){
             JOptionPane.showMessageDialog(this, "Debe seleccionar una fila");
         }else{
-            int id = Integer.parseInt((String)jTListaCategorias.getValueAt(fila, 0).toString());
-            Categoria item = catBuss.getCategoria(id);
+            int id = Integer.parseInt((String)jTListaSubCategorias.getValueAt(fila, 0).toString());
+            SubCategoria item = subCatBuss.getSubCategoria(id);
             jLID.setText(""+item.getId());
             jTFNombre.setText(item.getNombre());
             jTADescripcion.setText(item.getDescripcion());
+            Categoria categoria = catBuss.getCategoria(item.getCategoriaId());
+            jCBCategorias.getModel().setSelectedItem(categoria);
         }
     }
     
@@ -95,24 +102,32 @@ public class CategoriaView extends javax.swing.JPanel {
     }
     
     public void vaciarTabla(){
-        DefaultTableModel modelo = (DefaultTableModel) jTListaCategorias.getModel();
+        DefaultTableModel modelo = (DefaultTableModel) jTListaSubCategorias.getModel();
         modelo.setRowCount(0);
-        jTListaCategorias.setModel(modelo);
+        jTListaSubCategorias.setModel(modelo);
     }
     
     public void loadCategorias(){
-        vaciarTabla();
-        DefaultTableModel modelo = (DefaultTableModel) jTListaCategorias.getModel();
+        jCBCategorias.removeAllItems();
         List<Categoria> items = catBuss.getCategorias();
+        for(Categoria tp: items){
+           jCBCategorias.addItem(tp);
+        }
+    }
+    
+    public void loadSubCategorias(){
+        vaciarTabla();
+        DefaultTableModel modelo = (DefaultTableModel) jTListaSubCategorias.getModel();
+        List<SubCategoria> items = subCatBuss.getSubCategorias();
         Object rowData[] = new Object[3];
-        for(Categoria c: items){
+        for(SubCategoria c: items){
             System.out.println(c);
             rowData[0] = c.getId();
             rowData[1] = c.getNombre();
             rowData[2] = c.getDescripcion();
             modelo.addRow(rowData);
         }
-        jTListaCategorias.setModel(modelo);
+        jTListaSubCategorias.setModel(modelo);
     }
 
     /**
@@ -136,6 +151,8 @@ public class CategoriaView extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         jTADescripcion = new javax.swing.JTextArea();
+        jLabel1 = new javax.swing.JLabel();
+        jCBCategorias = new javax.swing.JComboBox<>();
         jPanel6 = new javax.swing.JPanel();
         jBGuardar = new javax.swing.JButton();
         jBActualizar = new javax.swing.JButton();
@@ -143,13 +160,13 @@ public class CategoriaView extends javax.swing.JPanel {
         jBVaciarFormulario = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTListaCategorias = new javax.swing.JTable();
+        jTListaSubCategorias = new javax.swing.JTable();
 
         setLayout(new java.awt.BorderLayout());
 
         jPanel3.setLayout(new java.awt.GridLayout(1, 0));
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Ingresar Categoría", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Ingresar SubCategoría", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Arial", 1, 12))); // NOI18N
         jPanel4.setPreferredSize(new java.awt.Dimension(400, 100));
         jPanel4.setLayout(new java.awt.BorderLayout());
 
@@ -164,47 +181,42 @@ public class CategoriaView extends javax.swing.JPanel {
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel7.add(jLabel2, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLID.setPreferredSize(new java.awt.Dimension(100, 20));
+        jLID.setPreferredSize(new java.awt.Dimension(350, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
+        gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel7.add(jLID, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel3.setText("Nombre:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel7.add(jLabel3, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTFNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 2;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 1;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel7.add(jTFNombre, gridBagConstraints);
 
         jLabel4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLabel4.setText("Descripción:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel7.add(jLabel4, gridBagConstraints);
 
         jTADescripcion.setColumns(20);
@@ -215,12 +227,24 @@ public class CategoriaView extends javax.swing.JPanel {
         jScrollPane3.setViewportView(jTADescripcion);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 4;
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.BASELINE_LEADING;
-        gridBagConstraints.insets = new java.awt.Insets(5, 5, 5, 5);
         jPanel7.add(jScrollPane3, gridBagConstraints);
+
+        jLabel1.setText("Categoría: ");
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel7.add(jLabel1, gridBagConstraints);
+
+        jCBCategorias.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 3;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
+        jPanel7.add(jCBCategorias, gridBagConstraints);
 
         jPanel1.add(jPanel7, java.awt.BorderLayout.WEST);
 
@@ -276,13 +300,13 @@ public class CategoriaView extends javax.swing.JPanel {
 
         jPanel3.add(jPanel4);
 
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de Categorías", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Lista de SubCategorías", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
         jPanel5.setLayout(new java.awt.CardLayout());
 
         jScrollPane2.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
-        jTListaCategorias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTListaCategorias.setModel(new javax.swing.table.DefaultTableModel(
+        jTListaSubCategorias.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTListaSubCategorias.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -298,12 +322,12 @@ public class CategoriaView extends javax.swing.JPanel {
                 return types [columnIndex];
             }
         });
-        jTListaCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
+        jTListaSubCategorias.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jTListaCategoriasMouseClicked(evt);
+                jTListaSubCategoriasMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(jTListaCategorias);
+        jScrollPane2.setViewportView(jTListaSubCategorias);
 
         jPanel5.add(jScrollPane2, "card2");
 
@@ -332,17 +356,17 @@ public class CategoriaView extends javax.swing.JPanel {
     private void jBVaciarFormularioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBVaciarFormularioActionPerformed
         // TODO add your handling code here:
         vaciarFormulario();
-        loadCategorias();
+        loadSubCategorias();
         jBGuardar.setEnabled(true);
         jBActualizar.setEnabled(false);
     }//GEN-LAST:event_jBVaciarFormularioActionPerformed
 
-    private void jTListaCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaCategoriasMouseClicked
+    private void jTListaSubCategoriasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTListaSubCategoriasMouseClicked
         // TODO add your handling code here:
         jBGuardar.setEnabled(false);
         jBActualizar.setEnabled(true);
         seleccionarItemTabla();
-    }//GEN-LAST:event_jTListaCategoriasMouseClicked
+    }//GEN-LAST:event_jTListaSubCategoriasMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -350,7 +374,9 @@ public class CategoriaView extends javax.swing.JPanel {
     private javax.swing.JButton jBEliminar;
     private javax.swing.JButton jBGuardar;
     private javax.swing.JButton jBVaciarFormulario;
+    private javax.swing.JComboBox<Categoria> jCBCategorias;
     private javax.swing.JLabel jLID;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -364,6 +390,6 @@ public class CategoriaView extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextArea jTADescripcion;
     private javax.swing.JTextField jTFNombre;
-    private javax.swing.JTable jTListaCategorias;
+    private javax.swing.JTable jTListaSubCategorias;
     // End of variables declaration//GEN-END:variables
 }
