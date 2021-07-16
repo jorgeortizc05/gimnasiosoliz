@@ -327,7 +327,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jLFoto, gridBagConstraints);
 
+        jBTomarFoto.setBackground(new java.awt.Color(194, 60, 61));
         jBTomarFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBTomarFoto.setForeground(java.awt.Color.white);
         jBTomarFoto.setText("Tomar Foto");
         jBTomarFoto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -341,7 +343,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(4, 4, 4, 4);
         jPDatos.add(jBTomarFoto, gridBagConstraints);
 
+        jBEncenderCam.setBackground(new java.awt.Color(194, 60, 61));
         jBEncenderCam.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEncenderCam.setForeground(java.awt.Color.white);
         jBEncenderCam.setText("Encender Cámara");
         jBEncenderCam.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,7 +448,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jLabel15, gridBagConstraints);
 
+        jBLimpiar.setBackground(new java.awt.Color(194, 60, 61));
         jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBLimpiar.setForeground(java.awt.Color.white);
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -732,7 +738,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel2.setPreferredSize(new java.awt.Dimension(400, 30));
         jPanel2.setLayout(new java.awt.GridLayout(1, 4));
 
+        jBGuardar.setBackground(new java.awt.Color(194, 60, 61));
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setForeground(java.awt.Color.white);
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -741,7 +749,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         });
         jPanel2.add(jBGuardar);
 
+        jBActualizar.setBackground(new java.awt.Color(194, 60, 61));
         jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setForeground(java.awt.Color.white);
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -750,7 +760,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         });
         jPanel2.add(jBActualizar);
 
+        JBEliminar.setBackground(new java.awt.Color(194, 60, 61));
         JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEliminar.setForeground(java.awt.Color.white);
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -759,7 +771,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         });
         jPanel2.add(JBEliminar);
 
+        JBVaciarFormulario.setBackground(new java.awt.Color(194, 60, 61));
         JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBVaciarFormulario.setForeground(java.awt.Color.white);
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

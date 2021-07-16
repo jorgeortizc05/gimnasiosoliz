@@ -210,7 +210,9 @@ public class TipoPersonaView extends javax.swing.JPanel {
 
         jPanel1.setLayout(new java.awt.GridLayout(1, 4));
 
+        jBGuardar.setBackground(new java.awt.Color(194, 60, 61));
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setForeground(java.awt.Color.white);
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -219,7 +221,9 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(jBGuardar);
 
+        jBActualizar.setBackground(new java.awt.Color(194, 60, 61));
         jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setForeground(java.awt.Color.white);
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -228,7 +232,9 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(jBActualizar);
 
+        JBEliminar.setBackground(new java.awt.Color(194, 60, 61));
         JBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBEliminar.setForeground(java.awt.Color.white);
         JBEliminar.setText("Eliminar");
         JBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -237,7 +243,9 @@ public class TipoPersonaView extends javax.swing.JPanel {
         });
         jPanel1.add(JBEliminar);
 
+        JBVaciarFormulario.setBackground(new java.awt.Color(194, 60, 61));
         JBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        JBVaciarFormulario.setForeground(java.awt.Color.white);
         JBVaciarFormulario.setText("Vaciar Formulario");
         JBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

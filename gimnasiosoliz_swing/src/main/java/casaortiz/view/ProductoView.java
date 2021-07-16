@@ -346,7 +346,9 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLFoto, gridBagConstraints);
 
+        jBEligirImagen.setBackground(new java.awt.Color(194, 60, 61));
         jBEligirImagen.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEligirImagen.setForeground(java.awt.Color.white);
         jBEligirImagen.setText("Elegir Imagen");
         jBEligirImagen.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -423,7 +425,9 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jTFBuscarNombre, gridBagConstraints);
 
+        jBLimpiar.setBackground(new java.awt.Color(194, 60, 61));
         jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBLimpiar.setForeground(java.awt.Color.white);
         jBLimpiar.setText("Limpiar");
         jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -611,7 +615,9 @@ public class ProductoView extends javax.swing.JPanel {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel3.add(jScrollPane3, gridBagConstraints);
 
+        jCBSubCategoria.setBackground(new java.awt.Color(194, 60, 61));
         jCBSubCategoria.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCBSubCategoria.setForeground(java.awt.Color.white);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 5;
@@ -640,7 +646,9 @@ public class ProductoView extends javax.swing.JPanel {
 
         jPanel5.setLayout(new java.awt.GridLayout(1, 4));
 
+        jBGuardar.setBackground(new java.awt.Color(194, 60, 61));
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setForeground(java.awt.Color.white);
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -649,7 +657,9 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jPanel5.add(jBGuardar);
 
+        jBActualizar.setBackground(new java.awt.Color(194, 60, 61));
         jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setForeground(java.awt.Color.white);
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -658,7 +668,9 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jPanel5.add(jBActualizar);
 
+        jBEliminar.setBackground(new java.awt.Color(194, 60, 61));
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setForeground(java.awt.Color.white);
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -667,7 +679,9 @@ public class ProductoView extends javax.swing.JPanel {
         });
         jPanel5.add(jBEliminar);
 
+        jBVaciarFormulario.setBackground(new java.awt.Color(194, 60, 61));
         jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setForeground(java.awt.Color.white);
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

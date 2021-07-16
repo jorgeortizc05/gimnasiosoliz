@@ -263,7 +263,9 @@ public class FormaPagoView extends javax.swing.JPanel {
 
         jPanel4.setLayout(new java.awt.GridLayout(1, 4));
 
+        jBGuardar.setBackground(new java.awt.Color(194, 60, 61));
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setForeground(java.awt.Color.white);
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -272,7 +274,9 @@ public class FormaPagoView extends javax.swing.JPanel {
         });
         jPanel4.add(jBGuardar);
 
+        jBActualizar.setBackground(new java.awt.Color(194, 60, 61));
         jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setForeground(java.awt.Color.white);
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -281,7 +285,9 @@ public class FormaPagoView extends javax.swing.JPanel {
         });
         jPanel4.add(jBActualizar);
 
+        jBEliminar.setBackground(new java.awt.Color(194, 60, 61));
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setForeground(java.awt.Color.white);
         jBEliminar.setText("Eliminar");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -290,7 +296,9 @@ public class FormaPagoView extends javax.swing.JPanel {
         });
         jPanel4.add(jBEliminar);
 
+        jBVaciarFormulario.setBackground(new java.awt.Color(194, 60, 61));
         jBVaciarFormulario.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBVaciarFormulario.setForeground(java.awt.Color.white);
         jBVaciarFormulario.setText("Vaciar Formulario");
         jBVaciarFormulario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

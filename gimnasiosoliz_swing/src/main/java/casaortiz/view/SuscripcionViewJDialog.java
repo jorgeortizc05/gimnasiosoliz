@@ -245,7 +245,9 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jTFBusCedula, gridBagConstraints);
 
+        jBBuscarPersona.setBackground(new java.awt.Color(194, 60, 61));
         jBBuscarPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBBuscarPersona.setForeground(java.awt.Color.white);
         jBBuscarPersona.setText("Buscar");
         jBBuscarPersona.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -349,7 +351,9 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel2.add(jLabel7, gridBagConstraints);
 
+        jCBTipoSuscripcion.setBackground(new java.awt.Color(194, 60, 61));
         jCBTipoSuscripcion.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCBTipoSuscripcion.setForeground(java.awt.Color.white);
         jCBTipoSuscripcion.setMinimumSize(new java.awt.Dimension(33, 29));
         jCBTipoSuscripcion.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
@@ -568,7 +572,9 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel4.add(jPanel3, gridBagConstraints);
 
+        jBGuardar.setBackground(new java.awt.Color(194, 60, 61));
         jBGuardar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBGuardar.setForeground(java.awt.Color.white);
         jBGuardar.setText("Guardar");
         jBGuardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -584,7 +590,9 @@ public class SuscripcionViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel4.add(jBGuardar, gridBagConstraints);
 
+        jBEliminar.setBackground(new java.awt.Color(194, 60, 61));
         jBEliminar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBEliminar.setForeground(java.awt.Color.white);
         jBEliminar.setText("Eliminar Suscripción");
         jBEliminar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

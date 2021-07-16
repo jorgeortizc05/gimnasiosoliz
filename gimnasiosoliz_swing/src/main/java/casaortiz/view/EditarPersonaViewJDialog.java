@@ -366,7 +366,9 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jLabel14, gridBagConstraints);
 
+        jCBTipoPersona.setBackground(new java.awt.Color(194, 60, 61));
         jCBTipoPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCBTipoPersona.setForeground(java.awt.Color.white);
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 16;
@@ -375,7 +377,9 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         jPanel1.add(jCBTipoPersona, gridBagConstraints);
 
+        jBActualizar.setBackground(new java.awt.Color(194, 60, 61));
         jBActualizar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jBActualizar.setForeground(java.awt.Color.white);
         jBActualizar.setText("Actualizar");
         jBActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
