@@ -281,6 +281,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jPanel3.add(jLabel3, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jLID.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -291,7 +292,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jPanel3.add(jLID, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFNombre.setPreferredSize(new java.awt.Dimension(280, 30));
+        jTFNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -327,6 +328,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jCBCanton.setBackground(new java.awt.Color(194, 60, 61));
         jCBCanton.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jCBCanton.setForeground(java.awt.Color.white);
+        jCBCanton.setPreferredSize(new java.awt.Dimension(100, 20));
         jCBCanton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jCBCantonActionPerformed(evt);
@@ -399,6 +401,7 @@ public class EmpresaView extends javax.swing.JPanel {
         jPanel3.add(jScrollPane4, gridBagConstraints);
 
         jTFRUC.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFRUC.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 6;
         gridBagConstraints.gridy = 0;

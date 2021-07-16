@@ -319,7 +319,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
 
         jLFoto.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLFoto.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 2, true), "Foto"));
-        jLFoto.setPreferredSize(new java.awt.Dimension(400, 300));
+        jLFoto.setPreferredSize(new java.awt.Dimension(410, 320));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 4;
         gridBagConstraints.gridy = 0;
@@ -466,6 +466,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         JPListaPersonas.add(jBLimpiar, gridBagConstraints);
 
         jTFBusCedula.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jTFBusCedula.setPreferredSize(new java.awt.Dimension(100, 29));
         jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusCedulaKeyReleased(evt);
@@ -474,13 +475,14 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jTFBusCedula, gridBagConstraints);
 
         jTFBusNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jTFBusNombre.setPreferredSize(new java.awt.Dimension(100, 29));
         jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusNombreKeyReleased(evt);
@@ -489,13 +491,14 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jTFBusNombre, gridBagConstraints);
 
         jTFBusApell.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jTFBusApell.setPreferredSize(new java.awt.Dimension(100, 29));
         jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 jTFBusApellKeyReleased(evt);
@@ -504,7 +507,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 3;
         gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
+        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
@@ -554,7 +557,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel3, gridBagConstraints);
 
         jTFCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFCedula.setPreferredSize(new java.awt.Dimension(100, 26));
+        jTFCedula.setPreferredSize(new java.awt.Dimension(100, 20));
         jTFCedula.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFCedulaActionPerformed(evt);
@@ -579,6 +582,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel2, gridBagConstraints);
 
         jCBTipoPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jCBTipoPersona.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 16;
@@ -608,6 +612,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel6, gridBagConstraints);
 
         jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFTele.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
@@ -641,6 +646,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel9, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         jTFNombre.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFNombreActionPerformed(evt);
@@ -665,6 +671,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel10, gridBagConstraints);
 
         jTFApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFApellido.setPreferredSize(new java.awt.Dimension(100, 20));
         jTFApellido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFApellidoActionPerformed(evt);
@@ -689,6 +696,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel11, gridBagConstraints);
 
         jTFEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFEmail.setPreferredSize(new java.awt.Dimension(100, 20));
         jTFEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTFEmailActionPerformed(evt);

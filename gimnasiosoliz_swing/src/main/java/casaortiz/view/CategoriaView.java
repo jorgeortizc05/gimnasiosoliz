@@ -173,7 +173,7 @@ public class CategoriaView extends javax.swing.JPanel {
         jPanel7.add(jLabel2, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLID.setPreferredSize(new java.awt.Dimension(300, 20));
+        jLID.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -193,7 +193,7 @@ public class CategoriaView extends javax.swing.JPanel {
         jPanel7.add(jLabel3, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        jTFNombre.setPreferredSize(new java.awt.Dimension(300, 29));
+        jTFNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -216,6 +216,7 @@ public class CategoriaView extends javax.swing.JPanel {
         jTADescripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jTADescripcion.setLineWrap(true);
         jTADescripcion.setRows(5);
+        jTADescripcion.setPreferredSize(new java.awt.Dimension(100, 20));
         jScrollPane3.setViewportView(jTADescripcion);
 
         gridBagConstraints = new java.awt.GridBagConstraints();

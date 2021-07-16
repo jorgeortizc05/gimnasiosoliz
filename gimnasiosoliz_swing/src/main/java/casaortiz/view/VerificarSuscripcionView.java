@@ -365,7 +365,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
         jLabel1.setBackground(java.awt.Color.white);
         jLabel1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel1.setText("Busqueda");
+        jLabel1.setText("Busqueda: ");
         jPanel5.add(jLabel1);
 
         jTFBusqueda.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N

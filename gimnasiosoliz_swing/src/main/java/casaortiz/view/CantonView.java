@@ -203,6 +203,7 @@ public class CantonView extends javax.swing.JPanel {
         jPanel3.setLayout(jPanel3Layout);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -260,7 +261,7 @@ public class CantonView extends javax.swing.JPanel {
         jPanel3.add(jScrollPane2, gridBagConstraints);
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLID.setPreferredSize(new java.awt.Dimension(400, 20));
+        jLID.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;

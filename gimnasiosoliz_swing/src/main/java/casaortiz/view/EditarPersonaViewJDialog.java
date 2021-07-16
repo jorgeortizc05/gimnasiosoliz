@@ -204,6 +204,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
 
         jLID.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jLID.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
+        jLID.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
@@ -223,6 +224,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel13, gridBagConstraints);
 
         jTFCedula.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFCedula.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 2;
@@ -242,6 +244,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel12, gridBagConstraints);
 
         jTFNombre.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFNombre.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 4;
@@ -261,6 +264,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel18, gridBagConstraints);
 
         jTFApellido.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFApellido.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 6;
@@ -280,6 +284,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel16, gridBagConstraints);
 
         jTFEmail.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFEmail.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 8;
@@ -299,6 +304,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         jPanel1.add(jLabel8, gridBagConstraints);
 
         jTFTele.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTFTele.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 10;
@@ -369,6 +375,7 @@ public class EditarPersonaViewJDialog extends javax.swing.JDialog {
         jCBTipoPersona.setBackground(new java.awt.Color(194, 60, 61));
         jCBTipoPersona.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jCBTipoPersona.setForeground(java.awt.Color.white);
+        jCBTipoPersona.setPreferredSize(new java.awt.Dimension(100, 20));
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 16;
