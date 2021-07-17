@@ -235,7 +235,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jTListaPersonas.setModel(modelo);
     }
     
-    public void loadPersonasBusqueda(List<Persona> items){
+    public void buscarPersonas(List<Persona> items){
         vaciarTabla();
         DefaultTableModel modelo = (DefaultTableModel) jTListaPersonas.getModel();
         List<Persona> personas = items;
@@ -253,9 +253,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
     }
     
     public void vaciarCamposBusqueda(){
-        jTFBusNombre.setText("");
-        jTFBusApell.setText("");
-        jTFBusCedula.setText("");
+        jTFBuscar.setText("");
     }
 
     /**
@@ -278,12 +276,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTListaPersonas = new javax.swing.JTable();
         jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jBLimpiar = new javax.swing.JButton();
-        jTFBusCedula = new javax.swing.JTextField();
-        jTFBusNombre = new javax.swing.JTextField();
-        jTFBusApell = new javax.swing.JTextField();
+        jTFBuscar = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLID = new javax.swing.JLabel();
@@ -406,7 +399,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.gridwidth = 8;
+        gridBagConstraints.gridwidth = 2;
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.ipadx = 1198;
         gridBagConstraints.ipady = 314;
@@ -416,7 +409,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         JPListaPersonas.add(jScrollPane2, gridBagConstraints);
 
         jLabel13.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel13.setText("Nombre:");
+        jLabel13.setText("Buscar:");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -426,66 +419,11 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
         JPListaPersonas.add(jLabel13, gridBagConstraints);
 
-        jLabel14.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel14.setText("Apellido:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 2;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        JPListaPersonas.add(jLabel14, gridBagConstraints);
-
-        jLabel15.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jLabel15.setText("Cedula:");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 4;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
-        gridBagConstraints.ipadx = 5;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        JPListaPersonas.add(jLabel15, gridBagConstraints);
-
-        jBLimpiar.setBackground(new java.awt.Color(194, 60, 61));
-        jBLimpiar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jBLimpiar.setForeground(java.awt.Color.white);
-        jBLimpiar.setText("Limpiar");
-        jBLimpiar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jBLimpiarActionPerformed(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 6;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        JPListaPersonas.add(jBLimpiar, gridBagConstraints);
-
-        jTFBusCedula.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jTFBusCedula.setPreferredSize(new java.awt.Dimension(100, 29));
-        jTFBusCedula.addKeyListener(new java.awt.event.KeyAdapter() {
+        jTFBuscar.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jTFBuscar.setPreferredSize(new java.awt.Dimension(100, 29));
+        jTFBuscar.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBusCedulaKeyReleased(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 5;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        JPListaPersonas.add(jTFBusCedula, gridBagConstraints);
-
-        jTFBusNombre.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jTFBusNombre.setPreferredSize(new java.awt.Dimension(100, 29));
-        jTFBusNombre.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBusNombreKeyReleased(evt);
+                jTFBuscarKeyReleased(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -495,23 +433,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         gridBagConstraints.ipadx = 200;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        JPListaPersonas.add(jTFBusNombre, gridBagConstraints);
-
-        jTFBusApell.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
-        jTFBusApell.setPreferredSize(new java.awt.Dimension(100, 29));
-        jTFBusApell.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTFBusApellKeyReleased(evt);
-            }
-        });
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 3;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.fill = java.awt.GridBagConstraints.HORIZONTAL;
-        gridBagConstraints.ipadx = 200;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(2, 2, 2, 2);
-        JPListaPersonas.add(jTFBusApell, gridBagConstraints);
+        JPListaPersonas.add(jTFBuscar, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -832,25 +754,9 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
         seleccionarItemTabla();
     }//GEN-LAST:event_jTListaPersonasMouseClicked
 
-    private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed
-        // TODO add your handling code here:
-        loadPersonas();
-        vaciarCamposBusqueda();
-    }//GEN-LAST:event_jBLimpiarActionPerformed
-
-    private void jTFBusCedulaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusCedulaKeyReleased
-        // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorCedula(jTFBusCedula.getText()));
-    }//GEN-LAST:event_jTFBusCedulaKeyReleased
-
-    private void jTFBusNombreKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusNombreKeyReleased
-        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusNombre.getText()));
-    }//GEN-LAST:event_jTFBusNombreKeyReleased
-
-    private void jTFBusApellKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusApellKeyReleased
-        // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorApellido(jTFBusApell.getText()));
-    }//GEN-LAST:event_jTFBusApellKeyReleased
+    private void jTFBuscarKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBuscarKeyReleased
+        buscarPersonas(perBuss.buscarPersonas(jTFBuscar.getText().toUpperCase()));
+    }//GEN-LAST:event_jTFBuscarKeyReleased
 
     private void jTFCedulaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCedulaActionPerformed
         // TODO add your handling code here:
@@ -903,7 +809,6 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
     private javax.swing.JButton jBActualizar;
     private javax.swing.JButton jBEncenderCam;
     private javax.swing.JButton jBGuardar;
-    private javax.swing.JButton jBLimpiar;
     private javax.swing.JButton jBTomarFoto;
     private javax.swing.JComboBox<TipoPersona> jCBTipoPersona;
     private javax.swing.JLabel jLFoto;
@@ -912,8 +817,6 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
@@ -928,9 +831,7 @@ public class PersonaViewJDialog extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTextField jTFApellido;
-    private javax.swing.JTextField jTFBusApell;
-    private javax.swing.JTextField jTFBusCedula;
-    private javax.swing.JTextField jTFBusNombre;
+    private javax.swing.JTextField jTFBuscar;
     private javax.swing.JTextField jTFCedula;
     private javax.swing.JTextField jTFEmail;
     private javax.swing.JTextField jTFNombre;

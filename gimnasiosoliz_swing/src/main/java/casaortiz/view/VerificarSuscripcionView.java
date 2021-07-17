@@ -135,7 +135,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(jTFBusqueda, persona.getNombre()+" no dispone de suscripciones");
-            jLMensajeAdvertencia.setText("RENOVAR SUSCRIPCIÓN");
+            jLMensajeAdvertencia.setText("SIN SUSCRIPCIONES");
             jLMensajeAdvertencia.setForeground(Color.red);
             jLDiasRestantes.setText(0+"");
             jLDiasRestantes.setForeground(Color.red);
@@ -150,7 +150,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         try {
             // TODO add your handling code here:
             if(persona == null){
-                JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes cargar el cliente");
+                JOptionPane.showMessageDialog(jTFBusqCedula, "Primero debes seleccionar un cliente de la tabla");
             }else{
                 JasperReport reporte;
                 connect = conector.getConexion();
@@ -453,7 +453,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
 
     private void jTFBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTFBusquedaKeyReleased
         // TODO add your handling code here:
-        loadPersonasBusqueda(perBuss.buscarPersonasPorNombre(jTFBusqueda.getText().toUpperCase()));
+        loadPersonasBusqueda(perBuss.buscarPersonas(jTFBusqueda.getText().toUpperCase()));
     }//GEN-LAST:event_jTFBusquedaKeyReleased
 
     private void jBLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBLimpiarActionPerformed

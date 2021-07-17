@@ -70,25 +70,16 @@ public class PersonaBuss {
     }
     
     
-    public List<Persona> buscarPersonasPorNombre(String nombre){
+    public List<Persona> buscarPersonas(String nombre){
         List<Persona> items = null;
         try {
-            items = perDAO.buscarPersonasPorNombre(nombre);
+            items = perDAO.buscarPersonas(nombre);
             return items;
         } catch (Exception e) {
             return items;
         }
     }
     
-    public List<Persona> buscarPersonasPorApellido(String apellido){
-        List<Persona> items = null;
-        try {
-            items = perDAO.buscarPersonasPorApellido(apellido);
-            return items;
-        } catch (Exception e) {
-            return items;
-        }
-    }
     
     public Persona buscarPersonaPorCedula(String cedula){
         Persona item = null;
@@ -99,15 +90,4 @@ public class PersonaBuss {
             return item;
         }
     }
-    
-    public List<Persona> buscarPersonasPorCedula(String cedula){
-        List<Persona> items = null;
-        try {
-            items = perDAO.buscarPersonasPorCedula(cedula);
-            return items;
-        } catch (Exception e) {
-            return items;
-        }
-    }
-    
 }
