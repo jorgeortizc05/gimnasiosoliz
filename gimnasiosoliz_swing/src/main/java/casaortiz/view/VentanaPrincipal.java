@@ -102,7 +102,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         getContentPane().add(jPanel1, "card2");
 
-        jMenuBar1.setBackground(java.awt.Color.white);
+        jMenuBar1.setBackground(new java.awt.Color(194, 60, 61));
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
         jMenuBar1.setPreferredSize(new java.awt.Dimension(175, 60));
@@ -113,6 +113,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu6);
 
         jMenu4.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setText("Control de Acceso");
         jMenu4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -128,6 +129,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu4);
 
         jMenu1.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu1.setForeground(new java.awt.Color(255, 255, 255));
         jMenu1.setText("Empresa");
         jMenu1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -152,6 +154,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu1);
 
         jMenu2.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu2.setForeground(new java.awt.Color(255, 255, 255));
         jMenu2.setText("Clientes");
         jMenu2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -176,6 +179,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu2);
 
         jMenu5.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu5.setForeground(new java.awt.Color(255, 255, 255));
         jMenu5.setText("Inventarios");
         jMenu5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -218,6 +222,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMenu5);
 
         jMCaja.setBackground(new java.awt.Color(255, 255, 255));
+        jMCaja.setForeground(new java.awt.Color(255, 255, 255));
         jMCaja.setText("Caja");
         jMCaja.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
@@ -242,6 +247,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuBar1.add(jMCaja);
 
         jMenu3.setBackground(new java.awt.Color(255, 255, 255));
+        jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Suscripción");
         jMenu3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
 
