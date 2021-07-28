@@ -48,6 +48,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         this.vp = vp;
         perBuss = new PersonaBuss();
         susBuss = new SuscripcionBuss();
+        loadPersonas();
     }
     
     public void buscarPersonaPorCedula(String cedula){
@@ -134,8 +135,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
                 jLDiasRestantes.setForeground(Color.BLACK);
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(jTFBusqueda, persona.getNombre()+" no dispone de suscripciones");
-            jLMensajeAdvertencia.setText("SIN SUSCRIPCIONES");
+            //JOptionPane.showMessageDialog(jTFBusqueda, persona.getNombre()+" no dispone de suscripciones");
+            jLMensajeAdvertencia.setText(persona.getNombre()+" NO TIENE SUSCRIPCIONES");
             jLMensajeAdvertencia.setForeground(Color.red);
             jLDiasRestantes.setText(0+"");
             jLDiasRestantes.setForeground(Color.red);
@@ -168,6 +169,8 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
             conector.close(connect);
         }
     }
+    
+    
     
     public void loadPersonasBusqueda(List<Persona> items){
         vaciarTabla();

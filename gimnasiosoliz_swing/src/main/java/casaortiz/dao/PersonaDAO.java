@@ -137,7 +137,7 @@ public class PersonaDAO {
         connect = conector.getConexion();
         List<Persona> items = null;
         try{
-            PreparedStatement st = connect.prepareStatement("select * from persona p order by p.id desc");
+            PreparedStatement st = connect.prepareStatement("select * from persona p order by p.id desc limit 300");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
             while(result.next()){

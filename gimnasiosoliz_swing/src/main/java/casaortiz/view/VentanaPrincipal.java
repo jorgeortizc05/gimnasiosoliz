@@ -300,6 +300,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMIVerificarSuscripcionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIVerificarSuscripcionActionPerformed
         // TODO add your handling code here:
        JTPContenedor.setSelectedComponent(verificarSuscripcionView);
+       verificarSuscripcionView.loadPersonas();
     }//GEN-LAST:event_jMIVerificarSuscripcionActionPerformed
 
     private void jMICatalogoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMICatalogoActionPerformed
