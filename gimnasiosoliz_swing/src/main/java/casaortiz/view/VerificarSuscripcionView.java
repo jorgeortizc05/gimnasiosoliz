@@ -317,7 +317,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel10.setBackground(java.awt.Color.white);
 
         jBEditarPersona.setBackground(new java.awt.Color(194, 60, 61));
-        jBEditarPersona.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jBEditarPersona.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jBEditarPersona.setForeground(java.awt.Color.white);
         jBEditarPersona.setText("Editar");
         jBEditarPersona.setPreferredSize(new java.awt.Dimension(280, 39));
@@ -329,7 +329,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel10.add(jBEditarPersona);
 
         jBAgregarSuscripcion.setBackground(new java.awt.Color(194, 60, 61));
-        jBAgregarSuscripcion.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jBAgregarSuscripcion.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jBAgregarSuscripcion.setForeground(java.awt.Color.white);
         jBAgregarSuscripcion.setText("Agregar Suscripción");
         jBAgregarSuscripcion.setPreferredSize(new java.awt.Dimension(280, 39));
@@ -341,7 +341,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel10.add(jBAgregarSuscripcion);
 
         jBGenerarTarjeta.setBackground(new java.awt.Color(194, 60, 61));
-        jBGenerarTarjeta.setFont(new java.awt.Font("Arial", 1, 20)); // NOI18N
+        jBGenerarTarjeta.setFont(new java.awt.Font("Segoe UI", 1, 20)); // NOI18N
         jBGenerarTarjeta.setForeground(java.awt.Color.white);
         jBGenerarTarjeta.setText("Generar Tarjeta");
         jBGenerarTarjeta.setPreferredSize(new java.awt.Dimension(280, 39));
@@ -396,7 +396,7 @@ public class VerificarSuscripcionView extends javax.swing.JPanel {
         jPanel6.setBackground(java.awt.Color.white);
 
         jTListaPersonas.setBackground(new java.awt.Color(24, 23, 23));
-        jTListaPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
+        jTListaPersonas.setFont(new java.awt.Font("Segoe UI", 0, 12)); // NOI18N
         jTListaPersonas.setForeground(new java.awt.Color(255, 255, 255));
         jTListaPersonas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {

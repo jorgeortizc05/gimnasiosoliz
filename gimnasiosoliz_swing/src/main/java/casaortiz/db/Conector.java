@@ -11,8 +11,10 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author jorge
+ * Clase para manejar la conexiones a la base de datos Postgresql
+ * @author Ing. Jorge Luis Ortiz Caceres
+ * @since 17/08/2021
+ * @version 1.0.0
  */
 public class Conector {
     
@@ -20,7 +22,11 @@ public class Conector {
     private String user = "jorge";
     private String pass = "jorge";
     private Connection connect;
-        
+    
+    /**
+     * Obtengo la conexion hacia la base de datos
+     * @return Objeto Connection
+     */
     public Connection getConexion(){
         try {
             connect = DriverManager.getConnection(url, user, pass);
@@ -34,7 +40,10 @@ public class Conector {
         return connect;
     }
     
-    
+    /**
+     * Metodo para cerrar la conexion
+     * @param connect Objeto Connection
+     */
     public void close(Connection connect){
         try {
             connect.close();
@@ -42,37 +51,5 @@ public class Conector {
         } catch (SQLException ex) {
             Logger.getLogger(Conector.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    
-    /*
-    
-    SQL LITE 3
-    private String url = "gimnasio.db";
-    private Connection connect;
-        
-    public Connection getConexion(){
-        try {
-            connect = DriverManager.getConnection("jdbc:sqlite:"+url);
-            if (connect!=null) {
-                System.out.println("Conectado");
-            }
-        }catch (SQLException ex) {
-            System.err.println("No se ha podido conectar a la base de datos\n"+ex.getMessage());
-        }
-        
-        return connect;
-    }
-    
-    
-    public void close(Connection connect){
-        try {
-            connect.close();
-            System.out.println("Conexion cerrada");
-        } catch (SQLException ex) {
-            Logger.getLogger(Conector.class.getName()).log(Level.SEVERE, null, ex);
-        }
-    }
-    
-    */
-    
+    }    
 }

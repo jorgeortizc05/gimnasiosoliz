@@ -15,13 +15,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author jorge
+ * Manejo del CRUD Persona
+ * @author Ing. Jorge Luis Ortiz Caceres
+ * @since 17/08/2021
+ * @version 1.0.0
  */
 public class PersonaDAO {
     
     private Conector conector = new Conector();
     
+    /**
+     * Guardar persona en db
+     * @param item Objeto Persona
+     * @return Confirmación de guardado exitosa
+     */
     public boolean guardar(Persona item){
         Connection connect = null;
         try {
@@ -50,6 +57,11 @@ public class PersonaDAO {
         }
     }
     
+    /**
+     * Recupero una persona segun el id
+     * @param id Id de persona
+     * @return Objeto Persona
+     */
     public Persona getPersona(int id){
         Connection connect = null;
         ResultSet result = null;
@@ -82,6 +94,11 @@ public class PersonaDAO {
         }
     }
     
+    /**
+     * Actualizar Persona
+     * @param item Objeto Persona
+     * @return Confirmacion de actualizacion exitosa
+     */
     public boolean actualizar(Persona item){
         Connection connect = null;
         ResultSet result = null;
@@ -113,6 +130,11 @@ public class PersonaDAO {
         }
     }
     
+    /**
+     * Eliminar persona segun el id
+     * @param id id de persona
+     * @return Confirmacion de eliminacion de la persona
+     */
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
@@ -131,6 +153,10 @@ public class PersonaDAO {
         }
     }
     
+    /**
+     * Obtengo una lista de 300 personas
+     * @return Lista de personas
+     */
     public List<Persona> getPersonas(){
         Connection connect = null;
         ResultSet result = null;
@@ -164,6 +190,11 @@ public class PersonaDAO {
         } 
     }
     
+    /**
+     * Buscar las personas que coincida con los caracteres
+     * @param nombre Caracteres a ingresar
+     * @return Lista de personas coincidentes
+     */
     public List<Persona> buscarPersonas(String nombre){
         Connection connect = null;
         ResultSet result = null;
@@ -197,6 +228,11 @@ public class PersonaDAO {
         } 
     }
     
+    /**
+     * Busca una persona que coincida con la cedula
+     * @param cedula Cedula de la persona
+     * @return Persona que coincida con la cedula
+     */
     public Persona buscarPersonaPorCedula(String cedula){
         Connection connect = null;
         ResultSet result = null;

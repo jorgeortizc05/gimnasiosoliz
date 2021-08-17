@@ -115,7 +115,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu4.setBackground(new java.awt.Color(255, 255, 255));
         jMenu4.setForeground(new java.awt.Color(255, 255, 255));
         jMenu4.setText("Control de Acceso");
-        jMenu4.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMIVerificarSuscripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMIVerificarSuscripcion.setText("Verificar Suscripción");
@@ -131,7 +131,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.setBackground(new java.awt.Color(255, 255, 255));
         jMenu1.setForeground(new java.awt.Color(255, 255, 255));
         jMenu1.setText("Empresa");
-        jMenu1.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMICantones.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMICantones.setText("Cantones");
@@ -156,7 +156,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu2.setBackground(new java.awt.Color(255, 255, 255));
         jMenu2.setForeground(new java.awt.Color(255, 255, 255));
         jMenu2.setText("Clientes");
-        jMenu2.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMIPersonas.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMIPersonas.setText("Clientes");
@@ -181,7 +181,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu5.setBackground(new java.awt.Color(255, 255, 255));
         jMenu5.setForeground(new java.awt.Color(255, 255, 255));
         jMenu5.setText("Inventarios");
-        jMenu5.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         JMIProductos.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         JMIProductos.setText("Productos");
@@ -224,7 +224,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMCaja.setBackground(new java.awt.Color(255, 255, 255));
         jMCaja.setForeground(new java.awt.Color(255, 255, 255));
         jMCaja.setText("Caja");
-        jMCaja.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMCaja.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMIFormaPago.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMIFormaPago.setText("Forma de Pago");
@@ -249,7 +249,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu3.setBackground(new java.awt.Color(255, 255, 255));
         jMenu3.setForeground(new java.awt.Color(255, 255, 255));
         jMenu3.setText("Suscripción");
-        jMenu3.setFont(new java.awt.Font("Arial", 1, 12)); // NOI18N
+        jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
 
         jMITipoSuscripcion.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
         jMITipoSuscripcion.setText("Tipo de Suscripción");
