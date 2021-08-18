@@ -11,13 +11,18 @@ import casaortiz.model.Producto;
 import java.util.List;
 
 /**
- *
+ * Manejo del CRUD Canton para logica de negocios
  * @author jorge
  */
 public class CantonBuss {
     
     private CantonDAO canDAO = new CantonDAO();
     
+    /**
+     * Guardar canton
+     * @param item Objeto Persona
+     * @return Confirmacion de guardado exitosa
+     */
     public boolean guardar(Canton item){
         
         try {

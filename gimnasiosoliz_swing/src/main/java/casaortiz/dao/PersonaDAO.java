@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Manejo del CRUD Persona
+ * Manejo del CRUD Persona para base de datos
  * @author Ing. Jorge Luis Ortiz Caceres
  * @since 17/08/2021
  * @version 1.0.0

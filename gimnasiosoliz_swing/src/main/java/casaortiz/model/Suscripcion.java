@@ -8,8 +8,11 @@ package casaortiz.model;
 import java.util.Date;
 
 /**
- *
- * @author jorge
+ * Modelo Suscripcion
+ * @author Ing. Jorge Luis Ortiz Caceres
+ * @since 18/08/2021
+ * @version 1.0.0
+ * 
  */
 public class Suscripcion {
     private int id;

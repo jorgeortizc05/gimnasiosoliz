@@ -6,8 +6,11 @@
 package casaortiz.model;
 
 /**
- *
- * @author jorge
+ * Modelo Tipo de Comprobante: factura, nota de venta, etc
+ * @author Ing. Jorge Luis Ortiz Caceres
+ * @since 18/08/2021
+ * @version 1.0.0
+ * 
  */
 public class TipoComprobante {
     
