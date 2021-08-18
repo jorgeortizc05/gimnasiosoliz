@@ -65,7 +65,6 @@ public class PersonaDAO {
     public Persona getPersona(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Persona item = null;
         try {
             connect = conector.getConexion();
@@ -102,7 +101,6 @@ public class PersonaDAO {
     public boolean actualizar(Persona item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update persona set "
@@ -138,7 +136,6 @@ public class PersonaDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -160,9 +157,9 @@ public class PersonaDAO {
     public List<Persona> getPersonas(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Persona> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from persona p order by p.id desc limit 300");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
@@ -198,9 +195,9 @@ public class PersonaDAO {
     public List<Persona> buscarPersonas(String nombre){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Persona> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from persona p where p.nombre || ' '||p.apellido ||' '||p.cedula like '%"+nombre+"%' order by p.id desc");
             result = st.executeQuery();
             items = new ArrayList<Persona>();
@@ -236,7 +233,6 @@ public class PersonaDAO {
     public Persona buscarPersonaPorCedula(String cedula){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Persona item = null;
         try {
             connect = conector.getConexion();

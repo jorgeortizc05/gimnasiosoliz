@@ -41,7 +41,6 @@ public class SubCategoriaDAO {
     public SubCategoria getSubCategoria(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         SubCategoria item = null;
         try {
             connect = conector.getConexion();
@@ -66,7 +65,6 @@ public class SubCategoriaDAO {
     public boolean actualizar(SubCategoria item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update subcategoria set nombre = ?, descripcion = ? where id = ?");
@@ -86,7 +84,6 @@ public class SubCategoriaDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -104,9 +101,9 @@ public class SubCategoriaDAO {
     public List<SubCategoria> getSubCategorias(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<SubCategoria> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from subcategoria");
             result = st.executeQuery();
             items = new ArrayList<SubCategoria>();

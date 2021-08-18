@@ -41,7 +41,6 @@ public class CategoriaDAO {
     public Categoria getCategoria(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Categoria item = null;
         try {
             connect = conector.getConexion();
@@ -65,7 +64,6 @@ public class CategoriaDAO {
     public boolean actualizar(Categoria item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update categoria set nombre = ?, descripcion = ? where id = ?");
@@ -85,7 +83,6 @@ public class CategoriaDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -103,9 +100,9 @@ public class CategoriaDAO {
     public List<Categoria> getCategorias(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Categoria> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from categoria");
             result = st.executeQuery();
             items = new ArrayList<Categoria>();

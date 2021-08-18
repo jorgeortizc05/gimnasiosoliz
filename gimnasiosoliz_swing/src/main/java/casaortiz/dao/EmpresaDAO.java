@@ -49,7 +49,6 @@ public class EmpresaDAO {
     public Empresa getEmpresa(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Empresa item = null;
         try {
             connect = conector.getConexion();
@@ -77,7 +76,6 @@ public class EmpresaDAO {
     public boolean actualizar(Empresa item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update empresa set nombre = ?, descripcion = ?, RUC = ?, direccion_matriz = ?, direccion_sucursal = ?, canton_id = ? where id = ?");
@@ -101,7 +99,6 @@ public class EmpresaDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -119,9 +116,9 @@ public class EmpresaDAO {
     public List<Empresa> getEmpresas(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Empresa> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from empresa");
             result = st.executeQuery();
             items = new ArrayList<Empresa>();

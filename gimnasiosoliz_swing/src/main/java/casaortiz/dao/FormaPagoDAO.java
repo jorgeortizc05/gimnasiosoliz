@@ -43,7 +43,6 @@ public class FormaPagoDAO {
     public FormaPago getFormaPago(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         FormaPago item = null;
         try {
             connect = conector.getConexion();
@@ -67,7 +66,6 @@ public class FormaPagoDAO {
     public boolean actualizar(FormaPago item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update forma_pago set nombre = ?, descripcion = ? where id = ?");
@@ -87,7 +85,6 @@ public class FormaPagoDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -105,9 +102,9 @@ public class FormaPagoDAO {
     public List<FormaPago> getFormaPagos(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<FormaPago> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from forma_pago");
             result = st.executeQuery();
             items = new ArrayList<FormaPago>();

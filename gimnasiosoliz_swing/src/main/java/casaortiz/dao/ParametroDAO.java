@@ -28,7 +28,6 @@ public class ParametroDAO {
     public Parametro getParametro(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Parametro item = null;
         try {
             connect = conector.getConexion();

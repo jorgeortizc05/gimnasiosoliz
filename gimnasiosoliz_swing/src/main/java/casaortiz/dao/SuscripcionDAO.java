@@ -54,7 +54,6 @@ public class SuscripcionDAO {
     public Suscripcion getSuscripcion(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Suscripcion item = null;
         try {
             connect = conector.getConexion();
@@ -86,7 +85,6 @@ public class SuscripcionDAO {
     public boolean actualizar(Suscripcion item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("UPDATE suscripcion\n" +
@@ -126,7 +124,6 @@ public class SuscripcionDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -144,9 +141,9 @@ public class SuscripcionDAO {
     public List<Suscripcion> getSuscripciones(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Suscripcion> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from suscripcion");
             result = st.executeQuery();
             items = new ArrayList<Suscripcion>();
@@ -176,9 +173,9 @@ public class SuscripcionDAO {
     public List<Suscripcion> getHistorialSuscripcionesPersona(int idPersona){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Suscripcion> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from suscripcion s where s.persona_id = "+idPersona+" order by s.fecha_hasta desc");
             result = st.executeQuery();
             items = new ArrayList<Suscripcion>();
@@ -208,9 +205,9 @@ public class SuscripcionDAO {
     public Date getFechaMaximaPorPersona(int idPersona){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Date fechaMaxima = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select max(s.fecha_hasta) as fecha_maxima\n" +
                             "from suscripcion s\n" +
                             "where s.persona_id = "+idPersona);

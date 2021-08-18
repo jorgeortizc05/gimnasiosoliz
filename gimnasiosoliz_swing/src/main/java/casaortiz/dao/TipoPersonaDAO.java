@@ -44,7 +44,6 @@ public class TipoPersonaDAO {
     public TipoPersona getTipoPersona(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         TipoPersona item = null;
         try {
             connect = conector.getConexion();
@@ -68,7 +67,6 @@ public class TipoPersonaDAO {
     public boolean actualizar(TipoPersona item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update tipo_persona set nombre = ?, descripcion = ? where id = ?");
@@ -88,7 +86,6 @@ public class TipoPersonaDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -106,9 +103,9 @@ public class TipoPersonaDAO {
     public List<TipoPersona> getTipoPersonas(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<TipoPersona> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from tipo_persona");
             result = st.executeQuery();
             items = new ArrayList<TipoPersona>();

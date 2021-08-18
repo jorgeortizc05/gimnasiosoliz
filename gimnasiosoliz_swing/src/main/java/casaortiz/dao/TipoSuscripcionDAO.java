@@ -44,7 +44,6 @@ public class TipoSuscripcionDAO {
     public TipoSuscripcion getTipoSuscripcion(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         TipoSuscripcion item = null;
         try {
             connect = conector.getConexion();
@@ -70,7 +69,6 @@ public class TipoSuscripcionDAO {
     public boolean actualizar(TipoSuscripcion item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update tipo_suscripcion set nombre = ?, numero_dias = ?, precio = ?, descripcion = ? where id = ?");
@@ -92,7 +90,6 @@ public class TipoSuscripcionDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -110,9 +107,9 @@ public class TipoSuscripcionDAO {
     public List<TipoSuscripcion> geTipoSuscripciones(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<TipoSuscripcion> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from tipo_suscripcion");
             result = st.executeQuery();
             items = new ArrayList<TipoSuscripcion>();

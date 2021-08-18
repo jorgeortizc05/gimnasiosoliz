@@ -45,7 +45,6 @@ public class CantonDAO {
     public Canton getCanton(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Canton item = null;
         try {
             connect = conector.getConexion();
@@ -69,7 +68,6 @@ public class CantonDAO {
     public boolean actualizar(Canton item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update canton set nombre = ?, descripcion = ? where id = ?");
@@ -89,7 +87,6 @@ public class CantonDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -107,9 +104,9 @@ public class CantonDAO {
     public List<Canton> getCantones(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Canton> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from canton");
             result = st.executeQuery();
             items = new ArrayList<Canton>();

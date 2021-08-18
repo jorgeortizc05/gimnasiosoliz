@@ -48,7 +48,6 @@ public class ProductoDAO {
     public Producto getProducto(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         Producto item = null;
         try {
             connect = conector.getConexion();
@@ -76,7 +75,6 @@ public class ProductoDAO {
     public boolean actualizar(Producto item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update producto set nombre = ?, descripcion = ?, precio = ?, codigo_barra = ?, foto = ?, subcategoria_id = ? where id = ?");
@@ -100,7 +98,6 @@ public class ProductoDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -118,9 +115,9 @@ public class ProductoDAO {
     public List<Producto> getProductos(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Producto> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from producto");
             result = st.executeQuery();
             items = new ArrayList<Producto>();
@@ -147,9 +144,9 @@ public class ProductoDAO {
     public List<Producto> buscarProductosPorNombre(String nombre){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Producto> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from producto p where p.nombre like '%"+nombre+"%'");
             result = st.executeQuery();
             items = new ArrayList<Producto>();
@@ -176,9 +173,9 @@ public class ProductoDAO {
     public List<Producto> buscarProductosPorCodigoBarra(String codigoBarra){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<Producto> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from producto p where p.codigo_barra like '%"+codigoBarra+"%'");
             result = st.executeQuery();
             items = new ArrayList<Producto>();

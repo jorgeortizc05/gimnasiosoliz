@@ -44,7 +44,6 @@ public class TipoComprobanteDAO {
     public TipoComprobante getTipoComprobante(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         TipoComprobante item = null;
         try {
             connect = conector.getConexion();
@@ -68,7 +67,6 @@ public class TipoComprobanteDAO {
     public boolean actualizar(TipoComprobante item){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("update tipo_comprobante set nombre = ?, descripcion = ? where id = ?");
@@ -88,7 +86,6 @@ public class TipoComprobanteDAO {
     public boolean eliminar(int id){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         try {
             System.out.println(id);
             connect = conector.getConexion();
@@ -106,9 +103,9 @@ public class TipoComprobanteDAO {
     public List<TipoComprobante> getTipoComprobantes(){
         Connection connect = null;
         ResultSet result = null;
-        connect = conector.getConexion();
         List<TipoComprobante> items = null;
         try{
+            connect = conector.getConexion();
             PreparedStatement st = connect.prepareStatement("select * from tipo_comprobante");
             result = st.executeQuery();
             items = new ArrayList<TipoComprobante>();
